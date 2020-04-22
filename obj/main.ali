@@ -1,0 +1,77 @@
+V "GNAT Lib v2019"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U main%b		main.adb		02497a70 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W reactor%s		reactor.adb		reactor.ali
+Z system%s		system.ads		system.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+
+D ada.ads		20190518041256 76789da1 ada%s
+D a-except.ads		20190518041256 291912d5 ada.exceptions%s
+D a-ioexce.ads		20190518041256 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20190518041256 119b8fb3 ada.streams%s
+D a-tags.ads		20190518041258 491b781d ada.tags%s
+D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
+D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20190518041256 5ab55268 interfaces%s
+D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
+D main.adb		20200422153612 b3a7aaca main%b
+D reactor.ads		20200422153850 1f1a05d7 reactor%s
+D system.ads		20190518041258 32a08138 system%s
+D s-conca4.ads		20190518041258 7e642b20 system.concat_4%s
+D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
+D s-exctab.ads		20190518041256 54135002 system.exception_table%s
+D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
+D s-imenne.ads		20190518041256 614c06c0 system.img_enum_new%s
+D s-imgint.ads		20190518041256 02dbe0c2 system.img_int%s
+D s-parame.ads		20190518041258 48ec542b system.parameters%s
+D s-secsta.ads		20190518041258 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20190518041256 a7318a92 system.soft_links%s
+D s-stache.ads		20190518041258 a37c21ec system.stack_checking%s
+D s-stalib.ads		20190518041258 09bd3940 system.standard_library%s
+D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
+D s-stratt.ads		20190518041256 aedef97e system.stream_attributes%s
+D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [main standard 4 11 none]
+G r c none [main standard 4 11 none] [engineon reactor 33 14 none]
+G r c none [main standard 4 11 none] [calculatepower reactor 53 13 none]
+G r c none [main standard 4 11 none] [decreaserod reactor 44 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 10|2r6 2r23
+X 6 a-textio.ads
+57K13*Text_IO 727e16 10|2w10 2r27
+508U14*Put_Line 10|9s4 10s4 11s4 12s4 13s4 14s4 16s4 17s4 19s4 21s4 23s4
+X 10 main.adb
+4U11*Main 4b11 24l5 24t9
+X 11 reactor.ads
+1K9*reactor 10|1w6 1r19 11|58e12
+3I9*Temperature<short_short_integer>
+5I9*Power<short_integer>
+7I9*Rods<short_short_integer>
+19e7*OnOff{10E9} 10|10r23
+20i7*temp{3I9} 10|14r23
+21i7*rod_number{7I9} 10|12r23 19r34 21r34 23r34
+22e7*status{12E9} 10|17r23
+26r4*T_Reactor{18R9} 10|10r13 12r13 14r13 17r13 19r24 21r24 23r24
+33U14*EngineOn 10|18s4
+44U14*decreaseRod 10|20s4 22s4
+53V13*calculatePower{5I9} 10|19s67 21s67 23s67
+

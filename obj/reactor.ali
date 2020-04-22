@@ -1,0 +1,110 @@
+V "GNAT Lib v2019"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_DISPATCHING_CALLS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U reactor%b		reactor.adb		8d5dcd92 NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+U reactor%s		reactor.ads		1f1a05d7 EE OO PF PK IL
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20190518041256 76789da1 ada%s
+D a-except.ads		20190518041256 291912d5 ada.exceptions%s
+D a-ioexce.ads		20190518041256 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20190518041256 119b8fb3 ada.streams%s
+D a-tags.ads		20190518041258 491b781d ada.tags%s
+D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
+D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20190518041256 5ab55268 interfaces%s
+D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
+D reactor.ads		20200422153850 1f1a05d7 reactor%s
+D reactor.adb		20200422133812 3cb31d28 reactor%b
+D system.ads		20190518041258 32a08138 system%s
+D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
+D s-exctab.ads		20190518041256 54135002 system.exception_table%s
+D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
+D s-parame.ads		20190518041258 48ec542b system.parameters%s
+D s-secsta.ads		20190518041258 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20190518041256 a7318a92 system.soft_links%s
+D s-stache.ads		20190518041258 a37c21ec system.stack_checking%s
+D s-stalib.ads		20190518041258 09bd3940 system.standard_library%s
+D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20190518041256 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20190518041256 aedef97e system.stream_attributes%s
+D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
+G a e
+G c Z s s [trainreactorDA reactor 18 9 none]
+G c Z s s [trainreactorDF reactor 18 9 none]
+G c Z s s [trainreactorIP reactor 18 9 none]
+G c Z s b [engineon reactor 33 14 none]
+G c Z s b [engineoff reactor 38 14 none]
+G c Z s b [decreaserod reactor 44 14 none]
+G c Z s b [addrod reactor 48 14 none]
+G c Z s b [calculatepower reactor 53 13 none]
+G c Z s s [TpowerarrayBIP reactor 6 4 none]
+G c Z s s [TrodsrarrayBIP reactor 8 4 none]
+X 1 ada.ads
+16K9*Ada 20e8 11|1r6 1r23
+X 6 a-textio.ads
+57K13*Text_IO 727e16 11|1w10 1r27
+X 10 reactor.ads
+1K9*reactor 58l5 58e12 11|3b14 47l5 47t12
+3I9*Temperature<short_short_integer> 14r33 16r29 20r14 27r41
+5I9*Power<short_integer> 6r30 23r13 30r40 53r36 11|33r35 35r13 36r16 37r16
+. 37r25 41r49
+6A9*PowerArray(integer)<5I9> 54r39 54r85 11|36r25
+7I9*Rods<short_short_integer> 8r30 21r20 28r47 35r67 36r67 40r66 41r68 46r66
+. 50r66 11|7r59 19r59 27r59 37r31
+8A9*RodsrArray(integer)<7I9>
+10E9*StatusOnOff 10e33 19r15
+10n25*On{10E9} 36r32 40r31 46r31 50r31 11|8r29 19r28 27r28
+10n29*Off{10E9} 26r42 35r31 41r32 11|7r28 14r26
+12E9*ReactorStatus 12e47 22r16
+12n27*Running{12E9} 29r43
+12n36*Overheated{12E9}
+14i4*OverheatThreshold{3I9}
+16i4*TempIncrement{3I9}
+18R9*TrainReactor 24e14 26r16
+19e7*OnOff{10E9} 26m33 35r23 36r24 40r23 41r24 46r23 50r23 11|7r20 8m20 14m17
+. 19r20 27r20
+20i7*temp{3I9} 27m33
+21i7*rod_number{7I9} 28m33 35r54 36r54 40r53 41r55 46r53 47r24 47r47 50r53
+. 51r24 51r47 11|7r46 19r46 20m20 20r44 27r46 28m20 28r44 41r65
+22e7*status{12E9} 29m33
+23i7*pow{5I9} 30m33
+26r4*T_Reactor{18R9} 34r27 35r13 35r44 36r14 36r44 39r27 40r13 40r43 41r14
+. 41r45 45r27 46r13 46r43 47r14 47r37 49r27 50r13 50r43 51r14 51r37 11|7r10
+. 7r36 8m10 14m7 19r10 19r36 20m10 20r34 27r10 27r36 28m10 28r34 41r55
+33U14*EngineOn 11|5b14 10l8 10t16
+38U14*EngineOff 11|12b14 15l8 15t17
+44U14*decreaseRod 11|17b14 23l8 23t19
+48U14*addRod 11|25b14 31l8 31t14
+53V13*calculatePower{5I9} 54r14 54r60 11|33b13 45l8 45t22
+X 11 reactor.adb
+35i7 Pow{10|5I9} 41m7 43r14
+36i7 MaxPow{10|5I9} 41r15
+37i7 MaxRod{10|5I9} 41r24 41r35
+

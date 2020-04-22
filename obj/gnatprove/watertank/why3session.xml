@@ -3,6 +3,7 @@
 "http://why3.lri.fr/why3session.dtd">
 <why3session shape_version="6">
 <prover id="0" name="CVC4" version="1.6-gnatprove" timelimit="1" steplimit="0" memlimit="1000"/>
+<prover id="1" name="CVC4_CE" version="1.6-gnatprove" timelimit="1" steplimit="0" memlimit="1000"/>
 <file>
 <path name=".."/>
 <path name="watertank.mlw"/>
@@ -27,6 +28,7 @@
   </goal>
   <goal name="VC def.3" expl="check" proved="true">
   <proof prover="0"><result status="valid" steps="22"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="72"/></proof>
   </goal>
   <goal name="VC def.4" expl="check" proved="true">
   <proof prover="0"><result status="valid" steps="22"/></proof>
@@ -35,45 +37,31 @@
   </goal>
   <goal name="VC def.6" expl="postcondition">
   </goal>
-  <goal name="VC def.7" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="19"/></proof>
+  <goal name="VC def.7" expl="postcondition">
   </goal>
-  <goal name="VC def.8" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="19"/></proof>
+  <goal name="VC def.8" expl="postcondition">
   </goal>
-  <goal name="VC def.9" expl="postcondition">
+  <goal name="VC def.9" expl="assertion">
+  <proof prover="0"><result status="unknown" steps="70"/></proof>
+  <proof prover="1"><result status="unknown" steps="101"/></proof>
   </goal>
-  <goal name="VC def.10" expl="postcondition">
-  </goal>
-  <goal name="VC def.11" expl="assertion" proved="true">
-  <proof prover="0"><result status="valid" steps="20"/></proof>
-  </goal>
-  <goal name="VC def.12" expl="assertion" proved="true">
+  <goal name="VC def.10" expl="assertion" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
-  <goal name="VC def.13" expl="postcondition">
+  <goal name="VC def.11" expl="postcondition">
   </goal>
-  <goal name="VC def.14" expl="assertion" proved="true">
-  <proof prover="0"><result status="valid" steps="20"/></proof>
+  <goal name="VC def.12" expl="assertion">
+  <proof prover="0"><result status="unknown" steps="101"/></proof>
+  <proof prover="1"><result status="unknown" steps="153"/></proof>
   </goal>
-  <goal name="VC def.15" expl="assertion" proved="true">
+  <goal name="VC def.13" expl="assertion" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
-  <goal name="VC def.16" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="81"/></proof>
+  <goal name="VC def.14" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="19"/></proof>
   </goal>
-  <goal name="VC def.17" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="81"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Watertank__updatewaterlevel__subprogram_lsp">
- <goal name="VC def" expl="VC for def">
- <transf name="split_goal_wp_conj" >
-  <goal name="VC def.0" expl="postcondition">
-  </goal>
-  <goal name="VC def.1" expl="postcondition">
+  <goal name="VC def.15" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="19"/></proof>
   </goal>
  </transf>
  </goal>
@@ -88,26 +76,10 @@
   <goal name="VC def.2" expl="precondition" proved="true">
   <proof prover="0"><result status="valid" steps="49"/></proof>
   </goal>
-  <goal name="VC def.3" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="19"/></proof>
+  <goal name="VC def.3" expl="postcondition">
   </goal>
-  <goal name="VC def.4" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="19"/></proof>
-  </goal>
-  <goal name="VC def.5" expl="postcondition">
-  </goal>
-  <goal name="VC def.6" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="81"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Watertank__update__subprogram_lsp">
- <goal name="VC def" expl="VC for def">
- <transf name="split_goal_wp_conj" >
-  <goal name="VC def.0" expl="postcondition">
-  </goal>
-  <goal name="VC def.1" expl="postcondition">
+  <goal name="VC def.4" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="26"/></proof>
   </goal>
  </transf>
  </goal>
@@ -149,19 +121,10 @@
   </goal>
   <goal name="VC def.14" expl="assertion" proved="true">
   <proof prover="0"><result status="valid" steps="26"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="276"/></proof>
   </goal>
   <goal name="VC def.15" expl="assertion" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Watertank__updatewaterstatus__subprogram_lsp">
- <goal name="VC def" expl="VC for def">
- <transf name="split_goal_wp_conj" >
-  <goal name="VC def.0" expl="postcondition">
-  </goal>
-  <goal name="VC def.1" expl="postcondition">
   </goal>
  </transf>
  </goal>
@@ -172,14 +135,6 @@
   <goal name="VC def.0" expl="postcondition">
   </goal>
   <goal name="VC def.1" expl="postcondition">
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Watertank__constructwatertank__subprogram_lsp">
- <goal name="VC def" expl="VC for def">
- <transf name="split_goal_wp_conj" >
-  <goal name="VC def.0" expl="postcondition">
   </goal>
  </transf>
  </goal>

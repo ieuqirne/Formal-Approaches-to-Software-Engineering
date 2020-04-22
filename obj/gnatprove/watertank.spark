@@ -135,62 +135,11 @@
       }
     },
     {
-      "file": "watertank.adb",
-      "line": 18,
-      "col": 11,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "waterTank.UpdateWaterLevel",
-        "sloc": [
-          {
-            "file": "watertank.ads",
-            "line": 15
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 19,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 19,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "watertank.adb",
-      "check_line": 18,
-      "check_col": 11,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
       "file": "watertank.ads",
       "line": 18,
-      "col": 73,
+      "col": 74,
       "rule": "VC_CONTRACT_CASE",
-      "severity": "info",
+      "severity": "medium",
       "entity": {
         "name": "waterTank.UpdateWaterLevel",
         "sloc": [
@@ -215,8 +164,13 @@
         {
           "proof_attempts": {
             "CVC4": {
-              "result": "Valid",
-              "steps": 20,
+              "result": "Unknown ()",
+              "steps": 70,
+              "time": 0
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 101,
               "time": 0
             }
           },
@@ -226,22 +180,48 @@
       ],
       "check_file": "watertank.ads",
       "check_line": 18,
-      "check_col": 73,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
+      "check_col": 74,
+      "cntexmp": {
+        "watertank.adb": {
+          "17": [
+            {
+              "name": "This",
+              "value": "(water_level => 500, status => Critical)",
+              "kind": "variable"
+            }
+          ]
+        },
+        "watertank.ads": {
+          "15": [
+            {
+              "name": "This",
+              "value": "(water_level => 500, status => Critical)",
+              "kind": "variable"
+            },
+            {
+              "name": "lvl",
+              "value": "500",
+              "kind": "variable"
+            }
+          ],
+          "18": [
+            {
+              "name": "This",
+              "value": "(water_level => 500, status => Critical)",
+              "kind": "variable"
+            }
+          ]
         }
-      }
+      },
+      "msg_id": 0,
+      "how_proved": "prover"
     },
     {
       "file": "watertank.ads",
       "line": 19,
-      "col": 75,
+      "col": 76,
       "rule": "VC_CONTRACT_CASE",
-      "severity": "info",
+      "severity": "medium",
       "entity": {
         "name": "waterTank.UpdateWaterLevel",
         "sloc": [
@@ -266,8 +246,13 @@
         {
           "proof_attempts": {
             "CVC4": {
-              "result": "Valid",
-              "steps": 20,
+              "result": "Unknown ()",
+              "steps": 101,
+              "time": 0
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 153,
               "time": 0
             }
           },
@@ -277,15 +262,41 @@
       ],
       "check_file": "watertank.ads",
       "check_line": 19,
-      "check_col": 75,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
+      "check_col": 76,
+      "cntexmp": {
+        "watertank.adb": {
+          "17": [
+            {
+              "name": "This",
+              "value": "(water_level => 0, status => Sufficient)",
+              "kind": "variable"
+            }
+          ]
+        },
+        "watertank.ads": {
+          "15": [
+            {
+              "name": "This",
+              "value": "(water_level => 0, status => Sufficient)",
+              "kind": "variable"
+            },
+            {
+              "name": "lvl",
+              "value": "0",
+              "kind": "variable"
+            }
+          ],
+          "19": [
+            {
+              "name": "This",
+              "value": "(water_level => 0, status => Sufficient)",
+              "kind": "variable"
+            }
+          ]
         }
-      }
+      },
+      "msg_id": 1,
+      "how_proved": "prover"
     },
     {
       "file": "watertank.ads",
@@ -307,7 +318,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 81,
+              "steps": 19,
               "time": 0
             }
           },
@@ -318,7 +329,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 81,
+              "steps": 19,
               "time": 0
             }
           },
@@ -340,7 +351,7 @@
     },
     {
       "file": "watertank.adb",
-      "line": 24,
+      "line": 23,
       "col": 47,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -367,63 +378,12 @@
         }
       ],
       "check_file": "watertank.adb",
-      "check_line": 24,
+      "check_line": 23,
       "check_col": 47,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "watertank.adb",
-      "line": 25,
-      "col": 14,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "waterTank.Update",
-        "sloc": [
-          {
-            "file": "watertank.ads",
-            "line": 22
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 19,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 19,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "watertank.adb",
-      "check_line": 25,
-      "check_col": 14,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
         }
@@ -449,7 +409,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 81,
+              "steps": 26,
               "time": 0
             }
           },
@@ -632,7 +592,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 26,
-              "time": 0
+              "time": 5.00000000000000E-02
             }
           },
           "transformations": {
@@ -647,7 +607,7 @@
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 0.00000000000000E+00
+          "max_time": 5.00000007450581E-02
         }
       }
     }
@@ -655,107 +615,15 @@
   "assumptions": [
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "waterTank.UpdateWaterLevel",
-          "sloc": [
-            {
-              "file": "watertank.ads",
-              "line": 15
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "waterTank.UpdateWaterLevel",
-          "sloc": [
-            {
-              "file": "watertank.ads",
-              "line": 15
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
-          "name": "waterTank.UpdateWaterLevel",
+          "name": "waterTank",
           "sloc": [
             {
               "file": "watertank.ads",
-              "line": 15
+              "line": 1
             }
           ]
         }
@@ -788,6 +656,22 @@
             {
               "file": "watertank.ads",
               "line": 31
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "waterTank.UpdateWaterLevel",
+          "sloc": [
+            {
+              "file": "watertank.ads",
+              "line": 15
             }
           ]
         }
@@ -875,30 +759,6 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_POST",
@@ -915,18 +775,6 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_EFFECTS",
@@ -943,30 +791,6 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "waterTank.UpdateWaterStatus",
-            "sloc": [
-              {
-                "file": "watertank.ads",
-                "line": 26
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_AORTE",
@@ -980,33 +804,17 @@
           ]
         }
       }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "waterTank",
-          "sloc": [
-            {
-              "file": "watertank.ads",
-              "line": 1
-            }
-          ]
-        }
-      }
     }
   ],
   "timings": {
-    "marking": 1.31850002799183E-03,
-    "globals (basic)": 2.33670994639397E-02,
-    "globals/properties (advanced)": 2.98235006630421E-02,
-    "flow analysis": 1.46228997036815E-02,
-    "codepeer results": 7.00000009601354E-06,
-    "init_why_sections": 5.03499992191792E-04,
-    "translation of standard": 3.36170010268688E-03,
-    "translation of compilation unit": 6.38324022293091E-02,
-    "proof": 7.76112973690033E-01
+    "marking": 1.13009999040514E-03,
+    "globals (basic)": 2.30813995003700E-02,
+    "globals/properties (advanced)": 2.90978997945786E-02,
+    "flow analysis": 1.00367004051805E-02,
+    "codepeer results": 6.79999993735692E-06,
+    "init_why_sections": 5.13300008606166E-04,
+    "translation of standard": 3.38319991715252E-03,
+    "translation of compilation unit": 3.11115998774767E-02,
+    "proof": 1.26040899753571E+00
   }
 }

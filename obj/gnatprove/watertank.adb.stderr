@@ -1,0 +1,2 @@
+watertank.ads:18:74: medium: contract case might fail (e.g. when This = (water_level => 500, status => Critical))[#0]
+watertank.ads:19:76: medium: contract case might fail (e.g. when This = (water_level => 0, status => Sufficient))[#1]

@@ -15,16 +15,15 @@ package body waterTank with SPARK_Mode is
    procedure UpdateWaterLevel ( This : in out TrainWaterTank; lvl : in WaterLevel) is
    begin
       This.water_level := lvl;
-      This.UpdateWaterStatus;
    end UpdateWaterLevel;
 
    procedure Update (This : in out TrainWaterTank) is
    begin
       if This.water_level > WaterDecrement then
          This.water_level := This.water_level - WaterDecrement;
-         This.UpdateWaterStatus;
       end if;
-   end update;
+   end Update;
+
 
    function ConstructWaterTank return TrainWaterTank is
       result : TrainWaterTank := (status => (Sufficient), water_level => (5600));

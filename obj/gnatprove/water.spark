@@ -1,0 +1,227 @@
+{
+  "spark": [
+    {
+      "name": "water",
+      "sloc": [
+        {
+          "file": "water.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "water.Update",
+      "sloc": [
+        {
+          "file": "water.ads",
+          "line": 15
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "water.ConstructWaterTank",
+      "sloc": [
+        {
+          "file": "water.ads",
+          "line": 22
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+    {
+      "file": "water.adb",
+      "line": 8,
+      "col": 47,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "water.Update",
+        "sloc": [
+          {
+            "file": "water.ads",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 49,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "water.adb",
+      "check_line": 8,
+      "check_col": 47,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "water.ads",
+      "line": 17,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "water.Update",
+        "sloc": [
+          {
+            "file": "water.ads",
+            "line": 15
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 26,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "water.ads",
+      "check_line": 17,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "water.Update",
+          "sloc": [
+            {
+              "file": "water.ads",
+              "line": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "water.Update",
+          "sloc": [
+            {
+              "file": "water.ads",
+              "line": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "water.Update",
+          "sloc": [
+            {
+              "file": "water.ads",
+              "line": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "water",
+          "sloc": [
+            {
+              "file": "water.ads",
+              "line": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "water.ConstructWaterTank",
+          "sloc": [
+            {
+              "file": "water.ads",
+              "line": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "water.ConstructWaterTank",
+          "sloc": [
+            {
+              "file": "water.ads",
+              "line": 22
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 1.53709994629025E-03,
+    "globals (basic)": 7.01462998986244E-02,
+    "globals/properties (advanced)": 3.84171009063721E-02,
+    "flow analysis": 5.81250013783574E-03,
+    "codepeer results": 8.50000014906982E-06,
+    "init_why_sections": 1.60890002734959E-03,
+    "translation of standard": 6.94089988246560E-03,
+    "translation of compilation unit": 1.97256002575159E-02,
+    "proof": 1.15893244743347E+00
+  }
+}

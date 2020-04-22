@@ -1,3 +1,0 @@
-rods.adb:1:14: missing body for "addRod" declared at rods.ads:7
-rods.adb:4:27: expected type "Rod_Index" defined at rods.ads:3
-rods.adb:4:27: found type "Rod" defined at rods.ads:5
