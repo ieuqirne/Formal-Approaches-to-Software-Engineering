@@ -592,7 +592,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 26,
-              "time": 5.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -607,7 +607,7 @@
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     }
@@ -807,14 +807,14 @@
     }
   ],
   "timings": {
-    "marking": 1.13009999040514E-03,
-    "globals (basic)": 2.30813995003700E-02,
-    "globals/properties (advanced)": 2.90978997945786E-02,
-    "flow analysis": 1.00367004051805E-02,
-    "codepeer results": 6.79999993735692E-06,
-    "init_why_sections": 5.13300008606166E-04,
-    "translation of standard": 3.38319991715252E-03,
-    "translation of compilation unit": 3.11115998774767E-02,
-    "proof": 1.26040899753571E+00
+    "marking": 2.42529995739460E-03,
+    "globals (basic)": 3.69972996413708E-02,
+    "globals/properties (advanced)": 5.62861002981663E-02,
+    "flow analysis": 2.48313993215561E-02,
+    "codepeer results": 1.08000003820052E-05,
+    "init_why_sections": 1.48830004036427E-03,
+    "translation of standard": 8.51919967681170E-03,
+    "translation of compilation unit": 6.20185993611813E-02,
+    "proof": 1.65128064155579E+00
   }
 }

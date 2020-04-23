@@ -29,6 +29,7 @@ package body ada_main is
    E109 : Short_Integer; pragma Import (Ada, E109, "system__file_io_E");
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__text_io_E");
    E115 : Short_Integer; pragma Import (Ada, E115, "reactor_E");
+   E129 : Short_Integer; pragma Import (Ada, E129, "train_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -39,26 +40,19 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E115 := E115 - 1;
+      E006 := E006 - 1;
       declare
          procedure F1;
-         pragma Import (Ada, F1, "reactor__finalize_spec");
+         pragma Import (Ada, F1, "ada__text_io__finalize_spec");
       begin
          F1;
       end;
-      E006 := E006 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "ada__text_io__finalize_spec");
-      begin
-         F2;
-      end;
-      declare
-         procedure F3;
-         pragma Import (Ada, F3, "system__file_io__finalize_body");
+         pragma Import (Ada, F2, "system__file_io__finalize_body");
       begin
          E109 := E109 - 1;
-         F3;
+         F2;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -207,8 +201,8 @@ package body ada_main is
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E006 := E006 + 1;
-      reactor'elab_spec;
       E115 := E115 + 1;
+      E129 := E129 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -245,6 +239,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\reactor.o
+   --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\train.o
    --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\main.o
    --   -LC:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\
    --   -LC:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\

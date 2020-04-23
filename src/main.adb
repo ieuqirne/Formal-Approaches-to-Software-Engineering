@@ -1,24 +1,27 @@
+with train; use train;
 with reactor; use reactor;
+
 with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Main is
 
+   --reac: reactor.TrainReactor;
+   tren: train.Train;
 begin
 
 
    Put_Line("OnOff");
-   Put_Line(T_Reactor.OnOff'Image);
-   Put_Line("Rods");
-   Put_Line(T_Reactor.rod_number'Image);
-   Put_Line("temp");
-   Put_Line(T_Reactor.temp'Image);
+   Put_Line(tren.reac.OnOff'Image);
+   EngineOn(tren.reac);
+   Put_Line(tren.reac.OnOff'Image);
+   --calculatePower(tren.reac);
+   ----calculateSpeed(tren);
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image);
+   decreaseRod(tren.reac);
 
-   Put_Line("status");
-   Put_Line(T_Reactor.status'Image);
-   EngineOn;
-   Put_Line("Rods: " & T_Reactor.rod_number'Image & ". Power: " & calculatePower'Image);
-   decreaseRod;
-   Put_Line("Rods: " & T_Reactor.rod_number'Image & ". Power: " & calculatePower'Image);
-   decreaseRod;
-   Put_Line("Rods: " & T_Reactor.rod_number'Image & ". Power: " & calculatePower'Image);
+   ----calculateSpeed(tren);
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image &". Speed: " & tren.sp'Image );
+
+   --decreaseRod;
+   --Put_Line("Rods: " & T_Reactor.rod_number'Image & ". Power: " & calculatePower'Image);
 end Main;

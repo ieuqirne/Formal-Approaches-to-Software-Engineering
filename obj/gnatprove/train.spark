@@ -1,0 +1,362 @@
+{
+  "spark": [
+    {
+      "name": "train",
+      "sloc": [
+        {
+          "file": "train.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "train.calculateSpeed",
+      "sloc": [
+        {
+          "file": "train.ads",
+          "line": 18
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+    {
+      "file": "train.adb",
+      "line": 8,
+      "col": 32,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "train.calculateSpeed",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 195,
+              "time": 1.30000000000000E-01
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 219,
+              "time": 1.40000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 8,
+      "check_col": 32,
+      "cntexmp": {
+        "train.adb": {
+          "8": [
+            {
+              "name": "This",
+              "value": "(rea => (OnOff => On, temp => 0, rod_number => 0, status => Running, pow => 1001), sp => 0, wei => Weight'First, NumbCarri => 0)",
+              "kind": "variable"
+            }
+          ]
+        },
+        "train.ads": {
+          "18": [
+            {
+              "name": "This",
+              "value": "(rea => (OnOff => On, temp => 0, rod_number => 0, status => Running, pow => 1001), sp => 0, wei => Weight'First, NumbCarri => 0)",
+              "kind": "variable"
+            }
+          ]
+        }
+      },
+      "msg_id": 0,
+      "how_proved": "prover"
+    },
+    {
+      "file": "train.adb",
+      "line": 8,
+      "col": 50,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "train.calculateSpeed",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 293,
+              "time": 8.00000000000000E-02
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 202,
+              "time": 1.40000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 8,
+      "check_col": 50,
+      "cntexmp": {
+        "train.adb": {
+          "8": [
+            {
+              "name": "This",
+              "value": "(rea => (OnOff => On, temp => 0, rod_number => 0, status => Running, pow => 0), sp => 0, wei => Weight'First+1, NumbCarri => 0)",
+              "kind": "variable"
+            }
+          ]
+        },
+        "train.ads": {
+          "18": [
+            {
+              "name": "This",
+              "value": "(rea => (OnOff => On, temp => 0, rod_number => 0, status => Running, pow => 0), sp => 0, wei => Weight'First+1, NumbCarri => 0)",
+              "kind": "variable"
+            }
+          ]
+        }
+      },
+      "msg_id": 1,
+      "how_proved": "prover"
+    },
+    {
+      "file": "train.adb",
+      "line": 8,
+      "col": 38,
+      "rule": "VC_DIVISION_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.calculateSpeed",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 156,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 8,
+      "check_col": 38,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 8,
+      "col": 56,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.calculateSpeed",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 409,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 8,
+      "check_col": 56,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 8,
+      "col": 56,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.calculateSpeed",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 408,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 8,
+      "check_col": 56,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 19,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.calculateSpeed",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 19,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.calculateSpeed",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 18
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 5.08799974340945E-04,
+    "globals (basic)": 3.41947004199028E-02,
+    "globals/properties (advanced)": 5.11967986822128E-02,
+    "flow analysis": 5.39069995284081E-03,
+    "codepeer results": 1.31999995574006E-05,
+    "init_why_sections": 1.38889998197556E-03,
+    "translation of standard": 1.16376997902989E-02,
+    "translation of compilation unit": 1.03753004223108E-02,
+    "proof": 1.89285194873810E+00
+  }
+}

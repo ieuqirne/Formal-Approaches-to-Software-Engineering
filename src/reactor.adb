@@ -2,43 +2,50 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 package body reactor with SPARK_Mode is
 
-   procedure EngineOn is
+   procedure EngineOn (This : in out TrainReactor) is
    begin
-      if T_Reactor.OnOff = Off and T_Reactor.rod_number = Rods'Last then
-         T_Reactor.OnOff := On;
+      if This.OnOff = Off and This.rod_number = Rods'Last then
+         This.OnOff := On;
+         This.pow := calculatePower(This);
       end if;
    end EngineOn;
 
-   procedure EngineOff is
+   procedure EngineOff (This : in out TrainReactor) is
    begin
-      T_Reactor.OnOff := Off;
+      This.OnOff := Off;
+
    end EngineOff;
 
-   procedure decreaseRod is
+   procedure decreaseRod (This : in out TrainReactor) is
    begin
-      if T_Reactor.OnOff = On and  T_Reactor.rod_number > Rods'First then
-         T_Reactor.rod_number := T_Reactor.rod_number - 1;
+      if This.OnOff = On and  This.rod_number > Rods'First then
+         This.rod_number := This.rod_number - 1;
+         This.pow := calculatePower(This);
+
+         --calculateSpeed(This);
       end if;
 
    end decreaseRod;
 
-   procedure addRod is
+   procedure addRod (This : in out TrainReactor) is
    begin
-      if T_Reactor.OnOff = On and  T_Reactor.rod_number < Rods'Last then
-         T_Reactor.rod_number := T_Reactor.rod_number + 1;
+      if This.OnOff = On and  This.rod_number < Rods'Last then
+         This.rod_number := This.rod_number + 1;
+         This.pow := calculatePower(This);
+         --calculateSpeed(This);
       end if;
 
    end addRod;
 
-   function calculatePower return Power
+   function calculatePower(This : in TrainReactor) return Power
    is
       Pow : Power;
       MaxPow : Power := PowerArray'Last;
       MaxRod : Power := Power(Rods'Last);
    begin
-      --Pow  := MaxPow - Power(T_Reactor.rod_number);
-      --Pow := MaxRod - Power(T_Reactor.rod_number);
-      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(T_Reactor.rod_number));
+      --Pow  := MaxPow - Power(This.rod_number);
+      --Pow := MaxRod - Power(This.rod_number);
+      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));
 
       return Pow;
       --return MaxPow;

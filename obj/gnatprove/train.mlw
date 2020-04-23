@@ -1788,6 +1788,476 @@ module Standard__universal_integer__rep
 
 end
 
+(* Module for axiomatizing type "TspeedB" defined at train.ads:5, created in Gnat2Why.Types.Translate_Type *)
+module Train__TspeedB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type tspeedB =
+  < range -32768 32767 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (( -32768) : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (32767 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = tspeedB, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type tspeedB__ref =
+  { mutable tspeedB__content : tspeedB }
+ 
+ function tspeedB__ref_tspeedB__content__projection 
+   (a : tspeedB__ref) : tspeedB =
+  a.tspeedB__content
+ 
+ meta "model_projection" function tspeedB__ref_tspeedB__content__projection
+ 
+ meta "inline:no" function tspeedB__ref_tspeedB__content__projection
+ 
+ val tspeedB__havoc 
+   (x : tspeedB__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "TspeedB" defined at train.ads:5, created in Gnat2Why.Types.Translate_Type *)
+module Train__TspeedB__rep
+ use        Train__TspeedB as Train__TspeedB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Train__TspeedB.tspeedB) : int =
+  (Train__TspeedB.tspeedB'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Train__TspeedB.tspeedB, 
+ predicate in_range = Train__TspeedB.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "speed" defined at train.ads:5, created in Gnat2Why.Types.Translate_Type *)
+module Train__speed
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type speed =
+  < range 0 1000 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (1000 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = speed, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type speed__ref =
+  { mutable speed__content : speed }
+ 
+ function speed__ref_speed__content__projection 
+   (a : speed__ref) : speed =
+  a.speed__content
+ 
+ meta "model_projection" function speed__ref_speed__content__projection
+ 
+ meta "inline:no" function speed__ref_speed__content__projection
+ 
+ val speed__havoc 
+   (x : speed__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "speed" defined at train.ads:5, created in Gnat2Why.Types.Translate_Type *)
+module Train__speed__rep
+ use        Train__speed as Train__speed
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Train__speed.speed) : int =
+  (Train__speed.speed'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Train__speed.speed, 
+ predicate in_range = Train__speed.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "TweightB" defined at train.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Train__TweightB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type tweightB =
+  < range -32768 32767 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (( -32768) : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (32767 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = tweightB, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type tweightB__ref =
+  { mutable tweightB__content : tweightB }
+ 
+ function tweightB__ref_tweightB__content__projection 
+   (a : tweightB__ref) : tweightB =
+  a.tweightB__content
+ 
+ meta "model_projection" function tweightB__ref_tweightB__content__projection
+ 
+ meta "inline:no" function tweightB__ref_tweightB__content__projection
+ 
+ val tweightB__havoc 
+   (x : tweightB__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "TweightB" defined at train.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Train__TweightB__rep
+ use        Train__TweightB as Train__TweightB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Train__TweightB.tweightB) : int =
+  (Train__TweightB.tweightB'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Train__TweightB.tweightB, 
+ predicate in_range = Train__TweightB.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "weight" defined at train.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Train__weight
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type weight =
+  < range 1000 10000 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (1000 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (10000 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = weight, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type weight__ref =
+  { mutable weight__content : weight }
+ 
+ function weight__ref_weight__content__projection 
+   (a : weight__ref) : weight =
+  a.weight__content
+ 
+ meta "model_projection" function weight__ref_weight__content__projection
+ 
+ meta "inline:no" function weight__ref_weight__content__projection
+ 
+ val weight__havoc 
+   (x : weight__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "weight" defined at train.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Train__weight__rep
+ use        Train__weight as Train__weight
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Train__weight.weight) : int =
+  (Train__weight.weight'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Train__weight.weight, 
+ predicate in_range = Train__weight.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "TcarriageB" defined at train.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Train__TcarriageB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type tcarriageB =
+  < range -128 127 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (( -128) : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (127 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = tcarriageB, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type tcarriageB__ref =
+  { mutable tcarriageB__content : tcarriageB }
+ 
+ function tcarriageB__ref_tcarriageB__content__projection 
+   (a : tcarriageB__ref) : tcarriageB =
+  a.tcarriageB__content
+ 
+ meta "model_projection" function tcarriageB__ref_tcarriageB__content__projection
+ 
+ meta "inline:no" function tcarriageB__ref_tcarriageB__content__projection
+ 
+ val tcarriageB__havoc 
+   (x : tcarriageB__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "TcarriageB" defined at train.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Train__TcarriageB__rep
+ use        Train__TcarriageB as Train__TcarriageB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Train__TcarriageB.tcarriageB) : int =
+  (Train__TcarriageB.tcarriageB'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Train__TcarriageB.tcarriageB, 
+ predicate in_range = Train__TcarriageB.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "carriage" defined at train.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Train__carriage
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type carriage =
+  < range 0 20 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (20 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = carriage, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type carriage__ref =
+  { mutable carriage__content : carriage }
+ 
+ function carriage__ref_carriage__content__projection 
+   (a : carriage__ref) : carriage =
+  a.carriage__content
+ 
+ meta "model_projection" function carriage__ref_carriage__content__projection
+ 
+ meta "inline:no" function carriage__ref_carriage__content__projection
+ 
+ val carriage__havoc 
+   (x : carriage__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "carriage" defined at train.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Train__carriage__rep
+ use        Train__carriage as Train__carriage
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Train__carriage.carriage) : int =
+  (Train__carriage.carriage'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Train__carriage.carriage, 
+ predicate in_range = Train__carriage.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "statusonoff" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__statusonoff
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type statusonoff 
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (1 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = statusonoff, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type statusonoff__ref =
+  { mutable statusonoff__content : statusonoff }
+ 
+ function statusonoff__ref_statusonoff__content__projection 
+   (a : statusonoff__ref) : statusonoff =
+  a.statusonoff__content
+ 
+ meta "model_projection" function statusonoff__ref_statusonoff__content__projection
+ 
+ meta "inline:no" function statusonoff__ref_statusonoff__content__projection
+ 
+ val statusonoff__havoc 
+   (x : statusonoff__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "statusonoff" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__statusonoff__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__statusonoff.statusonoff, 
+ predicate in_range = Reactor__statusonoff.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
 (* Module for axiomatizing type "TtemperatureB" defined at reactor.ads:3, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__TtemperatureB
  use        "_gnatprove_standard".Main
@@ -1917,6 +2387,204 @@ module Reactor__temperature__rep
  type t = Reactor__temperature.temperature, 
  predicate in_range = Reactor__temperature.in_range, 
  function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "TrodsB" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__TrodsB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type trodsB =
+  < range -128 127 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (( -128) : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (127 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = trodsB, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type trodsB__ref =
+  { mutable trodsB__content : trodsB }
+ 
+ function trodsB__ref_trodsB__content__projection 
+   (a : trodsB__ref) : trodsB =
+  a.trodsB__content
+ 
+ meta "model_projection" function trodsB__ref_trodsB__content__projection
+ 
+ meta "inline:no" function trodsB__ref_trodsB__content__projection
+ 
+ val trodsB__havoc 
+   (x : trodsB__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "TrodsB" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__TrodsB__rep
+ use        Reactor__TrodsB as Reactor__TrodsB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Reactor__TrodsB.trodsB) : int =
+  (Reactor__TrodsB.trodsB'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__TrodsB.trodsB, 
+ predicate in_range = Reactor__TrodsB.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "rods" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__rods
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type rods =
+  < range 1 5 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (1 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (5 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = rods, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type rods__ref =
+  { mutable rods__content : rods }
+ 
+ function rods__ref_rods__content__projection 
+   (a : rods__ref) : rods =
+  a.rods__content
+ 
+ meta "model_projection" function rods__ref_rods__content__projection
+ 
+ meta "inline:no" function rods__ref_rods__content__projection
+ 
+ val rods__havoc 
+   (x : rods__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "rods" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__rods__rep
+ use        Reactor__rods as Reactor__rods
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Reactor__rods.rods) : int =
+  (Reactor__rods.rods'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__rods.rods, 
+ predicate in_range = Reactor__rods.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "reactorstatus" defined at reactor.ads:12, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__reactorstatus
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type reactorstatus 
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (1 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = reactorstatus, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type reactorstatus__ref =
+  { mutable reactorstatus__content : reactorstatus }
+ 
+ function reactorstatus__ref_reactorstatus__content__projection 
+   (a : reactorstatus__ref) : reactorstatus =
+  a.reactorstatus__content
+ 
+ meta "model_projection" function reactorstatus__ref_reactorstatus__content__projection
+ 
+ meta "inline:no" function reactorstatus__ref_reactorstatus__content__projection
+ 
+ val reactorstatus__havoc 
+   (x : reactorstatus__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "reactorstatus" defined at reactor.ads:12, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__reactorstatus__rep
+ use        Reactor__reactorstatus as Reactor__reactorstatus
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__reactorstatus.reactorstatus, 
+ predicate in_range = Reactor__reactorstatus.in_range
  
  meta "model_projection" function to_rep
  
@@ -2060,593 +2728,25 @@ module Reactor__power__rep
 
 end
 
-(* Module for axiomatizing the array theory associated to type "TpowerarrayB" defined at reactor.ads:6, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
-module Array__Int__Standard__integer
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__integer as Standard__integer
- use        Standard__integer__rep as Standard__integer__rep
-
- function index_I1_one 
-   : int =
-  (1 : int)
- 
- type component_type =
-  Standard__integer.integer
- 
- clone export "_gnatprove_standard".Array__1 with axiom .,
- type I1.t = int, 
- predicate I1.le = Int.(<=), 
- predicate I1.lt = Int.(<), 
- predicate I1.gt = Int.(>), 
- function I1.add = Int.(+), 
- function I1.sub = Int.(-), 
- function I1.one = index_I1_one, 
- type component_type = component_type
- 
- function bool_eq 
-   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
-  ( (if ((a__first <= a__last)) then (
-   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
-   (b__first > b__last))) /\ (forall temp___idx_154   : int.
-   (if (( (a__first <= temp___idx_154) /\ (temp___idx_154 <= a__last) )) then (
-    ((Standard__integer__rep.to_rep (get a temp___idx_154)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_154))))) else true)) )
- val bool_eq 
-   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool
-  ensures { result = bool_eq (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) }
- 
- axiom bool_eq_rev :
-  (forall a   b   : map.
-  (forall a__first   a__last   b__first   b__last   : int.
-   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
-    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
-    (b__first > b__last))) /\ (forall temp___idx_154   : int.
-    (if (( (a__first <= temp___idx_154) /\ (temp___idx_154 <= a__last) )) then (
-     ((Standard__integer__rep.to_rep (get a temp___idx_154)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_154))))) else true)) ) )))
-
-end
-
-(* Module for axiomatizing concatenation for the array theory associated to type "TpowerarrayB" defined at reactor.ads:6, created in Why.Gen.Arrays.Declare_Concatenation_Symbols *)
-module Array__Int__Standard__integer__Concat
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- function index_Index_one 
-   : int =
-  (1 : int)
- 
- clone export "_gnatprove_standard".Array__1__Concat with axiom .,
- type component_type = Array__Int__Standard__integer.component_type, 
- type map = Array__Int__Standard__integer.map, 
- type Index.t = int, 
- predicate Index.le = Int.(<=), 
- predicate Index.lt = Int.(<), 
- predicate Index.gt = Int.(>), 
- function Index.add = Int.(+), 
- function Index.sub = Int.(-), 
- function Index.one = index_Index_one, 
- function get = Array__Int__Standard__integer.get
-
-end
-
-(* Module for axiomatizing comparison for the array theory associated to type "TpowerarrayB" defined at reactor.ads:6, created in Why.Gen.Arrays.Declare_Comparison_Symbols *)
-module Array__Int__Standard__integer_Comp
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__integer__rep as Standard__integer__rep
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- function index_Index_one 
-   : int =
-  (1 : int)
- 
- clone export "ada__model".Array_Int_Rep_Comparison_Axiom with axiom .,
- type component_type = Array__Int__Standard__integer.component_type, 
- function to_rep = Standard__integer__rep.to_rep, 
- type map = Array__Int__Standard__integer.map, 
- type Index.t = int, 
- predicate Index.le = Int.(<=), 
- predicate Index.lt = Int.(<), 
- predicate Index.gt = Int.(>), 
- function Index.add = Int.(+), 
- function Index.sub = Int.(-), 
- function Index.one = index_Index_one, 
- function get = Array__Int__Standard__integer.get, 
- function bool_eq = Array__Int__Standard__integer.bool_eq
-
-end
-
-(* Module for axiomatizing type "TpowerarrayB" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__TpowerarrayB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__integer as Standard__integer
- use        Reactor__TpowerB as Reactor__TpowerB
- use        Reactor__TpowerB__rep as Reactor__TpowerB__rep
- use        Reactor__power as Reactor__power
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- type component_type =
-  Standard__integer.integer
- 
- function index_1_id 
-   (x : int) : int =
-  x
- 
- clone export "ada__model".Unconstr_Array with axiom .,
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
- type index_base_type = Reactor__TpowerB.tpowerB, 
- type index_rep_type = int, 
- function to_rep = Reactor__TpowerB__rep.to_rep, 
- function rep_to_int = index_1_id, 
- predicate in_range_base = Reactor__TpowerB.in_range, 
- predicate index_dynamic_property = Reactor__power.dynamic_property, 
- predicate index_rep_le = Int.(<=)
- 
- type tpowerarrayB =
-  __t
- 
- meta "model_projection" function to_array
- 
- meta "inline:no" function to_array
- 
- meta "model_projection" function first
- 
- meta "inline:no" function first
- 
- meta "model_projection" function last
- 
- meta "inline:no" function last
- 
- type tpowerarrayB__ref =
-  { mutable tpowerarrayB__content : tpowerarrayB }
- 
- function tpowerarrayB__ref_tpowerarrayB__content__projection 
-   (a : tpowerarrayB__ref) : tpowerarrayB =
-  a.tpowerarrayB__content
- 
- meta "model_projection" function tpowerarrayB__ref_tpowerarrayB__content__projection
- 
- meta "inline:no" function tpowerarrayB__ref_tpowerarrayB__content__projection
- 
- val tpowerarrayB__havoc 
-   (x : tpowerarrayB__ref) : unit
-  writes {x}
-
-end
-
-(* Module for axiomatizing type "powerarray" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__powerarray
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__integer as Standard__integer
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- type component_type =
-  Standard__integer.integer
- 
- val constant first 
-   : int
-  ensures { result =  (0 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (5200 : int) }
- 
- clone export "ada__model".Constr_Array with axiom .,
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
- function first = first, 
- function last = last, 
- type index_rep_type = int
-
-end
-
-(* Module for axiomatizing type "TrodsB" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__TrodsB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type trodsB =
-  < range -128 127 >
- 
- val constant first 
-   : int
-  ensures { result =  (( -128) : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (127 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = trodsB, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type trodsB__ref =
-  { mutable trodsB__content : trodsB }
- 
- function trodsB__ref_trodsB__content__projection 
-   (a : trodsB__ref) : trodsB =
-  a.trodsB__content
- 
- meta "model_projection" function trodsB__ref_trodsB__content__projection
- 
- meta "inline:no" function trodsB__ref_trodsB__content__projection
- 
- val trodsB__havoc 
-   (x : trodsB__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "TrodsB" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__TrodsB__rep
- use        Reactor__TrodsB as Reactor__TrodsB
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Reactor__TrodsB.trodsB) : int =
-  (Reactor__TrodsB.trodsB'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Reactor__TrodsB.trodsB, 
- predicate in_range = Reactor__TrodsB.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "rods" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__rods
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type rods =
-  < range 1 5 >
- 
- val constant first 
-   : int
-  ensures { result =  (1 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (5 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = rods, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type rods__ref =
-  { mutable rods__content : rods }
- 
- function rods__ref_rods__content__projection 
-   (a : rods__ref) : rods =
-  a.rods__content
- 
- meta "model_projection" function rods__ref_rods__content__projection
- 
- meta "inline:no" function rods__ref_rods__content__projection
- 
- val rods__havoc 
-   (x : rods__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "rods" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__rods__rep
- use        Reactor__rods as Reactor__rods
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Reactor__rods.rods) : int =
-  (Reactor__rods.rods'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Reactor__rods.rods, 
- predicate in_range = Reactor__rods.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "TrodsrarrayB" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__TrodsrarrayB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__integer as Standard__integer
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
- use        Reactor__TrodsB as Reactor__TrodsB
- use        Reactor__TrodsB__rep as Reactor__TrodsB__rep
- use        Reactor__rods as Reactor__rods
-
- type component_type =
-  Standard__integer.integer
- 
- function index_1_id 
-   (x : int) : int =
-  x
- 
- clone export "ada__model".Unconstr_Array with axiom .,
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
- type index_base_type = Reactor__TrodsB.trodsB, 
- type index_rep_type = int, 
- function to_rep = Reactor__TrodsB__rep.to_rep, 
- function rep_to_int = index_1_id, 
- predicate in_range_base = Reactor__TrodsB.in_range, 
- predicate index_dynamic_property = Reactor__rods.dynamic_property, 
- predicate index_rep_le = Int.(<=)
- 
- type trodsrarrayB =
-  __t
- 
- meta "model_projection" function to_array
- 
- meta "inline:no" function to_array
- 
- meta "model_projection" function first
- 
- meta "inline:no" function first
- 
- meta "model_projection" function last
- 
- meta "inline:no" function last
- 
- type trodsrarrayB__ref =
-  { mutable trodsrarrayB__content : trodsrarrayB }
- 
- function trodsrarrayB__ref_trodsrarrayB__content__projection 
-   (a : trodsrarrayB__ref) : trodsrarrayB =
-  a.trodsrarrayB__content
- 
- meta "model_projection" function trodsrarrayB__ref_trodsrarrayB__content__projection
- 
- meta "inline:no" function trodsrarrayB__ref_trodsrarrayB__content__projection
- 
- val trodsrarrayB__havoc 
-   (x : trodsrarrayB__ref) : unit
-  writes {x}
-
-end
-
-(* Module for axiomatizing type "rodsrarray" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__rodsrarray
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__integer as Standard__integer
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- type component_type =
-  Standard__integer.integer
- 
- val constant first 
-   : int
-  ensures { result =  (1 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (5 : int) }
- 
- clone export "ada__model".Constr_Array with axiom .,
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
- function first = first, 
- function last = last, 
- type index_rep_type = int
-
-end
-
-(* Module for axiomatizing type "statusonoff" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__statusonoff
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type statusonoff 
- 
- val constant first 
-   : int
-  ensures { result =  (0 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (1 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = statusonoff, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type statusonoff__ref =
-  { mutable statusonoff__content : statusonoff }
- 
- function statusonoff__ref_statusonoff__content__projection 
-   (a : statusonoff__ref) : statusonoff =
-  a.statusonoff__content
- 
- meta "model_projection" function statusonoff__ref_statusonoff__content__projection
- 
- meta "inline:no" function statusonoff__ref_statusonoff__content__projection
- 
- val statusonoff__havoc 
-   (x : statusonoff__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "statusonoff" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__statusonoff__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Reactor__statusonoff.statusonoff, 
- predicate in_range = Reactor__statusonoff.in_range
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "reactorstatus" defined at reactor.ads:12, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__reactorstatus
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type reactorstatus 
- 
- val constant first 
-   : int
-  ensures { result =  (0 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (1 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = reactorstatus, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type reactorstatus__ref =
-  { mutable reactorstatus__content : reactorstatus }
- 
- function reactorstatus__ref_reactorstatus__content__projection 
-   (a : reactorstatus__ref) : reactorstatus =
-  a.reactorstatus__content
- 
- meta "model_projection" function reactorstatus__ref_reactorstatus__content__projection
- 
- meta "inline:no" function reactorstatus__ref_reactorstatus__content__projection
- 
- val reactorstatus__havoc 
-   (x : reactorstatus__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "reactorstatus" defined at reactor.ads:12, created in Gnat2Why.Types.Translate_Type *)
-module Reactor__reactorstatus__rep
- use        Reactor__reactorstatus as Reactor__reactorstatus
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Reactor__reactorstatus.reactorstatus, 
- predicate in_range = Reactor__reactorstatus.in_range
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for defining the constant "overheatthreshold" defined at reactor.ads:14, created in Gnat2Why.Decls.Translate_Constant *)
-module Reactor__overheatthreshold
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val constant overheatthreshold [#"reactor.ads" 14 0 0][@model_trace:2673] [@name:OverheatThreshold] 
-   : int
-
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module for defining the constant "tempincrement" defined at reactor.ads:16, created in Gnat2Why.Decls.Translate_Constant *)
-module Reactor__tempincrement
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val constant tempincrement [#"reactor.ads" 16 0 0][@model_trace:2683] [@name:TempIncrement] 
-   : int
-
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
 (* Module for axiomatizing the record theory associated to type "trainreactor" defined at reactor.ads:18, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
 module Reactor__trainreactor__rep
  use        "_gnatprove_standard".Main
  use        "int".Int
- use        Reactor__temperature as Reactor__temperature
- use        Reactor__temperature__rep as Reactor__temperature__rep
- use        Reactor__power as Reactor__power
- use        Reactor__power__rep as Reactor__power__rep
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
  use        Reactor__statusonoff as Reactor__statusonoff
  use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Reactor__temperature as Reactor__temperature
+ use        Reactor__temperature__rep as Reactor__temperature__rep
+ use        Reactor__rods as Reactor__rods
+ use        Reactor__rods__rep as Reactor__rods__rep
  use        Reactor__reactorstatus as Reactor__reactorstatus
  use        Reactor__reactorstatus__rep as Reactor__reactorstatus__rep
+ use        Reactor__power as Reactor__power
+ use        Reactor__power__rep as Reactor__power__rep
 
  type __split_fields =
-  { rec__reactor__trainreactor__onoff [@model_trace:.2703] [@name:OnOff] : Reactor__statusonoff.statusonoff; rec__reactor__trainreactor__temp [@name:temp] [@model_trace:.2714] : Reactor__temperature.temperature; rec__reactor__trainreactor__rod_number [@model_trace:.2725] [@name:rod_number] : Reactor__rods.rods; rec__reactor__trainreactor__status [@name:status] [@model_trace:.2736] : Reactor__reactorstatus.reactorstatus; rec__reactor__trainreactor__pow [@name:pow] [@model_trace:.2747] : Reactor__power.power }
+  { rec__reactor__trainreactor__onoff [@model_trace:.2655] [@name:OnOff] : Reactor__statusonoff.statusonoff; rec__reactor__trainreactor__temp [@name:temp] [@model_trace:.2666] : Reactor__temperature.temperature; rec__reactor__trainreactor__rod_number [@model_trace:.2677] [@name:rod_number] : Reactor__rods.rods; rec__reactor__trainreactor__status [@model_trace:.2688] [@name:status] : Reactor__reactorstatus.reactorstatus; rec__reactor__trainreactor__pow [@name:pow] [@model_trace:.2699] : Reactor__power.power }
  
- function __split_fields_rec__reactor__trainreactor__onoff__projection [@model_trace:.2703] [@name:OnOff] 
+ function __split_fields_rec__reactor__trainreactor__onoff__projection [@model_trace:.2655] [@name:OnOff] 
    (a : __split_fields) : Reactor__statusonoff.statusonoff =
   a.rec__reactor__trainreactor__onoff
  
@@ -2654,7 +2754,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__onoff__projection
  
- function __split_fields_rec__reactor__trainreactor__temp__projection [@name:temp] [@model_trace:.2714] 
+ function __split_fields_rec__reactor__trainreactor__temp__projection [@name:temp] [@model_trace:.2666] 
    (a : __split_fields) : Reactor__temperature.temperature =
   a.rec__reactor__trainreactor__temp
  
@@ -2662,7 +2762,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__temp__projection
  
- function __split_fields_rec__reactor__trainreactor__rod_number__projection [@model_trace:.2725] [@name:rod_number] 
+ function __split_fields_rec__reactor__trainreactor__rod_number__projection [@model_trace:.2677] [@name:rod_number] 
    (a : __split_fields) : Reactor__rods.rods =
   a.rec__reactor__trainreactor__rod_number
  
@@ -2670,7 +2770,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__rod_number__projection
  
- function __split_fields_rec__reactor__trainreactor__status__projection [@name:status] [@model_trace:.2736] 
+ function __split_fields_rec__reactor__trainreactor__status__projection [@model_trace:.2688] [@name:status] 
    (a : __split_fields) : Reactor__reactorstatus.reactorstatus =
   a.rec__reactor__trainreactor__status
  
@@ -2678,7 +2778,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__status__projection
  
- function __split_fields_rec__reactor__trainreactor__pow__projection [@name:pow] [@model_trace:.2747] 
+ function __split_fields_rec__reactor__trainreactor__pow__projection [@name:pow] [@model_trace:.2699] 
    (a : __split_fields) : Reactor__power.power =
   a.rec__reactor__trainreactor__pow
  
@@ -2957,186 +3057,297 @@ module Reactor__trainreactor
 
 end
 
-(* Module for defining the constant "this" defined at reactor.ads:43, created in Gnat2Why.Decls.Translate_Constant *)
-module Reactor__calculatepower__this
+(* Module for axiomatizing the record theory associated to type "train" defined at train.ads:10, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
+module Train__train__rep
  use        "_gnatprove_standard".Main
  use        "int".Int
+ use        Train__speed as Train__speed
+ use        Train__speed__rep as Train__speed__rep
+ use        Train__weight as Train__weight
+ use        Train__weight__rep as Train__weight__rep
+ use        Train__carriage as Train__carriage
+ use        Train__carriage__rep as Train__carriage__rep
  use        Reactor__trainreactor as Reactor__trainreactor
 
- val constant this [#"reactor.ads" 43 0 0][@model_projected] [@model_trace:2963] [@name:This] 
-   : Reactor__trainreactor.trainreactor
-
+ type __split_fields =
+  { rec__train__train__rea [@model_trace:.2418] [@name:rea] : Reactor__trainreactor.trainreactor; rec__train__train__sp [@name:sp] [@model_trace:.2430] : Train__speed.speed; rec__train__train__wei [@name:wei] [@model_trace:.2440] : Train__weight.weight; rec__train__train__numbcarri [@model_trace:.2451] [@name:NumbCarri] : Train__carriage.carriage }
  
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
+ function __split_fields_rec__train__train__rea__projection [@model_trace:.2418] [@name:rea] 
+   (a : __split_fields) : Reactor__trainreactor.trainreactor =
+  a.rec__train__train__rea
+ 
+ meta "model_projection" function __split_fields_rec__train__train__rea__projection
+ 
+ meta "inline:no" function __split_fields_rec__train__train__rea__projection
+ 
+ function __split_fields_rec__train__train__sp__projection [@name:sp] [@model_trace:.2430] 
+   (a : __split_fields) : Train__speed.speed =
+  a.rec__train__train__sp
+ 
+ meta "model_projection" function __split_fields_rec__train__train__sp__projection
+ 
+ meta "inline:no" function __split_fields_rec__train__train__sp__projection
+ 
+ function __split_fields_rec__train__train__wei__projection [@name:wei] [@model_trace:.2440] 
+   (a : __split_fields) : Train__weight.weight =
+  a.rec__train__train__wei
+ 
+ meta "model_projection" function __split_fields_rec__train__train__wei__projection
+ 
+ meta "inline:no" function __split_fields_rec__train__train__wei__projection
+ 
+ function __split_fields_rec__train__train__numbcarri__projection [@model_trace:.2451] [@name:NumbCarri] 
+   (a : __split_fields) : Train__carriage.carriage =
+  a.rec__train__train__numbcarri
+ 
+ meta "model_projection" function __split_fields_rec__train__train__numbcarri__projection
+ 
+ meta "inline:no" function __split_fields_rec__train__train__numbcarri__projection
+ 
+ type __split_fields__ref =
+  { mutable __split_fields__content : __split_fields }
+ 
+ function __split_fields__ref___split_fields__content__2__projection 
+   (a : __split_fields__ref) : __split_fields =
+  a.__split_fields__content
+ 
+ meta "model_projection" function __split_fields__ref___split_fields__content__2__projection
+ 
+ meta "inline:no" function __split_fields__ref___split_fields__content__2__projection
+ 
+ val __split_fields__havoc 
+   (x : __split_fields__ref) : unit
+  writes {x}
+ 
+ type __rep =
+  { __split_fields : __split_fields }
+ 
+ function __rep___split_fields__2__projection 
+   (a : __rep) : __split_fields =
+  a.__split_fields
+ 
+ meta "model_projection" function __rep___split_fields__2__projection
+ 
+ meta "inline:no" function __rep___split_fields__2__projection
+ 
+ function to_base 
+   (a : __rep) : __rep =
+  a
+ val to_base 
+   (a : __rep) : __rep
+  ensures { result = to_base (a : __rep) }
+ 
+ function of_base 
+   (a : __rep) : __rep =
+  a
+ val of_base 
+   (a : __rep) : __rep
+  ensures { result = of_base (a : __rep) }
+ 
+ predicate train__train__rea__pred 
+   (a : __rep) =
+  true
+ val train__train__rea__pred 
+   (a : __rep) : bool
+  ensures { result <-> train__train__rea__pred (a : __rep) }
+ 
+ val rec__train__train__rea_ 
+   (a : __rep) : Reactor__trainreactor.trainreactor
+  requires {  (train__train__rea__pred a) }
+  ensures {  (result = a.__split_fields.rec__train__train__rea) }
+ 
+ predicate train__train__sp__pred 
+   (a : __rep) =
+  true
+ val train__train__sp__pred 
+   (a : __rep) : bool
+  ensures { result <-> train__train__sp__pred (a : __rep) }
+ 
+ val rec__train__train__sp_ 
+   (a : __rep) : Train__speed.speed
+  requires {  (train__train__sp__pred a) }
+  ensures {  (result = a.__split_fields.rec__train__train__sp) }
+ 
+ predicate train__train__wei__pred 
+   (a : __rep) =
+  true
+ val train__train__wei__pred 
+   (a : __rep) : bool
+  ensures { result <-> train__train__wei__pred (a : __rep) }
+ 
+ val rec__train__train__wei_ 
+   (a : __rep) : Train__weight.weight
+  requires {  (train__train__wei__pred a) }
+  ensures {  (result = a.__split_fields.rec__train__train__wei) }
+ 
+ predicate train__train__numbcarri__pred 
+   (a : __rep) =
+  true
+ val train__train__numbcarri__pred 
+   (a : __rep) : bool
+  ensures { result <-> train__train__numbcarri__pred (a : __rep) }
+ 
+ val rec__train__train__numbcarri_ 
+   (a : __rep) : Train__carriage.carriage
+  requires {  (train__train__numbcarri__pred a) }
+  ensures {  (result = a.__split_fields.rec__train__train__numbcarri) }
+ 
+ function bool_eq 
+   (a : __rep) (b : __rep) : bool =
+  (if (( ( (Reactor__trainreactor.bool_eq a.__split_fields.rec__train__train__rea b.__split_fields.rec__train__train__rea) /\ ((Train__speed__rep.to_rep a.__split_fields.rec__train__train__sp) = (Train__speed__rep.to_rep b.__split_fields.rec__train__train__sp)) )/\( ((Train__weight__rep.to_rep a.__split_fields.rec__train__train__wei) = (Train__weight__rep.to_rep b.__split_fields.rec__train__train__wei))/\((Train__carriage__rep.to_rep a.__split_fields.rec__train__train__numbcarri) = (Train__carriage__rep.to_rep b.__split_fields.rec__train__train__numbcarri)) ) )) then (
+   True) else (
+   False))
+ val bool_eq 
+   (a : __rep) (b : __rep) : bool
+  ensures { result = bool_eq (a : __rep) (b : __rep) }
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:43, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__calculatepower__this___axiom
+(* Module for axiomatizing type "train" defined at train.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Train__train
+ use export Train__train__rep
  use        "_gnatprove_standard".Main
  use        "int".Int
-
-
-end
-
-(* Module for possibly declaring a logic function for "calculatepower" defined at reactor.ads:43, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Reactor__calculatepower
- use        "_gnatprove_standard".Main
  use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
 
- val function calculatepower 
-   (this : Reactor__trainreactor.trainreactor) : int
+ type train =
+  __rep
  
- val predicate calculatepower__function_guard 
-   (temp___result_155 : int) (this : Reactor__trainreactor.trainreactor)
-
-end
-
-(* Module for axiomatizing type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__TcountB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type tcountB =
-  < range -2147483648 2147483647 >
- 
- val constant first 
+ val constant value__size 
    : int
-  ensures { result =  (( -2147483648) : int) }
+
  
- val constant last 
+ val constant object__size 
    : int
-  ensures { result =  (2147483647 : int) }
+
  
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
+ val constant alignment 
+   : int
+
  
- clone export "ada__model".Static_Discrete with axiom .,
- type t = tcountB, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
+ axiom value__size_axiom :
+  ((value__size ) >= (0 : int))
  
- type tcountB__ref =
-  { mutable tcountB__content : tcountB }
+ axiom object__size_axiom :
+  ((object__size ) >= (0 : int))
  
- function tcountB__ref_tcountB__content__projection 
-   (a : tcountB__ref) : tcountB =
-  a.tcountB__content
+ axiom alignment_axiom :
+  ((alignment ) >= (0 : int))
  
- meta "model_projection" function tcountB__ref_tcountB__content__projection
+ val constant train__train__rea__first__bit 
+   : int
+
  
- meta "inline:no" function tcountB__ref_tcountB__content__projection
+ val constant train__train__rea__last__bit 
+   : int
+
  
- val tcountB__havoc 
-   (x : tcountB__ref) : unit
+ val constant train__train__rea__position 
+   : int
+
+ 
+ axiom train__train__rea__first__bit_axiom :
+  ((train__train__rea__first__bit ) >= (0 : int))
+ 
+ axiom train__train__rea__last__bit_axiom :
+  ((train__train__rea__last__bit ) > (train__train__rea__first__bit ))
+ 
+ axiom train__train__rea__position_axiom :
+  ((train__train__rea__position ) >= (0 : int))
+ 
+ val constant train__train__sp__first__bit 
+   : int
+
+ 
+ val constant train__train__sp__last__bit 
+   : int
+
+ 
+ val constant train__train__sp__position 
+   : int
+
+ 
+ axiom train__train__sp__first__bit_axiom :
+  ((train__train__sp__first__bit ) >= (0 : int))
+ 
+ axiom train__train__sp__last__bit_axiom :
+  ((train__train__sp__last__bit ) > (train__train__sp__first__bit ))
+ 
+ axiom train__train__sp__position_axiom :
+  ((train__train__sp__position ) >= (0 : int))
+ 
+ val constant train__train__wei__first__bit 
+   : int
+
+ 
+ val constant train__train__wei__last__bit 
+   : int
+
+ 
+ val constant train__train__wei__position 
+   : int
+
+ 
+ axiom train__train__wei__first__bit_axiom :
+  ((train__train__wei__first__bit ) >= (0 : int))
+ 
+ axiom train__train__wei__last__bit_axiom :
+  ((train__train__wei__last__bit ) > (train__train__wei__first__bit ))
+ 
+ axiom train__train__wei__position_axiom :
+  ((train__train__wei__position ) >= (0 : int))
+ 
+ val constant train__train__numbcarri__first__bit 
+   : int
+
+ 
+ val constant train__train__numbcarri__last__bit 
+   : int
+
+ 
+ val constant train__train__numbcarri__position 
+   : int
+
+ 
+ axiom train__train__numbcarri__first__bit_axiom :
+  ((train__train__numbcarri__first__bit ) >= (0 : int))
+ 
+ axiom train__train__numbcarri__last__bit_axiom :
+  ((train__train__numbcarri__last__bit ) > (train__train__numbcarri__first__bit ))
+ 
+ axiom train__train__numbcarri__position_axiom :
+  ((train__train__numbcarri__position ) >= (0 : int))
+ 
+ val function user_eq 
+   (a : train) (b : train) : bool
+ 
+ val constant dummy 
+   : train
+
+ 
+ type train__ref =
+  { mutable train__content : train }
+ 
+ function train__ref_train__content__projection 
+   (a : train__ref) : train =
+  a.train__content
+ 
+ meta "model_projection" function train__ref_train__content__projection
+ 
+ meta "inline:no" function train__ref_train__content__projection
+ 
+ val train__havoc 
+   (x : train__ref) : unit
   writes {x}
 
 end
-
-(* Module defining to_rep/of_rep for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__TcountB__rep
- use        Ada__text_io__TcountB as Ada__text_io__TcountB
+(* Module for defining a ref holding the value of variable "this" defined at train.ads:18, created in Gnat2Why.Decls.Translate_Variable *)
+module Train__calculatespeed__this
  use        "_gnatprove_standard".Main
  use        "int".Int
+ use        Train__train as Train__train
 
- function to_rep 
-   (x : Ada__text_io__TcountB.tcountB) : int =
-  (Ada__text_io__TcountB.tcountB'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Ada__text_io__TcountB.tcountB, 
- predicate in_range = Ada__text_io__TcountB.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__count
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type count =
-  < range 0 2147483647 >
- 
- val constant first 
-   : int
-  ensures { result =  (0 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (2147483647 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = count, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type count__ref =
-  { mutable count__content : count }
- 
- function count__ref_count__content__projection 
-   (a : count__ref) : count =
-  a.count__content
- 
- meta "model_projection" function count__ref_count__content__projection
- 
- meta "inline:no" function count__ref_count__content__projection
- 
- val count__havoc 
-   (x : count__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__count__rep
- use        Ada__text_io__count as Ada__text_io__count
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Ada__text_io__count.count) : int =
-  (Ada__text_io__count.count'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Ada__text_io__count.count, 
- predicate in_range = Ada__text_io__count.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:26, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__engineon__this
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
-
- val this__split_fields [#"reactor.ads" 26 0 0][@model_projected] [@model_trace:2767] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
+ val this__split_fields [#"train.ads" 18 0 0][@model_trace:2471] [@model_projected] [@name:This]  : Train__train.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3144,203 +3355,11 @@ module Reactor__engineon__this
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:26, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__engineon__this___axiom
+(* Module giving an empty axiom for the entity "this" defined at train.ads:18, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Train__calculatespeed__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
-
-end
-
-(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:30, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__engineoff__this
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
-
- val this__split_fields [#"reactor.ads" 30 0 0][@model_projected] [@model_trace:2818] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:30, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__engineoff__this___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:35, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__decreaserod__this
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
-
- val this__split_fields [#"reactor.ads" 35 0 0][@model_projected] [@model_trace:2869] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:35, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__decreaserod__this___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:39, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__addrod__this
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
-
- val this__split_fields [#"reactor.ads" 39 0 0][@model_trace:2916] [@model_projected] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:39, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__addrod__this___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "pow" defined at reactor.adb:35, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__calculatepower__pow
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val pow [#"reactor.adb" 35 0 0][@model_projected] [@model_trace:2491] [@name:Pow]  : int__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "pow" defined at reactor.adb:35, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__calculatepower__pow___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "maxpow" defined at reactor.adb:36, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__calculatepower__maxpow
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val maxpow [#"reactor.adb" 36 0 0][@name:MaxPow] [@model_projected] [@model_trace:2500]  : int__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "maxpow" defined at reactor.adb:36, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__calculatepower__maxpow___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "maxrod" defined at reactor.adb:37, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__calculatepower__maxrod
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val maxrod [#"reactor.adb" 37 0 0][@model_trace:2512] [@model_projected] [@name:MaxRod]  : int__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "maxrod" defined at reactor.adb:37, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Reactor__calculatepower__maxrod___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module declaring the external object "ada__text_io__standard_in," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__standard_in
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val standard_in  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__file_system," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__file_system
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val file_system  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__standard_out," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__standard_out
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val standard_out  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__standard_err," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__standard_err
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val standard_err  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__current_in," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__current_in
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val current_in  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__current_out," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__current_out
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val current_out  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__current_err," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__current_err
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val current_err  : Main.__private__ref 
 
 end
 (* Module giving axioms for type "short_short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
@@ -3854,63 +3873,131 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "engineon" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Reactor__engineon
+(* Module for possibly declaring a logic function for "calculatespeed" defined at train.ads:18, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__calculatespeed
  use        "_gnatprove_standard".Main
  use        "int".Int
 
 
 end
 
-(* Module for possibly declaring a logic function for "engineoff" defined at reactor.ads:30, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Reactor__engineoff
+(* Module giving axioms for type "TspeedB" defined at train.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__TspeedB___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
 
 end
 
-(* Module for possibly declaring a logic function for "decreaserod" defined at reactor.ads:35, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Reactor__decreaserod
+(* Module giving axioms for type "speed" defined at train.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__speed___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
-
-
-end
-
-(* Module for possibly declaring a logic function for "addrod" defined at reactor.ads:39, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Reactor__addrod
- use        "_gnatprove_standard".Main
  use        "int".Int
+ use        Train__speed as Train__speed
 
-
-end
-
-(* Module for possibly declaring a logic function for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Ada__text_io__line_length__2
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
-
- val function line_length__2 
-   (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) =
+  (if (( temp___is_init_154 \/ (Train__speed.first <= Train__speed.last) )) then (
+   (Train__speed.dynamic_property Train__speed.first Train__speed.last temp___expr_158)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) }
  
- val predicate line_length__2__function_guard 
-   (temp___result_156 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_159 : int) (temp___skip_top_level_160 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_159 : int) (temp___skip_top_level_160 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_159 : int) (temp___skip_top_level_160 : bool) }
 
 end
 
-(* Module for possibly declaring a logic function for "page_length__2" defined at a-textio.ads:251, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Ada__text_io__page_length__2
+(* Module giving axioms for type "TweightB" defined at train.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__TweightB___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
- use        "_gnatprove_standard".Main as Main
 
- val function page_length__2 
-   (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
+
+end
+
+(* Module giving axioms for type "weight" defined at train.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__weight___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__weight as Train__weight
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) =
+  (if (( temp___is_init_161 \/ (Train__weight.first <= Train__weight.last) )) then (
+   (Train__weight.dynamic_property Train__weight.first Train__weight.last temp___expr_165)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) }
  
- val predicate page_length__2__function_guard 
-   (temp___result_157 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_166 : int) (temp___skip_top_level_167 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_166 : int) (temp___skip_top_level_167 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_166 : int) (temp___skip_top_level_167 : bool) }
+
+end
+
+(* Module giving axioms for type "TcarriageB" defined at train.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__TcarriageB___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module giving axioms for type "carriage" defined at train.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__carriage___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__carriage as Train__carriage
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_172 : int) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) =
+  (if (( temp___is_init_168 \/ (Train__carriage.first <= Train__carriage.last) )) then (
+   (Train__carriage.dynamic_property Train__carriage.first Train__carriage.last temp___expr_172)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_172 : int) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_172 : int) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_173 : int) (temp___skip_top_level_174 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_173 : int) (temp___skip_top_level_174 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_173 : int) (temp___skip_top_level_174 : bool) }
+
+end
+
+(* Module giving axioms for type "statusonoff" defined at reactor.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__statusonoff___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__statusonoff as Reactor__statusonoff
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_179 : int) (temp___is_init_175 : bool) (temp___skip_constant_176 : bool) (temp___do_toplevel_177 : bool) (temp___do_typ_inv_178 : bool) =
+  (if (( temp___is_init_175 \/ (Reactor__statusonoff.first <= Reactor__statusonoff.last) )) then (
+   (Reactor__statusonoff.dynamic_property Reactor__statusonoff.first Reactor__statusonoff.last temp___expr_179)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_179 : int) (temp___is_init_175 : bool) (temp___skip_constant_176 : bool) (temp___do_toplevel_177 : bool) (temp___do_typ_inv_178 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_179 : int) (temp___is_init_175 : bool) (temp___skip_constant_176 : bool) (temp___do_toplevel_177 : bool) (temp___do_typ_inv_178 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_180 : int) (temp___skip_top_level_181 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_180 : int) (temp___skip_top_level_181 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_180 : int) (temp___skip_top_level_181 : bool) }
 
 end
 
@@ -3930,82 +4017,19 @@ module Reactor__temperature___axiom
  use        Reactor__temperature as Reactor__temperature
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_162 : int) (temp___is_init_158 : bool) (temp___skip_constant_159 : bool) (temp___do_toplevel_160 : bool) (temp___do_typ_inv_161 : bool) =
-  (if (( temp___is_init_158 \/ (Reactor__temperature.first <= Reactor__temperature.last) )) then (
-   (Reactor__temperature.dynamic_property Reactor__temperature.first Reactor__temperature.last temp___expr_162)) else true)
+   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) =
+  (if (( temp___is_init_182 \/ (Reactor__temperature.first <= Reactor__temperature.last) )) then (
+   (Reactor__temperature.dynamic_property Reactor__temperature.first Reactor__temperature.last temp___expr_186)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_162 : int) (temp___is_init_158 : bool) (temp___skip_constant_159 : bool) (temp___do_toplevel_160 : bool) (temp___do_typ_inv_161 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_162 : int) (temp___is_init_158 : bool) (temp___skip_constant_159 : bool) (temp___do_toplevel_160 : bool) (temp___do_typ_inv_161 : bool) }
+   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_163 : int) (temp___skip_top_level_164 : bool) =
+   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_163 : int) (temp___skip_top_level_164 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_163 : int) (temp___skip_top_level_164 : bool) }
-
-end
-
-(* Module giving axioms for type "TpowerB" defined at reactor.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__TpowerB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "power" defined at reactor.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__power___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__power as Reactor__power
-
- predicate dynamic_invariant [@inline] 
-   (temp___expr_169 : int) (temp___is_init_165 : bool) (temp___skip_constant_166 : bool) (temp___do_toplevel_167 : bool) (temp___do_typ_inv_168 : bool) =
-  (if (( temp___is_init_165 \/ (Reactor__power.first <= Reactor__power.last) )) then (
-   (Reactor__power.dynamic_property Reactor__power.first Reactor__power.last temp___expr_169)) else true)
- val dynamic_invariant [@inline] 
-   (temp___expr_169 : int) (temp___is_init_165 : bool) (temp___skip_constant_166 : bool) (temp___do_toplevel_167 : bool) (temp___do_typ_inv_168 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_169 : int) (temp___is_init_165 : bool) (temp___skip_constant_166 : bool) (temp___do_toplevel_167 : bool) (temp___do_typ_inv_168 : bool) }
- 
- predicate default_initial_assumption [@inline] 
-   (temp___expr_170 : int) (temp___skip_top_level_171 : bool) =
-  true
- val default_initial_assumption [@inline] 
-   (temp___expr_170 : int) (temp___skip_top_level_171 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_170 : int) (temp___skip_top_level_171 : bool) }
-
-end
-
-(* Module giving axioms for type "TpowerarrayB" defined at reactor.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__TpowerarrayB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "powerarray" defined at reactor.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__powerarray___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- predicate dynamic_invariant [@inline] 
-   (temp___expr_176 : Array__Int__Standard__integer.map) (temp___is_init_172 : bool) (temp___skip_constant_173 : bool) (temp___do_toplevel_174 : bool) (temp___do_typ_inv_175 : bool) =
-  true
- val dynamic_invariant [@inline] 
-   (temp___expr_176 : Array__Int__Standard__integer.map) (temp___is_init_172 : bool) (temp___skip_constant_173 : bool) (temp___do_toplevel_174 : bool) (temp___do_typ_inv_175 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_176 : Array__Int__Standard__integer.map) (temp___is_init_172 : bool) (temp___skip_constant_173 : bool) (temp___do_toplevel_174 : bool) (temp___do_typ_inv_175 : bool) }
- 
- predicate default_initial_assumption [@inline] 
-   (temp___expr_178 : Array__Int__Standard__integer.map) (temp___skip_top_level_179 : bool) =
-  true
- val default_initial_assumption [@inline] 
-   (temp___expr_178 : Array__Int__Standard__integer.map) (temp___skip_top_level_179 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_178 : Array__Int__Standard__integer.map) (temp___skip_top_level_179 : bool) }
+   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_187 : int) (temp___skip_top_level_188 : bool) }
 
 end
 
@@ -4025,74 +4049,19 @@ module Reactor__rods___axiom
  use        Reactor__rods as Reactor__rods
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) =
-  (if (( temp___is_init_182 \/ (Reactor__rods.first <= Reactor__rods.last) )) then (
-   (Reactor__rods.dynamic_property Reactor__rods.first Reactor__rods.last temp___expr_186)) else true)
+   (temp___expr_193 : int) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) =
+  (if (( temp___is_init_189 \/ (Reactor__rods.first <= Reactor__rods.last) )) then (
+   (Reactor__rods.dynamic_property Reactor__rods.first Reactor__rods.last temp___expr_193)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) }
+   (temp___expr_193 : int) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_193 : int) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) =
+   (temp___expr_194 : int) (temp___skip_top_level_195 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_187 : int) (temp___skip_top_level_188 : bool) }
-
-end
-
-(* Module giving axioms for type "TrodsrarrayB" defined at reactor.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__TrodsrarrayB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "rodsrarray" defined at reactor.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__rodsrarray___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
- use        Array__Int__Standard__integer as Array__Int__Standard__integer
-
- predicate dynamic_invariant [@inline] 
-   (temp___expr_193 : Array__Int__Standard__integer.map) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) =
-  true
- val dynamic_invariant [@inline] 
-   (temp___expr_193 : Array__Int__Standard__integer.map) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_193 : Array__Int__Standard__integer.map) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) }
- 
- predicate default_initial_assumption [@inline] 
-   (temp___expr_195 : Array__Int__Standard__integer.map) (temp___skip_top_level_196 : bool) =
-  true
- val default_initial_assumption [@inline] 
-   (temp___expr_195 : Array__Int__Standard__integer.map) (temp___skip_top_level_196 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_195 : Array__Int__Standard__integer.map) (temp___skip_top_level_196 : bool) }
-
-end
-
-(* Module giving axioms for type "statusonoff" defined at reactor.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Reactor__statusonoff___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__statusonoff as Reactor__statusonoff
-
- predicate dynamic_invariant [@inline] 
-   (temp___expr_203 : int) (temp___is_init_199 : bool) (temp___skip_constant_200 : bool) (temp___do_toplevel_201 : bool) (temp___do_typ_inv_202 : bool) =
-  (if (( temp___is_init_199 \/ (Reactor__statusonoff.first <= Reactor__statusonoff.last) )) then (
-   (Reactor__statusonoff.dynamic_property Reactor__statusonoff.first Reactor__statusonoff.last temp___expr_203)) else true)
- val dynamic_invariant [@inline] 
-   (temp___expr_203 : int) (temp___is_init_199 : bool) (temp___skip_constant_200 : bool) (temp___do_toplevel_201 : bool) (temp___do_typ_inv_202 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_203 : int) (temp___is_init_199 : bool) (temp___skip_constant_200 : bool) (temp___do_toplevel_201 : bool) (temp___do_typ_inv_202 : bool) }
- 
- predicate default_initial_assumption [@inline] 
-   (temp___expr_204 : int) (temp___skip_top_level_205 : bool) =
-  true
- val default_initial_assumption [@inline] 
-   (temp___expr_204 : int) (temp___skip_top_level_205 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_204 : int) (temp___skip_top_level_205 : bool) }
+   (temp___expr_194 : int) (temp___skip_top_level_195 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_194 : int) (temp___skip_top_level_195 : bool) }
 
 end
 
@@ -4104,19 +4073,51 @@ module Reactor__reactorstatus___axiom
  use        Reactor__reactorstatus as Reactor__reactorstatus
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_210 : int) (temp___is_init_206 : bool) (temp___skip_constant_207 : bool) (temp___do_toplevel_208 : bool) (temp___do_typ_inv_209 : bool) =
-  (if (( temp___is_init_206 \/ (Reactor__reactorstatus.first <= Reactor__reactorstatus.last) )) then (
-   (Reactor__reactorstatus.dynamic_property Reactor__reactorstatus.first Reactor__reactorstatus.last temp___expr_210)) else true)
+   (temp___expr_200 : int) (temp___is_init_196 : bool) (temp___skip_constant_197 : bool) (temp___do_toplevel_198 : bool) (temp___do_typ_inv_199 : bool) =
+  (if (( temp___is_init_196 \/ (Reactor__reactorstatus.first <= Reactor__reactorstatus.last) )) then (
+   (Reactor__reactorstatus.dynamic_property Reactor__reactorstatus.first Reactor__reactorstatus.last temp___expr_200)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_210 : int) (temp___is_init_206 : bool) (temp___skip_constant_207 : bool) (temp___do_toplevel_208 : bool) (temp___do_typ_inv_209 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_210 : int) (temp___is_init_206 : bool) (temp___skip_constant_207 : bool) (temp___do_toplevel_208 : bool) (temp___do_typ_inv_209 : bool) }
+   (temp___expr_200 : int) (temp___is_init_196 : bool) (temp___skip_constant_197 : bool) (temp___do_toplevel_198 : bool) (temp___do_typ_inv_199 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_200 : int) (temp___is_init_196 : bool) (temp___skip_constant_197 : bool) (temp___do_toplevel_198 : bool) (temp___do_typ_inv_199 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_211 : int) (temp___skip_top_level_212 : bool) =
+   (temp___expr_201 : int) (temp___skip_top_level_202 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_211 : int) (temp___skip_top_level_212 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_211 : int) (temp___skip_top_level_212 : bool) }
+   (temp___expr_201 : int) (temp___skip_top_level_202 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_201 : int) (temp___skip_top_level_202 : bool) }
+
+end
+
+(* Module giving axioms for type "TpowerB" defined at reactor.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__TpowerB___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module giving axioms for type "power" defined at reactor.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__power___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__power as Reactor__power
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_207 : int) (temp___is_init_203 : bool) (temp___skip_constant_204 : bool) (temp___do_toplevel_205 : bool) (temp___do_typ_inv_206 : bool) =
+  (if (( temp___is_init_203 \/ (Reactor__power.first <= Reactor__power.last) )) then (
+   (Reactor__power.dynamic_property Reactor__power.first Reactor__power.last temp___expr_207)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_207 : int) (temp___is_init_203 : bool) (temp___skip_constant_204 : bool) (temp___do_toplevel_205 : bool) (temp___do_typ_inv_206 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_207 : int) (temp___is_init_203 : bool) (temp___skip_constant_204 : bool) (temp___do_toplevel_205 : bool) (temp___do_typ_inv_206 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_208 : int) (temp___skip_top_level_209 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_208 : int) (temp___skip_top_level_209 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_208 : int) (temp___skip_top_level_209 : bool) }
 
 end
 
@@ -4125,700 +4126,199 @@ module Reactor__trainreactor___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
  use        Reactor__temperature as Reactor__temperature
  use        Reactor__temperature__rep as Reactor__temperature__rep
- use        Reactor__power as Reactor__power
- use        Reactor__power__rep as Reactor__power__rep
  use        Reactor__rods as Reactor__rods
  use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
  use        Reactor__reactorstatus as Reactor__reactorstatus
  use        Reactor__reactorstatus__rep as Reactor__reactorstatus__rep
+ use        Reactor__power as Reactor__power
+ use        Reactor__power__rep as Reactor__power__rep
+ use        Reactor__trainreactor as Reactor__trainreactor
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_217 : Reactor__trainreactor.trainreactor) (temp___is_init_213 : bool) (temp___skip_constant_214 : bool) (temp___do_toplevel_215 : bool) (temp___do_typ_inv_216 : bool) =
+   (temp___expr_214 : Reactor__trainreactor.trainreactor) (temp___is_init_210 : bool) (temp___skip_constant_211 : bool) (temp___do_toplevel_212 : bool) (temp___do_typ_inv_213 : bool) =
   true
  val dynamic_invariant [@inline] 
-   (temp___expr_217 : Reactor__trainreactor.trainreactor) (temp___is_init_213 : bool) (temp___skip_constant_214 : bool) (temp___do_toplevel_215 : bool) (temp___do_typ_inv_216 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_217 : Reactor__trainreactor.trainreactor) (temp___is_init_213 : bool) (temp___skip_constant_214 : bool) (temp___do_toplevel_215 : bool) (temp___do_typ_inv_216 : bool) }
+   (temp___expr_214 : Reactor__trainreactor.trainreactor) (temp___is_init_210 : bool) (temp___skip_constant_211 : bool) (temp___do_toplevel_212 : bool) (temp___do_typ_inv_213 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_214 : Reactor__trainreactor.trainreactor) (temp___is_init_210 : bool) (temp___skip_constant_211 : bool) (temp___do_toplevel_212 : bool) (temp___do_typ_inv_213 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_218 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_219 : bool) =
-  ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_218)) then (
-   ((Reactor__statusonoff__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_218)) then (
-   ((Reactor__temperature__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_218)) then (
-   ((Reactor__rods__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_218)) then (
-   ((Reactor__reactorstatus__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_218)) then (
-   ((Reactor__power__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )
+   (temp___expr_215 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_216 : bool) =
+  ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_215)) then (
+   ((Reactor__statusonoff__rep.to_rep temp___expr_215.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_215)) then (
+   ((Reactor__temperature__rep.to_rep temp___expr_215.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_215)) then (
+   ((Reactor__rods__rep.to_rep temp___expr_215.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_215)) then (
+   ((Reactor__reactorstatus__rep.to_rep temp___expr_215.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_215)) then (
+   ((Reactor__power__rep.to_rep temp___expr_215.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )
  val default_initial_assumption [@inline] 
-   (temp___expr_218 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_219 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_218 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_219 : bool) }
+   (temp___expr_215 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_216 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_215 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_216 : bool) }
 
 end
 
-(* Module giving axioms for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Ada__text_io__TcountB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Ada__text_io__count___axiom
+(* Module giving axioms for type "train" defined at train.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Train__train___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
- use        Ada__text_io__count as Ada__text_io__count
+ use        Train__train as Train__train
+ use        Train__weight as Train__weight
+ use        Train__weight__rep as Train__weight__rep
+ use        Train__carriage as Train__carriage
+ use        Train__carriage__rep as Train__carriage__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Reactor__temperature as Reactor__temperature
+ use        Reactor__temperature__rep as Reactor__temperature__rep
+ use        Reactor__rods as Reactor__rods
+ use        Reactor__rods__rep as Reactor__rods__rep
+ use        Reactor__reactorstatus as Reactor__reactorstatus
+ use        Reactor__reactorstatus__rep as Reactor__reactorstatus__rep
+ use        Reactor__power as Reactor__power
+ use        Reactor__power__rep as Reactor__power__rep
+ use        Reactor__trainreactor as Reactor__trainreactor
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_224 : int) (temp___is_init_220 : bool) (temp___skip_constant_221 : bool) (temp___do_toplevel_222 : bool) (temp___do_typ_inv_223 : bool) =
-  (if (( temp___is_init_220 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
-   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_224)) else true)
+   (temp___expr_221 : Train__train.train) (temp___is_init_217 : bool) (temp___skip_constant_218 : bool) (temp___do_toplevel_219 : bool) (temp___do_typ_inv_220 : bool) =
+  true
  val dynamic_invariant [@inline] 
-   (temp___expr_224 : int) (temp___is_init_220 : bool) (temp___skip_constant_221 : bool) (temp___do_toplevel_222 : bool) (temp___do_typ_inv_223 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_224 : int) (temp___is_init_220 : bool) (temp___skip_constant_221 : bool) (temp___do_toplevel_222 : bool) (temp___do_typ_inv_223 : bool) }
+   (temp___expr_221 : Train__train.train) (temp___is_init_217 : bool) (temp___skip_constant_218 : bool) (temp___do_toplevel_219 : bool) (temp___do_typ_inv_220 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_221 : Train__train.train) (temp___is_init_217 : bool) (temp___skip_constant_218 : bool) (temp___do_toplevel_219 : bool) (temp___do_typ_inv_220 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_225 : int) (temp___skip_top_level_226 : bool) =
-  true
+   (temp___expr_222 : Train__train.train) (temp___skip_top_level_223 : bool) =
+  ( ( (if ((Train__train.train__train__rea__pred temp___expr_222)) then (
+   (let temp___224 [@mlw:proxy_symbol] [@introduced] = temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea in (
+    ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea)) then (
+     ((Reactor__statusonoff__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea)) then (
+     ((Reactor__temperature__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea)) then (
+     ((Reactor__rods__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea)) then (
+     ((Reactor__reactorstatus__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea)) then (
+     ((Reactor__power__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__rea.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )))
+  ) else true) /\ (if ((Train__train.train__train__wei__pred temp___expr_222)) then (
+   ((Train__weight__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__wei) = (5200 : int))) else true) )/\(if ((Train__train.train__train__numbcarri__pred temp___expr_222)) then (
+   ((Train__carriage__rep.to_rep temp___expr_222.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) = (0 : int))) else true) )
  val default_initial_assumption [@inline] 
-   (temp___expr_225 : int) (temp___skip_top_level_226 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_225 : int) (temp___skip_top_level_226 : bool) }
+   (temp___expr_222 : Train__train.train) (temp___skip_top_level_223 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_222 : Train__train.train) (temp___skip_top_level_223 : bool) }
 
 end
-(* Module for defining the value of constant "overheatthreshold" defined at reactor.ads:14, created in Gnat2Why.Decls.Translate_Constant_Value *)
-module Reactor__overheatthreshold___axiom
+(* Module for declaring a program function (and possibly an axiom) for "calculatespeed" defined at train.ads:18, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__calculatespeed___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
- use        Reactor__overheatthreshold as Reactor__overheatthreshold
+ use        Train__train as Train__train
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__speed as Train__speed
+ use        Train__speed__rep as Train__speed__rep
 
- axiom overheatthreshold__def_axiom :
-  ((Reactor__overheatthreshold.overheatthreshold ) = (75 : int))
-
-end
-
-(* Module for defining the value of constant "tempincrement" defined at reactor.ads:16, created in Gnat2Why.Decls.Translate_Constant_Value *)
-module Reactor__tempincrement___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__tempincrement as Reactor__tempincrement
-
- axiom tempincrement__def_axiom :
-  ((Reactor__tempincrement.tempincrement ) = (10 : int))
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "engineon" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Reactor__engineon___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
-
- val engineon 
-   (this__split_fields : Reactor__trainreactor.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2786] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2792] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2802] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2808] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "engineoff" defined at reactor.ads:30, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Reactor__engineoff___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
-
- val engineoff 
-   (this__split_fields : Reactor__trainreactor.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2837] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2843] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2853] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2859] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "decreaserod" defined at reactor.ads:35, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Reactor__decreaserod___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
-
- val decreaserod 
-   (this__split_fields : Reactor__trainreactor.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2888] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2894] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (1 : int)) ) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18422] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (Reactor__rods__rep.to_rep (old { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "addrod" defined at reactor.ads:39, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Reactor__addrod___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
-
- val addrod 
-   (this__split_fields : Reactor__trainreactor.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2935] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2941] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (5 : int)) ) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18471] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (Reactor__rods__rep.to_rep (old { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "calculatepower" defined at reactor.ads:43, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Reactor__calculatepower___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__calculatepower as Reactor__calculatepower
- use        Reactor__power___axiom as Reactor__power___axiom
-
- val calculatepower 
-   (this : Reactor__trainreactor.trainreactor) : int
+ val calculatespeed 
+   (this__split_fields : Train__train.__split_fields__ref) : unit
   requires {  true }
-  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:2983] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2991] (result <= (5200 : int)) ) ) ) ) }
- 
- axiom calculatepower__post_axiom :
-  (forall this   : Reactor__trainreactor.trainreactor [(Reactor__calculatepower.calculatepower this)].
-   ( (Reactor__trainreactor___axiom.dynamic_invariant this True True True True) -> (let result = (Reactor__calculatepower.calculatepower this) in (
-    (if ((Reactor__calculatepower.calculatepower__function_guard result this)) then (
-     ( ( ( ( [@GP_Pretty_Ada:2983] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2991] (result <= (5200 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
-    ))
+  ensures {  ( ( ( [@GP_Pretty_Ada:2490] ((Train__speed__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2498] ((Train__speed__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) <= (1000 : int)) ) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
+  writes {this__split_fields}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Ada__text_io__line_length__2___axiom
+(* Module for checking absence of run-time errors and package initial condition on package elaboration of "train" defined at train.ads:3, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
+module Train__package_def
  use        "_gnatprove_standard".Main
  use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
 
- val line_length__2 
-   (__void_param : unit) : int
-  requires {  true }
-  ensures {  ( ( (result = (Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) /\ true )/\(Ada__text_io__count___axiom.dynamic_invariant result True False True True) ) }
-  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
- 
- axiom line_length__2__post_axiom :
-  (forall ada__text_io__standard_in   ada__text_io__file_system   ada__text_io__standard_out   ada__text_io__standard_err   ada__text_io__current_in   ada__text_io__current_out   ada__text_io__current_err   : Main.__private [(Ada__text_io__line_length__2.line_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err)].
-   ( true -> (let result = (Ada__text_io__line_length__2.line_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err) in (
-    ( ( true /\ (Ada__text_io__count___axiom.dynamic_invariant result True False True True) )/\true )))
-    ))
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "page_length__2" defined at a-textio.ads:251, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Ada__text_io__page_length__2___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
-
- val page_length__2 
-   (__void_param : unit) : int
-  requires {  true }
-  ensures {  ( ( (result = (Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) /\ true )/\(Ada__text_io__count___axiom.dynamic_invariant result True False True True) ) }
-  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
- 
- axiom page_length__2__post_axiom :
-  (forall ada__text_io__standard_in   ada__text_io__file_system   ada__text_io__standard_out   ada__text_io__standard_err   ada__text_io__current_in   ada__text_io__current_out   ada__text_io__current_err   : Main.__private [(Ada__text_io__page_length__2.page_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err)].
-   ( true -> (let result = (Ada__text_io__page_length__2.page_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err) in (
-    ( ( true /\ (Ada__text_io__count___axiom.dynamic_invariant result True False True True) )/\true )))
-    ))
-
-end
-
-(* Module for checking absence of run-time errors and package initial condition on package elaboration of "reactor" defined at reactor.ads:1, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
-module Reactor__package_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Reactor__overheatthreshold as Reactor__overheatthreshold
- use        Reactor__tempincrement as Reactor__tempincrement
- use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
- use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
- use        Reactor__temperature___axiom as Reactor__temperature___axiom
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Reactor__temperature___axiom as Reactor__temperature___axiom
- use        Reactor__overheatthreshold___axiom as Reactor__overheatthreshold___axiom
- use        Reactor__tempincrement___axiom as Reactor__tempincrement___axiom
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__line_length__2___axiom as Ada__text_io__line_length__2___axiom
- use        Ada__text_io__page_length__2___axiom as Ada__text_io__page_length__2___axiom
-
- let def [#"reactor.ads" 1 0 0][@GP_Subp:reactor.ads:1] 
+ let def [#"train.ads" 3 0 0][@GP_Subp:train.ads:3] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 1 0 0] true }
+  requires { [#"train.ads" 3 0 0] true }
    = [@vc:divergent]
   ( ();
-  ([#"reactor.ads" 1 0 0] ());
-  ([#"reactor.ads" 3 0 0] ());
-  ([#"reactor.ads" 5 0 0] ());
-  ([#"reactor.ads" 6 0 0] ());
-  ([#"reactor.ads" 7 0 0] ());
-  ([#"reactor.ads" 8 0 0] ());
-  ([#"reactor.ads" 10 0 0] ());
-  ([#"reactor.ads" 12 0 0] ());
-  ([#"reactor.ads" 14 0 0] ());
-  ([#"reactor.ads" 14 0 0] ());
-  ([#"reactor.ads" 14 0 0] ( [#"reactor.ads" 14 0 0] begin ensures {true} let _ = (let _ = (75 : int) in (
-   ()))
-   in () end ;
-  [#"reactor.ads" 14 0 0] assume { [#"reactor.ads" 14 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__overheatthreshold.overheatthreshold True False True True) } ));
-  ([#"reactor.ads" 16 0 0] ( [#"reactor.ads" 16 0 0] begin ensures {true} let _ = (let _ = (10 : int) in (
-   ()))
-   in () end ;
-  [#"reactor.ads" 16 0 0] assume { [#"reactor.ads" 16 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__tempincrement.tempincrement True False True True) } ));
-  ([#"reactor.ads" 19 0 0] ());
-  ([#"reactor.ads" 21 0 0] ());
-  ([#"reactor.ads" 21 0 0] ());
-  ([#"reactor.ads" 22 0 0] ());
-  ([#"reactor.ads" 23 0 0] ());
-  ([#"reactor.ads" 23 0 0] ());
-  ([#"reactor.ads" 18 0 0] ());
-  ([#"reactor.ads" 26 0 0] ());
-  ([#"reactor.ads" 28 0 0] ());
-  ([#"reactor.ads" 27 0 0] ());
-  ([#"reactor.ads" 30 0 0] ());
-  ([#"reactor.ads" 32 0 0] ());
-  ([#"reactor.ads" 31 0 0] ());
-  ([#"reactor.ads" 35 0 0] ());
-  ([#"reactor.ads" 37 0 0] ());
-  ([#"reactor.ads" 36 0 0] ());
-  ([#"reactor.ads" 39 0 0] ());
-  ([#"reactor.ads" 41 0 0] ());
-  ([#"reactor.ads" 40 0 0] ());
-  ([#"reactor.ads" 43 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-  ([#"reactor.ads" 44 0 0] ());
-   assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
+  ([#"train.ads" 3 0 0] ());
+  ([#"train.ads" 5 0 0] ());
+  ([#"train.ads" 7 0 0] ());
+  ([#"train.ads" 8 0 0] ());
+  ([#"train.ads" 13 0 0] ());
+  ([#"train.ads" 13 0 0] ());
+  ([#"train.ads" 14 0 0] ());
+  ([#"train.ads" 14 0 0] ());
+  ([#"train.ads" 10 0 0] ());
+  ([#"train.ads" 18 0 0] ());
+  ([#"train.ads" 19 0 0] ());
+  ([#"train.ads" 19 0 0] ());
+  ([#"train.ads" 19 0 0] ());
+  ([#"train.ads" 19 0 0] ());
+  ([#"train.ads" 19 0 0] ());
   ();
-  ([#"reactor.adb" 3 0 0] ());
-  ([#"reactor.adb" 5 0 0] ());
-  ([#"reactor.adb" 12 0 0] ());
-  ([#"reactor.adb" 17 0 0] ());
-  ([#"reactor.adb" 25 0 0] ());
-  ([#"reactor.adb" 33 0 0] ());
+  ([#"train.adb" 3 0 0] ());
+  ([#"train.adb" 5 0 0] ());
   ();
-  ( [@GP_Sloc:reactor.adb:47:1] ([#"reactor.adb" 47 0 0] ()) ) )
+  ( [@GP_Sloc:train.adb:11:1] ([#"train.adb" 11 0 0] ()) ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "engineon" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Reactor__engineon__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        "_gnatprove_standard".Boolean as Boolean
- use        Reactor__engineon__this as Reactor__engineon__this
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__temperature___axiom as Reactor__temperature___axiom
- use        Reactor__power___axiom as Reactor__power___axiom
- use        Reactor__rods___axiom as Reactor__rods___axiom
- use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
- use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__engineon__this___axiom as Reactor__engineon__this___axiom
-
- let def [#"reactor.ads" 26 0 0][@GP_Subp:reactor.ads:26] 
-   (__void_param : unit)
-  requires { [#"reactor.ads" 26 0 0] true }
-  ensures { [#"reactor.ads" 26 0 0] ([#"reactor.ads" 28 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__andthen] [@GP_Sloc:reactor.ads:28:14] [@model_vc_post] [@GP_Id:0] [@comment:     Post => This.OnOff = On and then This.rod_number = Rods'Last;              ^ reactor.ads:28:14:VC_POSTCONDITION] ( ( [@GP_Pretty_Ada:2802] [@GP_Sloc:reactor.ads:28:14] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Sloc:reactor.ads:28:39] [@GP_Pretty_Ada:2808] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) )) }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:26 *)
-  ;
-   assume {  (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:26 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:26 *)
-  ;
-   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)) ) in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:26 *)
-  ;
-   assume {  ( ( [@GP_Pretty_Ada:2786] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2792] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:7:7] ([#"reactor.adb" 7 0 0] (if (( ([#"reactor.adb" 7 0 0] [#"reactor.adb" 7 0 0] (([@branch_id=2334] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)))) )));
-   ( [@branch_id=2334] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:8:21] ([#"reactor.adb" 8 0 0] (let temp___228 [@mlw:proxy_symbol] [@introduced] = (let temp___227 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
-     ( [#"reactor.adb" 8 0 0] begin ensures {true} let _ = (let _ = temp___227.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff in (
-      ()))
-      in () end ;
-     { ( temp___227 ) with Reactor__trainreactor.__split_fields = { ( temp___227.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__onoff = (Reactor__statusonoff__rep.of_rep((0 : int))) } } )))
-     in (
-     [#"reactor.adb" 8 0 0] (Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___228.Reactor__trainreactor.__split_fields ))))
-    ) ) )) else (
-    ()))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)) ) in (
-   ()))
-   in () end  )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "engineoff" defined at reactor.ads:30, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Reactor__engineoff__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__engineoff__this as Reactor__engineoff__this
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__temperature___axiom as Reactor__temperature___axiom
- use        Reactor__power___axiom as Reactor__power___axiom
- use        Reactor__rods___axiom as Reactor__rods___axiom
- use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
- use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__engineoff__this___axiom as Reactor__engineoff__this___axiom
-
- let def [#"reactor.ads" 30 0 0][@GP_Subp:reactor.ads:30] 
-   (__void_param : unit)
-  requires { [#"reactor.ads" 30 0 0] true }
-  ensures { [#"reactor.ads" 30 0 0] ([#"reactor.ads" 32 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => This.OnOff = Off and then This.rod_number = Rods'Last;              ^ reactor.ads:32:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:32:14] [@GP_Shape:pragargs__andthen] [@model_vc_post] [@GP_Id:1] ( ( [@GP_Sloc:reactor.ads:32:14] [@GP_Pretty_Ada:2853] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Sloc:reactor.ads:32:40] [@GP_Pretty_Ada:2859] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) )) }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:30 *)
-  ;
-   assume {  (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:30 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:30 *)
-  ;
-   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)) ) in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:30 *)
-  ;
-   assume {  ( ( [@GP_Pretty_Ada:2837] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2843] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:14:18] ([#"reactor.adb" 14 0 0] (let temp___230 [@mlw:proxy_symbol] [@introduced] = (let temp___229 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
-    ( [#"reactor.adb" 14 0 0] begin ensures {true} let _ = (let _ = temp___229.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff in (
-     ()))
-     in () end ;
-    { ( temp___229 ) with Reactor__trainreactor.__split_fields = { ( temp___229.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__onoff = (Reactor__statusonoff__rep.of_rep((1 : int))) } } )))
-    in (
-    [#"reactor.adb" 14 0 0] (Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___230.Reactor__trainreactor.__split_fields ))))
-   ) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)) ) in (
-   ()))
-   in () end  )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "decreaserod" defined at reactor.ads:35, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Reactor__decreaserod__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        "_gnatprove_standard".Boolean as Boolean
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__decreaserod__this as Reactor__decreaserod__this
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__temperature___axiom as Reactor__temperature___axiom
- use        Reactor__power___axiom as Reactor__power___axiom
- use        Reactor__rods___axiom as Reactor__rods___axiom
- use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
- use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__decreaserod__this___axiom as Reactor__decreaserod__this___axiom
-
- let def [#"reactor.ads" 35 0 0][@GP_Subp:reactor.ads:35] 
-   (__void_param : unit)
-  requires { [#"reactor.ads" 35 0 0] true }
-  ensures { [#"reactor.ads" 35 0 0] ([#"reactor.ads" 37 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:37:14] [@comment:     Post => This.rod_number < This.rod_number'Old;              ^ reactor.ads:37:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:3] ( [@GP_Sloc:reactor.ads:37:14] [@GP_Pretty_Ada:18422] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (Reactor__rods__rep.to_rep (old { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) )) }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:35 *)
-  ;
-   assume {  (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:35 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:35 *)
-  ;
-   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) > (1 : int)) ) in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:35 *)
-  ;
-   assume {  ( ( [@GP_Pretty_Ada:2888] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2894] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (1 : int)) ) ) };
-   begin ensures {true} let _ = (let _ = { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
-   ()))
-   in () end ;
-  (let temp___old_233 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
-  ensures { (result = (Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number))} 
-  in _f) in (
-   (  try
-    ( ();
-    ( [@GP_Sloc:reactor.adb:19:7] ([#"reactor.adb" 19 0 0] (if (( ([#"reactor.adb" 19 0 0] [#"reactor.adb" 19 0 0] (([@branch_id=2401] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int))) (((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) > (1 : int)))) )));
-    ( [@branch_id=2401] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:20:26] ([#"reactor.adb" 20 0 0] (let temp___232 [@mlw:proxy_symbol] [@introduced] = (let temp___231 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
-      ( [#"reactor.adb" 20 0 0] begin ensures {true} let _ = (let _ = temp___231.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
-       ()))
-       in () end ;
-      { ( temp___231 ) with Reactor__trainreactor.__split_fields = { ( temp___231.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__rod_number = (Reactor__rods__rep.of_rep(([#"reactor.adb" 20 0 0] ( [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__this_assign__sub] [@comment:         This.rod_number := This.rod_number - 1;                                             ^ reactor.adb:20:45:VC_RANGE_CHECK] [@GP_Id:2] [@GP_Sloc:reactor.adb:20:45] (Reactor__rods.range_check_(((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) - (1 : int)))) )))) } } )))
-      in (
-       (Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___232.Reactor__trainreactor.__split_fields ))))
-     ) ) )) else (
-     ()))) );
-     raise Return__exc )
-   with
-    Return__exc -> ()
-   end;
-    begin ensures {true} let _ = (let _ = ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__decreaserod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < temp___old_233) in (
-    ()))
-    in () end  )))
-   )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "addrod" defined at reactor.ads:39, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Reactor__addrod__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        "_gnatprove_standard".Boolean as Boolean
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__addrod__this as Reactor__addrod__this
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__temperature___axiom as Reactor__temperature___axiom
- use        Reactor__power___axiom as Reactor__power___axiom
- use        Reactor__rods___axiom as Reactor__rods___axiom
- use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
- use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__addrod__this___axiom as Reactor__addrod__this___axiom
-
- let def [#"reactor.ads" 39 0 0][@GP_Subp:reactor.ads:39] 
-   (__void_param : unit)
-  requires { [#"reactor.ads" 39 0 0] true }
-  ensures { [#"reactor.ads" 39 0 0] ([#"reactor.ads" 41 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:41:14] [@GP_Shape:pragargs__cmp] [@comment:     Post => This.rod_number > This.rod_number'Old;              ^ reactor.ads:41:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:5] ( [@GP_Sloc:reactor.ads:41:14] [@GP_Pretty_Ada:18471] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (Reactor__rods__rep.to_rep (old { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) )) }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:39 *)
-  ;
-   assume {  (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:39 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:39 *)
-  ;
-   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < (5 : int)) ) in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:39 *)
-  ;
-   assume {  ( ( [@GP_Pretty_Ada:2935] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2941] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (5 : int)) ) ) };
-   begin ensures {true} let _ = (let _ = { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
-   ()))
-   in () end ;
-  (let temp___old_236 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
-  ensures { (result = (Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number))} 
-  in _f) in (
-   (  try
-    ( ();
-    ( [@GP_Sloc:reactor.adb:27:7] ([#"reactor.adb" 27 0 0] (if (( ([#"reactor.adb" 27 0 0] [#"reactor.adb" 27 0 0] (([@branch_id=2446] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int))) (((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < (5 : int)))) )));
-    ( [@branch_id=2446] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:28:26] ([#"reactor.adb" 28 0 0] (let temp___235 [@mlw:proxy_symbol] [@introduced] = (let temp___234 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
-      ( [#"reactor.adb" 28 0 0] begin ensures {true} let _ = (let _ = temp___234.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
-       ()))
-       in () end ;
-      { ( temp___234 ) with Reactor__trainreactor.__split_fields = { ( temp___234.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__rod_number = (Reactor__rods__rep.of_rep(([#"reactor.adb" 28 0 0] ( [@GP_Sloc:reactor.adb:28:45] [@vc:annotation] [@GP_Shape:if__this_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:4] [@comment:         This.rod_number := This.rod_number + 1;                                             ^ reactor.adb:28:45:VC_RANGE_CHECK] (Reactor__rods.range_check_(((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) + (1 : int)))) )))) } } )))
-      in (
-       (Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___235.Reactor__trainreactor.__split_fields ))))
-     ) ) )) else (
-     ()))) );
-     raise Return__exc )
-   with
-    Return__exc -> ()
-   end;
-    begin ensures {true} let _ = (let _ = ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) > temp___old_236) in (
-    ()))
-    in () end  )))
-   )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "calculatepower" defined at reactor.ads:43, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Reactor__calculatepower__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "calculatespeed" defined at train.ads:18, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__calculatespeed__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Int_Division as Int_Division
  use        "_gnatprove_standard".Boolean as Boolean
- use        Reactor__trainreactor as Reactor__trainreactor
- use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__calculatepower__this as Reactor__calculatepower__this
- use        Reactor__calculatepower__pow as Reactor__calculatepower__pow
- use        Reactor__calculatepower__maxpow as Reactor__calculatepower__maxpow
- use        Reactor__calculatepower__maxrod as Reactor__calculatepower__maxrod
- use        Reactor__TpowerB as Reactor__TpowerB
+ use        Train__calculatespeed__this as Train__calculatespeed__this
+ use        Train__train as Train__train
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__TspeedB as Train__TspeedB
+ use        Train__speed as Train__speed
+ use        Train__speed__rep as Train__speed__rep
+ use        Train__weight as Train__weight
+ use        Train__weight__rep as Train__weight__rep
  use        Reactor__power as Reactor__power
- use        Reactor__power___axiom as Reactor__power___axiom
- use        Reactor__rods as Reactor__rods
- use        Reactor__rods__rep as Reactor__rods__rep
- use        Reactor__calculatepower__pow___axiom as Reactor__calculatepower__pow___axiom
- use        Reactor__calculatepower__maxpow___axiom as Reactor__calculatepower__maxpow___axiom
- use        Reactor__calculatepower__maxrod___axiom as Reactor__calculatepower__maxrod___axiom
+ use        Reactor__power__rep as Reactor__power__rep
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__weight___axiom as Train__weight___axiom
+ use        Train__carriage___axiom as Train__carriage___axiom
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__calculatespeed__this___axiom as Train__calculatespeed__this___axiom
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
  use        Reactor__power___axiom as Reactor__power___axiom
  use        Reactor__rods___axiom as Reactor__rods___axiom
  use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
  use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
  use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
- use        Reactor__calculatepower__this___axiom as Reactor__calculatepower__this___axiom
- use        Reactor__TpowerB___axiom as Reactor__TpowerB___axiom
+ use        Train__TspeedB___axiom as Train__TspeedB___axiom
 
- val reactor__calculatepower__result [@model_projected] [@name:calculatePower] [@model_trace:2956@result]  : int__ref 
- 
- let def [#"reactor.ads" 43 0 0][@GP_Subp:reactor.ads:43] 
+ let def [#"train.ads" 18 0 0][@GP_Subp:train.ads:18] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 43 0 0] true }
-  ensures { [#"reactor.ads" 43 0 0] ([#"reactor.ads" 44 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:44:14] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:44:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:9] ( ( [@GP_Sloc:reactor.ads:44:14] [@GP_Pretty_Ada:2983] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2991] [@GP_Sloc:reactor.ads:44:60] (reactor__calculatepower__result.int__content <= (5200 : int)) ) ) )) }
+  requires { [#"train.ads" 18 0 0] true }
+  ensures { [#"train.ads" 18 0 0] ([#"train.ads" 19 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => This.sp >= Speed'First and This.sp <= Speed'Last;              ^ train.ads:19:14:VC_POSTCONDITION] [@GP_Sloc:train.ads:19:14] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:5] ( ( [@GP_Sloc:train.ads:19:14] [@GP_Pretty_Ada:2490] ((Train__speed__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) >= (0 : int)) ) /\ ( [@GP_Sloc:train.ads:19:41] [@GP_Pretty_Ada:2498] ((Train__speed__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) <= (1000 : int)) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:43 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:18 *)
   ;
-   assume {  (Reactor__trainreactor___axiom.dynamic_invariant Reactor__calculatepower__this.this True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:43 *)
+   assume {  (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content } True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:18 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:43 *)
+  () (* Check for RTE in the Pre of the subprogram train.ads:18 *)
   ;
    begin ensures {true} let _ = (let _ = True in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:43 *)
+  () (* Assume Pre of the subprogram train.ads:18 *)
   ;
    try
    ( ();
-   ([#"reactor.adb" 35 0 0] ( [#"reactor.adb" 35 0 0] assume { [#"reactor.adb" 35 0 0] (Reactor__power___axiom.default_initial_assumption Reactor__calculatepower__pow.pow.int__content False) };
-   [#"reactor.adb" 35 0 0] assume { [#"reactor.adb" 35 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__pow.pow.int__content False False True True) } ));
-   ([#"reactor.adb" 36 0 0] ( [#"reactor.adb" 36 0 0] (Reactor__calculatepower__maxpow.maxpow.int__content <- ( (5200 : int) ));
-   [#"reactor.adb" 36 0 0] assume { [#"reactor.adb" 36 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxpow.maxpow.int__content True False True True) } ));
-   ([#"reactor.adb" 37 0 0] ( [#"reactor.adb" 37 0 0] (Reactor__calculatepower__maxrod.maxrod.int__content <- ( (5 : int) ));
-   [#"reactor.adb" 37 0 0] assume { [#"reactor.adb" 37 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxrod.maxrod.int__content True False True True) } ));
-   ();
-   ( [@GP_Sloc:reactor.adb:41:7] ([#"reactor.adb" 41 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:41:15] ([#"reactor.adb" 41 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:41:24] ([#"reactor.adb" 41 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:41:35] ([#"reactor.adb" 41 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:41:12] ([#"reactor.adb" 41 0 0] [#"reactor.adb" 41 0 0] (Reactor__calculatepower__pow.pow.int__content <- ( ([#"reactor.adb" 41 0 0] ( [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:41:31:VC_RANGE_CHECK] [@vc:annotation] [@GP_Sloc:reactor.adb:41:31] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:8] [@GP_Shape:pow_assign__mult] (Reactor__power.range_check_(([#"reactor.adb" 41 0 0] ( [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:41:31:VC_OVERFLOW_CHECK] [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Sloc:reactor.adb:41:31] [@GP_Id:7] [@GP_Shape:pow_assign__mult] (Reactor__TpowerB.range_check_((([#"reactor.adb" 41 0 0] ( [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                      ^ reactor.adb:41:22:VC_DIVISION_CHECK] [@GP_Shape:pow_assign__mult__div] [@GP_Sloc:reactor.adb:41:22] [@GP_Id:6] (Int_Division.div_(Reactor__calculatepower__maxpow.maxpow.int__content) (Reactor__calculatepower__maxrod.maxrod.int__content)) )) * ((Reactor__calculatepower__maxrod.maxrod.int__content + (1 : int)) - (Reactor__rods__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)))))) )))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:43:14] ([#"reactor.adb" 43 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:43:7] ([#"reactor.adb" 43 0 0] ( [#"reactor.adb" 43 0 0] (reactor__calculatepower__result.int__content <- ( Reactor__calculatepower__pow.pow.int__content ));
-   [#"reactor.adb" 43 0 0] raise Return__exc )) );
+   ( [@GP_Sloc:train.adb:8:15] ([#"train.adb" 8 0 0] (let temp___227 [@mlw:proxy_symbol] [@introduced] = (let temp___226 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content } in (
+    ( [#"train.adb" 8 0 0] begin ensures {true} let _ = (let _ = temp___226.Train__train.__split_fields.Train__train.rec__train__train__sp in (
+     ()))
+     in () end ;
+    { ( temp___226 ) with Train__train.__split_fields = { ( temp___226.Train__train.__split_fields ) with Train__train.rec__train__train__sp = (Train__speed__rep.of_rep(([#"train.adb" 8 0 0] ( [@vc:annotation] [@comment:      This.sp := Speed(This.rea.pow) / Speed(This.wei) * 100;                                                        ^ train.adb:8:56:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:this_assign__mult] [@GP_Id:4] [@GP_Sloc:train.adb:8:56] (Train__speed.range_check_(([#"train.adb" 8 0 0] ( [@comment:      This.sp := Speed(This.rea.pow) / Speed(This.wei) * 100;                                                        ^ train.adb:8:56:VC_OVERFLOW_CHECK] [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Shape:this_assign__mult] [@GP_Id:3] [@GP_Sloc:train.adb:8:56] (Train__TspeedB.range_check_((([#"train.adb" 8 0 0] ( [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Sloc:train.adb:8:38] [@GP_Shape:this_assign__mult__div] [@GP_Id:2] [@comment:      This.sp := Speed(This.rea.pow) / Speed(This.wei) * 100;                                      ^ train.adb:8:38:VC_DIVISION_CHECK] (Int_Division.div_(([#"train.adb" 8 0 0] ( [@vc:annotation] [@GP_Shape:this_assign__mult__div__typeconv__selectcomp] [@GP_Sloc:train.adb:8:32] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:0] [@comment:      This.sp := Speed(This.rea.pow) / Speed(This.wei) * 100;                                ^ train.adb:8:32:VC_RANGE_CHECK] (Train__speed.range_check_((Reactor__power__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__rea.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)))) ))) (([#"train.adb" 8 0 0] ( [@comment:      This.sp := Speed(This.rea.pow) / Speed(This.wei) * 100;                                                  ^ train.adb:8:50:VC_RANGE_CHECK] [@vc:annotation] [@GP_Shape:this_assign__mult__div__typeconv__selectcomp] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:1] [@GP_Sloc:train.adb:8:50] (Train__speed.range_check_((Train__weight__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei)))) )))) )) * (100 : int)))) )))) )))) } } )))
+    in (
+     (Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content <- ( temp___227.Train__train.__split_fields ))))
+   ) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((reactor__calculatepower__result.int__content >= (0 : int))) ((reactor__calculatepower__result.int__content <= (5200 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb(((Train__speed__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp)) >= (0 : int))) (((Train__speed__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp)) <= (1000 : int)))) in (
    ()))
-   in () end ;
-  reactor__calculatepower__result.int__content )
+   in () end  )
 end

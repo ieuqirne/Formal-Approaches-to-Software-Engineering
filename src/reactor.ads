@@ -16,41 +16,31 @@ package reactor with SPARK_Mode is
    TempIncrement : constant Temperature := 10;
 
    type TrainReactor is record
-      OnOff : StatusOnOff;
-      temp : Temperature;
-      rod_number : Rods;
-      status : ReactorStatus;
-      pow : Power;
+      OnOff : StatusOnOff := Off;
+      temp : Temperature := 20;
+      rod_number : Rods := 5;
+      status : ReactorStatus := Running;
+      pow : Power := 0;
    end record;
 
-   T_Reactor : TrainReactor := (OnOff => Off,
-                                temp => Temperature'First,
-                                rod_number => Rods'Last,
-                                status => Running,
-                                pow => Power'First);
+   procedure EngineOn (This : in out TrainReactor) with
+     Pre => This.OnOff = Off and then This.rod_number = Rods'Last,
+     Post => This.OnOff = On and then This.rod_number = Rods'Last;
+
+   procedure EngineOff (This : in out TrainReactor) with
+     Pre => This.OnOff = On and then This.rod_number = Rods'Last,
+     Post => This.OnOff = Off and then This.rod_number = Rods'Last;
 
 
-   procedure EngineOn  with
-     Global => (In_Out => T_Reactor),
-     Pre => T_Reactor.OnOff = Off and then T_Reactor.rod_number = Rods'Last,
-     Post => T_Reactor.OnOff = On and then T_Reactor.rod_number = Rods'Last;
+   procedure decreaseRod (This : in out TrainReactor) with
+     Pre => This.OnOff = On and then This.rod_number > Rods'First,
+     Post => This.rod_number < This.rod_number'Old;
 
-   procedure EngineOff with
-     Global => (In_Out => T_Reactor),
-     Pre => T_Reactor.OnOff = On and then T_Reactor.rod_number = Rods'Last,
-     Post => T_Reactor.OnOff = Off and then T_Reactor.rod_number = Rods'Last;
+   procedure addRod (This : in out TrainReactor) with
+     Pre => This.OnOff = On and then This.rod_number < Rods'Last,
+     Post => This.rod_number > This.rod_number'Old;
 
-
-   procedure decreaseRod  with
-     Global => (In_Out => T_Reactor),
-     Pre => T_Reactor.OnOff = On and then T_Reactor.rod_number > Rods'First,
-     Post => T_Reactor.rod_number < T_Reactor.rod_number'Old;
-   procedure addRod  with
-     Global => (In_Out => T_Reactor),
-     Pre => T_Reactor.OnOff = On and then T_Reactor.rod_number < Rods'Last,
-     Post => T_Reactor.rod_number > T_Reactor.rod_number'Old;
-
-   function calculatePower  return Power with
+   function calculatePower (This : in TrainReactor) return Power with
      Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;
 
 
