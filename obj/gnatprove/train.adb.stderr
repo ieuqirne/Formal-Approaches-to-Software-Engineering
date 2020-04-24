@@ -1,2 +1,0 @@
-train.adb:8:32: medium: range check might fail (e.g. when This = (rea => (OnOff => On, temp => 0, rod_number => 0, status => Running, pow => 1001), sp => 0, wei => Weight'First, NumbCarri => 0)) [possible explanation: subprogram at train.ads:18 should mention This in a precondition][#0]
-train.adb:8:50: medium: range check might fail (e.g. when This = (rea => (OnOff => On, temp => 0, rod_number => 0, status => Running, pow => 0), sp => 0, wei => Weight'First+1, NumbCarri => 0)) [possible explanation: subprogram at train.ads:18 should mention This in a precondition][#1]

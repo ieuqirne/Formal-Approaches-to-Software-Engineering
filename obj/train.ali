@@ -11,13 +11,13 @@ RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U train%b		train.adb		a277feb3 NE OO PK IL
+U train%b		train.adb		8c21ce3f NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W reactor%s		reactor.adb		reactor.ali
 
-U train%s		train.ads		ed227d0f EE NE OO PK IL
+U train%s		train.ads		4539b419 EE NE OO PK IL
 W reactor%s		reactor.adb		reactor.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
@@ -31,7 +31,7 @@ D a-tiflio.ads		20190518041256 bf196650 ada.text_io.float_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200423144946 ee2f4d8e reactor%s
+D reactor.ads		20200423163322 ee2f4d8e reactor%s
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
@@ -45,10 +45,11 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200423144946 030d3081 train%s
-D train.adb		20200423144946 002b1171 train%b
+D train.ads		20200423172128 ab16f997 train%s
+D train.adb		20200423172640 8666e8eb train%b
 G a e
 G c Z s b [calculatespeed train 18 14 none]
+G c Z s b [update train 23 14 none]
 G c Z s s [trainIP train 10 9 none]
 G r s trainreactor [trainIP train 10 9 none] [trainreactorIP reactor 18 9 none]
 X 1 ada.ads
@@ -61,22 +62,22 @@ X 12 reactor.ads
 1K9*reactor 48e12 26|1w6 1r19 11r14 27|1w6 1r19
 5I9*Power<short_integer>
 18R9*TrainReactor 24e14 26|11r22
-23i7*pow{5I9} 27|8r38
+23i7*pow{5I9} 26|20r16 20r39 27|8r38
 X 26 train.ads
-3K9*train 22l5 22e10 27|5b14 21l5 21t10
-5I9*Speed<short_integer> 12r12 19r25 19r52 27|11r18 15r19
-7I9*Weight<short_integer> 13r13
+3K9*train 26l5 26e10 27|5b14 29l5 29t10
+5I9*Speed<short_integer> 12r12 21r25 21r52 24r25 24r52 27|18r18
+7I9*Weight<short_integer> 13r13 19r24 19r53
 8I9*Carriage<short_short_integer> 14r19
-10R9*Train 15e14 18r44 27|7r44
-11r7*reac{12|18R9} 27|8r33
-12i7*sp{5I9} 19r19 19r46 27|16m12
-13i7*wei{7I9} 27|9r33
+10R9*Train 15e14 18r44 23r36 27|7r44 23r36
+11r7*reac{12|18R9} 20r11 20r34 27|8r33
+12i7*sp{5I9} 21r19 21r46 24r19 24r46 27|18m12
+13i7*wei{7I9} 19r17 19r46 27|9r33
 14i7*NumbCarri{8I9}
-18U14*calculateSpeed 18=30 27|7b14 17l8 17t22
-18r30 This{10R9} 19r14 19r41 27|7b30 8r28 9r28 16m7
+18U14*calculateSpeed 18=30 27|7b14 20l8 20t22 26s7
+18r30 This{10R9} 19r12 19r41 20r6 20r29 21r14 21r41 27|7b30 8r28 9r28 18m7
+23U14*Update 23=22 27|23b14 27l8 27t14
+23r22 This{10R9} 24r14 24r41 27|23b22 26m22
 X 27 train.adb
-8f7 Pow{float} 13r16
-9f7 Wei{float} 13r22
-10f7 Total{float} 13m7 14m7 14r16 15r25
-11i7 TotalInt{26|5I9} 15m7 16r18
+8f7 Pow{float} 18r24
+9f7 Wei{float} 18r30
 

@@ -16,11 +16,12 @@ begin
    Put_Line(tren.reac.OnOff'Image);
    --calculatePower(tren.reac);
    ----calculateSpeed(tren);
+   Update(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image);
    decreaseRod(tren.reac);
-
+   Update(tren);
    ----calculateSpeed(tren);
-   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image &". Speed: " & tren.sp'Image );
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  tren.reac.pow'Image &". Speed: " & tren.sp'Image );
 
    --decreaseRod;
    --Put_Line("Rods: " & T_Reactor.rod_number'Image & ". Power: " & calculatePower'Image);

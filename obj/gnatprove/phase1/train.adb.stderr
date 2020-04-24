@@ -1,5 +1,0 @@
-train.ads:1:06: circular unit dependency
-train.ads:1:06: "train (body)" depends on "train (spec)"
-train.ads:1:06: "train (spec)" depends on "reactor (spec)"
-train.ads:1:06: "reactor (spec)" depends on "train (spec)"
-train.ads:1:06: "train (spec)" depends on "train (spec)"

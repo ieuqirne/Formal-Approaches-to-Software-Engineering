@@ -1,7 +1,0 @@
-main.adb:1:06: circular unit dependency
-main.adb:1:06: "Main (body)" depends on "Reactor (spec)"
-main.adb:1:06: "Reactor (spec)" depends on "Train (spec)"
-main.adb:1:06: "Train (spec)" depends on "Reactor (spec)"
-main.adb:1:06: "Reactor (spec)" depends on "Reactor (body)"
-main.adb:1:06: "Reactor (body)" depends on "Reactor (spec)"
-main.adb:1:06: "Reactor (spec)" depends on "Reactor (spec)"
