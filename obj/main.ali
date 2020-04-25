@@ -12,13 +12,12 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		3f7bee75 NE OO SU
+U main%b		main.adb		2e1c2bbe NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z interfaces%s		interfac.ads		interfac.ali
 W reactor%s		reactor.adb		reactor.ali
 Z system%s		system.ads		system.ali
-Z system.concat_6%s	s-conca6.adb		s-conca6.ali
 Z system.img_enum_new%s	s-imenne.adb		s-imenne.ali
 Z system.img_int%s	s-imgint.adb		s-imgint.ali
 W train%s		train.adb		train.ali
@@ -32,10 +31,9 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D main.adb		20200423163750 d4b68f01 main%b
-D reactor.ads		20200423163322 ee2f4d8e reactor%s
+D main.adb		20200425121832 6aeced78 main%b
+D reactor.ads		20200425111106 8c462cd4 reactor%s
 D system.ads		20190518041258 32a08138 system%s
-D s-conca6.ads		20190518041256 d2c72db2 system.concat_6%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
 D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
@@ -50,38 +48,47 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200423172128 ab16f997 train%s
+D train.ads		20200425123338 66423f7f train%s
 G a e
 G c Z b b [main standard 6 11 none]
-G r s train [main standard 6 11 none] [trainIP train 10 9 none]
+G r s train [main standard 6 11 none] [trainIP train 14 9 none]
+G r c none [main standard 6 11 none] [calculateweight train 34 14 none]
 G r c none [main standard 6 11 none] [engineon reactor 26 14 none]
-G r c none [main standard 6 11 none] [update train 23 14 none]
+G r c none [main standard 6 11 none] [update train 27 14 none]
 G r c none [main standard 6 11 none] [calculatepower reactor 43 13 none]
 G r c none [main standard 6 11 none] [decreaserod reactor 35 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 10|4r6 4r23
 X 6 a-textio.ads
 57K13*Text_IO 727e16 10|4w10 4r27
-508U14*Put_Line 10|13s4 14s4 16s4 20s4 24s4
+508U14*Put_Line 10|13s4 14s4 18s4 22s4 26s4 30s4 33s4 36s4
 X 10 main.adb
-6U11*Main 6b11 28l5 28t9
-9r4 tren{28|10R9} 14r13 15m13 15r13 16r13 19m11 19r11 20r24 20r83 20r116
-. 21m16 21r16 22m11 22r11 24r24 24r68 24r103
+6U11*Main 6b11 40l5 40t9
+9r4 tren{27|14R9} 14r13 16m20 16r20 17m13 17r13 18r13 21m11 21r11 22r24 22r83
+. 22r116 22r147 22r181 23m16 23r16 24m11 24r11 26r24 26r83 26r116 26r147
+. 26r181 27m16 27r16 29m11 29r11 30r24 30r83 30r116 30r147 30r181 31m16 31r16
+. 32m11 32r11 33r24 33r83 33r116 33r147 33r181 34m16 34r16 35m11 35r11 36r24
+. 36r83 36r116 36r147 36r181
 X 11 reactor.ads
 1K9*reactor 10|2w6 2r19 11|48e12
 5I9*Power<short_integer>
 7I9*Rods<short_short_integer>
-19e7*OnOff{10E9} 10|14r23 16r23
-21i7*rod_number{7I9} 10|20r34 24r34
-23i7*pow{5I9} 10|24r78
-26U14*EngineOn 10|15s4
-35U14*decreaseRod 10|21s4
-43V13*calculatePower{5I9} 10|20s68
-X 28 train.ads
-3K9*train 10|1w6 1r17 9r10 28|26e10
-5I9*Speed<short_integer>
-10R9*Train 10|9r16 28|15e14
-11r7*reac{11|18R9} 10|14r18 15m18 16r18 20r29 20r88 21m21 24r29 24r73
-12i7*sp{5I9} 10|20r121 24r108
-23U14*Update 10|19s4 22s4
+19e7*OnOff{10E9} 10|14r23 18r23
+21i7*rod_number{7I9} 10|22r34 26r34 30r34 33r34 36r34
+26U14*EngineOn 10|17s4
+35U14*decreaseRod 10|23s4 27s4 31s4 34s4
+43V13*calculatePower{5I9} 10|22s68 26s68 30s68 33s68 36s68
+X 27 train.ads
+3K9*train 10|1w6 1r17 9r10 27|37e10
+5I9*Speed<short_short_integer>
+7I9*Weight<short_integer>
+12I9*Carriage<short_short_integer>
+14R9*Train 10|9r16 27|19e14
+15r7*reac{11|18R9} 10|14r18 17m18 18r18 22r29 22r88 23m21 26r29 26r88 27m21
+. 30r29 30r88 31m21 33r29 33r88 34m21 36r29 36r88
+16i7*sp{5I9} 10|22r121 26r121 30r121 33r121 36r121
+17i7*wei{7I9} 10|22r152 26r152 30r152 33r152 36r152
+18i7*numbCarri{12I9} 10|22r186 26r186 30r186 33r186 36r186
+27U14*Update 10|21s4 24s4 29s4 32s4 35s4
+34U14*calculateWeight 10|16s4
 

@@ -1999,7 +1999,7 @@ module Reactor__power
  use        "int".Int
 
  type power =
-  < range 0 5200 >
+  < range 0 8000 >
  
  val constant first 
    : int
@@ -2007,7 +2007,7 @@ module Reactor__power
  
  val constant last 
    : int
-  ensures { result =  (5200 : int) }
+  ensures { result =  (8000 : int) }
  
  predicate in_range 
    (x : int) =
@@ -2238,7 +2238,7 @@ module Reactor__powerarray
  
  val constant last 
    : int
-  ensures { result =  (5200 : int) }
+  ensures { result =  (8000 : int) }
  
  clone export "ada__model".Constr_Array with axiom .,
  type map = Array__Int__Standard__integer.map, 
@@ -4306,13 +4306,13 @@ module Reactor__calculatepower___axiom
  val calculatepower 
    (this : Reactor__trainreactor.trainreactor) : int
   requires {  true }
-  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (5200 : int)) ) ) ) ) }
+  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (8000 : int)) ) ) ) ) }
  
  axiom calculatepower__post_axiom :
   (forall this   : Reactor__trainreactor.trainreactor [(Reactor__calculatepower.calculatepower this)].
    ( (Reactor__trainreactor___axiom.dynamic_invariant this True True True True) -> (let result = (Reactor__calculatepower.calculatepower this) in (
     (if ((Reactor__calculatepower.calculatepower__function_guard result this)) then (
-     ( ( ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (5200 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+     ( ( ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (8000 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
     ))
 
 end
@@ -4821,7 +4821,7 @@ module Reactor__calculatepower__subprogram_def
  let def [#"reactor.ads" 43 0 0][@GP_Subp:reactor.ads:43] 
    (__void_param : unit)
   requires { [#"reactor.ads" 43 0 0] true }
-  ensures { [#"reactor.ads" 43 0 0] ([#"reactor.ads" 44 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:44:14] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:44:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:9] ( ( [@GP_Sloc:reactor.ads:44:14] [@GP_Pretty_Ada:3004] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] [@GP_Sloc:reactor.ads:44:60] (reactor__calculatepower__result.int__content <= (5200 : int)) ) ) )) }
+  ensures { [#"reactor.ads" 43 0 0] ([#"reactor.ads" 44 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:44:14] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:44:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:9] ( ( [@GP_Sloc:reactor.ads:44:14] [@GP_Pretty_Ada:3004] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] [@GP_Sloc:reactor.ads:44:60] (reactor__calculatepower__result.int__content <= (8000 : int)) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:43 *)
   ;
@@ -4839,7 +4839,7 @@ module Reactor__calculatepower__subprogram_def
    ( ();
    ([#"reactor.adb" 42 0 0] ( [#"reactor.adb" 42 0 0] assume { [#"reactor.adb" 42 0 0] (Reactor__power___axiom.default_initial_assumption Reactor__calculatepower__pow.pow.int__content False) };
    [#"reactor.adb" 42 0 0] assume { [#"reactor.adb" 42 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__pow.pow.int__content False False True True) } ));
-   ([#"reactor.adb" 43 0 0] ( [#"reactor.adb" 43 0 0] (Reactor__calculatepower__maxpow.maxpow.int__content <- ( (5200 : int) ));
+   ([#"reactor.adb" 43 0 0] ( [#"reactor.adb" 43 0 0] (Reactor__calculatepower__maxpow.maxpow.int__content <- ( (8000 : int) ));
    [#"reactor.adb" 43 0 0] assume { [#"reactor.adb" 43 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxpow.maxpow.int__content True False True True) } ));
    ([#"reactor.adb" 44 0 0] ( [#"reactor.adb" 44 0 0] (Reactor__calculatepower__maxrod.maxrod.int__content <- ( (5 : int) ));
    [#"reactor.adb" 44 0 0] assume { [#"reactor.adb" 44 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxrod.maxrod.int__content True False True True) } ));
@@ -4856,7 +4856,7 @@ module Reactor__calculatepower__subprogram_def
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((reactor__calculatepower__result.int__content >= (0 : int))) ((reactor__calculatepower__result.int__content <= (5200 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((reactor__calculatepower__result.int__content >= (0 : int))) ((reactor__calculatepower__result.int__content <= (8000 : int)))) in (
    ()))
    in () end ;
   reactor__calculatepower__result.int__content )

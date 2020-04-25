@@ -2,25 +2,37 @@ with reactor; use reactor;
 
 package train with SPARK_Mode is
 
-   type Speed is range 0..300;
+   type Speed is range 0..100;
 
-   type Weight is range 5200..10000;
+   type Weight is range 0..22000;
+   ReactorWeight : constant Weight := 2000;
+
+   CarriageWeight : constant Weight := 1000;
+
    type Carriage is range 0..20;
 
    type Train is record
       reac : reactor.TrainReactor;
       sp : Speed := 0;
-      wei : Weight := 5200;
-      NumbCarri : Carriage := 0;
+      wei : Weight := ReactorWeight;
+      numbCarri : Carriage := 0;
    end record;
 
 
    procedure calculateSpeed (This : in out Train)  with
-     Pre=> this.wei >= Weight'First and this.wei <= Weight'Last and
-     this.reac.pow >= 0 and this.reac.pow <= 5200,
+     Pre=> this.wei >= Weight'First and this.wei <= Weight'Last and This.reac.OnOff = Off and
+     this.reac.pow >= Power'First and this.reac.pow <= Power'Last ,
      Post => This.sp >= Speed'First and This.sp <= Speed'Last;
 
-   procedure Update (This : in out Train)  with
-     Post => This.sp >= Speed'First and This.sp <= Speed'Last;
+--     procedure Update (This : in out Train)  with
+--       --Pre => This.reac.OnOff = On,
+--       Post => This.sp >= Speed'First and This.sp <= Speed'Last;
 
+   procedure addCarriage (This : in out Train) with
+     Pre => This.reac.OnOff = Off and This.numbCarri < Carriage'Last,
+     Post => This.numbCarri > This.numbCarri'Old;
+
+   procedure calculateWeight (This : in out Train) with
+     Pre => This.reac.OnOff = Off and This.wei >= Weight'First and This.wei <= Weight'Last,
+     Post => This.wei >=Weight'First and This.wei <= Weight'Last;
 end Train;
