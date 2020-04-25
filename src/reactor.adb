@@ -16,26 +16,24 @@ package body reactor with SPARK_Mode is
 
    end EngineOff;
 
-   procedure decreaseRod (This : in out TrainReactor) is
-   begin
-      if This.OnOff = On and  This.rod_number > Rods'First then
-         This.rod_number := This.rod_number - 1;
-         This.pow := calculatePower(This);
+--     procedure decreaseRod (This : in out TrainReactor) is
+--     begin
+--        if This.OnOff = On and  This.rod_number > Rods'First then
+--           This.rod_number := This.rod_number - 1;
+--           This.pow := calculatePower(This);
+--        end if;
+--
+--     end decreaseRod;
 
-         --calculateSpeed(This);
-      end if;
-
-   end decreaseRod;
-
-   procedure addRod (This : in out TrainReactor) is
-   begin
-      if This.OnOff = On and  This.rod_number < Rods'Last then
-         This.rod_number := This.rod_number + 1;
-         This.pow := calculatePower(This);
-         --calculateSpeed(This);
-      end if;
-
-   end addRod;
+--     procedure addRod (This : in out TrainReactor) is
+--     begin
+--        if This.OnOff = On and  This.rod_number < Rods'Last then
+--           This.rod_number := This.rod_number + 1;
+--           This.pow := calculatePower(This);
+--           --calculateSpeed(This);
+--        end if;
+--
+--     end addRod;
 
    function calculatePower(This : in TrainReactor) return Power
    is

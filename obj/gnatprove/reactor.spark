@@ -64,7 +64,7 @@
   "flow": [
     {
       "file": "reactor.adb",
-      "line": 42,
+      "line": 40,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -267,7 +267,7 @@
     },
     {
       "file": "reactor.adb",
-      "line": 33,
+      "line": 31,
       "col": 45,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -294,7 +294,7 @@
         }
       ],
       "check_file": "reactor.adb",
-      "check_line": 33,
+      "check_line": 31,
       "check_col": 45,
       "how_proved": "prover",
       "stats": {
@@ -347,7 +347,7 @@
     },
     {
       "file": "reactor.adb",
-      "line": 48,
+      "line": 46,
       "col": 22,
       "rule": "VC_DIVISION_CHECK",
       "severity": "info",
@@ -374,7 +374,7 @@
         }
       ],
       "check_file": "reactor.adb",
-      "check_line": 48,
+      "check_line": 46,
       "check_col": 22,
       "how_proved": "prover",
       "stats": {
@@ -387,7 +387,7 @@
     },
     {
       "file": "reactor.adb",
-      "line": 48,
+      "line": 46,
       "col": 31,
       "rule": "VC_OVERFLOW_CHECK",
       "severity": "info",
@@ -405,7 +405,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 399,
+              "steps": 394,
               "time": 0
             }
           },
@@ -414,7 +414,7 @@
         }
       ],
       "check_file": "reactor.adb",
-      "check_line": 48,
+      "check_line": 46,
       "check_col": 31,
       "how_proved": "prover",
       "stats": {
@@ -427,7 +427,7 @@
     },
     {
       "file": "reactor.adb",
-      "line": 48,
+      "line": 46,
       "col": 31,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -454,7 +454,7 @@
         }
       ],
       "check_file": "reactor.adb",
-      "check_line": 48,
+      "check_line": 46,
       "check_col": 31,
       "how_proved": "prover",
       "stats": {
@@ -1028,14 +1028,14 @@
     }
   ],
   "timings": {
-    "marking": 1.57039996702224E-03,
-    "globals (basic)": 3.26085016131401E-02,
-    "globals/properties (advanced)": 4.26105000078678E-02,
-    "flow analysis": 1.67261995375156E-02,
-    "codepeer results": 8.69999985297909E-06,
-    "init_why_sections": 9.42000013310462E-04,
-    "translation of standard": 4.62550017982721E-03,
-    "translation of compilation unit": 3.27605009078979E-02,
-    "proof": 1.14677596092224E+00
+    "marking": 1.55829999130219E-03,
+    "globals (basic)": 2.84694992005825E-02,
+    "globals/properties (advanced)": 3.79111990332603E-02,
+    "flow analysis": 1.38397999107838E-02,
+    "codepeer results": 1.14000004032278E-05,
+    "init_why_sections": 8.34600010421127E-04,
+    "translation of standard": 4.58500022068620E-03,
+    "translation of compilation unit": 3.16936001181602E-02,
+    "proof": 1.56272196769714E+00
   }
 }

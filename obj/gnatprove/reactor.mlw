@@ -1999,7 +1999,7 @@ module Reactor__power
  use        "int".Int
 
  type power =
-  < range 0 8000 >
+  < range 0 5200 >
  
  val constant first 
    : int
@@ -2007,7 +2007,7 @@ module Reactor__power
  
  val constant last 
    : int
-  ensures { result =  (8000 : int) }
+  ensures { result =  (5200 : int) }
  
  predicate in_range 
    (x : int) =
@@ -2238,7 +2238,7 @@ module Reactor__powerarray
  
  val constant last 
    : int
-  ensures { result =  (8000 : int) }
+  ensures { result =  (5200 : int) }
  
  clone export "ada__model".Constr_Array with axiom .,
  type map = Array__Int__Standard__integer.map, 
@@ -3218,12 +3218,12 @@ module Reactor__addrod__this___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "pow" defined at reactor.adb:42, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "pow" defined at reactor.adb:40, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__calculatepower__pow
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val pow [#"reactor.adb" 42 0 0][@model_trace:2512] [@model_projected] [@name:Pow]  : int__ref 
+ val pow [#"reactor.adb" 40 0 0][@model_trace:2512] [@model_projected] [@name:Pow]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3231,7 +3231,7 @@ module Reactor__calculatepower__pow
 
 end
 
-(* Module giving an empty axiom for the entity "pow" defined at reactor.adb:42, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "pow" defined at reactor.adb:40, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__calculatepower__pow___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3239,12 +3239,12 @@ module Reactor__calculatepower__pow___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "maxpow" defined at reactor.adb:43, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "maxpow" defined at reactor.adb:41, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__calculatepower__maxpow
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val maxpow [#"reactor.adb" 43 0 0][@model_trace:2521] [@name:MaxPow] [@model_projected]  : int__ref 
+ val maxpow [#"reactor.adb" 41 0 0][@model_trace:2521] [@name:MaxPow] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3252,7 +3252,7 @@ module Reactor__calculatepower__maxpow
 
 end
 
-(* Module giving an empty axiom for the entity "maxpow" defined at reactor.adb:43, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "maxpow" defined at reactor.adb:41, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__calculatepower__maxpow___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3260,12 +3260,12 @@ module Reactor__calculatepower__maxpow___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "maxrod" defined at reactor.adb:44, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "maxrod" defined at reactor.adb:42, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__calculatepower__maxrod
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val maxrod [#"reactor.adb" 44 0 0][@model_projected] [@name:MaxRod] [@model_trace:2533]  : int__ref 
+ val maxrod [#"reactor.adb" 42 0 0][@model_projected] [@name:MaxRod] [@model_trace:2533]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3273,7 +3273,7 @@ module Reactor__calculatepower__maxrod
 
 end
 
-(* Module giving an empty axiom for the entity "maxrod" defined at reactor.adb:44, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "maxrod" defined at reactor.adb:42, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__calculatepower__maxrod___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4306,13 +4306,13 @@ module Reactor__calculatepower___axiom
  val calculatepower 
    (this : Reactor__trainreactor.trainreactor) : int
   requires {  true }
-  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (8000 : int)) ) ) ) ) }
+  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (5200 : int)) ) ) ) ) }
  
  axiom calculatepower__post_axiom :
   (forall this   : Reactor__trainreactor.trainreactor [(Reactor__calculatepower.calculatepower this)].
    ( (Reactor__trainreactor___axiom.dynamic_invariant this True True True True) -> (let result = (Reactor__calculatepower.calculatepower this) in (
     (if ((Reactor__calculatepower.calculatepower__function_guard result this)) then (
-     ( ( ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (8000 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+     ( ( ( ( [@GP_Pretty_Ada:3004] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] (result <= (5200 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
     ))
 
 end
@@ -4481,10 +4481,10 @@ module Reactor__package_def
   ([#"reactor.adb" 5 0 0] ());
   ([#"reactor.adb" 13 0 0] ());
   ([#"reactor.adb" 19 0 0] ());
-  ([#"reactor.adb" 30 0 0] ());
-  ([#"reactor.adb" 40 0 0] ());
+  ([#"reactor.adb" 28 0 0] ());
+  ([#"reactor.adb" 38 0 0] ());
   ();
-  ( [@GP_Sloc:reactor.adb:54:1] ([#"reactor.adb" 54 0 0] ()) ) )
+  ( [@GP_Sloc:reactor.adb:52:1] ([#"reactor.adb" 52 0 0] ()) ) )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "engineon" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4755,25 +4755,25 @@ module Reactor__addrod__subprogram_def
   in _f) in (
    (  try
     ( ();
-    ( [@GP_Sloc:reactor.adb:32:7] ([#"reactor.adb" 32 0 0] (if (( ([#"reactor.adb" 32 0 0] [#"reactor.adb" 32 0 0] (([@branch_id=2460] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int))) (((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < (5 : int)))) )));
+    ( [@GP_Sloc:reactor.adb:30:7] ([#"reactor.adb" 30 0 0] (if (( ([#"reactor.adb" 30 0 0] [#"reactor.adb" 30 0 0] (([@branch_id=2460] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int))) (((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < (5 : int)))) )));
     ( [@branch_id=2460] Main.spark__branch ).bool__content )) then (
      ( ();
-     ( [@GP_Sloc:reactor.adb:33:26] ([#"reactor.adb" 33 0 0] (let temp___239 [@mlw:proxy_symbol] [@introduced] = (let temp___238 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
-      ( [#"reactor.adb" 33 0 0] begin ensures {true} let _ = (let _ = temp___238.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
+     ( [@GP_Sloc:reactor.adb:31:26] ([#"reactor.adb" 31 0 0] (let temp___239 [@mlw:proxy_symbol] [@introduced] = (let temp___238 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
+      ( [#"reactor.adb" 31 0 0] begin ensures {true} let _ = (let _ = temp___238.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
        ()))
        in () end ;
-      { ( temp___238 ) with Reactor__trainreactor.__split_fields = { ( temp___238.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__rod_number = (Reactor__rods__rep.of_rep(([#"reactor.adb" 33 0 0] ( [@GP_Sloc:reactor.adb:33:45] [@vc:annotation] [@GP_Shape:if__this_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@comment:         This.rod_number := This.rod_number + 1;                                             ^ reactor.adb:33:45:VC_RANGE_CHECK] [@GP_Id:4] (Reactor__rods.range_check_(((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) + (1 : int)))) )))) } } )))
+      { ( temp___238 ) with Reactor__trainreactor.__split_fields = { ( temp___238.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__rod_number = (Reactor__rods__rep.of_rep(([#"reactor.adb" 31 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:31:45] [@GP_Shape:if__this_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@comment:         This.rod_number := This.rod_number + 1;                                             ^ reactor.adb:31:45:VC_RANGE_CHECK] [@GP_Id:4] (Reactor__rods.range_check_(((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) + (1 : int)))) )))) } } )))
       in (
        (Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___239.Reactor__trainreactor.__split_fields ))))
      ) );
-     ( [@GP_Sloc:reactor.adb:34:22] ([#"reactor.adb" 34 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:34:19] ([#"reactor.adb" 34 0 0] (let temp___241 [@mlw:proxy_symbol] [@introduced] = (let temp___240 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
-      ( [#"reactor.adb" 34 0 0] begin ensures {true} let _ = (let _ = temp___240.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow in (
+     ( [@GP_Sloc:reactor.adb:32:22] ([#"reactor.adb" 32 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:32:19] ([#"reactor.adb" 32 0 0] (let temp___241 [@mlw:proxy_symbol] [@introduced] = (let temp___240 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
+      ( [#"reactor.adb" 32 0 0] begin ensures {true} let _ = (let _ = temp___240.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow in (
        ()))
        in () end ;
       { ( temp___240 ) with Reactor__trainreactor.__split_fields = { ( temp___240.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__pow = (Reactor__power__rep.of_rep((Reactor__calculatepower___axiom.calculatepower({ Reactor__trainreactor.__split_fields = Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content })))) } } )))
       in (
-      [#"reactor.adb" 34 0 0] (Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___241.Reactor__trainreactor.__split_fields ))))
+      [#"reactor.adb" 32 0 0] (Reactor__addrod__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___241.Reactor__trainreactor.__split_fields ))))
      ) ) )) else (
      ()))) );
      raise Return__exc )
@@ -4821,7 +4821,7 @@ module Reactor__calculatepower__subprogram_def
  let def [#"reactor.ads" 43 0 0][@GP_Subp:reactor.ads:43] 
    (__void_param : unit)
   requires { [#"reactor.ads" 43 0 0] true }
-  ensures { [#"reactor.ads" 43 0 0] ([#"reactor.ads" 44 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:44:14] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:44:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:9] ( ( [@GP_Sloc:reactor.ads:44:14] [@GP_Pretty_Ada:3004] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] [@GP_Sloc:reactor.ads:44:60] (reactor__calculatepower__result.int__content <= (8000 : int)) ) ) )) }
+  ensures { [#"reactor.ads" 43 0 0] ([#"reactor.ads" 44 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:44:14] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:44:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:9] ( ( [@GP_Sloc:reactor.ads:44:14] [@GP_Pretty_Ada:3004] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3012] [@GP_Sloc:reactor.ads:44:60] (reactor__calculatepower__result.int__content <= (5200 : int)) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:43 *)
   ;
@@ -4837,26 +4837,26 @@ module Reactor__calculatepower__subprogram_def
   ;
    try
    ( ();
-   ([#"reactor.adb" 42 0 0] ( [#"reactor.adb" 42 0 0] assume { [#"reactor.adb" 42 0 0] (Reactor__power___axiom.default_initial_assumption Reactor__calculatepower__pow.pow.int__content False) };
-   [#"reactor.adb" 42 0 0] assume { [#"reactor.adb" 42 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__pow.pow.int__content False False True True) } ));
-   ([#"reactor.adb" 43 0 0] ( [#"reactor.adb" 43 0 0] (Reactor__calculatepower__maxpow.maxpow.int__content <- ( (8000 : int) ));
-   [#"reactor.adb" 43 0 0] assume { [#"reactor.adb" 43 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxpow.maxpow.int__content True False True True) } ));
-   ([#"reactor.adb" 44 0 0] ( [#"reactor.adb" 44 0 0] (Reactor__calculatepower__maxrod.maxrod.int__content <- ( (5 : int) ));
-   [#"reactor.adb" 44 0 0] assume { [#"reactor.adb" 44 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxrod.maxrod.int__content True False True True) } ));
+   ([#"reactor.adb" 40 0 0] ( [#"reactor.adb" 40 0 0] assume { [#"reactor.adb" 40 0 0] (Reactor__power___axiom.default_initial_assumption Reactor__calculatepower__pow.pow.int__content False) };
+   [#"reactor.adb" 40 0 0] assume { [#"reactor.adb" 40 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__pow.pow.int__content False False True True) } ));
+   ([#"reactor.adb" 41 0 0] ( [#"reactor.adb" 41 0 0] (Reactor__calculatepower__maxpow.maxpow.int__content <- ( (5200 : int) ));
+   [#"reactor.adb" 41 0 0] assume { [#"reactor.adb" 41 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxpow.maxpow.int__content True False True True) } ));
+   ([#"reactor.adb" 42 0 0] ( [#"reactor.adb" 42 0 0] (Reactor__calculatepower__maxrod.maxrod.int__content <- ( (5 : int) ));
+   [#"reactor.adb" 42 0 0] assume { [#"reactor.adb" 42 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__calculatepower__maxrod.maxrod.int__content True False True True) } ));
    ();
-   ( [@GP_Sloc:reactor.adb:48:7] ([#"reactor.adb" 48 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:48:15] ([#"reactor.adb" 48 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:48:24] ([#"reactor.adb" 48 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:48:35] ([#"reactor.adb" 48 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:48:12] ([#"reactor.adb" 48 0 0] [#"reactor.adb" 48 0 0] (Reactor__calculatepower__pow.pow.int__content <- ( ([#"reactor.adb" 48 0 0] ( [@vc:annotation] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:48:31:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:48:31] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:8] [@GP_Shape:pow_assign__mult] (Reactor__power.range_check_(([#"reactor.adb" 48 0 0] ( [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Sloc:reactor.adb:48:31] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:48:31:VC_OVERFLOW_CHECK] [@GP_Id:7] [@GP_Shape:pow_assign__mult] (Reactor__TpowerB.range_check_((([#"reactor.adb" 48 0 0] ( [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                      ^ reactor.adb:48:22:VC_DIVISION_CHECK] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Shape:pow_assign__mult__div] [@GP_Sloc:reactor.adb:48:22] [@GP_Id:6] (Int_Division.div_(Reactor__calculatepower__maxpow.maxpow.int__content) (Reactor__calculatepower__maxrod.maxrod.int__content)) )) * ((Reactor__calculatepower__maxrod.maxrod.int__content + (1 : int)) - (Reactor__rods__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)))))) )))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:50:14] ([#"reactor.adb" 50 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:50:7] ([#"reactor.adb" 50 0 0] ( [#"reactor.adb" 50 0 0] (reactor__calculatepower__result.int__content <- ( Reactor__calculatepower__pow.pow.int__content ));
-   [#"reactor.adb" 50 0 0] raise Return__exc )) );
+   ( [@GP_Sloc:reactor.adb:46:7] ([#"reactor.adb" 46 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:46:15] ([#"reactor.adb" 46 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:46:24] ([#"reactor.adb" 46 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:46:35] ([#"reactor.adb" 46 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:46:12] ([#"reactor.adb" 46 0 0] [#"reactor.adb" 46 0 0] (Reactor__calculatepower__pow.pow.int__content <- ( ([#"reactor.adb" 46 0 0] ( [@vc:annotation] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:46:31:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:46:31] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:8] [@GP_Shape:pow_assign__mult] (Reactor__power.range_check_(([#"reactor.adb" 46 0 0] ( [@vc:annotation] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:46:31:VC_OVERFLOW_CHECK] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Sloc:reactor.adb:46:31] [@GP_Id:7] [@GP_Shape:pow_assign__mult] (Reactor__TpowerB.range_check_((([#"reactor.adb" 46 0 0] ( [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                      ^ reactor.adb:46:22:VC_DIVISION_CHECK] [@GP_Shape:pow_assign__mult__div] [@GP_Sloc:reactor.adb:46:22] [@GP_Id:6] (Int_Division.div_(Reactor__calculatepower__maxpow.maxpow.int__content) (Reactor__calculatepower__maxrod.maxrod.int__content)) )) * ((Reactor__calculatepower__maxrod.maxrod.int__content + (1 : int)) - (Reactor__rods__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)))))) )))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:48:14] ([#"reactor.adb" 48 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:48:7] ([#"reactor.adb" 48 0 0] ( [#"reactor.adb" 48 0 0] (reactor__calculatepower__result.int__content <- ( Reactor__calculatepower__pow.pow.int__content ));
+   [#"reactor.adb" 48 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((reactor__calculatepower__result.int__content >= (0 : int))) ((reactor__calculatepower__result.int__content <= (8000 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((reactor__calculatepower__result.int__content >= (0 : int))) ((reactor__calculatepower__result.int__content <= (5200 : int)))) in (
    ()))
    in () end ;
   reactor__calculatepower__result.int__content )

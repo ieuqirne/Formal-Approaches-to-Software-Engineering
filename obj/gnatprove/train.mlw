@@ -1999,11 +1999,11 @@ module Train__weight
  use        "int".Int
 
  type weight =
-  < range 0 22000 >
+  < range 2000 22000 >
  
  val constant first 
    : int
-  ensures { result =  (0 : int) }
+  ensures { result =  (2000 : int) }
  
  val constant last 
    : int
@@ -2065,7 +2065,7 @@ module Train__reactorweight
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant reactorweight [#"train.ads" 8 0 0][@model_trace:2574] [@name:ReactorWeight] 
+ val constant reactorweight [#"train.ads" 8 0 0][@model_trace:2776] [@name:ReactorWeight] 
    : int
 
  
@@ -2080,7 +2080,7 @@ module Train__carriageweight
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant carriageweight [#"train.ads" 10 0 0][@model_trace:2584] [@name:CarriageWeight] 
+ val constant carriageweight [#"train.ads" 10 0 0][@model_trace:2786] [@name:CarriageWeight] 
    : int
 
  
@@ -2165,7 +2165,7 @@ module Train__carriage
  use        "int".Int
 
  type carriage =
-  < range 0 20 >
+  < range 0 10 >
  
  val constant first 
    : int
@@ -2173,7 +2173,7 @@ module Train__carriage
  
  val constant last 
    : int
-  ensures { result =  (20 : int) }
+  ensures { result =  (10 : int) }
  
  predicate in_range 
    (x : int) =
@@ -2697,7 +2697,7 @@ module Reactor__power
  use        "int".Int
 
  type power =
-  < range 0 8000 >
+  < range 0 5200 >
  
  val constant first 
    : int
@@ -2705,7 +2705,7 @@ module Reactor__power
  
  val constant last 
    : int
-  ensures { result =  (8000 : int) }
+  ensures { result =  (5200 : int) }
  
  predicate in_range 
    (x : int) =
@@ -2774,9 +2774,9 @@ module Reactor__trainreactor__rep
  use        Reactor__power__rep as Reactor__power__rep
 
  type __split_fields =
-  { rec__reactor__trainreactor__onoff [@model_trace:.3012] [@name:OnOff] : Reactor__statusonoff.statusonoff; rec__reactor__trainreactor__temp [@name:temp] [@model_trace:.3023] : Reactor__temperature.temperature; rec__reactor__trainreactor__rod_number [@model_trace:.3034] [@name:rod_number] : Reactor__rods.rods; rec__reactor__trainreactor__status [@model_trace:.3045] [@name:status] : Reactor__reactorstatus.reactorstatus; rec__reactor__trainreactor__pow [@name:pow] [@model_trace:.3056] : Reactor__power.power }
+  { rec__reactor__trainreactor__onoff [@model_trace:.3364] [@name:OnOff] : Reactor__statusonoff.statusonoff; rec__reactor__trainreactor__temp [@name:temp] [@model_trace:.3375] : Reactor__temperature.temperature; rec__reactor__trainreactor__rod_number [@name:rod_number] [@model_trace:.3386] : Reactor__rods.rods; rec__reactor__trainreactor__status [@model_trace:.3397] [@name:status] : Reactor__reactorstatus.reactorstatus; rec__reactor__trainreactor__pow [@name:pow] [@model_trace:.3408] : Reactor__power.power }
  
- function __split_fields_rec__reactor__trainreactor__onoff__projection [@model_trace:.3012] [@name:OnOff] 
+ function __split_fields_rec__reactor__trainreactor__onoff__projection [@model_trace:.3364] [@name:OnOff] 
    (a : __split_fields) : Reactor__statusonoff.statusonoff =
   a.rec__reactor__trainreactor__onoff
  
@@ -2784,7 +2784,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__onoff__projection
  
- function __split_fields_rec__reactor__trainreactor__temp__projection [@name:temp] [@model_trace:.3023] 
+ function __split_fields_rec__reactor__trainreactor__temp__projection [@name:temp] [@model_trace:.3375] 
    (a : __split_fields) : Reactor__temperature.temperature =
   a.rec__reactor__trainreactor__temp
  
@@ -2792,7 +2792,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__temp__projection
  
- function __split_fields_rec__reactor__trainreactor__rod_number__projection [@model_trace:.3034] [@name:rod_number] 
+ function __split_fields_rec__reactor__trainreactor__rod_number__projection [@name:rod_number] [@model_trace:.3386] 
    (a : __split_fields) : Reactor__rods.rods =
   a.rec__reactor__trainreactor__rod_number
  
@@ -2800,7 +2800,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__rod_number__projection
  
- function __split_fields_rec__reactor__trainreactor__status__projection [@model_trace:.3045] [@name:status] 
+ function __split_fields_rec__reactor__trainreactor__status__projection [@model_trace:.3397] [@name:status] 
    (a : __split_fields) : Reactor__reactorstatus.reactorstatus =
   a.rec__reactor__trainreactor__status
  
@@ -2808,7 +2808,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__status__projection
  
- function __split_fields_rec__reactor__trainreactor__pow__projection [@name:pow] [@model_trace:.3056] 
+ function __split_fields_rec__reactor__trainreactor__pow__projection [@name:pow] [@model_trace:.3408] 
    (a : __split_fields) : Reactor__power.power =
   a.rec__reactor__trainreactor__pow
  
@@ -3091,18 +3091,18 @@ end
 module Train__train__rep
  use        "_gnatprove_standard".Main
  use        "int".Int
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__speed as Train__speed
  use        Train__speed__rep as Train__speed__rep
  use        Train__weight as Train__weight
  use        Train__weight__rep as Train__weight__rep
  use        Train__carriage as Train__carriage
  use        Train__carriage__rep as Train__carriage__rep
- use        Reactor__trainreactor as Reactor__trainreactor
 
  type __split_fields =
-  { rec__train__train__reac [@name:reac] [@model_trace:.2615] : Reactor__trainreactor.trainreactor; rec__train__train__sp [@name:sp] [@model_trace:.2627] : Train__speed.speed; rec__train__train__wei [@name:wei] [@model_trace:.2638] : Train__weight.weight; rec__train__train__numbcarri [@model_trace:.2649] [@name:numbCarri] : Train__carriage.carriage }
+  { rec__train__train__reac [@name:reac] [@model_trace:.2817] : Reactor__trainreactor.trainreactor; rec__train__train__sp [@name:sp] [@model_trace:.2829] : Train__speed.speed; rec__train__train__wei [@name:wei] [@model_trace:.2840] : Train__weight.weight; rec__train__train__numbcarri [@name:numbCarri] [@model_trace:.2851] : Train__carriage.carriage }
  
- function __split_fields_rec__train__train__reac__projection [@name:reac] [@model_trace:.2615] 
+ function __split_fields_rec__train__train__reac__projection [@name:reac] [@model_trace:.2817] 
    (a : __split_fields) : Reactor__trainreactor.trainreactor =
   a.rec__train__train__reac
  
@@ -3110,7 +3110,7 @@ module Train__train__rep
  
  meta "inline:no" function __split_fields_rec__train__train__reac__projection
  
- function __split_fields_rec__train__train__sp__projection [@name:sp] [@model_trace:.2627] 
+ function __split_fields_rec__train__train__sp__projection [@name:sp] [@model_trace:.2829] 
    (a : __split_fields) : Train__speed.speed =
   a.rec__train__train__sp
  
@@ -3118,7 +3118,7 @@ module Train__train__rep
  
  meta "inline:no" function __split_fields_rec__train__train__sp__projection
  
- function __split_fields_rec__train__train__wei__projection [@name:wei] [@model_trace:.2638] 
+ function __split_fields_rec__train__train__wei__projection [@name:wei] [@model_trace:.2840] 
    (a : __split_fields) : Train__weight.weight =
   a.rec__train__train__wei
  
@@ -3126,7 +3126,7 @@ module Train__train__rep
  
  meta "inline:no" function __split_fields_rec__train__train__wei__projection
  
- function __split_fields_rec__train__train__numbcarri__projection [@model_trace:.2649] [@name:numbCarri] 
+ function __split_fields_rec__train__train__numbcarri__projection [@name:numbCarri] [@model_trace:.2851] 
    (a : __split_fields) : Train__carriage.carriage =
   a.rec__train__train__numbcarri
  
@@ -3372,13 +3372,13 @@ module Train__train
 
 end
 
-(* Module for defining the constant "this" defined at train.ads:35, created in Gnat2Why.Decls.Translate_Constant *)
-module Train__calculateweight__this
+(* Module for defining the constant "this" defined at train.ads:22, created in Gnat2Why.Decls.Translate_Constant *)
+module Train__calculatespeed__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Train__train as Train__train
 
- val constant this [#"train.ads" 35 0 0][@model_projected] [@model_trace:2801] [@name:This] 
+ val constant this [#"train.ads" 22 0 0][@model_projected] [@name:This] [@model_trace:2871] 
    : Train__train.train
 
  
@@ -3388,7 +3388,45 @@ module Train__calculateweight__this
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at train.ads:35, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "this" defined at train.ads:22, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Train__calculatespeed__this___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "calculatespeed" defined at train.ads:22, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__calculatespeed
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        Train__train as Train__train
+
+ val function calculatespeed 
+   (this : Train__train.train) : int
+ 
+ val predicate calculatespeed__function_guard 
+   (temp___result_154 : int) (this : Train__train.train)
+
+end
+
+(* Module for defining the constant "this" defined at train.ads:47, created in Gnat2Why.Decls.Translate_Constant *)
+module Train__calculateweight__this
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        Train__train as Train__train
+
+ val constant this [#"train.ads" 47 0 0][@model_projected] [@model_trace:3155] [@name:This] 
+   : Train__train.train
+
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "this" defined at train.ads:47, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Train__calculateweight__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3396,7 +3434,7 @@ module Train__calculateweight__this___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "calculateweight" defined at train.ads:35, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "calculateweight" defined at train.ads:47, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Train__calculateweight
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3406,7 +3444,7 @@ module Train__calculateweight
    (this : Train__train.train) : int
  
  val predicate calculateweight__function_guard 
-   (temp___result_154 : int) (this : Train__train.train)
+   (temp___result_155 : int) (this : Train__train.train)
 
 end
 
@@ -3545,13 +3583,16 @@ module Ada__text_io__count__rep
  meta "inline:no" function to_rep
 
 end
-(* Module for defining a ref holding the value of variable "this" defined at train.ads:22, created in Gnat2Why.Decls.Translate_Variable *)
-module Train__calculatespeed__this
+
+(* Module for defining the constant "this" defined at reactor.ads:43, created in Gnat2Why.Decls.Translate_Constant *)
+module Reactor__calculatepower__this
  use        "_gnatprove_standard".Main
  use        "int".Int
- use        Train__train as Train__train
+ use        Reactor__trainreactor as Reactor__trainreactor
 
- val this__split_fields [#"train.ads" 22 0 0][@model_projected] [@model_trace:2669] [@name:This]  : Train__train.__split_fields__ref 
+ val constant this [#"reactor.ads" 43 0 0][@model_trace:3530] [@model_projected] [@name:This] 
+   : Reactor__trainreactor.trainreactor
+
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3559,21 +3600,223 @@ module Train__calculatespeed__this
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at train.ads:22, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Train__calculatespeed__this___axiom
+(* Module giving an empty axiom for the entity "this" defined at reactor.ads:43, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Reactor__calculatepower__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
 
 end
 
+(* Module for axiomatizing the array theory associated to type "TpowerarrayB" defined at reactor.ads:6, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__integer
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Standard__integer as Standard__integer
+ use        Standard__integer__rep as Standard__integer__rep
+
+ function index_I1_one 
+   : int =
+  (1 : int)
+ 
+ type component_type =
+  Standard__integer.integer
+ 
+ clone export "_gnatprove_standard".Array__1 with axiom .,
+ type I1.t = int, 
+ predicate I1.le = Int.(<=), 
+ predicate I1.lt = Int.(<), 
+ predicate I1.gt = Int.(>), 
+ function I1.add = Int.(+), 
+ function I1.sub = Int.(-), 
+ function I1.one = index_I1_one, 
+ type component_type = component_type
+ 
+ function bool_eq 
+   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
+  ( (if ((a__first <= a__last)) then (
+   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+   (b__first > b__last))) /\ (forall temp___idx_158   : int.
+   (if (( (a__first <= temp___idx_158) /\ (temp___idx_158 <= a__last) )) then (
+    ((Standard__integer__rep.to_rep (get a temp___idx_158)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_158))))) else true)) )
+ val bool_eq 
+   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool
+  ensures { result = bool_eq (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) }
+ 
+ axiom bool_eq_rev :
+  (forall a   b   : map.
+  (forall a__first   a__last   b__first   b__last   : int.
+   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
+    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+    (b__first > b__last))) /\ (forall temp___idx_158   : int.
+    (if (( (a__first <= temp___idx_158) /\ (temp___idx_158 <= a__last) )) then (
+     ((Standard__integer__rep.to_rep (get a temp___idx_158)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_158))))) else true)) ) )))
+
+end
+
+(* Module for axiomatizing concatenation for the array theory associated to type "TpowerarrayB" defined at reactor.ads:6, created in Why.Gen.Arrays.Declare_Concatenation_Symbols *)
+module Array__Int__Standard__integer__Concat
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Array__Int__Standard__integer as Array__Int__Standard__integer
+
+ function index_Index_one 
+   : int =
+  (1 : int)
+ 
+ clone export "_gnatprove_standard".Array__1__Concat with axiom .,
+ type component_type = Array__Int__Standard__integer.component_type, 
+ type map = Array__Int__Standard__integer.map, 
+ type Index.t = int, 
+ predicate Index.le = Int.(<=), 
+ predicate Index.lt = Int.(<), 
+ predicate Index.gt = Int.(>), 
+ function Index.add = Int.(+), 
+ function Index.sub = Int.(-), 
+ function Index.one = index_Index_one, 
+ function get = Array__Int__Standard__integer.get
+
+end
+
+(* Module for axiomatizing comparison for the array theory associated to type "TpowerarrayB" defined at reactor.ads:6, created in Why.Gen.Arrays.Declare_Comparison_Symbols *)
+module Array__Int__Standard__integer_Comp
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Standard__integer__rep as Standard__integer__rep
+ use        Array__Int__Standard__integer as Array__Int__Standard__integer
+
+ function index_Index_one 
+   : int =
+  (1 : int)
+ 
+ clone export "ada__model".Array_Int_Rep_Comparison_Axiom with axiom .,
+ type component_type = Array__Int__Standard__integer.component_type, 
+ function to_rep = Standard__integer__rep.to_rep, 
+ type map = Array__Int__Standard__integer.map, 
+ type Index.t = int, 
+ predicate Index.le = Int.(<=), 
+ predicate Index.lt = Int.(<), 
+ predicate Index.gt = Int.(>), 
+ function Index.add = Int.(+), 
+ function Index.sub = Int.(-), 
+ function Index.one = index_Index_one, 
+ function get = Array__Int__Standard__integer.get, 
+ function bool_eq = Array__Int__Standard__integer.bool_eq
+
+end
+
+(* Module for axiomatizing type "TpowerarrayB" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__TpowerarrayB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Standard__integer as Standard__integer
+ use        Reactor__TpowerB as Reactor__TpowerB
+ use        Reactor__TpowerB__rep as Reactor__TpowerB__rep
+ use        Reactor__power as Reactor__power
+ use        Array__Int__Standard__integer as Array__Int__Standard__integer
+
+ type component_type =
+  Standard__integer.integer
+ 
+ function index_1_id 
+   (x : int) : int =
+  x
+ 
+ clone export "ada__model".Unconstr_Array with axiom .,
+ type map = Array__Int__Standard__integer.map, 
+ function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
+ type index_base_type = Reactor__TpowerB.tpowerB, 
+ type index_rep_type = int, 
+ function to_rep = Reactor__TpowerB__rep.to_rep, 
+ function rep_to_int = index_1_id, 
+ predicate in_range_base = Reactor__TpowerB.in_range, 
+ predicate index_dynamic_property = Reactor__power.dynamic_property, 
+ predicate index_rep_le = Int.(<=)
+ 
+ type tpowerarrayB =
+  __t
+ 
+ meta "model_projection" function to_array
+ 
+ meta "inline:no" function to_array
+ 
+ meta "model_projection" function first
+ 
+ meta "inline:no" function first
+ 
+ meta "model_projection" function last
+ 
+ meta "inline:no" function last
+ 
+ type tpowerarrayB__ref =
+  { mutable tpowerarrayB__content : tpowerarrayB }
+ 
+ function tpowerarrayB__ref_tpowerarrayB__content__projection 
+   (a : tpowerarrayB__ref) : tpowerarrayB =
+  a.tpowerarrayB__content
+ 
+ meta "model_projection" function tpowerarrayB__ref_tpowerarrayB__content__projection
+ 
+ meta "inline:no" function tpowerarrayB__ref_tpowerarrayB__content__projection
+ 
+ val tpowerarrayB__havoc 
+   (x : tpowerarrayB__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing type "powerarray" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__powerarray
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Standard__integer as Standard__integer
+ use        Array__Int__Standard__integer as Array__Int__Standard__integer
+
+ type component_type =
+  Standard__integer.integer
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (5200 : int) }
+ 
+ clone export "ada__model".Constr_Array with axiom .,
+ type map = Array__Int__Standard__integer.map, 
+ function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
+ function first = first, 
+ function last = last, 
+ type index_rep_type = int
+
+end
+
+(* Module for possibly declaring a logic function for "calculatepower" defined at reactor.ads:43, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Reactor__calculatepower
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        Reactor__trainreactor as Reactor__trainreactor
+
+ val function calculatepower 
+   (this : Reactor__trainreactor.trainreactor) : int
+ 
+ val predicate calculatepower__function_guard 
+   (temp___result_159 : int) (this : Reactor__trainreactor.trainreactor)
+
+end
 (* Module for defining a ref holding the value of variable "this" defined at train.ads:31, created in Gnat2Why.Decls.Translate_Variable *)
 module Train__addcarriage__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Train__train as Train__train
 
- val this__split_fields [#"train.ads" 31 0 0][@model_trace:2752] [@model_projected] [@name:This]  : Train__train.__split_fields__ref 
+ val this__split_fields [#"train.ads" 31 0 0][@model_projected] [@model_trace:2947] [@name:This]  : Train__train.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3589,13 +3832,13 @@ module Train__addcarriage__this___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "pow" defined at train.adb:8, created in Gnat2Why.Decls.Translate_Variable *)
-module Train__calculatespeed__pow
+(* Module for defining a ref holding the value of variable "this" defined at train.ads:35, created in Gnat2Why.Decls.Translate_Variable *)
+module Train__decreasecarriage__this
  use        "_gnatprove_standard".Main
  use        "int".Int
- use        "_gnatprove_standard".Float32 as Float32
+ use        Train__train as Train__train
 
- val pow [#"train.adb" 8 0 0][@model_projected] [@model_trace:2345] [@name:Pow]  : Float32.t__ref 
+ val this__split_fields [#"train.ads" 35 0 0][@model_projected] [@model_trace:2996] [@name:This]  : Train__train.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3603,21 +3846,21 @@ module Train__calculatespeed__pow
 
 end
 
-(* Module giving an empty axiom for the entity "pow" defined at train.adb:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Train__calculatespeed__pow___axiom
+(* Module giving an empty axiom for the entity "this" defined at train.ads:35, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Train__decreasecarriage__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
 
 end
 
-(* Module for defining a ref holding the value of variable "wei" defined at train.adb:9, created in Gnat2Why.Decls.Translate_Variable *)
-module Train__calculatespeed__wei
+(* Module for defining a ref holding the value of variable "this" defined at train.ads:39, created in Gnat2Why.Decls.Translate_Variable *)
+module Train__addrod__this
  use        "_gnatprove_standard".Main
  use        "int".Int
- use        "_gnatprove_standard".Float32 as Float32
+ use        Train__train as Train__train
 
- val wei [#"train.adb" 9 0 0][@model_trace:2361] [@model_projected] [@name:Wei]  : Float32.t__ref 
+ val this__split_fields [#"train.ads" 39 0 0][@model_projected] [@model_trace:3045] [@name:This]  : Train__train.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3625,8 +3868,30 @@ module Train__calculatespeed__wei
 
 end
 
-(* Module giving an empty axiom for the entity "wei" defined at train.adb:9, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Train__calculatespeed__wei___axiom
+(* Module giving an empty axiom for the entity "this" defined at train.ads:39, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Train__addrod__this___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for defining a ref holding the value of variable "this" defined at train.ads:43, created in Gnat2Why.Decls.Translate_Variable *)
+module Train__decreaserod__this
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        Train__train as Train__train
+
+ val this__split_fields [#"train.ads" 43 0 0][@model_trace:3100] [@model_projected] [@name:This]  : Train__train.__split_fields__ref 
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "this" defined at train.ads:43, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Train__decreaserod__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
@@ -3639,7 +3904,7 @@ module Train__calculatespeed__spfloat
  use        "int".Int
  use        "_gnatprove_standard".Float32 as Float32
 
- val spfloat [#"train.adb" 10 0 0][@model_projected] [@name:SpFloat] [@model_trace:2375]  : Float32.t__ref 
+ val spfloat [#"train.adb" 10 0 0][@model_projected] [@model_trace:2346] [@name:SpFloat]  : Float32.t__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3655,12 +3920,12 @@ module Train__calculatespeed__spfloat___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "ret" defined at train.adb:60, created in Gnat2Why.Decls.Translate_Variable *)
-module Train__calculateweight__ret
+(* Module for defining a ref holding the value of variable "spee" defined at train.adb:13, created in Gnat2Why.Decls.Translate_Variable *)
+module Train__calculatespeed__spee
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val ret [#"train.adb" 60 0 0][@model_projected] [@model_trace:2497] [@name:ret]  : int__ref 
+ val spee [#"train.adb" 13 0 0][@name:Spee] [@model_trace:2355] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3668,7 +3933,28 @@ module Train__calculateweight__ret
 
 end
 
-(* Module giving an empty axiom for the entity "ret" defined at train.adb:60, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "spee" defined at train.adb:13, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Train__calculatespeed__spee___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for defining a ref holding the value of variable "ret" defined at train.adb:95, created in Gnat2Why.Decls.Translate_Variable *)
+module Train__calculateweight__ret
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val ret [#"train.adb" 95 0 0][@model_projected] [@name:ret] [@model_trace:2689]  : int__ref 
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "ret" defined at train.adb:95, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Train__calculateweight__ret___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4249,16 +4535,32 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "calculatespeed" defined at train.ads:22, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Train__calculatespeed
+(* Module for possibly declaring a logic function for "addcarriage" defined at train.ads:31, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__addcarriage
  use        "_gnatprove_standard".Main
  use        "int".Int
 
 
 end
 
-(* Module for possibly declaring a logic function for "addcarriage" defined at train.ads:31, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Train__addcarriage
+(* Module for possibly declaring a logic function for "decreasecarriage" defined at train.ads:35, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__decreasecarriage
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "addrod" defined at train.ads:39, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__addrod
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "decreaserod" defined at train.ads:43, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__decreaserod
  use        "_gnatprove_standard".Main
  use        "int".Int
 
@@ -4275,7 +4577,7 @@ module Ada__text_io__line_length__2
    (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
  
  val predicate line_length__2__function_guard 
-   (temp___result_155 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
+   (temp___result_156 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
 
 end
 
@@ -4289,7 +4591,7 @@ module Ada__text_io__page_length__2
    (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
  
  val predicate page_length__2__function_guard 
-   (temp___result_156 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
+   (temp___result_157 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
 
 end
 
@@ -4309,19 +4611,19 @@ module Train__speed___axiom
  use        Train__speed as Train__speed
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_161 : int) (temp___is_init_157 : bool) (temp___skip_constant_158 : bool) (temp___do_toplevel_159 : bool) (temp___do_typ_inv_160 : bool) =
-  (if (( temp___is_init_157 \/ (Train__speed.first <= Train__speed.last) )) then (
-   (Train__speed.dynamic_property Train__speed.first Train__speed.last temp___expr_161)) else true)
+   (temp___expr_164 : int) (temp___is_init_160 : bool) (temp___skip_constant_161 : bool) (temp___do_toplevel_162 : bool) (temp___do_typ_inv_163 : bool) =
+  (if (( temp___is_init_160 \/ (Train__speed.first <= Train__speed.last) )) then (
+   (Train__speed.dynamic_property Train__speed.first Train__speed.last temp___expr_164)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_161 : int) (temp___is_init_157 : bool) (temp___skip_constant_158 : bool) (temp___do_toplevel_159 : bool) (temp___do_typ_inv_160 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_161 : int) (temp___is_init_157 : bool) (temp___skip_constant_158 : bool) (temp___do_toplevel_159 : bool) (temp___do_typ_inv_160 : bool) }
+   (temp___expr_164 : int) (temp___is_init_160 : bool) (temp___skip_constant_161 : bool) (temp___do_toplevel_162 : bool) (temp___do_typ_inv_163 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_164 : int) (temp___is_init_160 : bool) (temp___skip_constant_161 : bool) (temp___do_toplevel_162 : bool) (temp___do_typ_inv_163 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_162 : int) (temp___skip_top_level_163 : bool) =
+   (temp___expr_165 : int) (temp___skip_top_level_166 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_162 : int) (temp___skip_top_level_163 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_162 : int) (temp___skip_top_level_163 : bool) }
+   (temp___expr_165 : int) (temp___skip_top_level_166 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_165 : int) (temp___skip_top_level_166 : bool) }
 
 end
 
@@ -4341,19 +4643,19 @@ module Train__weight___axiom
  use        Train__weight as Train__weight
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_168 : int) (temp___is_init_164 : bool) (temp___skip_constant_165 : bool) (temp___do_toplevel_166 : bool) (temp___do_typ_inv_167 : bool) =
-  (if (( temp___is_init_164 \/ (Train__weight.first <= Train__weight.last) )) then (
-   (Train__weight.dynamic_property Train__weight.first Train__weight.last temp___expr_168)) else true)
+   (temp___expr_171 : int) (temp___is_init_167 : bool) (temp___skip_constant_168 : bool) (temp___do_toplevel_169 : bool) (temp___do_typ_inv_170 : bool) =
+  (if (( temp___is_init_167 \/ (Train__weight.first <= Train__weight.last) )) then (
+   (Train__weight.dynamic_property Train__weight.first Train__weight.last temp___expr_171)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_168 : int) (temp___is_init_164 : bool) (temp___skip_constant_165 : bool) (temp___do_toplevel_166 : bool) (temp___do_typ_inv_167 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_168 : int) (temp___is_init_164 : bool) (temp___skip_constant_165 : bool) (temp___do_toplevel_166 : bool) (temp___do_typ_inv_167 : bool) }
+   (temp___expr_171 : int) (temp___is_init_167 : bool) (temp___skip_constant_168 : bool) (temp___do_toplevel_169 : bool) (temp___do_typ_inv_170 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_171 : int) (temp___is_init_167 : bool) (temp___skip_constant_168 : bool) (temp___do_toplevel_169 : bool) (temp___do_typ_inv_170 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_169 : int) (temp___skip_top_level_170 : bool) =
+   (temp___expr_172 : int) (temp___skip_top_level_173 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_169 : int) (temp___skip_top_level_170 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_169 : int) (temp___skip_top_level_170 : bool) }
+   (temp___expr_172 : int) (temp___skip_top_level_173 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_172 : int) (temp___skip_top_level_173 : bool) }
 
 end
 
@@ -4373,19 +4675,19 @@ module Train__carriage___axiom
  use        Train__carriage as Train__carriage
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_175 : int) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) =
-  (if (( temp___is_init_171 \/ (Train__carriage.first <= Train__carriage.last) )) then (
-   (Train__carriage.dynamic_property Train__carriage.first Train__carriage.last temp___expr_175)) else true)
+   (temp___expr_178 : int) (temp___is_init_174 : bool) (temp___skip_constant_175 : bool) (temp___do_toplevel_176 : bool) (temp___do_typ_inv_177 : bool) =
+  (if (( temp___is_init_174 \/ (Train__carriage.first <= Train__carriage.last) )) then (
+   (Train__carriage.dynamic_property Train__carriage.first Train__carriage.last temp___expr_178)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_175 : int) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_175 : int) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) }
+   (temp___expr_178 : int) (temp___is_init_174 : bool) (temp___skip_constant_175 : bool) (temp___do_toplevel_176 : bool) (temp___do_typ_inv_177 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_178 : int) (temp___is_init_174 : bool) (temp___skip_constant_175 : bool) (temp___do_toplevel_176 : bool) (temp___do_typ_inv_177 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_176 : int) (temp___skip_top_level_177 : bool) =
+   (temp___expr_179 : int) (temp___skip_top_level_180 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_176 : int) (temp___skip_top_level_177 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_176 : int) (temp___skip_top_level_177 : bool) }
+   (temp___expr_179 : int) (temp___skip_top_level_180 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_179 : int) (temp___skip_top_level_180 : bool) }
 
 end
 
@@ -4397,19 +4699,19 @@ module Reactor__statusonoff___axiom
  use        Reactor__statusonoff as Reactor__statusonoff
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_182 : int) (temp___is_init_178 : bool) (temp___skip_constant_179 : bool) (temp___do_toplevel_180 : bool) (temp___do_typ_inv_181 : bool) =
-  (if (( temp___is_init_178 \/ (Reactor__statusonoff.first <= Reactor__statusonoff.last) )) then (
-   (Reactor__statusonoff.dynamic_property Reactor__statusonoff.first Reactor__statusonoff.last temp___expr_182)) else true)
+   (temp___expr_185 : int) (temp___is_init_181 : bool) (temp___skip_constant_182 : bool) (temp___do_toplevel_183 : bool) (temp___do_typ_inv_184 : bool) =
+  (if (( temp___is_init_181 \/ (Reactor__statusonoff.first <= Reactor__statusonoff.last) )) then (
+   (Reactor__statusonoff.dynamic_property Reactor__statusonoff.first Reactor__statusonoff.last temp___expr_185)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_182 : int) (temp___is_init_178 : bool) (temp___skip_constant_179 : bool) (temp___do_toplevel_180 : bool) (temp___do_typ_inv_181 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_182 : int) (temp___is_init_178 : bool) (temp___skip_constant_179 : bool) (temp___do_toplevel_180 : bool) (temp___do_typ_inv_181 : bool) }
+   (temp___expr_185 : int) (temp___is_init_181 : bool) (temp___skip_constant_182 : bool) (temp___do_toplevel_183 : bool) (temp___do_typ_inv_184 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_185 : int) (temp___is_init_181 : bool) (temp___skip_constant_182 : bool) (temp___do_toplevel_183 : bool) (temp___do_typ_inv_184 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_183 : int) (temp___skip_top_level_184 : bool) =
+   (temp___expr_186 : int) (temp___skip_top_level_187 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_183 : int) (temp___skip_top_level_184 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_183 : int) (temp___skip_top_level_184 : bool) }
+   (temp___expr_186 : int) (temp___skip_top_level_187 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_186 : int) (temp___skip_top_level_187 : bool) }
 
 end
 
@@ -4429,19 +4731,19 @@ module Reactor__temperature___axiom
  use        Reactor__temperature as Reactor__temperature
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_189 : int) (temp___is_init_185 : bool) (temp___skip_constant_186 : bool) (temp___do_toplevel_187 : bool) (temp___do_typ_inv_188 : bool) =
-  (if (( temp___is_init_185 \/ (Reactor__temperature.first <= Reactor__temperature.last) )) then (
-   (Reactor__temperature.dynamic_property Reactor__temperature.first Reactor__temperature.last temp___expr_189)) else true)
+   (temp___expr_192 : int) (temp___is_init_188 : bool) (temp___skip_constant_189 : bool) (temp___do_toplevel_190 : bool) (temp___do_typ_inv_191 : bool) =
+  (if (( temp___is_init_188 \/ (Reactor__temperature.first <= Reactor__temperature.last) )) then (
+   (Reactor__temperature.dynamic_property Reactor__temperature.first Reactor__temperature.last temp___expr_192)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_189 : int) (temp___is_init_185 : bool) (temp___skip_constant_186 : bool) (temp___do_toplevel_187 : bool) (temp___do_typ_inv_188 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_189 : int) (temp___is_init_185 : bool) (temp___skip_constant_186 : bool) (temp___do_toplevel_187 : bool) (temp___do_typ_inv_188 : bool) }
+   (temp___expr_192 : int) (temp___is_init_188 : bool) (temp___skip_constant_189 : bool) (temp___do_toplevel_190 : bool) (temp___do_typ_inv_191 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_192 : int) (temp___is_init_188 : bool) (temp___skip_constant_189 : bool) (temp___do_toplevel_190 : bool) (temp___do_typ_inv_191 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_190 : int) (temp___skip_top_level_191 : bool) =
+   (temp___expr_193 : int) (temp___skip_top_level_194 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_190 : int) (temp___skip_top_level_191 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_190 : int) (temp___skip_top_level_191 : bool) }
+   (temp___expr_193 : int) (temp___skip_top_level_194 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_193 : int) (temp___skip_top_level_194 : bool) }
 
 end
 
@@ -4461,19 +4763,19 @@ module Reactor__rods___axiom
  use        Reactor__rods as Reactor__rods
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_196 : int) (temp___is_init_192 : bool) (temp___skip_constant_193 : bool) (temp___do_toplevel_194 : bool) (temp___do_typ_inv_195 : bool) =
-  (if (( temp___is_init_192 \/ (Reactor__rods.first <= Reactor__rods.last) )) then (
-   (Reactor__rods.dynamic_property Reactor__rods.first Reactor__rods.last temp___expr_196)) else true)
+   (temp___expr_199 : int) (temp___is_init_195 : bool) (temp___skip_constant_196 : bool) (temp___do_toplevel_197 : bool) (temp___do_typ_inv_198 : bool) =
+  (if (( temp___is_init_195 \/ (Reactor__rods.first <= Reactor__rods.last) )) then (
+   (Reactor__rods.dynamic_property Reactor__rods.first Reactor__rods.last temp___expr_199)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_196 : int) (temp___is_init_192 : bool) (temp___skip_constant_193 : bool) (temp___do_toplevel_194 : bool) (temp___do_typ_inv_195 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_196 : int) (temp___is_init_192 : bool) (temp___skip_constant_193 : bool) (temp___do_toplevel_194 : bool) (temp___do_typ_inv_195 : bool) }
+   (temp___expr_199 : int) (temp___is_init_195 : bool) (temp___skip_constant_196 : bool) (temp___do_toplevel_197 : bool) (temp___do_typ_inv_198 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_199 : int) (temp___is_init_195 : bool) (temp___skip_constant_196 : bool) (temp___do_toplevel_197 : bool) (temp___do_typ_inv_198 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_197 : int) (temp___skip_top_level_198 : bool) =
+   (temp___expr_200 : int) (temp___skip_top_level_201 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_197 : int) (temp___skip_top_level_198 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_197 : int) (temp___skip_top_level_198 : bool) }
+   (temp___expr_200 : int) (temp___skip_top_level_201 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_200 : int) (temp___skip_top_level_201 : bool) }
 
 end
 
@@ -4485,19 +4787,19 @@ module Reactor__reactorstatus___axiom
  use        Reactor__reactorstatus as Reactor__reactorstatus
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_203 : int) (temp___is_init_199 : bool) (temp___skip_constant_200 : bool) (temp___do_toplevel_201 : bool) (temp___do_typ_inv_202 : bool) =
-  (if (( temp___is_init_199 \/ (Reactor__reactorstatus.first <= Reactor__reactorstatus.last) )) then (
-   (Reactor__reactorstatus.dynamic_property Reactor__reactorstatus.first Reactor__reactorstatus.last temp___expr_203)) else true)
+   (temp___expr_206 : int) (temp___is_init_202 : bool) (temp___skip_constant_203 : bool) (temp___do_toplevel_204 : bool) (temp___do_typ_inv_205 : bool) =
+  (if (( temp___is_init_202 \/ (Reactor__reactorstatus.first <= Reactor__reactorstatus.last) )) then (
+   (Reactor__reactorstatus.dynamic_property Reactor__reactorstatus.first Reactor__reactorstatus.last temp___expr_206)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_203 : int) (temp___is_init_199 : bool) (temp___skip_constant_200 : bool) (temp___do_toplevel_201 : bool) (temp___do_typ_inv_202 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_203 : int) (temp___is_init_199 : bool) (temp___skip_constant_200 : bool) (temp___do_toplevel_201 : bool) (temp___do_typ_inv_202 : bool) }
+   (temp___expr_206 : int) (temp___is_init_202 : bool) (temp___skip_constant_203 : bool) (temp___do_toplevel_204 : bool) (temp___do_typ_inv_205 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_206 : int) (temp___is_init_202 : bool) (temp___skip_constant_203 : bool) (temp___do_toplevel_204 : bool) (temp___do_typ_inv_205 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_204 : int) (temp___skip_top_level_205 : bool) =
+   (temp___expr_207 : int) (temp___skip_top_level_208 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_204 : int) (temp___skip_top_level_205 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_204 : int) (temp___skip_top_level_205 : bool) }
+   (temp___expr_207 : int) (temp___skip_top_level_208 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_207 : int) (temp___skip_top_level_208 : bool) }
 
 end
 
@@ -4517,19 +4819,19 @@ module Reactor__power___axiom
  use        Reactor__power as Reactor__power
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_210 : int) (temp___is_init_206 : bool) (temp___skip_constant_207 : bool) (temp___do_toplevel_208 : bool) (temp___do_typ_inv_209 : bool) =
-  (if (( temp___is_init_206 \/ (Reactor__power.first <= Reactor__power.last) )) then (
-   (Reactor__power.dynamic_property Reactor__power.first Reactor__power.last temp___expr_210)) else true)
+   (temp___expr_213 : int) (temp___is_init_209 : bool) (temp___skip_constant_210 : bool) (temp___do_toplevel_211 : bool) (temp___do_typ_inv_212 : bool) =
+  (if (( temp___is_init_209 \/ (Reactor__power.first <= Reactor__power.last) )) then (
+   (Reactor__power.dynamic_property Reactor__power.first Reactor__power.last temp___expr_213)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_210 : int) (temp___is_init_206 : bool) (temp___skip_constant_207 : bool) (temp___do_toplevel_208 : bool) (temp___do_typ_inv_209 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_210 : int) (temp___is_init_206 : bool) (temp___skip_constant_207 : bool) (temp___do_toplevel_208 : bool) (temp___do_typ_inv_209 : bool) }
+   (temp___expr_213 : int) (temp___is_init_209 : bool) (temp___skip_constant_210 : bool) (temp___do_toplevel_211 : bool) (temp___do_typ_inv_212 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_213 : int) (temp___is_init_209 : bool) (temp___skip_constant_210 : bool) (temp___do_toplevel_211 : bool) (temp___do_typ_inv_212 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_211 : int) (temp___skip_top_level_212 : bool) =
+   (temp___expr_214 : int) (temp___skip_top_level_215 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_211 : int) (temp___skip_top_level_212 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_211 : int) (temp___skip_top_level_212 : bool) }
+   (temp___expr_214 : int) (temp___skip_top_level_215 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_214 : int) (temp___skip_top_level_215 : bool) }
 
 end
 
@@ -4538,6 +4840,7 @@ module Reactor__trainreactor___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Reactor__statusonoff as Reactor__statusonoff
  use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
  use        Reactor__temperature as Reactor__temperature
@@ -4548,26 +4851,25 @@ module Reactor__trainreactor___axiom
  use        Reactor__reactorstatus__rep as Reactor__reactorstatus__rep
  use        Reactor__power as Reactor__power
  use        Reactor__power__rep as Reactor__power__rep
- use        Reactor__trainreactor as Reactor__trainreactor
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_217 : Reactor__trainreactor.trainreactor) (temp___is_init_213 : bool) (temp___skip_constant_214 : bool) (temp___do_toplevel_215 : bool) (temp___do_typ_inv_216 : bool) =
+   (temp___expr_220 : Reactor__trainreactor.trainreactor) (temp___is_init_216 : bool) (temp___skip_constant_217 : bool) (temp___do_toplevel_218 : bool) (temp___do_typ_inv_219 : bool) =
   true
  val dynamic_invariant [@inline] 
-   (temp___expr_217 : Reactor__trainreactor.trainreactor) (temp___is_init_213 : bool) (temp___skip_constant_214 : bool) (temp___do_toplevel_215 : bool) (temp___do_typ_inv_216 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_217 : Reactor__trainreactor.trainreactor) (temp___is_init_213 : bool) (temp___skip_constant_214 : bool) (temp___do_toplevel_215 : bool) (temp___do_typ_inv_216 : bool) }
+   (temp___expr_220 : Reactor__trainreactor.trainreactor) (temp___is_init_216 : bool) (temp___skip_constant_217 : bool) (temp___do_toplevel_218 : bool) (temp___do_typ_inv_219 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_220 : Reactor__trainreactor.trainreactor) (temp___is_init_216 : bool) (temp___skip_constant_217 : bool) (temp___do_toplevel_218 : bool) (temp___do_typ_inv_219 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_218 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_219 : bool) =
-  ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_218)) then (
-   ((Reactor__statusonoff__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_218)) then (
-   ((Reactor__temperature__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_218)) then (
-   ((Reactor__rods__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_218)) then (
-   ((Reactor__reactorstatus__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_218)) then (
-   ((Reactor__power__rep.to_rep temp___expr_218.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )
+   (temp___expr_221 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_222 : bool) =
+  ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_221)) then (
+   ((Reactor__statusonoff__rep.to_rep temp___expr_221.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_221)) then (
+   ((Reactor__temperature__rep.to_rep temp___expr_221.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_221)) then (
+   ((Reactor__rods__rep.to_rep temp___expr_221.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_221)) then (
+   ((Reactor__reactorstatus__rep.to_rep temp___expr_221.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_221)) then (
+   ((Reactor__power__rep.to_rep temp___expr_221.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )
  val default_initial_assumption [@inline] 
-   (temp___expr_218 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_219 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_218 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_219 : bool) }
+   (temp___expr_221 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_222 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_221 : Reactor__trainreactor.trainreactor) (temp___skip_top_level_222 : bool) }
 
 end
 
@@ -4577,6 +4879,7 @@ module Train__train___axiom
  use        "int".Int
  use        "int".Int
  use        Train__train as Train__train
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__speed as Train__speed
  use        Train__speed__rep as Train__speed__rep
  use        Train__weight as Train__weight
@@ -4593,32 +4896,31 @@ module Train__train___axiom
  use        Reactor__reactorstatus__rep as Reactor__reactorstatus__rep
  use        Reactor__power as Reactor__power
  use        Reactor__power__rep as Reactor__power__rep
- use        Reactor__trainreactor as Reactor__trainreactor
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_224 : Train__train.train) (temp___is_init_220 : bool) (temp___skip_constant_221 : bool) (temp___do_toplevel_222 : bool) (temp___do_typ_inv_223 : bool) =
+   (temp___expr_227 : Train__train.train) (temp___is_init_223 : bool) (temp___skip_constant_224 : bool) (temp___do_toplevel_225 : bool) (temp___do_typ_inv_226 : bool) =
   true
  val dynamic_invariant [@inline] 
-   (temp___expr_224 : Train__train.train) (temp___is_init_220 : bool) (temp___skip_constant_221 : bool) (temp___do_toplevel_222 : bool) (temp___do_typ_inv_223 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_224 : Train__train.train) (temp___is_init_220 : bool) (temp___skip_constant_221 : bool) (temp___do_toplevel_222 : bool) (temp___do_typ_inv_223 : bool) }
+   (temp___expr_227 : Train__train.train) (temp___is_init_223 : bool) (temp___skip_constant_224 : bool) (temp___do_toplevel_225 : bool) (temp___do_typ_inv_226 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_227 : Train__train.train) (temp___is_init_223 : bool) (temp___skip_constant_224 : bool) (temp___do_toplevel_225 : bool) (temp___do_typ_inv_226 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_225 : Train__train.train) (temp___skip_top_level_226 : bool) =
-  ( ( (if ((Train__train.train__train__reac__pred temp___expr_225)) then (
-   (let temp___227 [@mlw:proxy_symbol] [@introduced] = temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac in (
-    ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
-     ((Reactor__statusonoff__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
-     ((Reactor__temperature__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
-     ((Reactor__rods__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
-     ((Reactor__reactorstatus__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
-     ((Reactor__power__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )))
-  ) else true) /\ (if ((Train__train.train__train__sp__pred temp___expr_225)) then (
-   ((Train__speed__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__sp) = (0 : int))) else true) )/\( (if ((Train__train.train__train__wei__pred temp___expr_225)) then (
-   ((Train__weight__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__wei) = (2000 : int))) else true)/\(if ((Train__train.train__train__numbcarri__pred temp___expr_225)) then (
-   ((Train__carriage__rep.to_rep temp___expr_225.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) = (0 : int))) else true) ) )
+   (temp___expr_228 : Train__train.train) (temp___skip_top_level_229 : bool) =
+  ( ( (if ((Train__train.train__train__reac__pred temp___expr_228)) then (
+   (let temp___230 [@mlw:proxy_symbol] [@introduced] = temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+    ( ( (if ((Reactor__trainreactor.reactor__trainreactor__onoff__pred temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
+     ((Reactor__statusonoff__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int))) else true) /\ (if ((Reactor__trainreactor.reactor__trainreactor__temp__pred temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
+     ((Reactor__temperature__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__temp) = (20 : int))) else true) )/\( ( (if ((Reactor__trainreactor.reactor__trainreactor__rod_number__pred temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
+     ((Reactor__rods__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int))) else true)/\(if ((Reactor__trainreactor.reactor__trainreactor__status__pred temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
+     ((Reactor__reactorstatus__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status) = (0 : int))) else true) )/\(if ((Reactor__trainreactor.reactor__trainreactor__pow__pred temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac)) then (
+     ((Reactor__power__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) = (0 : int))) else true) ) )))
+  ) else true) /\ (if ((Train__train.train__train__sp__pred temp___expr_228)) then (
+   ((Train__speed__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__sp) = (0 : int))) else true) )/\( (if ((Train__train.train__train__wei__pred temp___expr_228)) then (
+   ((Train__weight__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__wei) = (2000 : int))) else true)/\(if ((Train__train.train__train__numbcarri__pred temp___expr_228)) then (
+   ((Train__carriage__rep.to_rep temp___expr_228.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) = (0 : int))) else true) ) )
  val default_initial_assumption [@inline] 
-   (temp___expr_225 : Train__train.train) (temp___skip_top_level_226 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_225 : Train__train.train) (temp___skip_top_level_226 : bool) }
+   (temp___expr_228 : Train__train.train) (temp___skip_top_level_229 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_228 : Train__train.train) (temp___skip_top_level_229 : bool) }
 
 end
 
@@ -4638,19 +4940,50 @@ module Ada__text_io__count___axiom
  use        Ada__text_io__count as Ada__text_io__count
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_232 : int) (temp___is_init_228 : bool) (temp___skip_constant_229 : bool) (temp___do_toplevel_230 : bool) (temp___do_typ_inv_231 : bool) =
-  (if (( temp___is_init_228 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
-   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_232)) else true)
+   (temp___expr_235 : int) (temp___is_init_231 : bool) (temp___skip_constant_232 : bool) (temp___do_toplevel_233 : bool) (temp___do_typ_inv_234 : bool) =
+  (if (( temp___is_init_231 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
+   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_235)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_232 : int) (temp___is_init_228 : bool) (temp___skip_constant_229 : bool) (temp___do_toplevel_230 : bool) (temp___do_typ_inv_231 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_232 : int) (temp___is_init_228 : bool) (temp___skip_constant_229 : bool) (temp___do_toplevel_230 : bool) (temp___do_typ_inv_231 : bool) }
+   (temp___expr_235 : int) (temp___is_init_231 : bool) (temp___skip_constant_232 : bool) (temp___do_toplevel_233 : bool) (temp___do_typ_inv_234 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_235 : int) (temp___is_init_231 : bool) (temp___skip_constant_232 : bool) (temp___do_toplevel_233 : bool) (temp___do_typ_inv_234 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_233 : int) (temp___skip_top_level_234 : bool) =
+   (temp___expr_236 : int) (temp___skip_top_level_237 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_233 : int) (temp___skip_top_level_234 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_233 : int) (temp___skip_top_level_234 : bool) }
+   (temp___expr_236 : int) (temp___skip_top_level_237 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_236 : int) (temp___skip_top_level_237 : bool) }
+
+end
+
+(* Module giving axioms for type "TpowerarrayB" defined at reactor.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__TpowerarrayB___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module giving axioms for type "powerarray" defined at reactor.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__powerarray___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        Array__Int__Standard__integer as Array__Int__Standard__integer
+ use        Array__Int__Standard__integer as Array__Int__Standard__integer
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_242 : Array__Int__Standard__integer.map) (temp___is_init_238 : bool) (temp___skip_constant_239 : bool) (temp___do_toplevel_240 : bool) (temp___do_typ_inv_241 : bool) =
+  true
+ val dynamic_invariant [@inline] 
+   (temp___expr_242 : Array__Int__Standard__integer.map) (temp___is_init_238 : bool) (temp___skip_constant_239 : bool) (temp___do_toplevel_240 : bool) (temp___do_typ_inv_241 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_242 : Array__Int__Standard__integer.map) (temp___is_init_238 : bool) (temp___skip_constant_239 : bool) (temp___do_toplevel_240 : bool) (temp___do_typ_inv_241 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_244 : Array__Int__Standard__integer.map) (temp___skip_top_level_245 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_244 : Array__Int__Standard__integer.map) (temp___skip_top_level_245 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_244 : Array__Int__Standard__integer.map) (temp___skip_top_level_245 : bool) }
 
 end
 (* Module for defining the value of constant "reactorweight" defined at train.ads:8, created in Gnat2Why.Decls.Translate_Constant_Value *)
@@ -4673,7 +5006,7 @@ module Train__carriageweight___axiom
  use        Train__carriageweight as Train__carriageweight
 
  axiom carriageweight__def_axiom :
-  ((Train__carriageweight.carriageweight ) = (1000 : int))
+  ((Train__carriageweight.carriageweight ) = (2000 : int))
 
 end
 
@@ -4683,22 +5016,26 @@ module Train__calculatespeed___axiom
  use        "int".Int
  use        "int".Int
  use        Train__train as Train__train
+ use        Train__calculatespeed as Train__calculatespeed
  use        Train__train___axiom as Train__train___axiom
- use        Train__speed as Train__speed
- use        Train__speed__rep as Train__speed__rep
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Train__speed___axiom as Train__speed___axiom
  use        Train__weight as Train__weight
  use        Train__weight__rep as Train__weight__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
  use        Reactor__power as Reactor__power
  use        Reactor__power__rep as Reactor__power__rep
- use        Reactor__trainreactor as Reactor__trainreactor
 
  val calculatespeed 
-   (this__split_fields : Train__train.__split_fields__ref) : unit
-  requires {  ( ( ( ( ( [@GP_Pretty_Ada:2688] ((Train__weight__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2696] ((Train__weight__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) /\ ( [@GP_Pretty_Ada:2706] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) ) /\ ( [@GP_Pretty_Ada:2714] ((Reactor__power__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2724] ((Reactor__power__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) <= (8000 : int)) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2734] ((Train__speed__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2742] ((Train__speed__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) <= (100 : int)) ) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
+   (this : Train__train.train) : int
+  requires {  ( ( ( ( [@GP_Pretty_Ada:2891] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (2000 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) /\ ( [@GP_Pretty_Ada:2909] ((Reactor__power__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2919] ((Reactor__power__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) <= (5200 : int)) ) ) }
+  ensures {  ( ( (result = (Train__calculatespeed.calculatespeed this)) /\ (Train__calculatespeed.calculatespeed__function_guard result this) )/\( (Train__speed___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:2929] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2937] (result <= (100 : int)) ) ) ) ) }
+ 
+ axiom calculatespeed__post_axiom :
+  (forall this   : Train__train.train [(Train__calculatespeed.calculatespeed this)].
+   ( ( (Train__train___axiom.dynamic_invariant this True True True True) /\ ( ( ( ( [@GP_Pretty_Ada:2891] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (2000 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) /\ ( [@GP_Pretty_Ada:2909] ((Reactor__power__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2919] ((Reactor__power__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) <= (5200 : int)) ) ) ) -> (let result = (Train__calculatespeed.calculatespeed this) in (
+    (if ((Train__calculatespeed.calculatespeed__function_guard result this)) then (
+     ( ( ( ( [@GP_Pretty_Ada:2929] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2937] (result <= (100 : int)) ) ) /\ (Train__speed___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+    ))
 
 end
 
@@ -4709,21 +5046,84 @@ module Train__addcarriage___axiom
  use        "int".Int
  use        Train__train as Train__train
  use        Train__train___axiom as Train__train___axiom
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__carriage as Train__carriage
  use        Train__carriage__rep as Train__carriage__rep
  use        Reactor__statusonoff as Reactor__statusonoff
  use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__trainreactor as Reactor__trainreactor
 
  val addcarriage 
    (this__split_fields : Train__train.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2773] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2779] ((Train__carriage__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) < (20 : int)) ) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:20779] ((Train__carriage__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) > (Train__carriage__rep.to_rep (old { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri ))) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
+  requires {  ( ( [@GP_Pretty_Ada:2968] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2974] ((Train__carriage__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) < (10 : int)) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:20923] ((Train__carriage__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) > (Train__carriage__rep.to_rep (old { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri ))) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
   writes {this__split_fields}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "calculateweight" defined at train.ads:35, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "decreasecarriage" defined at train.ads:35, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__decreasecarriage___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__train as Train__train
+ use        Train__train___axiom as Train__train___axiom
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Train__carriage as Train__carriage
+ use        Train__carriage__rep as Train__carriage__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+
+ val decreasecarriage 
+   (this__split_fields : Train__train.__split_fields__ref) : unit
+  requires {  ( ( [@GP_Pretty_Ada:3017] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:3023] ((Train__carriage__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) > (0 : int)) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:20974] ((Train__carriage__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) < (Train__carriage__rep.to_rep (old { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri ))) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
+  writes {this__split_fields}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "addrod" defined at train.ads:39, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__addrod___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__train as Train__train
+ use        Train__train___axiom as Train__train___axiom
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Reactor__rods as Reactor__rods
+ use        Reactor__rods__rep as Reactor__rods__rep
+
+ val addrod 
+   (this__split_fields : Train__train.__split_fields__ref) : unit
+  requires {  ( ( [@GP_Pretty_Ada:3066] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:3074] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (5 : int)) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:21031] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (Reactor__rods__rep.to_rep (old { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
+  writes {this__split_fields}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "decreaserod" defined at train.ads:43, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__decreaserod___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__train as Train__train
+ use        Train__train___axiom as Train__train___axiom
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Reactor__rods as Reactor__rods
+ use        Reactor__rods__rep as Reactor__rods__rep
+
+ val decreaserod 
+   (this__split_fields : Train__train.__split_fields__ref) : unit
+  requires {  ( ( [@GP_Pretty_Ada:3121] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:3129] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (1 : int)) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:21088] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (Reactor__rods__rep.to_rep (old { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) /\ (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = this__split_fields.Train__train.__split_fields__content } True True True True) ) }
+  writes {this__split_fields}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "calculateweight" defined at train.ads:47, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Train__calculateweight___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4731,23 +5131,23 @@ module Train__calculateweight___axiom
  use        Train__train as Train__train
  use        Train__train___axiom as Train__train___axiom
  use        Train__calculateweight as Train__calculateweight
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__weight as Train__weight
  use        Train__weight___axiom as Train__weight___axiom
  use        Train__weight__rep as Train__weight__rep
  use        Reactor__statusonoff as Reactor__statusonoff
  use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__trainreactor as Reactor__trainreactor
 
  val calculateweight 
    (this : Train__train.train) : int
-  requires {  ( ( ( [@GP_Pretty_Ada:2823] ((Reactor__statusonoff__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2829] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2837] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) }
-  ensures {  ( ( (result = (Train__calculateweight.calculateweight this)) /\ (Train__calculateweight.calculateweight__function_guard result this) )/\( (Train__weight___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:2847] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2855] (result <= (22000 : int)) ) ) ) ) }
+  requires {  ( ( ( [@GP_Pretty_Ada:3177] ((Reactor__statusonoff__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:3183] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (2000 : int)) ) ) /\ ( [@GP_Pretty_Ada:3191] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) }
+  ensures {  ( ( (result = (Train__calculateweight.calculateweight this)) /\ (Train__calculateweight.calculateweight__function_guard result this) )/\( (Train__weight___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:3201] (result >= (2000 : int)) ) /\ ( [@GP_Pretty_Ada:3207] (result <= (22000 : int)) ) ) ) ) }
  
  axiom calculateweight__post_axiom :
   (forall this   : Train__train.train [(Train__calculateweight.calculateweight this)].
-   ( ( (Train__train___axiom.dynamic_invariant this True True True True) /\ ( ( ( [@GP_Pretty_Ada:2823] ((Reactor__statusonoff__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2829] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2837] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) ) -> (let result = (Train__calculateweight.calculateweight this) in (
+   ( ( (Train__train___axiom.dynamic_invariant this True True True True) /\ ( ( ( [@GP_Pretty_Ada:3177] ((Reactor__statusonoff__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:3183] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (2000 : int)) ) ) /\ ( [@GP_Pretty_Ada:3191] ((Train__weight__rep.to_rep this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) ) -> (let result = (Train__calculateweight.calculateweight this) in (
     (if ((Train__calculateweight.calculateweight__function_guard result this)) then (
-     ( ( ( ( [@GP_Pretty_Ada:2847] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2855] (result <= (22000 : int)) ) ) /\ (Train__weight___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+     ( ( ( ( [@GP_Pretty_Ada:3201] (result >= (2000 : int)) ) /\ ( [@GP_Pretty_Ada:3207] (result <= (22000 : int)) ) ) /\ (Train__weight___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
     ))
 
 end
@@ -4824,6 +5224,30 @@ module Ada__text_io__page_length__2___axiom
 
 end
 
+(* Module for declaring a program function (and possibly an axiom) for "calculatepower" defined at reactor.ads:43, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Reactor__calculatepower___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Reactor__calculatepower as Reactor__calculatepower
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
+
+ val calculatepower 
+   (this : Reactor__trainreactor.trainreactor) : int
+  requires {  true }
+  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:3550] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3558] (result <= (5200 : int)) ) ) ) ) }
+ 
+ axiom calculatepower__post_axiom :
+  (forall this   : Reactor__trainreactor.trainreactor [(Reactor__calculatepower.calculatepower this)].
+   ( (Reactor__trainreactor___axiom.dynamic_invariant this True True True True) -> (let result = (Reactor__calculatepower.calculatepower this) in (
+    (if ((Reactor__calculatepower.calculatepower__function_guard result this)) then (
+     ( ( ( ( [@GP_Pretty_Ada:3550] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:3558] (result <= (5200 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+    ))
+
+end
+
 (* Module for checking absence of run-time errors and package initial condition on package elaboration of "train" defined at train.ads:3, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
 module Train__package_def
  use        "_gnatprove_standard".Main
@@ -4870,7 +5294,7 @@ module Train__package_def
    ()))
    in () end ;
   [#"train.ads" 8 0 0] assume { [#"train.ads" 8 0 0] (Train__weight___axiom.dynamic_invariant Train__reactorweight.reactorweight True False True True) } ));
-  ([#"train.ads" 10 0 0] ( [#"train.ads" 10 0 0] begin ensures {true} let _ = (let _ = (1000 : int) in (
+  ([#"train.ads" 10 0 0] ( [#"train.ads" 10 0 0] begin ensures {true} let _ = (let _ = (2000 : int) in (
    ()))
    in () end ;
   [#"train.ads" 10 0 0] assume { [#"train.ads" 10 0 0] (Train__weight___axiom.dynamic_invariant Train__carriageweight.carriageweight True False True True) } ));
@@ -4889,18 +5313,33 @@ module Train__package_def
   ([#"train.ads" 35 0 0] ());
   ([#"train.ads" 37 0 0] ());
   ([#"train.ads" 36 0 0] ());
-  ([#"train.ads" 36 0 0] ());
-  ([#"train.ads" 36 0 0] ());
-  ([#"train.ads" 36 0 0] ());
-  ([#"train.ads" 36 0 0] ());
+  ([#"train.ads" 39 0 0] ());
+  ([#"train.ads" 41 0 0] ());
+  ([#"train.ads" 40 0 0] ());
+  ([#"train.ads" 43 0 0] ());
+  ([#"train.ads" 45 0 0] ());
+  ([#"train.ads" 44 0 0] ());
+  ([#"train.ads" 47 0 0] ());
+  ([#"train.ads" 49 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
+  ([#"train.ads" 48 0 0] ());
    assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
   ();
   ([#"train.adb" 5 0 0] ());
   ([#"train.adb" 7 0 0] ());
-  ([#"train.adb" 42 0 0] ());
-  ([#"train.adb" 54 0 0] ());
+  ([#"train.adb" 47 0 0] ());
+  ([#"train.adb" 57 0 0] ());
+  ([#"train.adb" 67 0 0] ());
+  ([#"train.adb" 78 0 0] ());
+  ([#"train.adb" 89 0 0] ());
   ();
-  ( [@GP_Sloc:train.adb:82:1] ([#"train.adb" 82 0 0] ()) ) )
+  ( [@GP_Sloc:train.adb:119:1] ([#"train.adb" 119 0 0] ()) ) )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "calculatespeed" defined at train.ads:22, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4911,27 +5350,22 @@ module Train__calculatespeed__subprogram_def
  use        "_gnatprove_standard".Main as Main
  use        "_gnatprove_standard".Float32 as Float32
  use        "_gnatprove_standard".Boolean as Boolean
- use        Standard__float as Standard__float
  use        Standard__float___axiom as Standard__float___axiom
- use        Train__calculatespeed__this as Train__calculatespeed__this
  use        Train__train as Train__train
+ use        Train__calculatespeed__this as Train__calculatespeed__this
  use        Train__train___axiom as Train__train___axiom
- use        Train__calculatespeed__pow as Train__calculatespeed__pow
- use        Train__calculatespeed__wei as Train__calculatespeed__wei
  use        Train__calculatespeed__spfloat as Train__calculatespeed__spfloat
+ use        Train__calculatespeed__spee as Train__calculatespeed__spee
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__speed as Train__speed
- use        Train__speed__rep as Train__speed__rep
+ use        Train__speed___axiom as Train__speed___axiom
  use        Train__weight as Train__weight
  use        Train__weight__rep as Train__weight__rep
- use        Reactor__statusonoff as Reactor__statusonoff
- use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
  use        Reactor__power as Reactor__power
  use        Reactor__power__rep as Reactor__power__rep
- use        Reactor__trainreactor as Reactor__trainreactor
  use        Standard__float___axiom as Standard__float___axiom
- use        Train__calculatespeed__pow___axiom as Train__calculatespeed__pow___axiom
- use        Train__calculatespeed__wei___axiom as Train__calculatespeed__wei___axiom
  use        Train__calculatespeed__spfloat___axiom as Train__calculatespeed__spfloat___axiom
+ use        Train__calculatespeed__spee___axiom as Train__calculatespeed__spee___axiom
  use        Train__speed___axiom as Train__speed___axiom
  use        Train__weight___axiom as Train__weight___axiom
  use        Train__carriage___axiom as Train__carriage___axiom
@@ -4944,72 +5378,67 @@ module Train__calculatespeed__subprogram_def
  use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
  use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
 
+ val train__calculatespeed__result [@model_trace:2864@result] [@model_projected] [@name:calculateSpeed]  : int__ref 
+ 
  let def [#"train.ads" 22 0 0][@GP_Subp:train.ads:22] 
    (__void_param : unit)
   requires { [#"train.ads" 22 0 0] true }
-  ensures { [#"train.ads" 22 0 0] ([#"train.ads" 25 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:train.ads:25:14] [@model_vc_post] [@comment:     Post => This.sp >= Speed'First and This.sp <= Speed'Last;              ^ train.ads:25:14:VC_POSTCONDITION] [@GP_Shape:pragargs__and] [@GP_Id:6] ( ( [@GP_Sloc:train.ads:25:14] [@GP_Pretty_Ada:2734] ((Train__speed__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) >= (0 : int)) ) /\ ( [@GP_Sloc:train.ads:25:41] [@GP_Pretty_Ada:2742] ((Train__speed__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp) <= (100 : int)) ) ) )) }
+  ensures { [#"train.ads" 22 0 0] ([#"train.ads" 25 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:train.ads:25:14] [@comment:     Post => calculateSpeed'Result >= Speed'First  and calculateSpeed'Result <= Speed'Last;              ^ train.ads:25:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:6] ( ( [@GP_Pretty_Ada:2929] [@GP_Sloc:train.ads:25:14] (train__calculatespeed__result.int__content >= (0 : int)) ) /\ ( [@GP_Sloc:train.ads:25:56] [@GP_Pretty_Ada:2937] (train__calculatespeed__result.int__content <= (100 : int)) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:22 *)
   ;
-   assume {  (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content } True False True True) };
+   assume {  (Train__train___axiom.dynamic_invariant Train__calculatespeed__this.this True False True True) };
   () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:22 *)
   ;
   () (* Check for RTE in the Pre of the subprogram train.ads:22 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Boolean.andb((Boolean.andb(((Train__weight__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei)) >= (0 : int))) (((Train__weight__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei)) <= (22000 : int))))) (((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))))) (((Reactor__power__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)) >= (0 : int))))) (((Reactor__power__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)) <= (8000 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Boolean.andb(((Train__weight__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)) >= (2000 : int))) (((Train__weight__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)) <= (22000 : int))))) (((Reactor__power__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)) >= (0 : int))))) (((Reactor__power__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)) <= (5200 : int)))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram train.ads:22 *)
   ;
-   assume {  ( ( ( ( ( [@GP_Pretty_Ada:2688] ((Train__weight__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2696] ((Train__weight__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) /\ ( [@GP_Pretty_Ada:2706] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) ) /\ ( [@GP_Pretty_Ada:2714] ((Reactor__power__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2724] ((Reactor__power__rep.to_rep { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) <= (8000 : int)) ) ) };
+   assume {  ( ( ( ( [@GP_Pretty_Ada:2891] ((Train__weight__rep.to_rep Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (2000 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((Train__weight__rep.to_rep Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) /\ ( [@GP_Pretty_Ada:2909] ((Reactor__power__rep.to_rep Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2919] ((Reactor__power__rep.to_rep Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow) <= (5200 : int)) ) ) };
    try
    ( ();
-   ([#"train.adb" 8 0 0] ( [#"train.adb" 8 0 0] (Train__calculatespeed__pow.pow.Float32.t__content <- ( (Float32.of_int_rne((Reactor__power__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)))) ));
-   [#"train.adb" 8 0 0] assume { [#"train.adb" 8 0 0] (Standard__float___axiom.dynamic_invariant Train__calculatespeed__pow.pow.Float32.t__content True False True True) } ));
-   ([#"train.adb" 9 0 0] ( [#"train.adb" 9 0 0] (Train__calculatespeed__wei.wei.Float32.t__content <- ( (Float32.of_int_rne((Train__weight__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__wei)))) ));
-   [#"train.adb" 9 0 0] assume { [#"train.adb" 9 0 0] (Standard__float___axiom.dynamic_invariant Train__calculatespeed__wei.wei.Float32.t__content True False True True) } ));
    ([#"train.adb" 10 0 0] ( [#"train.adb" 10 0 0] assume { [#"train.adb" 10 0 0] (Standard__float___axiom.default_initial_assumption Train__calculatespeed__spfloat.spfloat.Float32.t__content False) };
    [#"train.adb" 10 0 0] assume { [#"train.adb" 10 0 0] (Standard__float___axiom.dynamic_invariant Train__calculatespeed__spfloat.spfloat.Float32.t__content False False True True) } ));
+   ([#"train.adb" 13 0 0] ( [#"train.adb" 13 0 0] assume { [#"train.adb" 13 0 0] (Train__speed___axiom.default_initial_assumption Train__calculatespeed__spee.spee.int__content False) };
+   [#"train.adb" 13 0 0] assume { [#"train.adb" 13 0 0] (Train__speed___axiom.dynamic_invariant Train__calculatespeed__spee.spee.int__content False False True True) } ));
    ();
-   ( [@GP_Sloc:train.adb:25:7] ([#"train.adb" 25 0 0] (if (( ([#"train.adb" 25 0 0] [#"train.adb" 25 0 0] (([@branch_id=2385] Main.spark__branch).bool__content <- ( ((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int)) )));
-   ( [@branch_id=2385] Main.spark__branch ).bool__content )) then (
+   ( [@GP_Sloc:train.adb:26:7] ([#"train.adb" 26 0 0] (if (( ([#"train.adb" 26 0 0] [#"train.adb" 26 0 0] (([@branch_id=2365] Main.spark__branch).bool__content <- ( ((Reactor__power__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow)) = (0 : int)) )));
+   ( [@branch_id=2365] Main.spark__branch ).bool__content )) then (
     ( ();
-    ( [@GP_Sloc:train.adb:26:10] ([#"train.adb" 26 0 0] ()) );
-    ( [@GP_Sloc:train.adb:26:18] ([#"train.adb" 26 0 0] [#"train.adb" 26 0 0] (Train__calculatespeed__spfloat.spfloat.Float32.t__content <- ( (0.0E-1:Float32.t) ))) ) )) else (
+    ( [@GP_Sloc:train.adb:27:10] ([#"train.adb" 27 0 0] ()) );
+    ( [@GP_Sloc:train.adb:27:18] ([#"train.adb" 27 0 0] [#"train.adb" 27 0 0] (Train__calculatespeed__spfloat.spfloat.Float32.t__content <- ( (0.0E-1:Float32.t) ))) ) )) else (
     ( ();
-    ( [@GP_Sloc:train.adb:28:10] ([#"train.adb" 28 0 0] ()) );
-    ( [@GP_Sloc:train.adb:28:21] ([#"train.adb" 28 0 0] ()) );
-    ( [@GP_Sloc:train.adb:28:27] ([#"train.adb" 28 0 0] ()) );
-    ( [@GP_Sloc:train.adb:28:18] ([#"train.adb" 28 0 0] [#"train.adb" 28 0 0] (Train__calculatespeed__spfloat.spfloat.Float32.t__content <- ( ([#"train.adb" 28 0 0] ( [@GP_Reason:VC_FP_OVERFLOW_CHECK] [@vc:annotation] [@comment:         SpFloat := Pow / Wei * 100.0;                               ^ train.adb:28:31:VC_FP_OVERFLOW_CHECK] [@GP_Sloc:train.adb:28:31] [@GP_Id:4] [@GP_Shape:if__spfloat_assign__mult] (Standard__float.range_check_((Float32.mul_rne(([#"train.adb" 28 0 0] ( [@GP_Sloc:train.adb:28:25] [@GP_Reason:VC_FP_OVERFLOW_CHECK] [@vc:annotation] [@GP_Shape:if__spfloat_assign__mult__div] [@comment:         SpFloat := Pow / Wei * 100.0;                         ^ train.adb:28:25:VC_FP_OVERFLOW_CHECK] [@GP_Id:3] (Standard__float.range_check_(([#"train.adb" 28 0 0] ( [@GP_Sloc:train.adb:28:25] [@comment:         SpFloat := Pow / Wei * 100.0;                         ^ train.adb:28:25:VC_DIVISION_CHECK] [@vc:annotation] [@GP_Shape:if__spfloat_assign__mult__div] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Id:2] (Float32.div_rne_(Train__calculatespeed__pow.pow.Float32.t__content) (Train__calculatespeed__wei.wei.Float32.t__content)) )))) ))) ((100.0:Float32.t))))) )) ))) ) )))) );
-   ( [@GP_Sloc:train.adb:31:10] ([#"train.adb" 31 0 0] ()) );
-   ( [@GP_Sloc:train.adb:31:7] ([#"train.adb" 31 0 0] (if (( ([#"train.adb" 31 0 0] [#"train.adb" 31 0 0] (([@branch_id=2404] Main.spark__branch).bool__content <- ( (Float32.gt(Train__calculatespeed__spfloat.spfloat.Float32.t__content) ((100.0:Float32.t))) )));
-   ( [@branch_id=2404] Main.spark__branch ).bool__content )) then (
+    ( [@GP_Sloc:train.adb:29:10] ([#"train.adb" 29 0 0] ()) );
+    ( [@GP_Sloc:train.adb:29:18] ([#"train.adb" 29 0 0] [#"train.adb" 29 0 0] (Train__calculatespeed__spfloat.spfloat.Float32.t__content <- ( (Float32.mul_rne(([#"train.adb" 29 0 0] ( [@vc:annotation] [@GP_Shape:if__spfloat_assign__mult__div] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         SpFloat := Float(This.reac.pow) / Float(This.wei) * 100.0;                                          ^ train.adb:29:42:VC_DIVISION_CHECK] [@GP_Id:2] [@GP_Sloc:train.adb:29:42] (Float32.div_rne_((Float32.of_int_rne((Reactor__power__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow))))) ((Float32.of_int_rne((Train__weight__rep.to_rep(Train__calculatespeed__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)))))) ))) ((100.0:Float32.t))) ))) ) )))) );
+   ( [@GP_Sloc:train.adb:32:10] ([#"train.adb" 32 0 0] ()) );
+   ( [@GP_Sloc:train.adb:32:7] ([#"train.adb" 32 0 0] (if (( ([#"train.adb" 32 0 0] [#"train.adb" 32 0 0] (([@branch_id=2394] Main.spark__branch).bool__content <- ( (Float32.gt(Train__calculatespeed__spfloat.spfloat.Float32.t__content) ((100.0:Float32.t))) )));
+   ( [@branch_id=2394] Main.spark__branch ).bool__content )) then (
     ( ();
-    ( [@GP_Sloc:train.adb:32:17] ([#"train.adb" 32 0 0] (let temp___236 [@mlw:proxy_symbol] [@introduced] = (let temp___235 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content } in (
-     ( [#"train.adb" 32 0 0] begin ensures {true} let _ = (let _ = temp___235.Train__train.__split_fields.Train__train.rec__train__train__sp in (
-      ()))
-      in () end ;
-     { ( temp___235 ) with Train__train.__split_fields = { ( temp___235.Train__train.__split_fields ) with Train__train.rec__train__train__sp = ( 100 : Train__speed.speed ) } } )))
-     in (
-     [#"train.adb" 32 0 0] (Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content <- ( temp___236.Train__train.__split_fields ))))
-    ) ) )) else (
-    ( ();
-    ( [@GP_Sloc:train.adb:34:27] ([#"train.adb" 34 0 0] ()) );
-    ( [@GP_Sloc:train.adb:34:18] ([#"train.adb" 34 0 0] (let temp___238 [@mlw:proxy_symbol] [@introduced] = (let temp___237 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content } in (
-     ( [#"train.adb" 34 0 0] begin ensures {true} let _ = (let _ = temp___237.Train__train.__split_fields.Train__train.rec__train__train__sp in (
-      ()))
-      in () end ;
-     { ( temp___237 ) with Train__train.__split_fields = { ( temp___237.Train__train.__split_fields ) with Train__train.rec__train__train__sp = (Train__speed__rep.of_rep(([#"train.adb" 34 0 0] ( [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:train.adb:34:27] [@GP_Id:5] [@GP_Shape:if__this_assign__typeconv] [@comment:         This.sp := Speed(SpFloat);                           ^ train.adb:34:27:VC_RANGE_CHECK] (Train__speed.range_check_((Float32.to_int_rna(Train__calculatespeed__spfloat.spfloat.Float32.t__content)))) )))) } } )))
-     in (
-      (Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content <- ( temp___238.Train__train.__split_fields ))))
-    ) ) )))) );
+    ( [@GP_Sloc:train.adb:33:9] ([#"train.adb" 33 0 0] ()) );
+    ( [@GP_Sloc:train.adb:33:14] ([#"train.adb" 33 0 0] [#"train.adb" 33 0 0] (Train__calculatespeed__spee.spee.int__content <- ( (100 : int) ))) ) )) else (
+    ( [@GP_Sloc:train.adb:34:7] (if (( ([#"train.adb" 34 0 0] [#"train.adb" 34 0 0] (([@branch_id=2401] Main.spark__branch).bool__content <- ( (Float32.eq(Train__calculatespeed__spfloat.spfloat.Float32.t__content) ((0.0E-1:Float32.t))) )));
+    ( [@branch_id=2401] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:35:12] ([#"train.adb" 35 0 0] ()) );
+     ( [@GP_Sloc:train.adb:35:17] ([#"train.adb" 35 0 0] [#"train.adb" 35 0 0] (Train__calculatespeed__spee.spee.int__content <- ( (0 : int) ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:train.adb:37:9] ([#"train.adb" 37 0 0] ()) );
+     ( [@GP_Sloc:train.adb:37:23] ([#"train.adb" 37 0 0] ()) );
+     ( [@GP_Sloc:train.adb:37:14] ([#"train.adb" 37 0 0] [#"train.adb" 37 0 0] (Train__calculatespeed__spee.spee.int__content <- ( ([#"train.adb" 37 0 0] ( [@vc:annotation] [@comment:        Spee := Speed(SpFloat);                       ^ train.adb:37:23:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:train.adb:37:23] [@GP_Id:5] [@GP_Shape:if__spee_assign__typeconv] (Train__speed.range_check_((Float32.to_int_rna(Train__calculatespeed__spfloat.spfloat.Float32.t__content)))) )) ))) ) ))) )))) );
+   ( [@GP_Sloc:train.adb:40:14] ([#"train.adb" 40 0 0] ()) );
+   ( [@GP_Sloc:train.adb:40:7] ([#"train.adb" 40 0 0] ( [#"train.adb" 40 0 0] (train__calculatespeed__result.int__content <- ( Train__calculatespeed__spee.spee.int__content ));
+   [#"train.adb" 40 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb(((Train__speed__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp)) >= (0 : int))) (((Train__speed__rep.to_rep({ Train__train.__split_fields = Train__calculatespeed__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__sp)) <= (100 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((train__calculatespeed__result.int__content >= (0 : int))) ((train__calculatespeed__result.int__content <= (100 : int)))) in (
    ()))
-   in () end  )
+   in () end ;
+  train__calculatespeed__result.int__content )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "addcarriage" defined at train.ads:31, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -5020,16 +5449,16 @@ module Train__addcarriage__subprogram_def
  use        "_gnatprove_standard".Main as Main
  use        "_gnatprove_standard".Boolean as Boolean
  use        Train__train as Train__train
- use        Train__train___axiom as Train__train___axiom
  use        Train__addcarriage__this as Train__addcarriage__this
+ use        Train__train___axiom as Train__train___axiom
  use        Train__calculateweight___axiom as Train__calculateweight___axiom
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__weight as Train__weight
  use        Train__weight__rep as Train__weight__rep
  use        Train__carriage as Train__carriage
  use        Train__carriage__rep as Train__carriage__rep
  use        Reactor__statusonoff as Reactor__statusonoff
  use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__speed___axiom as Train__speed___axiom
  use        Train__weight___axiom as Train__weight___axiom
  use        Train__carriage___axiom as Train__carriage___axiom
@@ -5046,7 +5475,7 @@ module Train__addcarriage__subprogram_def
  let def [#"train.ads" 31 0 0][@GP_Subp:train.ads:31] 
    (__void_param : unit)
   requires { [#"train.ads" 31 0 0] true }
-  ensures { [#"train.ads" 31 0 0] ([#"train.ads" 33 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => This.numbCarri > This.numbCarri'Old;              ^ train.ads:33:14:VC_POSTCONDITION] [@GP_Sloc:train.ads:33:14] [@model_vc_post] [@GP_Id:9] ( [@GP_Pretty_Ada:20779] [@GP_Sloc:train.ads:33:14] ((Train__carriage__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) > (Train__carriage__rep.to_rep (old { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri ))) ) )) }
+  ensures { [#"train.ads" 31 0 0] ([#"train.ads" 33 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => This.numbCarri > This.numbCarri'Old;              ^ train.ads:33:14:VC_POSTCONDITION] [@GP_Sloc:train.ads:33:14] [@model_vc_post] [@GP_Id:9] ( [@GP_Pretty_Ada:20923] [@GP_Sloc:train.ads:33:14] ((Train__carriage__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) > (Train__carriage__rep.to_rep (old { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri ))) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:31 *)
   ;
@@ -5055,61 +5484,373 @@ module Train__addcarriage__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram train.ads:31 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) < (20 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) < (10 : int)))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram train.ads:31 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2773] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2779] ((Train__carriage__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) < (20 : int)) ) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2968] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2974] ((Train__carriage__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) < (10 : int)) ) ) };
    begin ensures {true} let _ = (let _ = { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri in (
    ()))
    in () end ;
-  (let temp___old_243 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  (let temp___old_252 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
   ensures { (result = (Train__carriage__rep.to_rep { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri))} 
   in _f) in (
    (  try
     ( ();
-    ( [@GP_Sloc:train.adb:44:7] ([#"train.adb" 44 0 0] (if (( ([#"train.adb" 44 0 0] [#"train.adb" 44 0 0] (([@branch_id=2443] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) < (20 : int)))) )));
-    ( [@branch_id=2443] Main.spark__branch ).bool__content )) then (
+    ( [@GP_Sloc:train.adb:49:7] ([#"train.adb" 49 0 0] (if (( ([#"train.adb" 49 0 0] [#"train.adb" 49 0 0] (([@branch_id=2439] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) < (10 : int)))) )));
+    ( [@branch_id=2439] Main.spark__branch ).bool__content )) then (
      ( ();
-     ( [@GP_Sloc:train.adb:45:25] ([#"train.adb" 45 0 0] (let temp___240 [@mlw:proxy_symbol] [@introduced] = (let temp___239 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content } in (
-      ( [#"train.adb" 45 0 0] begin ensures {true} let _ = (let _ = temp___239.Train__train.__split_fields.Train__train.rec__train__train__numbcarri in (
+     ( [@GP_Sloc:train.adb:50:25] ([#"train.adb" 50 0 0] (let temp___249 [@mlw:proxy_symbol] [@introduced] = (let temp___248 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 50 0 0] begin ensures {true} let _ = (let _ = temp___248.Train__train.__split_fields.Train__train.rec__train__train__numbcarri in (
        ()))
        in () end ;
-      { ( temp___239 ) with Train__train.__split_fields = { ( temp___239.Train__train.__split_fields ) with Train__train.rec__train__train__numbcarri = (Train__carriage__rep.of_rep(([#"train.adb" 45 0 0] ( [@comment:         This.numbCarri := This.numbCarri + 1;                                           ^ train.adb:45:43:VC_RANGE_CHECK] [@vc:annotation] [@GP_Shape:if__this_assign__add] [@GP_Sloc:train.adb:45:43] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:7] (Train__carriage.range_check_(((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) + (1 : int)))) )))) } } )))
+      { ( temp___248 ) with Train__train.__split_fields = { ( temp___248.Train__train.__split_fields ) with Train__train.rec__train__train__numbcarri = (Train__carriage__rep.of_rep(([#"train.adb" 50 0 0] ( [@comment:         This.numbCarri := This.numbCarri + 1;                                           ^ train.adb:50:43:VC_RANGE_CHECK] [@vc:annotation] [@GP_Shape:if__this_assign__add] [@GP_Sloc:train.adb:50:43] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:7] (Train__carriage.range_check_(((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) + (1 : int)))) )))) } } )))
       in (
-       (Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content <- ( temp___240.Train__train.__split_fields ))))
+       (Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content <- ( temp___249.Train__train.__split_fields ))))
      ) );
-     ( [@GP_Sloc:train.adb:46:22] ([#"train.adb" 46 0 0] ()) );
-     ( [@GP_Sloc:train.adb:46:19] ([#"train.adb" 46 0 0] (let temp___242 [@mlw:proxy_symbol] [@introduced] = (let temp___241 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content } in (
-      ( [#"train.adb" 46 0 0] begin ensures {true} let _ = (let _ = temp___241.Train__train.__split_fields.Train__train.rec__train__train__wei in (
+     ( [@GP_Sloc:train.adb:51:22] ([#"train.adb" 51 0 0] ()) );
+     ( [@GP_Sloc:train.adb:51:19] ([#"train.adb" 51 0 0] (let temp___251 [@mlw:proxy_symbol] [@introduced] = (let temp___250 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 51 0 0] begin ensures {true} let _ = (let _ = temp___250.Train__train.__split_fields.Train__train.rec__train__train__wei in (
        ()))
        in () end ;
-      { ( temp___241 ) with Train__train.__split_fields = { ( temp___241.Train__train.__split_fields ) with Train__train.rec__train__train__wei = (Train__weight__rep.of_rep(([#"train.adb" 46 0 0] ( [@GP_Reason:VC_PRECONDITION] [@vc:annotation] [@GP_Sloc:train.adb:46:22] [@comment:         This.wei := calculateWeight(This);                      ^ train.adb:46:22:VC_PRECONDITION] [@GP_Id:8] [@GP_Shape:if__this_assign__call_calculateweight] (Train__calculateweight___axiom.calculateweight({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content })) )))) } } )))
+      { ( temp___250 ) with Train__train.__split_fields = { ( temp___250.Train__train.__split_fields ) with Train__train.rec__train__train__wei = (Train__weight__rep.of_rep(([#"train.adb" 51 0 0] ( [@GP_Reason:VC_PRECONDITION] [@vc:annotation] [@comment:         This.wei := calculateWeight(This);                      ^ train.adb:51:22:VC_PRECONDITION] [@GP_Sloc:train.adb:51:22] [@GP_Id:8] [@GP_Shape:if__this_assign__call_calculateweight] (Train__calculateweight___axiom.calculateweight({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content })) )))) } } )))
       in (
-       (Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content <- ( temp___242.Train__train.__split_fields ))))
+       (Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content <- ( temp___251.Train__train.__split_fields ))))
      ) ) )) else (
      ()))) );
      raise Return__exc )
    with
     Return__exc -> ()
    end;
-    begin ensures {true} let _ = (let _ = ((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) > temp___old_243) in (
+    begin ensures {true} let _ = (let _ = ((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__addcarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) > temp___old_252) in (
     ()))
     in () end  )))
    )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "calculateweight" defined at train.ads:35, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "decreasecarriage" defined at train.ads:35, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__decreasecarriage__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
+ use        Train__train as Train__train
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__decreasecarriage__this as Train__decreasecarriage__this
+ use        Train__calculateweight___axiom as Train__calculateweight___axiom
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Train__weight as Train__weight
+ use        Train__weight__rep as Train__weight__rep
+ use        Train__carriage as Train__carriage
+ use        Train__carriage__rep as Train__carriage__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__weight___axiom as Train__weight___axiom
+ use        Train__carriage___axiom as Train__carriage___axiom
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__decreasecarriage__this___axiom as Train__decreasecarriage__this___axiom
+ use        Train__calculateweight___axiom as Train__calculateweight___axiom
+ use        Reactor__temperature___axiom as Reactor__temperature___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__rods___axiom as Reactor__rods___axiom
+ use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
+ use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
+ use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
+
+ let def [#"train.ads" 35 0 0][@GP_Subp:train.ads:35] 
+   (__void_param : unit)
+  requires { [#"train.ads" 35 0 0] true }
+  ensures { [#"train.ads" 35 0 0] ([#"train.ads" 37 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:12] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@comment:     Post => This.numbCarri < This.numbCarri'Old;              ^ train.ads:37:14:VC_POSTCONDITION] [@GP_Sloc:train.ads:37:14] ( [@GP_Sloc:train.ads:37:14] [@GP_Pretty_Ada:20974] ((Train__carriage__rep.to_rep { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) < (Train__carriage__rep.to_rep (old { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri ))) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:35 *)
+  ;
+   assume {  (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content } True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:35 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram train.ads:35 *)
+  ;
+   begin ensures {true} let _ = (let _ = (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) > (0 : int)))) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram train.ads:35 *)
+  ;
+   assume {  ( ( [@GP_Pretty_Ada:3017] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:3023] ((Train__carriage__rep.to_rep { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri) > (0 : int)) ) ) };
+   begin ensures {true} let _ = (let _ = { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri in (
+   ()))
+   in () end ;
+  (let temp___old_257 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = (Train__carriage__rep.to_rep { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri))} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:59:7] ([#"train.adb" 59 0 0] (if (( ([#"train.adb" 59 0 0] [#"train.adb" 59 0 0] (([@branch_id=2493] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) > (0 : int)))) )));
+    ( [@branch_id=2493] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:60:25] ([#"train.adb" 60 0 0] (let temp___254 [@mlw:proxy_symbol] [@introduced] = (let temp___253 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 60 0 0] begin ensures {true} let _ = (let _ = temp___253.Train__train.__split_fields.Train__train.rec__train__train__numbcarri in (
+       ()))
+       in () end ;
+      { ( temp___253 ) with Train__train.__split_fields = { ( temp___253.Train__train.__split_fields ) with Train__train.rec__train__train__numbcarri = (Train__carriage__rep.of_rep(([#"train.adb" 60 0 0] ( [@GP_Id:10] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__this_assign__sub] [@GP_Sloc:train.adb:60:43] [@comment:         This.numbCarri := This.numbCarri - 1;                                           ^ train.adb:60:43:VC_RANGE_CHECK] (Train__carriage.range_check_(((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) - (1 : int)))) )))) } } )))
+      in (
+       (Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content <- ( temp___254.Train__train.__split_fields ))))
+     ) );
+     ( [@GP_Sloc:train.adb:61:22] ([#"train.adb" 61 0 0] ()) );
+     ( [@GP_Sloc:train.adb:61:19] ([#"train.adb" 61 0 0] (let temp___256 [@mlw:proxy_symbol] [@introduced] = (let temp___255 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 61 0 0] begin ensures {true} let _ = (let _ = temp___255.Train__train.__split_fields.Train__train.rec__train__train__wei in (
+       ()))
+       in () end ;
+      { ( temp___255 ) with Train__train.__split_fields = { ( temp___255.Train__train.__split_fields ) with Train__train.rec__train__train__wei = (Train__weight__rep.of_rep(([#"train.adb" 61 0 0] ( [@GP_Id:11] [@GP_Reason:VC_PRECONDITION] [@vc:annotation] [@GP_Sloc:train.adb:61:22] [@comment:         This.wei := calculateWeight(This);                      ^ train.adb:61:22:VC_PRECONDITION] [@GP_Shape:if__this_assign__call_calculateweight] (Train__calculateweight___axiom.calculateweight({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content })) )))) } } )))
+      in (
+       (Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content <- ( temp___256.Train__train.__split_fields ))))
+     ) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = ((Train__carriage__rep.to_rep({ Train__train.__split_fields = Train__decreasecarriage__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) < temp___old_257) in (
+    ()))
+    in () end  )))
+   )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "addrod" defined at train.ads:39, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__addrod__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
+ use        Train__train as Train__train
+ use        Train__calculatespeed___axiom as Train__calculatespeed___axiom
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__addrod__this as Train__addrod__this
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Reactor__calculatepower___axiom as Reactor__calculatepower___axiom
+ use        Train__speed as Train__speed
+ use        Train__speed__rep as Train__speed__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Reactor__rods as Reactor__rods
+ use        Reactor__rods__rep as Reactor__rods__rep
+ use        Reactor__power as Reactor__power
+ use        Reactor__power__rep as Reactor__power__rep
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__weight___axiom as Train__weight___axiom
+ use        Train__carriage___axiom as Train__carriage___axiom
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__calculatespeed___axiom as Train__calculatespeed___axiom
+ use        Train__addrod__this___axiom as Train__addrod__this___axiom
+ use        Reactor__temperature___axiom as Reactor__temperature___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__rods___axiom as Reactor__rods___axiom
+ use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
+ use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
+ use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
+ use        Reactor__calculatepower___axiom as Reactor__calculatepower___axiom
+
+ let def [#"train.ads" 39 0 0][@GP_Subp:train.ads:39] 
+   (__void_param : unit)
+  requires { [#"train.ads" 39 0 0] true }
+  ensures { [#"train.ads" 39 0 0] ([#"train.ads" 41 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:15] [@GP_Shape:pragargs__cmp] [@comment:     Post => This.reac.rod_number > This.reac.rod_number'Old;              ^ train.ads:41:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Sloc:train.ads:41:14] ( [@GP_Pretty_Ada:21031] [@GP_Sloc:train.ads:41:14] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (Reactor__rods__rep.to_rep (old { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:39 *)
+  ;
+   assume {  (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content } True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:39 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram train.ads:39 *)
+  ;
+   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < (5 : int)) ) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram train.ads:39 *)
+  ;
+   assume {  ( ( [@GP_Pretty_Ada:3066] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:3074] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (5 : int)) ) ) };
+   begin ensures {true} let _ = (let _ = { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
+   ()))
+   in () end ;
+  (let temp___old_266 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = (Reactor__rods__rep.to_rep { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number))} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:69:7] ([#"train.adb" 69 0 0] (if (( ([#"train.adb" 69 0 0] [#"train.adb" 69 0 0] (([@branch_id=2547] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int))) (((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < (5 : int)))) )));
+    ( [@branch_id=2547] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:70:31] ([#"train.adb" 70 0 0] (let temp___260 [@mlw:proxy_symbol] [@introduced] = (let temp___259 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 70 0 0] begin ensures {true} let _ = (let _ = temp___259.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ()))
+       in () end ;
+      { ( temp___259 ) with Train__train.__split_fields = { ( temp___259.Train__train.__split_fields ) with Train__train.rec__train__train__reac = (let temp___258 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ( [#"train.adb" 70 0 0] begin ensures {true} let _ = (let _ = temp___258.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
+        ()))
+        in () end ;
+       { ( temp___258 ) with Reactor__trainreactor.__split_fields = { ( temp___258.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__rod_number = (Reactor__rods__rep.of_rep(([#"train.adb" 70 0 0] ( [@GP_Id:13] [@vc:annotation] [@GP_Shape:if__this_assign__add] [@GP_Sloc:train.adb:70:55] [@comment:         This.reac.rod_number := This.reac.rod_number + 1;                                                       ^ train.adb:70:55:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] (Reactor__rods.range_check_(((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) + (1 : int)))) )))) } } )))
+       } } )))
+      in (
+       (Train__addrod__this.this__split_fields.Train__train.__split_fields__content <- ( temp___260.Train__train.__split_fields ))))
+     ) );
+     ( [@GP_Sloc:train.adb:71:27] ([#"train.adb" 71 0 0] ()) );
+     ( [@GP_Sloc:train.adb:71:24] ([#"train.adb" 71 0 0] (let temp___263 [@mlw:proxy_symbol] [@introduced] = (let temp___262 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 71 0 0] begin ensures {true} let _ = (let _ = temp___262.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ()))
+       in () end ;
+      { ( temp___262 ) with Train__train.__split_fields = { ( temp___262.Train__train.__split_fields ) with Train__train.rec__train__train__reac = (let temp___261 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ( [#"train.adb" 71 0 0] begin ensures {true} let _ = (let _ = temp___261.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow in (
+        ()))
+        in () end ;
+       { ( temp___261 ) with Reactor__trainreactor.__split_fields = { ( temp___261.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__pow = (Reactor__power__rep.of_rep((Reactor__calculatepower___axiom.calculatepower({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac)))) } } )))
+       } } )))
+      in (
+      [#"train.adb" 71 0 0] (Train__addrod__this.this__split_fields.Train__train.__split_fields__content <- ( temp___263.Train__train.__split_fields ))))
+     ) );
+     ( [@GP_Sloc:train.adb:72:21] ([#"train.adb" 72 0 0] ()) );
+     ( [@GP_Sloc:train.adb:72:18] ([#"train.adb" 72 0 0] (let temp___265 [@mlw:proxy_symbol] [@introduced] = (let temp___264 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 72 0 0] begin ensures {true} let _ = (let _ = temp___264.Train__train.__split_fields.Train__train.rec__train__train__sp in (
+       ()))
+       in () end ;
+      { ( temp___264 ) with Train__train.__split_fields = { ( temp___264.Train__train.__split_fields ) with Train__train.rec__train__train__sp = (Train__speed__rep.of_rep(([#"train.adb" 72 0 0] ( [@GP_Reason:VC_PRECONDITION] [@GP_Id:14] [@vc:annotation] [@GP_Shape:if__this_assign__call_calculatespeed] [@comment:         This.sp := calculateSpeed(This);                     ^ train.adb:72:21:VC_PRECONDITION] [@GP_Sloc:train.adb:72:21] (Train__calculatespeed___axiom.calculatespeed({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content })) )))) } } )))
+      in (
+       (Train__addrod__this.this__split_fields.Train__train.__split_fields__content <- ( temp___265.Train__train.__split_fields ))))
+     ) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = ((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__addrod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) > temp___old_266) in (
+    ()))
+    in () end  )))
+   )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "decreaserod" defined at train.ads:43, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__decreaserod__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
+ use        Train__train as Train__train
+ use        Train__calculatespeed___axiom as Train__calculatespeed___axiom
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__decreaserod__this as Train__decreaserod__this
+ use        Reactor__trainreactor as Reactor__trainreactor
+ use        Reactor__calculatepower___axiom as Reactor__calculatepower___axiom
+ use        Train__speed as Train__speed
+ use        Train__speed__rep as Train__speed__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
+ use        Reactor__rods as Reactor__rods
+ use        Reactor__rods__rep as Reactor__rods__rep
+ use        Reactor__power as Reactor__power
+ use        Reactor__power__rep as Reactor__power__rep
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__weight___axiom as Train__weight___axiom
+ use        Train__carriage___axiom as Train__carriage___axiom
+ use        Train__train___axiom as Train__train___axiom
+ use        Train__calculatespeed___axiom as Train__calculatespeed___axiom
+ use        Train__decreaserod__this___axiom as Train__decreaserod__this___axiom
+ use        Reactor__temperature___axiom as Reactor__temperature___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__rods___axiom as Reactor__rods___axiom
+ use        Reactor__statusonoff___axiom as Reactor__statusonoff___axiom
+ use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
+ use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
+ use        Reactor__calculatepower___axiom as Reactor__calculatepower___axiom
+
+ let def [#"train.ads" 43 0 0][@GP_Subp:train.ads:43] 
+   (__void_param : unit)
+  requires { [#"train.ads" 43 0 0] true }
+  ensures { [#"train.ads" 43 0 0] ([#"train.ads" 45 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:train.ads:45:14] [@GP_Id:18] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@comment:     Post => This.reac.rod_number < This.reac.rod_number'Old;              ^ train.ads:45:14:VC_POSTCONDITION] ( [@GP_Sloc:train.ads:45:14] [@GP_Pretty_Ada:21088] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) < (Reactor__rods__rep.to_rep (old { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number ))) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:43 *)
+  ;
+   assume {  (Train__train___axiom.dynamic_invariant { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content } True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:43 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram train.ads:43 *)
+  ;
+   begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) > (1 : int)) ) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram train.ads:43 *)
+  ;
+   assume {  ( ( [@GP_Pretty_Ada:3121] ((Reactor__statusonoff__rep.to_rep { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:3129] ((Reactor__rods__rep.to_rep { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) > (1 : int)) ) ) };
+   begin ensures {true} let _ = (let _ = { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
+   ()))
+   in () end ;
+  (let temp___old_275 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = (Reactor__rods__rep.to_rep { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number))} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:80:7] ([#"train.adb" 80 0 0] (if (( ([#"train.adb" 80 0 0] [#"train.adb" 80 0 0] (([@branch_id=2618] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int))) (((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) > (1 : int)))) )));
+    ( [@branch_id=2618] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:81:31] ([#"train.adb" 81 0 0] (let temp___269 [@mlw:proxy_symbol] [@introduced] = (let temp___268 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 81 0 0] begin ensures {true} let _ = (let _ = temp___268.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ()))
+       in () end ;
+      { ( temp___268 ) with Train__train.__split_fields = { ( temp___268.Train__train.__split_fields ) with Train__train.rec__train__train__reac = (let temp___267 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ( [#"train.adb" 81 0 0] begin ensures {true} let _ = (let _ = temp___267.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number in (
+        ()))
+        in () end ;
+       { ( temp___267 ) with Reactor__trainreactor.__split_fields = { ( temp___267.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__rod_number = (Reactor__rods__rep.of_rep(([#"train.adb" 81 0 0] ( [@GP_Id:16] [@comment:         This.reac.rod_number := This.reac.rod_number - 1;                                                       ^ train.adb:81:55:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__this_assign__sub] [@GP_Sloc:train.adb:81:55] (Reactor__rods.range_check_(((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) - (1 : int)))) )))) } } )))
+       } } )))
+      in (
+       (Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content <- ( temp___269.Train__train.__split_fields ))))
+     ) );
+     ( [@GP_Sloc:train.adb:82:27] ([#"train.adb" 82 0 0] ()) );
+     ( [@GP_Sloc:train.adb:82:24] ([#"train.adb" 82 0 0] (let temp___272 [@mlw:proxy_symbol] [@introduced] = (let temp___271 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 82 0 0] begin ensures {true} let _ = (let _ = temp___271.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ()))
+       in () end ;
+      { ( temp___271 ) with Train__train.__split_fields = { ( temp___271.Train__train.__split_fields ) with Train__train.rec__train__train__reac = (let temp___270 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac in (
+       ( [#"train.adb" 82 0 0] begin ensures {true} let _ = (let _ = temp___270.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow in (
+        ()))
+        in () end ;
+       { ( temp___270 ) with Reactor__trainreactor.__split_fields = { ( temp___270.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__pow = (Reactor__power__rep.of_rep((Reactor__calculatepower___axiom.calculatepower({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac)))) } } )))
+       } } )))
+      in (
+      [#"train.adb" 82 0 0] (Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content <- ( temp___272.Train__train.__split_fields ))))
+     ) );
+     ( [@GP_Sloc:train.adb:83:21] ([#"train.adb" 83 0 0] ()) );
+     ( [@GP_Sloc:train.adb:83:18] ([#"train.adb" 83 0 0] (let temp___274 [@mlw:proxy_symbol] [@introduced] = (let temp___273 [@mlw:proxy_symbol] [@introduced] = { Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content } in (
+      ( [#"train.adb" 83 0 0] begin ensures {true} let _ = (let _ = temp___273.Train__train.__split_fields.Train__train.rec__train__train__sp in (
+       ()))
+       in () end ;
+      { ( temp___273 ) with Train__train.__split_fields = { ( temp___273.Train__train.__split_fields ) with Train__train.rec__train__train__sp = (Train__speed__rep.of_rep(([#"train.adb" 83 0 0] ( [@GP_Reason:VC_PRECONDITION] [@GP_Id:17] [@vc:annotation] [@GP_Sloc:train.adb:83:21] [@comment:         This.sp := calculateSpeed(This);                     ^ train.adb:83:21:VC_PRECONDITION] [@GP_Shape:if__this_assign__call_calculatespeed] (Train__calculatespeed___axiom.calculatespeed({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content })) )))) } } )))
+      in (
+       (Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content <- ( temp___274.Train__train.__split_fields ))))
+     ) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = ((Reactor__rods__rep.to_rep({ Train__train.__split_fields = Train__decreaserod__this.this__split_fields.Train__train.__split_fields__content }.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) < temp___old_275) in (
+    ()))
+    in () end  )))
+   )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "calculateweight" defined at train.ads:47, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Train__calculateweight__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        "_gnatprove_standard".Main as Main
  use        "_gnatprove_standard".Boolean as Boolean
  use        Standard__integer as Standard__integer
  use        Train__train as Train__train
  use        Train__train___axiom as Train__train___axiom
  use        Train__calculateweight__this as Train__calculateweight__this
+ use        Reactor__trainreactor as Reactor__trainreactor
  use        Train__calculateweight__ret as Train__calculateweight__ret
  use        Train__weight as Train__weight
  use        Train__weight___axiom as Train__weight___axiom
@@ -5118,7 +5859,6 @@ module Train__calculateweight__subprogram_def
  use        Train__carriage__rep as Train__carriage__rep
  use        Reactor__statusonoff as Reactor__statusonoff
  use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
- use        Reactor__trainreactor as Reactor__trainreactor
  use        Standard__integer___axiom as Standard__integer___axiom
  use        Train__calculateweight__ret___axiom as Train__calculateweight__ret___axiom
  use        Train__speed___axiom as Train__speed___axiom
@@ -5133,41 +5873,47 @@ module Train__calculateweight__subprogram_def
  use        Reactor__reactorstatus___axiom as Reactor__reactorstatus___axiom
  use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
 
- val train__calculateweight__result [@model_projected] [@model_trace:2794@result] [@name:calculateWeight]  : int__ref 
+ val train__calculateweight__result [@model_trace:3148@result] [@model_projected] [@name:calculateWeight]  : int__ref 
  
- let def [#"train.ads" 35 0 0][@GP_Subp:train.ads:35] 
+ let def [#"train.ads" 47 0 0][@GP_Subp:train.ads:47] 
    (__void_param : unit)
-  requires { [#"train.ads" 35 0 0] true }
-  ensures { [#"train.ads" 35 0 0] ([#"train.ads" 37 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:13] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Sloc:train.ads:37:14] [@comment:     Post => calculateWeight'Result >=Weight'First and calculateWeight'Result <= Weight'Last;              ^ train.ads:37:14:VC_POSTCONDITION] ( ( [@GP_Pretty_Ada:2847] [@GP_Sloc:train.ads:37:14] (train__calculateweight__result.int__content >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2855] [@GP_Sloc:train.ads:37:56] (train__calculateweight__result.int__content <= (22000 : int)) ) ) )) }
+  requires { [#"train.ads" 47 0 0] true }
+  ensures { [#"train.ads" 47 0 0] ([#"train.ads" 49 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => calculateWeight'Result >= ReactorWeight and calculateWeight'Result <= Weight'Last;              ^ train.ads:49:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:22] [@GP_Sloc:train.ads:49:14] [@GP_Shape:pragargs__and] ( ( [@GP_Pretty_Ada:3201] [@GP_Sloc:train.ads:49:14] (train__calculateweight__result.int__content >= (2000 : int)) ) /\ ( [@GP_Sloc:train.ads:49:58] [@GP_Pretty_Ada:3207] (train__calculateweight__result.int__content <= (22000 : int)) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:35 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:47 *)
   ;
    assume {  (Train__train___axiom.dynamic_invariant Train__calculateweight__this.this True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:35 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:47 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram train.ads:35 *)
+  () (* Check for RTE in the Pre of the subprogram train.ads:47 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb(((Reactor__statusonoff__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__weight__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)) >= (0 : int))))) (((Train__weight__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)) <= (22000 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb(((Reactor__statusonoff__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Train__weight__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)) >= (2000 : int))))) (((Train__weight__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei)) <= (22000 : int)))) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram train.ads:35 *)
+  () (* Assume Pre of the subprogram train.ads:47 *)
   ;
-   assume {  ( ( ( [@GP_Pretty_Ada:2823] ((Reactor__statusonoff__rep.to_rep Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2829] ((Train__weight__rep.to_rep Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2837] ((Train__weight__rep.to_rep Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) };
+   assume {  ( ( ( [@GP_Pretty_Ada:3177] ((Reactor__statusonoff__rep.to_rep Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__reac.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:3183] ((Train__weight__rep.to_rep Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei) >= (2000 : int)) ) ) /\ ( [@GP_Pretty_Ada:3191] ((Train__weight__rep.to_rep Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__wei) <= (22000 : int)) ) ) };
    try
    ( ();
-   ([#"train.adb" 60 0 0] ( [#"train.adb" 60 0 0] assume { [#"train.adb" 60 0 0] (Train__weight___axiom.default_initial_assumption Train__calculateweight__ret.ret.int__content False) };
-   [#"train.adb" 60 0 0] assume { [#"train.adb" 60 0 0] (Train__weight___axiom.dynamic_invariant Train__calculateweight__ret.ret.int__content False False True True) } ));
+   ([#"train.adb" 95 0 0] ( [#"train.adb" 95 0 0] assume { [#"train.adb" 95 0 0] (Train__weight___axiom.default_initial_assumption Train__calculateweight__ret.ret.int__content False) };
+   [#"train.adb" 95 0 0] assume { [#"train.adb" 95 0 0] (Train__weight___axiom.dynamic_invariant Train__calculateweight__ret.ret.int__content False False True True) } ));
    ();
-   ( [@GP_Sloc:train.adb:71:7] ([#"train.adb" 71 0 0] ()) );
-   ( [@GP_Sloc:train.adb:71:11] ([#"train.adb" 71 0 0] [#"train.adb" 71 0 0] (Train__calculateweight__ret.ret.int__content <- ( ([#"train.adb" 71 0 0] ( [@GP_Id:12] [@vc:annotation] [@comment:      ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));                             ^ train.adb:71:29:VC_RANGE_CHECK] [@GP_Shape:ret_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:train.adb:71:29] (Train__weight.range_check_(((2000 : int) + ([#"train.adb" 71 0 0] ( [@GP_Id:11] [@vc:annotation] [@GP_Shape:ret_assign__add__typeconv__mult] [@GP_Sloc:train.adb:71:62] [@GP_Reason:VC_RANGE_CHECK] [@comment:      ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));                                                              ^ train.adb:71:62:VC_RANGE_CHECK] (Train__weight.range_check_(([#"train.adb" 71 0 0] ( [@GP_Id:10] [@comment:      ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));                                                              ^ train.adb:71:62:VC_OVERFLOW_CHECK] [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Shape:ret_assign__add__typeconv__mult] [@GP_Sloc:train.adb:71:62] (Standard__integer.range_check_(((1000 : int) * (Train__carriage__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__numbcarri))))) )))) ))))) )) ))) );
-   ( [@GP_Sloc:train.adb:73:14] ([#"train.adb" 73 0 0] ()) );
-   ( [@GP_Sloc:train.adb:73:7] ([#"train.adb" 73 0 0] ( [#"train.adb" 73 0 0] (train__calculateweight__result.int__content <- ( Train__calculateweight__ret.ret.int__content ));
-   [#"train.adb" 73 0 0] raise Return__exc )) );
+   ( [@GP_Sloc:train.adb:104:7] ([#"train.adb" 104 0 0] (if (( ([#"train.adb" 104 0 0] [#"train.adb" 104 0 0] (([@branch_id=2699] Main.spark__branch).bool__content <- ( ((Train__carriage__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__numbcarri)) = (0 : int)) )));
+   ( [@branch_id=2699] Main.spark__branch ).bool__content )) then (
+    ( ();
+    ( [@GP_Sloc:train.adb:105:10] ([#"train.adb" 105 0 0] ()) );
+    ( [@GP_Sloc:train.adb:105:14] ([#"train.adb" 105 0 0] [#"train.adb" 105 0 0] (Train__calculateweight__ret.ret.int__content <- ( (2000 : int) ))) ) )) else (
+    ( ();
+    ( [@GP_Sloc:train.adb:107:10] ([#"train.adb" 107 0 0] ()) );
+    ( [@GP_Sloc:train.adb:107:14] ([#"train.adb" 107 0 0] [#"train.adb" 107 0 0] (Train__calculateweight__ret.ret.int__content <- ( ([#"train.adb" 107 0 0] ( [@GP_Shape:if__ret_assign__add] [@vc:annotation] [@comment:         ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));                                ^ train.adb:107:32:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:21] [@GP_Sloc:train.adb:107:32] (Train__weight.range_check_(((2000 : int) + ([#"train.adb" 107 0 0] ( [@GP_Sloc:train.adb:107:65] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:20] [@comment:         ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));                                                                 ^ train.adb:107:65:VC_RANGE_CHECK] [@GP_Shape:if__ret_assign__add__typeconv__mult] (Train__weight.range_check_(([#"train.adb" 107 0 0] ( [@comment:         ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));                                                                 ^ train.adb:107:65:VC_OVERFLOW_CHECK] [@GP_Sloc:train.adb:107:65] [@GP_Id:19] [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Shape:if__ret_assign__add__typeconv__mult] (Standard__integer.range_check_(((2000 : int) * (Train__carriage__rep.to_rep(Train__calculateweight__this.this.Train__train.__split_fields.Train__train.rec__train__train__numbcarri))))) )))) ))))) )) ))) ) )))) );
+   ( [@GP_Sloc:train.adb:110:14] ([#"train.adb" 110 0 0] ()) );
+   ( [@GP_Sloc:train.adb:110:7] ([#"train.adb" 110 0 0] ( [#"train.adb" 110 0 0] (train__calculateweight__result.int__content <- ( Train__calculateweight__ret.ret.int__content ));
+   [#"train.adb" 110 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((train__calculateweight__result.int__content >= (0 : int))) ((train__calculateweight__result.int__content <= (22000 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((train__calculateweight__result.int__content >= (2000 : int))) ((train__calculateweight__result.int__content <= (22000 : int)))) in (
    ()))
    in () end ;
   train__calculateweight__result.int__content )

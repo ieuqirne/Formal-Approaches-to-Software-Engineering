@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#9e42dd65#;
+   u00001 : constant Version_32 := 16#d9efc2ce#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#050ff2f0#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -263,17 +263,17 @@ package ada_main is
    pragma Export (C, u00112, "system__finalization_rootS");
    u00113 : constant Version_32 := 16#cf3f1b90#;
    pragma Export (C, u00113, "system__file_control_blockS");
-   u00114 : constant Version_32 := 16#9e5766ee#;
+   u00114 : constant Version_32 := 16#cbd064d3#;
    pragma Export (C, u00114, "reactorB");
-   u00115 : constant Version_32 := 16#8c462cd4#;
+   u00115 : constant Version_32 := 16#eeac5ed8#;
    pragma Export (C, u00115, "reactorS");
    u00116 : constant Version_32 := 16#273384e4#;
    pragma Export (C, u00116, "system__img_enum_newB");
    u00117 : constant Version_32 := 16#53ec87f8#;
    pragma Export (C, u00117, "system__img_enum_newS");
-   u00118 : constant Version_32 := 16#d3058052#;
+   u00118 : constant Version_32 := 16#b5e1f027#;
    pragma Export (C, u00118, "trainB");
-   u00119 : constant Version_32 := 16#bf10860d#;
+   u00119 : constant Version_32 := 16#53d41187#;
    pragma Export (C, u00119, "trainS");
    u00120 : constant Version_32 := 16#e18a47a0#;
    pragma Export (C, u00120, "ada__float_text_ioB");

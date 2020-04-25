@@ -4,12 +4,12 @@ package train with SPARK_Mode is
 
    type Speed is range 0..100;
 
-   type Weight is range 0..22000;
+   type Weight is range 2000..22000;
    ReactorWeight : constant Weight := 2000;
 
-   CarriageWeight : constant Weight := 1000;
+   CarriageWeight : constant Weight := 2000;
 
-   type Carriage is range 0..20;
+   type Carriage is range 0..10;
 
    type Train is record
       reac : reactor.TrainReactor;
@@ -19,10 +19,10 @@ package train with SPARK_Mode is
    end record;
 
 
-   procedure calculateSpeed (This : in out Train)  with
-     Pre=> this.wei >= Weight'First and this.wei <= Weight'Last and This.reac.OnOff = Off and
+   function calculateSpeed (This : in Train) return Speed with
+     Pre=> this.wei >= Weight'First and this.wei <= Weight'Last and
      this.reac.pow >= Power'First and this.reac.pow <= Power'Last ,
-     Post => This.sp >= Speed'First and This.sp <= Speed'Last;
+     Post => calculateSpeed'Result >= Speed'First  and calculateSpeed'Result <= Speed'Last;
 
 --     procedure Update (This : in out Train)  with
 --       --Pre => This.reac.OnOff = On,
@@ -32,7 +32,19 @@ package train with SPARK_Mode is
      Pre => This.reac.OnOff = Off and This.numbCarri < Carriage'Last,
      Post => This.numbCarri > This.numbCarri'Old;
 
+   procedure decreaseCarriage (This : in out Train) with
+     Pre => This.reac.OnOff = Off and This.numbCarri > Carriage'First,
+     Post => This.numbCarri < This.numbCarri'Old;
+
+   procedure addRod (This : in out Train) with
+     Pre => This.reac.OnOff = On and then This.reac.rod_number < Rods'Last,
+     Post => This.reac.rod_number > This.reac.rod_number'Old;
+
+   procedure decreaseRod (This : in out Train) with
+     Pre => This.reac.OnOff = On and then This.reac.rod_number > Rods'First,
+     Post => This.reac.rod_number < This.reac.rod_number'Old;
+
    function calculateWeight (This : in Train) return Weight with
      Pre => This.reac.OnOff = Off and This.wei >= Weight'First and This.wei <= Weight'Last,
-     Post => calculateWeight'Result >=Weight'First and calculateWeight'Result <= Weight'Last;
+     Post => calculateWeight'Result >= ReactorWeight and calculateWeight'Result <= Weight'Last;
 end Train;

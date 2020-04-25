@@ -4,12 +4,13 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 package body train with SPARK_Mode is
 
-   procedure calculateSpeed (This : in out Train) is
-      Pow : Float := Float(This.reac.pow);
-      Wei : Float := Float(This.wei);
+   function calculateSpeed (This : in Train) return Speed is
+      --Pow : Float := Float(This.reac.pow);
+      --Wei : Float := Float(This.wei);
       SpFloat : Float;
       --Total : Float;
       --TotalInt : Speed;
+      Spee : Speed;
    begin
       --Total := Pow / Wei * 100.00;
       --Put_Line("Total: " & Total'Image);
@@ -22,17 +23,21 @@ package body train with SPARK_Mode is
       --Put_Line ("Pow: " & Pow'Image);
       --Put_Line ("Wei: "& Wei'Image);
       --Sp := Pow / Wei;
-      if(This.reac.OnOff = Off) then
+      if(This.reac.pow = 0) then
          SpFloat := 0.0;
       else
-         SpFloat := Pow / Wei * 100.0;
+         SpFloat := Float(This.reac.pow) / Float(This.wei) * 100.0;
       end if;
 
       if(SpFloat > 100.00) then
-        This.Sp := 100;
+        Spee := 100;
+      elsif (SpFloat = 0.0) then
+           Spee := 0;
       else
-         This.sp := Speed(SpFloat);
+        Spee := Speed(SpFloat);
       end if;
+
+      return Spee;
 
       --Put_Line ("SpFloat: " & SpFloat'Image);
       --Put_Line ("This.sp: " & This.sp'Image);
@@ -49,6 +54,36 @@ package body train with SPARK_Mode is
 
    end addCarriage;
 
+   procedure decreaseCarriage (This : in out Train) is
+   begin
+      if This.reac.OnOff = Off and  This.numbCarri > Carriage'First then
+         This.numbCarri := This.numbCarri - 1;
+         This.wei := calculateWeight(This);
+         --This.wcalculateWeight(This);
+      end if;
+
+   end decreaseCarriage;
+
+   procedure addRod (This : in out Train) is
+   begin
+      if This.reac.OnOff = On and  This.reac.rod_number < Rods'Last then
+         This.reac.rod_number := This.reac.rod_number + 1;
+         This.reac.pow := calculatePower(This.reac);
+         This.sp := calculateSpeed(This);
+         --calculateSpeed(This);
+      end if;
+
+   end addRod;
+
+   procedure decreaseRod (This : in out Train) is
+   begin
+      if This.reac.OnOff = On and  This.reac.rod_number > Rods'First then
+         This.reac.rod_number := This.reac.rod_number - 1;
+         This.reac.pow := calculatePower(This.reac);
+         This.sp := calculateSpeed(This);
+      end if;
+
+   end decreaseRod;
 
 
    function calculateWeight (This : in Train) return Weight
@@ -61,14 +96,16 @@ package body train with SPARK_Mode is
    begin
       --Put_Line("CarriageWeight: " & CW'Image);
      -- Put_Line("This.numbCarri: " & CN'Image);
-
-
       --Put_Line("Caaa: " & Caaa'Image);
       --Put_Line("Caaaaa: " & Caaaaa'Image);
       --Put_Line("ReactorWeight: " & ReactorWeight'Image);
       --Caaaaa :=  Integer(this.numbCarri);
       --Put_Line("Caaaaa: " & Caaaaa'Image);
-      ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));
+      if(This.numbCarri = 0) then
+         ret := ReactorWeight;
+      else
+         ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));
+      end if;
 
       return ret;
    end calculateWeight;

@@ -12,7 +12,12 @@ begin
 
    Put_Line("OnOff");
    Put_Line(tren.reac.OnOff'Image);
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
    addCarriage(tren);
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
+   decreaseCarriage(tren);
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
+
    --calculateWeight(tren);
    EngineOn(tren.reac);
    Put_Line(tren.reac.OnOff'Image);
@@ -24,15 +29,16 @@ begin
    --Update(tren);
 
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
-   decreaseRod(tren.reac);
+   decreaseRod(tren);
 
    --Update(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
-   decreaseRod(tren.reac);
+   decreaseRod(tren);
    --Update(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
-   decreaseRod(tren.reac);
-   --Update(tren);
+   decreaseRod(tren);
+   Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
+   addRod(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
 
    --decreaseRod;

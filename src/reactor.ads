@@ -2,7 +2,7 @@ package reactor with SPARK_Mode is
 
    type Temperature is range 0..100;
 
-   type Power is range 0..8000;
+   type Power is range 0..5200;
    type PowerArray is array (Power) of Integer;
    type Rods is range 1..5;
    type RodsrArray is array (Rods) of Integer;
@@ -32,13 +32,13 @@ package reactor with SPARK_Mode is
      Post => This.OnOff = Off and then This.rod_number = Rods'Last;
 
 
-   procedure decreaseRod (This : in out TrainReactor) with
-     Pre => This.OnOff = On and then This.rod_number > Rods'First,
-     Post => This.rod_number < This.rod_number'Old;
+--     procedure decreaseRod (This : in out TrainReactor) with
+--       Pre => This.OnOff = On and then This.rod_number > Rods'First,
+--       Post => This.rod_number < This.rod_number'Old;
 
-   procedure addRod (This : in out TrainReactor) with
-     Pre => This.OnOff = On and then This.rod_number < Rods'Last,
-     Post => This.rod_number > This.rod_number'Old;
+--     procedure addRod (This : in out TrainReactor) with
+--       Pre => This.OnOff = On and then This.rod_number < Rods'Last,
+--       Post => This.rod_number > This.rod_number'Old;
 
    function calculatePower (This : in TrainReactor) return Power with
      Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;
