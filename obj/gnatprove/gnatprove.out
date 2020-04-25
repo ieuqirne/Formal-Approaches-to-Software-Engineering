@@ -8,12 +8,12 @@ Data Dependencies                 .         .          .          .            .
 Flow Dependencies                 .         .          .          .            .           .          .
 Initialization                    3         3          .          .            .           .          .
 Non-Aliasing                      .         .          .          .            .           .          .
-Run-time Checks                  20         .          2          .    18 (CVC4)           .          .
+Run-time Checks                  17         .          2          .    15 (CVC4)           .          .
 Assertions                        .         .          .          .            .           .          .
-Functional Contracts             20         .          .          .    17 (CVC4)           .          3
+Functional Contracts             20         .          .          .    18 (CVC4)           .          2
 LSP Verification                  .         .          .          .            .           .          .
 -------------------------------------------------------------------------------------------------------
-Total                            43    3 (7%)     2 (5%)          .     35 (81%)           .     3 (7%)
+Total                            40    3 (8%)     2 (5%)          .     33 (83%)           .     2 (5%)
 
 
 max steps used for successful proof: 1
@@ -30,9 +30,9 @@ in unit reactor, 6 subprograms and packages out of 6 analyzed
   reactor.decreaseRod at reactor.ads:35 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
 in unit train, 4 subprograms and packages out of 4 analyzed
   train at train.ads:3 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
-  train.addCarriage at train.ads:31 flow analyzed (0 errors, 0 checks and 0 warnings) and not proved, 2 checks out of 3 proved
+  train.addCarriage at train.ads:31 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (3 checks)
   train.calculateSpeed at train.ads:22 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (7 checks)
-  train.calculateWeight at train.ads:35 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (7 checks)
+  train.calculateWeight at train.ads:35 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (4 checks)
 in unit water, 3 subprograms and packages out of 3 analyzed
   water at water.ads:1 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
   water.ConstructWaterTank at water.ads:22 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)

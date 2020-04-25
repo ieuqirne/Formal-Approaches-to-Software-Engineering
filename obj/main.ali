@@ -12,7 +12,7 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		2e1c2bbe NE OO SU
+U main%b		main.adb		9e42dd65 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z interfaces%s		interfac.ads		interfac.ali
@@ -31,7 +31,7 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D main.adb		20200425121832 6aeced78 main%b
+D main.adb		20200425140404 8fa68e05 main%b
 D reactor.ads		20200425111106 8c462cd4 reactor%s
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
@@ -48,13 +48,12 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200425123338 66423f7f train%s
+D train.ads		20200425135452 3356aad9 train%s
 G a e
 G c Z b b [main standard 6 11 none]
 G r s train [main standard 6 11 none] [trainIP train 14 9 none]
-G r c none [main standard 6 11 none] [calculateweight train 34 14 none]
+G r c none [main standard 6 11 none] [addcarriage train 31 14 none]
 G r c none [main standard 6 11 none] [engineon reactor 26 14 none]
-G r c none [main standard 6 11 none] [update train 27 14 none]
 G r c none [main standard 6 11 none] [calculatepower reactor 43 13 none]
 G r c none [main standard 6 11 none] [decreaserod reactor 35 14 none]
 X 1 ada.ads
@@ -64,11 +63,10 @@ X 6 a-textio.ads
 508U14*Put_Line 10|13s4 14s4 18s4 22s4 26s4 30s4 33s4 36s4
 X 10 main.adb
 6U11*Main 6b11 40l5 40t9
-9r4 tren{27|14R9} 14r13 16m20 16r20 17m13 17r13 18r13 21m11 21r11 22r24 22r83
-. 22r116 22r147 22r181 23m16 23r16 24m11 24r11 26r24 26r83 26r116 26r147
-. 26r181 27m16 27r16 29m11 29r11 30r24 30r83 30r116 30r147 30r181 31m16 31r16
-. 32m11 32r11 33r24 33r83 33r116 33r147 33r181 34m16 34r16 35m11 35r11 36r24
-. 36r83 36r116 36r147 36r181
+9r4 tren{27|14R9} 14r13 15m16 15r16 17m13 17r13 18r13 22r24 22r83 22r116
+. 22r147 22r181 23m16 23r16 26r24 26r83 26r116 26r147 26r181 27m16 27r16
+. 30r24 30r83 30r116 30r147 30r181 31m16 31r16 33r24 33r83 33r116 33r147
+. 33r181 34m16 34r16 36r24 36r83 36r116 36r147 36r181
 X 11 reactor.ads
 1K9*reactor 10|2w6 2r19 11|48e12
 5I9*Power<short_integer>
@@ -79,7 +77,7 @@ X 11 reactor.ads
 35U14*decreaseRod 10|23s4 27s4 31s4 34s4
 43V13*calculatePower{5I9} 10|22s68 26s68 30s68 33s68 36s68
 X 27 train.ads
-3K9*train 10|1w6 1r17 9r10 27|37e10
+3K9*train 10|1w6 1r17 9r10 27|38e10
 5I9*Speed<short_short_integer>
 7I9*Weight<short_integer>
 12I9*Carriage<short_short_integer>
@@ -89,6 +87,5 @@ X 27 train.ads
 16i7*sp{5I9} 10|22r121 26r121 30r121 33r121 36r121
 17i7*wei{7I9} 10|22r152 26r152 30r152 33r152 36r152
 18i7*numbCarri{12I9} 10|22r186 26r186 30r186 33r186 36r186
-27U14*Update 10|21s4 24s4 29s4 32s4 35s4
-34U14*calculateWeight 10|16s4
+31U14*addCarriage 10|15s4
 

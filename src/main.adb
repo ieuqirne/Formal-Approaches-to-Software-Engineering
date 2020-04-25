@@ -12,27 +12,27 @@ begin
 
    Put_Line("OnOff");
    Put_Line(tren.reac.OnOff'Image);
-   --addCarriage(tren);
-   calculateWeight(tren);
+   addCarriage(tren);
+   --calculateWeight(tren);
    EngineOn(tren.reac);
    Put_Line(tren.reac.OnOff'Image);
    --calculatePower(tren.reac);
    ----calculateSpeed(tren);
-   Update(tren);
+   --(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
-   decreaseRod(tren.reac);
-   Update(tren);
+   decreaseRod(tren);
+   --Update(tren);
 
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
    decreaseRod(tren.reac);
 
-   Update(tren);
+   --Update(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
    decreaseRod(tren.reac);
-   Update(tren);
+   --Update(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
    decreaseRod(tren.reac);
-   Update(tren);
+   --Update(tren);
    Put_Line("Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image& ". Carriages: " & tren.numbCarri'Image);
 
    --decreaseRod;

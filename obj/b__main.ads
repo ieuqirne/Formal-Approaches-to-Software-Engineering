@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#2e1c2bbe#;
+   u00001 : constant Version_32 := 16#9e42dd65#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#050ff2f0#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -271,9 +271,9 @@ package ada_main is
    pragma Export (C, u00116, "system__img_enum_newB");
    u00117 : constant Version_32 := 16#53ec87f8#;
    pragma Export (C, u00117, "system__img_enum_newS");
-   u00118 : constant Version_32 := 16#81ff8f6a#;
+   u00118 : constant Version_32 := 16#d3058052#;
    pragma Export (C, u00118, "trainB");
-   u00119 : constant Version_32 := 16#ea0413ab#;
+   u00119 : constant Version_32 := 16#bf10860d#;
    pragma Export (C, u00119, "trainS");
    u00120 : constant Version_32 := 16#e18a47a0#;
    pragma Export (C, u00120, "ada__float_text_ioB");
@@ -313,14 +313,10 @@ package ada_main is
    pragma Export (C, u00137, "system__exn_llfS");
    u00138 : constant Version_32 := 16#6ad59d2c#;
    pragma Export (C, u00138, "system__fat_fltS");
-   u00139 : constant Version_32 := 16#fd83e873#;
-   pragma Export (C, u00139, "system__concat_2B");
-   u00140 : constant Version_32 := 16#300056e8#;
-   pragma Export (C, u00140, "system__concat_2S");
-   u00141 : constant Version_32 := 16#e31b7c4e#;
-   pragma Export (C, u00141, "system__memoryB");
-   u00142 : constant Version_32 := 16#6bdde70c#;
-   pragma Export (C, u00142, "system__memoryS");
+   u00139 : constant Version_32 := 16#e31b7c4e#;
+   pragma Export (C, u00139, "system__memoryB");
+   u00140 : constant Version_32 := 16#6bdde70c#;
+   pragma Export (C, u00140, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -367,8 +363,6 @@ package ada_main is
    --  system.wch_jis%b
    --  system.wch_cnv%s
    --  system.wch_cnv%b
-   --  system.concat_2%s
-   --  system.concat_2%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.characters.handling%s

@@ -117,7 +117,7 @@
   <proof prover="1" obsolete="true"><result status="unknown" steps="177"/></proof>
   </goal>
   <goal name="VC def.2" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="394"/></proof>
+  <proof prover="0"><result status="valid" steps="399"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="454"/></proof>
   </goal>
   <goal name="VC def.3" expl="precondition" proved="true">

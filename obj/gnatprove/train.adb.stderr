@@ -1,1 +1,0 @@
-train.ads:33:14: medium: postcondition might fail, cannot prove This.numbCarri > This.numbCarri'old (e.g. when This = (reac => (OnOff => Off, temp => 0, rod_number => 0, status => Running, pow => 0), sp => 0, wei => 0, numbCarri => 0) and This'Old = (reac => (OnOff => Off, temp => 0, rod_number => 0, status => Running, pow => 0), sp => 0, wei => 0, numbCarri => 0))[#0]

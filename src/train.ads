@@ -32,7 +32,7 @@ package train with SPARK_Mode is
      Pre => This.reac.OnOff = Off and This.numbCarri < Carriage'Last,
      Post => This.numbCarri > This.numbCarri'Old;
 
-   procedure calculateWeight (This : in out Train) with
+   function calculateWeight (This : in Train) return Weight with
      Pre => This.reac.OnOff = Off and This.wei >= Weight'First and This.wei <= Weight'Last,
-     Post => This.wei >=Weight'First and This.wei <= Weight'Last;
+     Post => calculateWeight'Result >=Weight'First and calculateWeight'Result <= Weight'Last;
 end Train;

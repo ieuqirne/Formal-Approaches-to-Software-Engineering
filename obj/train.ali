@@ -8,19 +8,16 @@ RN
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_FLOATING_POINT
 RV NO_IO
-RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U train%b		train.adb		81ff8f6a NE OO PK IL
+U train%b		train.adb		d3058052 NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W reactor%s		reactor.adb		reactor.ali
-Z system.concat_2%s	s-conca2.adb		s-conca2.ali
-Z system.img_int%s	s-imgint.adb		s-imgint.ali
 
-U train%s		train.ads		ea0413ab EE NE OO PK IL
+U train%s		train.ads		bf10860d EE NE OO PK IL
 W reactor%s		reactor.adb		reactor.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
@@ -36,11 +33,9 @@ D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
 D reactor.ads		20200425111106 8c462cd4 reactor%s
 D system.ads		20190518041258 32a08138 system%s
-D s-conca2.ads		20190518041256 02a0d7d0 system.concat_2%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
 D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
-D s-imgint.ads		20190518041256 02dbe0c2 system.img_int%s
 D s-parame.ads		20190518041258 48ec542b system.parameters%s
 D s-secsta.ads		20190518041258 20bbe636 system.secondary_stack%s
 D s-soflin.ads		20190518041256 a7318a92 system.soft_links%s
@@ -50,57 +45,51 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200425123338 66423f7f train%s
-D train.adb		20200425123510 24850e0c train%b
+D train.ads		20200425135452 3356aad9 train%s
+D train.adb		20200425140332 236b9492 train%b
 G a e
 G c Z s b [calculatespeed train 22 14 none]
-G c Z s b [update train 27 14 none]
-G c Z s b [addcarriage train 30 14 none]
-G c Z s b [calculateweight train 34 14 none]
+G c Z s b [addcarriage train 31 14 none]
+G c Z s b [calculateweight train 35 13 none]
 G c Z s s [trainIP train 14 9 none]
 G r s trainreactor [trainIP train 14 9 none] [trainreactorIP reactor 18 9 none]
 X 1 ada.ads
-16K9*Ada 20e8 29|2r6 2r23 3r6 3r29
+16K9*Ada 20e8 27|2r6 2r23 3r6 3r29
 X 3 a-flteio.ads
-20K13*Float_Text_IO[8|46] 29|3w10 3r33
+20K13*Float_Text_IO[8|46] 27|3w10 3r33
 X 7 a-textio.ads
-57K13*Text_IO 727e16 29|2w10 2r27
-508U14*Put_Line 29|59s7 64s7 66s7
+57K13*Text_IO 727e16 27|2w10 2r27
 X 12 reactor.ads
-1K9*reactor 48e12 28|1w6 1r19 15r14 29|1w6 1r19
-5I9*Power<short_integer> 28|24r23 24r56
-10n29*Off{10E9} 28|23r87 31r31 35r31 29|25r28 44r28
-18R9*TrainReactor 24e14 28|15r22
-19e7*OnOff{10E9} 28|23r79 31r23 35r23 29|25r20 44r20
-23i7*pow{5I9} 28|24r16 24r49 29|8r38
-X 28 train.ads
-3K9*train 37l5 37e10 29|5b14 79l5 79t10
-5I9*Speed<short_short_integer> 16r12 25r25 25r52 28r25 28r52 29|34r21
-7I9*Weight<short_integer> 8r29 10r30 17r13 23r24 23r53 35r51 35r80 36r25
-. 36r54 29|56r12 68r35
-8i4*ReactorWeight{7I9} 17r23 29|64r36 68r19
-10i4*CarriageWeight{7I9} 29|68r50
-12I9*Carriage<short_short_integer> 18r19 31r56 29|44r54 53r12
-14R9*Train 19e14 22r44 27r36 30r41 34r45 29|7r44 42r41 51r45 73r36
-15r7*reac{12|18R9} 23r74 24r11 24r44 31r18 35r18 29|8r33 25r15 44r15
-16i7*sp{5I9} 25r19 25r46 28r19 28r46 29|32m14 34m15
-17i7*wei{7I9} 23r17 23r46 35r44 35r73 36r19 36r47 29|9r33 68m12
-18i7*numbCarri{12I9} 31r44 32r19 32r36 29|44r42 45m15 45r33 53r29 65r31 68r81
-22U14*calculateSpeed 22=30 29|7b14 40l8 40t22 76s7
-22r30 This{14R9} 23r12 23r41 23r69 24r6 24r39 25r14 25r41 29|7b30 8r28 9r28
+1K9*reactor 48e12 26|1w6 1r19 15r14 27|1w6 1r19
+5I9*Power<short_integer> 26|24r23 24r56
+10n29*Off{10E9} 26|23r87 32r31 36r31 27|25r28 44r28
+18R9*TrainReactor 24e14 26|15r22
+19e7*OnOff{10E9} 26|23r79 32r23 36r23 27|25r20 44r20
+23i7*pow{5I9} 26|24r16 24r49 27|8r38
+X 26 train.ads
+3K9*train 38l5 38e10 27|5b14 82l5 82t10
+5I9*Speed<short_short_integer> 16r12 25r25 25r52 27|34r21
+7I9*Weight<short_integer> 8r29 10r30 17r13 23r24 23r53 35r54 36r51 36r80
+. 37r39 37r82 27|54r54 60r13 71r31
+8i4*ReactorWeight{7I9} 17r23 27|71r15
+10i4*CarriageWeight{7I9} 27|71r46
+12I9*Carriage<short_short_integer> 18r19 32r56 27|44r54
+14R9*Train 19e14 22r44 31r41 35r40 27|7r44 42r41 54r40
+15r7*reac{12|18R9} 23r74 24r11 24r44 32r18 36r18 27|8r33 25r15 44r15
+16i7*sp{5I9} 25r19 25r46 27|32m14 34m15
+17i7*wei{7I9} 23r17 23r46 36r44 36r73 27|9r33 46m15
+18i7*numbCarri{12I9} 32r44 33r19 33r36 27|44r42 45m15 45r33 71r77
+22U14*calculateSpeed 22=30 27|7b14 40l8 40t22
+22r30 This{14R9} 23r12 23r41 23r69 24r6 24r39 25r14 25r41 27|7b30 8r28 9r28
 . 25r10 32m9 34m10
-27U14*Update 27=22 29|73b14 77l8 77t14
-27r22 This{14R9} 28r14 28r41 29|73b22 76m22
-30U14*addCarriage 30=27 29|42b14 49l8 49t19
-30r27 This{14R9} 31r13 31r39 32r14 32r31 29|42b27 44r10 44r37 45m10 45r28
-34U14*calculateWeight 34=31 29|51b14 70l8 70t23
-34r31 This{14R9} 35r13 35r39 35r68 36r14 36r42 29|51b31 53r24 65r26 68m7
-. 68r76
-X 29 train.adb
+31U14*addCarriage 31=27 27|42b14 50l8 50t19
+31r27 This{14R9} 32r13 32r39 33r14 33r31 27|42b27 44r10 44r37 45m10 45r28
+. 46m10 46r38
+35V13*calculateWeight{7I9} 35>30 37r14 37r56 27|46s22 54b13 74l8 74t23
+35r30 This{14R9} 36r13 36r39 36r68 27|54b30 71r72
+X 27 train.adb
 8f7 Pow{float} 28r21
 9f7 Wei{float} 28r27
 10f7 SpFloat{float} 26m10 28m10 31r10 34r27
-53i7 CN{28|12I9} 59r37
-55i7 Caaaaa{integer} 65m7 66r29
-56i7 We{28|7I9}
+60i7 ret{26|7I9} 71m7 73r14
 

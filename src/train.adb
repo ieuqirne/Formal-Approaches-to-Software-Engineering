@@ -43,31 +43,34 @@ package body train with SPARK_Mode is
    begin
       if This.reac.OnOff = Off and  This.numbCarri < Carriage'Last then
          This.numbCarri := This.numbCarri + 1;
-         --calculateWeight(This);
+         This.wei := calculateWeight(This);
+         --This.wcalculateWeight(This);
       end if;
 
    end addCarriage;
 
 
 
-   procedure calculateWeight (This : in out Train) is
+   function calculateWeight (This : in Train) return Weight
+   is
       --CW : Integer := CarriageWeight;
-      CN : Carriage := This.numbCarri;
+      -- CN : Carriage := This.numbCarri;
       --Caaa : Integer :=  Integer(this.numbCarri) * CarriageWeight;
-      Caaaaa : Integer ;
+      --Caaaaa : Integer ;
+      ret : Weight;
    begin
       --Put_Line("CarriageWeight: " & CW'Image);
-      Put_Line("This.numbCarri: " & CN'Image);
+     -- Put_Line("This.numbCarri: " & CN'Image);
 
 
       --Put_Line("Caaa: " & Caaa'Image);
       --Put_Line("Caaaaa: " & Caaaaa'Image);
-      Put_Line("ReactorWeight: " & ReactorWeight'Image);
-      Caaaaa :=  Integer(this.numbCarri);
-      Put_Line("Caaaaa: " & Caaaaa'Image);
+      --Put_Line("ReactorWeight: " & ReactorWeight'Image);
+      --Caaaaa :=  Integer(this.numbCarri);
+      --Put_Line("Caaaaa: " & Caaaaa'Image);
+      ret :=  ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));
 
-      This.wei := ReactorWeight + Weight(Integer(CarriageWeight) * Integer(this.numbCarri));
-
+      return ret;
    end calculateWeight;
 
 
