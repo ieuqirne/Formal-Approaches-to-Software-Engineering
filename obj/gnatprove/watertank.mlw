@@ -1863,7 +1863,7 @@ module Watertank__waterlevel
  use        "int".Int
 
  type waterlevel =
-  < range 0 5600 >
+  < range 0 2500 >
  
  val constant first 
    : int
@@ -1871,7 +1871,7 @@ module Watertank__waterlevel
  
  val constant last 
    : int
-  ensures { result =  (5600 : int) }
+  ensures { result =  (2500 : int) }
  
  predicate in_range 
    (x : int) =
@@ -1991,7 +1991,7 @@ module Watertank__waterthreshold
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant waterthreshold [#"watertank.ads" 7 0 0][@name:WaterThreshold] [@model_trace:2539] 
+ val constant waterthreshold [#"watertank.ads" 7 0 0][@model_trace:2393] [@name:WaterThreshold] 
    : int
 
  
@@ -2006,7 +2006,7 @@ module Watertank__waterdecrement
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant waterdecrement [#"watertank.ads" 8 0 0][@model_trace:2549] [@name:WaterDecrement] 
+ val constant waterdecrement [#"watertank.ads" 8 0 0][@model_trace:2403] [@name:WaterDecrement] 
    : int
 
  
@@ -2026,9 +2026,9 @@ module Watertank__trainwatertank__rep
  use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
 
  type __split_fields =
-  { rec__watertank__trainwatertank__water_level [@model_trace:.2569] [@name:water_level] : Watertank__waterlevel.waterlevel; rec__watertank__trainwatertank__status [@name:status] [@model_trace:.2579] : Watertank__waterstatus.waterstatus }
+  { rec__watertank__trainwatertank__water_level [@model_trace:.2423] [@name:water_level] : Watertank__waterlevel.waterlevel; rec__watertank__trainwatertank__status [@model_trace:.2436] [@name:status] : Watertank__waterstatus.waterstatus }
  
- function __split_fields_rec__watertank__trainwatertank__water_level__projection [@model_trace:.2569] [@name:water_level] 
+ function __split_fields_rec__watertank__trainwatertank__water_level__projection [@model_trace:.2423] [@name:water_level] 
    (a : __split_fields) : Watertank__waterlevel.waterlevel =
   a.rec__watertank__trainwatertank__water_level
  
@@ -2036,7 +2036,7 @@ module Watertank__trainwatertank__rep
  
  meta "inline:no" function __split_fields_rec__watertank__trainwatertank__water_level__projection
  
- function __split_fields_rec__watertank__trainwatertank__status__projection [@name:status] [@model_trace:.2579] 
+ function __split_fields_rec__watertank__trainwatertank__status__projection [@model_trace:.2436] [@name:status] 
    (a : __split_fields) : Watertank__waterstatus.waterstatus =
   a.rec__watertank__trainwatertank__status
  
@@ -2215,238 +2215,13 @@ module Watertank__trainwatertank
   writes {x}
 
 end
-
-(* Module for defining the constant "lvl" defined at watertank.ads:15, created in Gnat2Why.Decls.Translate_Constant *)
-module Watertank__updatewaterlevel__lvl
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val constant lvl [#"watertank.ads" 15 0 0][@model_trace:2607] [@name:lvl] 
-   : int
-
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "lvl" defined at watertank.ads:15, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Watertank__updatewaterlevel__lvl___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for possibly declaring a logic function for "constructwatertank" defined at watertank.ads:31, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Watertank__constructwatertank
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Watertank__trainwatertank as Watertank__trainwatertank
-
- val function constructwatertank 
-   (__void_param : unit) : Watertank__trainwatertank.trainwatertank
- 
- val predicate constructwatertank__function_guard 
-   (temp___result_154 : Watertank__trainwatertank.trainwatertank) (__void_param : unit)
-
-end
-
-(* Module for axiomatizing type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__TcountB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type tcountB =
-  < range -2147483648 2147483647 >
- 
- val constant first 
-   : int
-  ensures { result =  (( -2147483648) : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (2147483647 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = tcountB, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type tcountB__ref =
-  { mutable tcountB__content : tcountB }
- 
- function tcountB__ref_tcountB__content__projection 
-   (a : tcountB__ref) : tcountB =
-  a.tcountB__content
- 
- meta "model_projection" function tcountB__ref_tcountB__content__projection
- 
- meta "inline:no" function tcountB__ref_tcountB__content__projection
- 
- val tcountB__havoc 
-   (x : tcountB__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__TcountB__rep
- use        Ada__text_io__TcountB as Ada__text_io__TcountB
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Ada__text_io__TcountB.tcountB) : int =
-  (Ada__text_io__TcountB.tcountB'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Ada__text_io__TcountB.tcountB, 
- predicate in_range = Ada__text_io__TcountB.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__count
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type count =
-  < range 0 2147483647 >
- 
- val constant first 
-   : int
-  ensures { result =  (0 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (2147483647 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = count, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type count__ref =
-  { mutable count__content : count }
- 
- function count__ref_count__content__projection 
-   (a : count__ref) : count =
-  a.count__content
- 
- meta "model_projection" function count__ref_count__content__projection
- 
- meta "inline:no" function count__ref_count__content__projection
- 
- val count__havoc 
-   (x : count__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
-module Ada__text_io__count__rep
- use        Ada__text_io__count as Ada__text_io__count
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Ada__text_io__count.count) : int =
-  (Ada__text_io__count.count'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Ada__text_io__count.count, 
- predicate in_range = Ada__text_io__count.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "T1b" defined at watertank.adb:11, created in Gnat2Why.Types.Translate_Type *)
-module Watertank__updatewaterstatus__T1b
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__character as Standard__character
- use        Array__Int__Standard__character as Array__Int__Standard__character
-
- type component_type =
-  Standard__character.character
- 
- val constant first 
-   : int
-  ensures { result =  (1 : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (21 : int) }
- 
- clone export "ada__model".Constr_Array with axiom .,
- type map = Array__Int__Standard__character.map, 
- function array_bool_eq = Array__Int__Standard__character.bool_eq, 
- function first = first, 
- function last = last, 
- type index_rep_type = int
-
-end
-
-(* Module for defining the constant "item" defined at a-textio.ads:509, created in Gnat2Why.Decls.Translate_Constant *)
-module Ada__text_io__put_line__2__item
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Standard__string as Standard__string
-
- val constant item [#"a-textio.ads" 509 0 0][@model_trace:6198] [@name:Item] [@model_projected] 
-   : Standard__string.string
-
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "item" defined at a-textio.ads:509, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Ada__text_io__put_line__2__item___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
 (* Module for defining a ref holding the value of variable "this" defined at watertank.ads:15, created in Gnat2Why.Decls.Translate_Variable *)
-module Watertank__updatewaterlevel__this
+module Watertank__addwaterreactor__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Watertank__trainwatertank as Watertank__trainwatertank
 
- val this__split_fields [#"watertank.ads" 15 0 0][@model_trace:2598] [@model_projected] [@name:This]  : Watertank__trainwatertank.__split_fields__ref 
+ val this__split_fields [#"watertank.ads" 15 0 0][@model_projected] [@model_trace:2456] [@name:This]  : Watertank__trainwatertank.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2455,139 +2230,10 @@ module Watertank__updatewaterlevel__this
 end
 
 (* Module giving an empty axiom for the entity "this" defined at watertank.ads:15, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Watertank__updatewaterlevel__this___axiom
+module Watertank__addwaterreactor__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
-
-end
-
-(* Module for defining a ref holding the value of variable "this" defined at watertank.ads:22, created in Gnat2Why.Decls.Translate_Variable *)
-module Watertank__update__this
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Watertank__trainwatertank as Watertank__trainwatertank
-
- val this__split_fields [#"watertank.ads" 22 0 0][@model_projected] [@model_trace:2708] [@name:This]  : Watertank__trainwatertank.__split_fields__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "this" defined at watertank.ads:22, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Watertank__update__this___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "this" defined at watertank.ads:26, created in Gnat2Why.Decls.Translate_Variable *)
-module Watertank__updatewaterstatus__this
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Watertank__trainwatertank as Watertank__trainwatertank
-
- val this__split_fields [#"watertank.ads" 26 0 0][@model_projected] [@model_trace:2744] [@name:This]  : Watertank__trainwatertank.__split_fields__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "this" defined at watertank.ads:26, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Watertank__updatewaterstatus__this___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a ref holding the value of variable "result" defined at watertank.adb:29, created in Gnat2Why.Decls.Translate_Variable *)
-module Watertank__constructwatertank__result
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Watertank__trainwatertank as Watertank__trainwatertank
-
- val result____split_fields [#"watertank.adb" 29 0 0][@model_projected] [@model_trace:2463] [@name:result]  : Watertank__trainwatertank.__split_fields__ref 
- 
- val constant attr__ATTRIBUTE_ADDRESS 
-   : int
-
-
-end
-
-(* Module giving an empty axiom for the entity "result" defined at watertank.adb:29, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Watertank__constructwatertank__result___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module declaring the external object "ada__text_io__standard_in," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__standard_in
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val standard_in  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__file_system," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__file_system
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val file_system  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__standard_out," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__standard_out
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val standard_out  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__standard_err," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__standard_err
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val standard_err  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__current_in," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__current_in
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val current_in  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__current_out," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__current_out
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val current_out  : Main.__private__ref 
-
-end
-
-(* Module declaring the external object "ada__text_io__current_err," created in Gnat2Why.Decls.Translate_External_Object *)
-module Ada__text_io__current_err
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- val current_err  : Main.__private__ref 
 
 end
 (* Module giving axioms for type "short_short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
@@ -3101,60 +2747,8 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "updatewaterlevel" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Watertank__updatewaterlevel
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for possibly declaring a logic function for "update" defined at watertank.ads:22, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Watertank__update
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for possibly declaring a logic function for "updatewaterstatus" defined at watertank.ads:26, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Watertank__updatewaterstatus
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for possibly declaring a logic function for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Ada__text_io__line_length__2
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
-
- val function line_length__2 
-   (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
- 
- val predicate line_length__2__function_guard 
-   (temp___result_155 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
-
-end
-
-(* Module for possibly declaring a logic function for "page_length__2" defined at a-textio.ads:251, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Ada__text_io__page_length__2
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
-
- val function page_length__2 
-   (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
- 
- val predicate page_length__2__function_guard 
-   (temp___result_156 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
-
-end
-
-(* Module for possibly declaring a logic function for "put_line__2" defined at a-textio.ads:508, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Ada__text_io__put_line__2
+(* Module for possibly declaring a logic function for "addwaterreactor" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Watertank__addwaterreactor
  use        "_gnatprove_standard".Main
  use        "int".Int
 
@@ -3177,19 +2771,19 @@ module Watertank__waterlevel___axiom
  use        Watertank__waterlevel as Watertank__waterlevel
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_161 : int) (temp___is_init_157 : bool) (temp___skip_constant_158 : bool) (temp___do_toplevel_159 : bool) (temp___do_typ_inv_160 : bool) =
-  (if (( temp___is_init_157 \/ (Watertank__waterlevel.first <= Watertank__waterlevel.last) )) then (
-   (Watertank__waterlevel.dynamic_property Watertank__waterlevel.first Watertank__waterlevel.last temp___expr_161)) else true)
+   (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) =
+  (if (( temp___is_init_154 \/ (Watertank__waterlevel.first <= Watertank__waterlevel.last) )) then (
+   (Watertank__waterlevel.dynamic_property Watertank__waterlevel.first Watertank__waterlevel.last temp___expr_158)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_161 : int) (temp___is_init_157 : bool) (temp___skip_constant_158 : bool) (temp___do_toplevel_159 : bool) (temp___do_typ_inv_160 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_161 : int) (temp___is_init_157 : bool) (temp___skip_constant_158 : bool) (temp___do_toplevel_159 : bool) (temp___do_typ_inv_160 : bool) }
+   (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_162 : int) (temp___skip_top_level_163 : bool) =
+   (temp___expr_159 : int) (temp___skip_top_level_160 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_162 : int) (temp___skip_top_level_163 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_162 : int) (temp___skip_top_level_163 : bool) }
+   (temp___expr_159 : int) (temp___skip_top_level_160 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_159 : int) (temp___skip_top_level_160 : bool) }
 
 end
 
@@ -3201,19 +2795,19 @@ module Watertank__waterstatus___axiom
  use        Watertank__waterstatus as Watertank__waterstatus
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_168 : int) (temp___is_init_164 : bool) (temp___skip_constant_165 : bool) (temp___do_toplevel_166 : bool) (temp___do_typ_inv_167 : bool) =
-  (if (( temp___is_init_164 \/ (Watertank__waterstatus.first <= Watertank__waterstatus.last) )) then (
-   (Watertank__waterstatus.dynamic_property Watertank__waterstatus.first Watertank__waterstatus.last temp___expr_168)) else true)
+   (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) =
+  (if (( temp___is_init_161 \/ (Watertank__waterstatus.first <= Watertank__waterstatus.last) )) then (
+   (Watertank__waterstatus.dynamic_property Watertank__waterstatus.first Watertank__waterstatus.last temp___expr_165)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_168 : int) (temp___is_init_164 : bool) (temp___skip_constant_165 : bool) (temp___do_toplevel_166 : bool) (temp___do_typ_inv_167 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_168 : int) (temp___is_init_164 : bool) (temp___skip_constant_165 : bool) (temp___do_toplevel_166 : bool) (temp___do_typ_inv_167 : bool) }
+   (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_169 : int) (temp___skip_top_level_170 : bool) =
+   (temp___expr_166 : int) (temp___skip_top_level_167 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_169 : int) (temp___skip_top_level_170 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_169 : int) (temp___skip_top_level_170 : bool) }
+   (temp___expr_166 : int) (temp___skip_top_level_167 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_166 : int) (temp___skip_top_level_167 : bool) }
 
 end
 
@@ -3221,80 +2815,28 @@ end
 module Watertank__trainwatertank___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
+ use        "int".Int
  use        Watertank__trainwatertank as Watertank__trainwatertank
+ use        Watertank__waterlevel as Watertank__waterlevel
+ use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
+ use        Watertank__waterstatus as Watertank__waterstatus
+ use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_175 : Watertank__trainwatertank.trainwatertank) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) =
+   (temp___expr_172 : Watertank__trainwatertank.trainwatertank) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) =
   true
  val dynamic_invariant [@inline] 
-   (temp___expr_175 : Watertank__trainwatertank.trainwatertank) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_175 : Watertank__trainwatertank.trainwatertank) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) }
+   (temp___expr_172 : Watertank__trainwatertank.trainwatertank) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_172 : Watertank__trainwatertank.trainwatertank) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_176 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_177 : bool) =
-  true
+   (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_174 : bool) =
+  ( (if ((Watertank__trainwatertank.watertank__trainwatertank__water_level__pred temp___expr_173)) then (
+   ((Watertank__waterlevel__rep.to_rep temp___expr_173.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) = (2500 : int))) else true) /\ (if ((Watertank__trainwatertank.watertank__trainwatertank__status__pred temp___expr_173)) then (
+   ((Watertank__waterstatus__rep.to_rep temp___expr_173.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else true) )
  val default_initial_assumption [@inline] 
-   (temp___expr_176 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_177 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_176 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_177 : bool) }
-
-end
-
-(* Module giving axioms for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Ada__text_io__TcountB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Ada__text_io__count___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Ada__text_io__count as Ada__text_io__count
-
- predicate dynamic_invariant [@inline] 
-   (temp___expr_184 : int) (temp___is_init_180 : bool) (temp___skip_constant_181 : bool) (temp___do_toplevel_182 : bool) (temp___do_typ_inv_183 : bool) =
-  (if (( temp___is_init_180 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
-   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_184)) else true)
- val dynamic_invariant [@inline] 
-   (temp___expr_184 : int) (temp___is_init_180 : bool) (temp___skip_constant_181 : bool) (temp___do_toplevel_182 : bool) (temp___do_typ_inv_183 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_184 : int) (temp___is_init_180 : bool) (temp___skip_constant_181 : bool) (temp___do_toplevel_182 : bool) (temp___do_typ_inv_183 : bool) }
- 
- predicate default_initial_assumption [@inline] 
-   (temp___expr_185 : int) (temp___skip_top_level_186 : bool) =
-  true
- val default_initial_assumption [@inline] 
-   (temp___expr_185 : int) (temp___skip_top_level_186 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_185 : int) (temp___skip_top_level_186 : bool) }
-
-end
-
-(* Module giving axioms for type "T1b" defined at watertank.adb:11, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Watertank__updatewaterstatus__T1b___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module for defining a value for string literal  defined at watertank.adb:11, created in Gnat2Why.Expr.Transform_String_Literal *)
-module Temp___String_Literal_200
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Standard__character as Standard__character
- use        Standard__character__rep as Standard__character__rep
- use        Array__Int__Standard__character as Array__Int__Standard__character
- use        Array__Int__Standard__character as Array__Int__Standard__character
-
- val function temp___String_Literal_200 
-   (__void_param : unit) : Array__Int__Standard__character.map
- 
- axiom temp___String_Literal_200__def_axiom :
-  (forall __void_param   : unit [(temp___String_Literal_200 __void_param)].
-   ( ( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (1 : int))) = (87 : int)) /\ ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (2 : int))) = (97 : int)) )/\( ( ( ( ( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (3 : int))) = (116 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (4 : int))) = (101 : int)) )/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (5 : int))) = (114 : int)) )/\( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (6 : int))) = (32 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (7 : int))) = (108 : int)) ) )/\( ( ( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (8 : int))) = (101 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (9 : int))) = (118 : int)) )/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (10 : int))) = (101 : int)) )/\( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (11 : int))) = (108 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (12 : int))) = (32 : int)) ) ) )/\( ( ( ( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (13 : int))) = (99 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (14 : int))) = (114 : int)) )/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (15 : int))) = (105 : int)) )/\( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (16 : int))) = (116 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (17 : int))) = (105 : int)) ) )/\( ( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (18 : int))) = (99 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (19 : int))) = (97 : int)) )/\( ((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (20 : int))) = (108 : int))/\((Standard__character__rep.to_rep (Array__Int__Standard__character.get (temp___String_Literal_200 __void_param) (21 : int))) = (33 : int)) ) ) ) ) ))
+   (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_174 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_174 : bool) }
 
 end
 (* Module for defining the value of constant "waterthreshold" defined at watertank.ads:7, created in Gnat2Why.Decls.Translate_Constant_Value *)
@@ -3321,33 +2863,8 @@ module Watertank__waterdecrement___axiom
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "updatewaterlevel" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Watertank__updatewaterlevel___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Integer as Integer
- use        "_gnatprove_standard".Boolean as Boolean
- use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__waterlevel as Watertank__waterlevel
- use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
- use        Watertank__waterstatus as Watertank__waterstatus
- use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
-
- val updatewaterlevel 
-   (this__split_fields : Watertank__trainwatertank.__split_fields__ref) (lvl : int) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2624] (lvl >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2630] (lvl <= (5600 : int)) ) ) }
-  ensures {  ( ( ( ( [@GP_Pretty_Ada:2640] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2648] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (5600 : int)) ) ) /\ (if (((old (Boolean.andb (Integer.bool_ge lvl (500 : int)) (Integer.bool_le lvl (5600 : int))) ) = True)) then (
-   ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else ((if (((old (Boolean.andb (Integer.bool_lt lvl (500 : int)) (Integer.bool_ge lvl (0 : int))) ) = True)) then (
-   ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (0 : int))) else (
-   true)))) ) /\ (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "update" defined at watertank.ads:22, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Watertank__update___axiom
+(* Module for declaring a program function (and possibly an axiom) for "addwaterreactor" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Watertank__addwaterreactor___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
@@ -3356,205 +2873,11 @@ module Watertank__update___axiom
  use        Watertank__waterlevel as Watertank__waterlevel
  use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
 
- val update 
+ val addwaterreactor 
    (this__split_fields : Watertank__trainwatertank.__split_fields__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:18154] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) > (100 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18167] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content } True True True True) ) }
+  requires {  ( ( [@GP_Pretty_Ada:2475] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2483] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:2493] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2501] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) /\ (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content } True True True True) ) }
   writes {this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "updatewaterstatus" defined at watertank.ads:26, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Watertank__updatewaterstatus___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Integer as Integer
- use        "_gnatprove_standard".Boolean as Boolean
- use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__waterlevel as Watertank__waterlevel
- use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
- use        Watertank__waterstatus as Watertank__waterstatus
- use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
-
- val updatewaterstatus 
-   (this__split_fields : Watertank__trainwatertank.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2763] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2771] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (5600 : int)) ) ) }
-  ensures {  ( (if (((old (Boolean.andb (Integer.bool_gt (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (500 : int)) (Integer.bool_le (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (5600 : int))) ) = True)) then (
-   ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else ((if (((old (Boolean.andb (Integer.bool_ge (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (0 : int)) (Integer.bool_le (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (500 : int))) ) = True)) then (
-   ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (0 : int))) else (
-   true)))) /\ (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content } True True True True) ) }
-  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
-  writes {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err, this__split_fields}
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "constructwatertank" defined at watertank.ads:31, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Watertank__constructwatertank___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__constructwatertank as Watertank__constructwatertank
-
- val constructwatertank 
-   (__void_param : unit) : Watertank__trainwatertank.trainwatertank
-  requires {  true }
-  ensures {  ( ( (result = (Watertank__constructwatertank.constructwatertank ())) /\ (Watertank__constructwatertank.constructwatertank__function_guard result ()) )/\(Watertank__trainwatertank___axiom.dynamic_invariant result True False True True) ) }
- 
- axiom constructwatertank__post_axiom :
-  (forall __void_param   : unit [(Watertank__constructwatertank.constructwatertank __void_param)].
-   ( true -> (let result = (Watertank__constructwatertank.constructwatertank __void_param) in (
-    (if ((Watertank__constructwatertank.constructwatertank__function_guard result __void_param)) then (
-     ( ( true /\ (Watertank__trainwatertank___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
-    ))
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Ada__text_io__line_length__2___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
-
- val line_length__2 
-   (__void_param : unit) : int
-  requires {  true }
-  ensures {  ( ( (result = (Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) /\ true )/\(Ada__text_io__count___axiom.dynamic_invariant result True False True True) ) }
-  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
- 
- axiom line_length__2__post_axiom :
-  (forall ada__text_io__standard_in   ada__text_io__file_system   ada__text_io__standard_out   ada__text_io__standard_err   ada__text_io__current_in   ada__text_io__current_out   ada__text_io__current_err   : Main.__private [(Ada__text_io__line_length__2.line_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err)].
-   ( true -> (let result = (Ada__text_io__line_length__2.line_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err) in (
-    ( ( true /\ (Ada__text_io__count___axiom.dynamic_invariant result True False True True) )/\true )))
-    ))
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "page_length__2" defined at a-textio.ads:251, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Ada__text_io__page_length__2___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
-
- val page_length__2 
-   (__void_param : unit) : int
-  requires {  true }
-  ensures {  ( ( (result = (Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) /\ true )/\(Ada__text_io__count___axiom.dynamic_invariant result True False True True) ) }
-  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
- 
- axiom page_length__2__post_axiom :
-  (forall ada__text_io__standard_in   ada__text_io__file_system   ada__text_io__standard_out   ada__text_io__standard_err   ada__text_io__current_in   ada__text_io__current_out   ada__text_io__current_err   : Main.__private [(Ada__text_io__page_length__2.page_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err)].
-   ( true -> (let result = (Ada__text_io__page_length__2.page_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err) in (
-    ( ( true /\ (Ada__text_io__count___axiom.dynamic_invariant result True False True True) )/\true )))
-    ))
-
-end
-
-(* Module for declaring a program function (and possibly an axiom) for "put_line__2" defined at a-textio.ads:508, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Ada__text_io__put_line__2___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Standard__string as Standard__string
- use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
- use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
-
- val put_line__2 
-   (item : Standard__string.string) : unit
-  requires {  true }
-  ensures {  ( ( [@GP_Pretty_Ada:6217] ((old (Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) ) = (Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) ) /\ ( [@GP_Pretty_Ada:6223] ((old (Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) ) = (Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) ) ) }
-  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
-  writes {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
 
 end
 
@@ -3563,32 +2886,12 @@ module Watertank__package_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
- use        "_gnatprove_standard".Main as Main
  use        Watertank__waterthreshold as Watertank__waterthreshold
  use        Watertank__waterdecrement as Watertank__waterdecrement
- use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
- use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
  use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
- use        Ada__text_io__standard_in as Ada__text_io__standard_in
- use        Ada__text_io__file_system as Ada__text_io__file_system
- use        Ada__text_io__standard_out as Ada__text_io__standard_out
- use        Ada__text_io__standard_err as Ada__text_io__standard_err
- use        Ada__text_io__current_in as Ada__text_io__current_in
- use        Ada__text_io__current_out as Ada__text_io__current_out
- use        Ada__text_io__current_err as Ada__text_io__current_err
  use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
  use        Watertank__waterthreshold___axiom as Watertank__waterthreshold___axiom
  use        Watertank__waterdecrement___axiom as Watertank__waterdecrement___axiom
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__line_length__2___axiom as Ada__text_io__line_length__2___axiom
- use        Ada__text_io__page_length__2___axiom as Ada__text_io__page_length__2___axiom
 
  let def [#"watertank.ads" 1 0 0][@GP_Subp:watertank.ads:1] 
    (__void_param : unit)
@@ -3608,367 +2911,79 @@ module Watertank__package_def
    ()))
    in () end ;
   [#"watertank.ads" 8 0 0] assume { [#"watertank.ads" 8 0 0] (Watertank__waterlevel___axiom.dynamic_invariant Watertank__waterdecrement.waterdecrement True False True True) } ));
+  ([#"watertank.ads" 12 0 0] ());
   ([#"watertank.ads" 10 0 0] ());
   ([#"watertank.ads" 15 0 0] ());
-  ([#"watertank.ads" 18 0 0] ());
   ([#"watertank.ads" 17 0 0] ());
   ([#"watertank.ads" 16 0 0] ());
-  ([#"watertank.ads" 22 0 0] ());
-  ([#"watertank.ads" 24 0 0] ());
-  ([#"watertank.ads" 23 0 0] ());
-  ([#"watertank.ads" 26 0 0] ());
-  ([#"watertank.ads" 28 0 0] ());
-  ([#"watertank.ads" 27 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-  ([#"watertank.ads" 31 0 0] ());
-   assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
+  ([#"watertank.ads" 16 0 0] ());
+  ([#"watertank.ads" 16 0 0] ());
   ();
   ([#"watertank.adb" 3 0 0] ());
   ([#"watertank.adb" 5 0 0] ());
-  ([#"watertank.adb" 15 0 0] ());
-  ([#"watertank.adb" 20 0 0] ());
-  ([#"watertank.adb" 28 0 0] ());
   ();
-  ( [@GP_Sloc:watertank.adb:34:1] ([#"watertank.adb" 34 0 0] ()) ) )
+  ( [@GP_Sloc:watertank.adb:41:3] ([#"watertank.adb" 41 0 0] ()) ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "updatewaterlevel" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Watertank__updatewaterlevel__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "addwaterreactor" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Watertank__addwaterreactor__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
- use        "_gnatprove_standard".Integer as Integer
  use        "_gnatprove_standard".Boolean as Boolean
- use        Watertank__updatewaterlevel__this as Watertank__updatewaterlevel__this
+ use        Watertank__addwaterreactor__this as Watertank__addwaterreactor__this
  use        Watertank__trainwatertank as Watertank__trainwatertank
  use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__updatewaterlevel__lvl as Watertank__updatewaterlevel__lvl
  use        Watertank__waterlevel as Watertank__waterlevel
- use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
  use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
  use        Watertank__waterstatus as Watertank__waterstatus
  use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
  use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
  use        Watertank__waterstatus___axiom as Watertank__waterstatus___axiom
  use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__updatewaterlevel__this___axiom as Watertank__updatewaterlevel__this___axiom
- use        Watertank__updatewaterlevel__lvl___axiom as Watertank__updatewaterlevel__lvl___axiom
+ use        Watertank__addwaterreactor__this___axiom as Watertank__addwaterreactor__this___axiom
 
  let def [#"watertank.ads" 15 0 0][@GP_Subp:watertank.ads:15] 
    (__void_param : unit)
   requires { [#"watertank.ads" 15 0 0] true }
-  ensures { [#"watertank.ads" 15 0 0] ([#"watertank.ads" 17 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:watertank.ads:17:14] [@comment:     Post => This.water_level >= WaterLevel'First and This.water_level <= WaterLevel'Last,              ^ watertank.ads:17:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:4] [@GP_Shape:pragargs__and] ( ( [@GP_Pretty_Ada:2640] [@GP_Sloc:watertank.ads:17:14] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2648] [@GP_Sloc:watertank.ads:17:55] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (5600 : int)) ) ) )) }
+  ensures { [#"watertank.ads" 15 0 0] ([#"watertank.ads" 17 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => This.water_level >= WaterLevel'First and This.water_level <= WaterLevel'Last;              ^ watertank.ads:17:14:VC_POSTCONDITION] [@GP_Sloc:watertank.ads:17:14] [@model_vc_post] [@GP_Id:0] [@GP_Shape:pragargs__and] ( ( [@GP_Sloc:watertank.ads:17:14] [@GP_Pretty_Ada:2493] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Sloc:watertank.ads:17:55] [@GP_Pretty_Ada:2501] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram watertank.ads:15 *)
   ;
-   assume {  (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } True False True True) };
-   assume {  (Watertank__waterlevel___axiom.dynamic_invariant Watertank__updatewaterlevel__lvl.lvl True False True True) };
+   assume {  (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } True False True True) };
   () (* Declarations introduced by the compiler at the beginning of the subprogram watertank.ads:15 *)
   ;
   () (* Check for RTE in the Pre of the subprogram watertank.ads:15 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Watertank__updatewaterlevel__lvl.lvl >= (0 : int))) ((Watertank__updatewaterlevel__lvl.lvl <= (5600 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (2500 : int)))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram watertank.ads:15 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2624] (Watertank__updatewaterlevel__lvl.lvl >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2630] (Watertank__updatewaterlevel__lvl.lvl <= (5600 : int)) ) ) };
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Watertank__updatewaterlevel__lvl.lvl < (500 : int))) ((Watertank__updatewaterlevel__lvl.lvl >= (0 : int)))) in (
-   ()))
-   in () end ;
-  (let temp___189 [@mlw:proxy_symbol] [@introduced] =  (val _f : bool
-  ensures { (result = (Boolean.andb (Integer.bool_lt Watertank__updatewaterlevel__lvl.lvl (500 : int)) (Integer.bool_ge Watertank__updatewaterlevel__lvl.lvl (0 : int))))} 
-  in _f) in (
-   (  begin ensures {true} let _ = (let _ = (Boolean.andb((Watertank__updatewaterlevel__lvl.lvl >= (500 : int))) ((Watertank__updatewaterlevel__lvl.lvl <= (5600 : int)))) in (
-    ()))
-    in () end ;
-   (let temp___188 [@mlw:proxy_symbol] [@introduced] =  (val _f : bool
-   ensures { (result = (Boolean.andb (Integer.bool_ge Watertank__updatewaterlevel__lvl.lvl (500 : int)) (Integer.bool_le Watertank__updatewaterlevel__lvl.lvl (5600 : int))))} 
-   in _f) in (
-    (  begin ensures {true} let _ = (let _ = (  check {  ([#"watertank.ads" 18 0 0] ( [@vc:annotation] [@GP_Sloc:watertank.ads:18:6] [@GP_Reason:VC_DISJOINT_CONTRACT_CASES] [@comment:     Contract_Cases => (lvl >= WaterThreshold and lvl <= WaterLevel'Last => This.status = Sufficient,      ^ watertank.ads:18:6:VC_DISJOINT_CONTRACT_CASES] [@GP_Id:0] ((((0 : int) + (if ((temp___188 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) + (if ((temp___189 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) <= (1 : int)) )) };
-     check {  ([#"watertank.ads" 18 0 0] ( [@GP_Reason:VC_COMPLETE_CONTRACT_CASES] [@vc:annotation] [@GP_Sloc:watertank.ads:18:6] [@comment:     Contract_Cases => (lvl >= WaterThreshold and lvl <= WaterLevel'Last => This.status = Sufficient,      ^ watertank.ads:18:6:VC_COMPLETE_CONTRACT_CASES] [@GP_Id:1] ((((0 : int) + (if ((temp___188 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) + (if ((temp___189 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) >= (1 : int)) )) } ) in (
-     ()))
-     in () end ;
-     try
-     ( ();
-     ( [@GP_Sloc:watertank.adb:17:24] ([#"watertank.adb" 17 0 0] (let temp___191 [@mlw:proxy_symbol] [@introduced] = (let temp___190 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
-      ( [#"watertank.adb" 17 0 0] begin ensures {true} let _ = (let _ = temp___190.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level in (
-       ()))
-       in () end ;
-      { ( temp___190 ) with Watertank__trainwatertank.__split_fields = { ( temp___190.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__water_level = (Watertank__waterlevel__rep.of_rep(Watertank__updatewaterlevel__lvl.lvl)) } } )))
-      in (
-      [#"watertank.adb" 17 0 0] (Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___191.Watertank__trainwatertank.__split_fields ))))
-     ) );
-      raise Return__exc )
-    with
-     Return__exc -> ()
-    end;
-     begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (5600 : int)))) in (
-     ()))
-     in () end ;
-     begin ensures {true} let _ = (let _ = (if (temp___188) then (
-     ((Watertank__waterstatus__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status)) = (1 : int))) else (
-     True)) in (
-     ()))
-     in () end ;
-     assert {  ([#"watertank.ads" 18 0 0] ( [@GP_Sloc:watertank.ads:18:74] [@GP_Reason:VC_CONTRACT_CASE] [@vc:annotation] [@GP_Id:2] [@GP_Shape:pragargs__aggr] [@comment:     Contract_Cases => (lvl >= WaterThreshold and lvl <= WaterLevel'Last => This.status = Sufficient,                                                                          ^ watertank.ads:18:74:VC_CONTRACT_CASE] (if ((temp___188 = True)) then (
-     ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else true) )) };
-     begin ensures {true} let _ = (let _ = (if (temp___189) then (
-     ((Watertank__waterstatus__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status)) = (0 : int))) else (
-     True)) in (
-     ()))
-     in () end ;
-     assert {  ([#"watertank.ads" 19 0 0] ( [@comment:                        lvl < WaterThreshold and  lvl >= WaterLevel'First  => This.status = Critical);                                                                            ^ watertank.ads:19:76:VC_CONTRACT_CASE] [@GP_Reason:VC_CONTRACT_CASE] [@vc:annotation] [@GP_Sloc:watertank.ads:19:76] [@GP_Id:3] [@GP_Shape:pragargs__aggr] (if ((temp___189 = True)) then (
-     ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterlevel__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (0 : int))) else true) )) } )))
-    )))
-   )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "update" defined at watertank.ads:22, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Watertank__update__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__update__this as Watertank__update__this
- use        Watertank__waterlevel as Watertank__waterlevel
- use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
- use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
- use        Watertank__waterstatus___axiom as Watertank__waterstatus___axiom
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__update__this___axiom as Watertank__update__this___axiom
-
- let def [#"watertank.ads" 22 0 0][@GP_Subp:watertank.ads:22] 
-   (__void_param : unit)
-  requires { [#"watertank.ads" 22 0 0] true }
-  ensures { [#"watertank.ads" 22 0 0] ([#"watertank.ads" 24 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@GP_Sloc:watertank.ads:24:14] [@comment:     Post => This.water_level >= WaterLevel'First;              ^ watertank.ads:24:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:6] ( [@GP_Sloc:watertank.ads:24:14] [@GP_Pretty_Ada:18167] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) )) }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram watertank.ads:22 *)
-  ;
-   assume {  (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram watertank.ads:22 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram watertank.ads:22 *)
-  ;
-   begin ensures {true} let _ = (let _ = ((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) > (100 : int)) in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram watertank.ads:22 *)
-  ;
-   assume {  ( [@GP_Pretty_Ada:18154] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) > (100 : int)) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2475] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2483] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) };
    try
    ( ();
-   ( [@GP_Sloc:watertank.adb:22:7] ([#"watertank.adb" 22 0 0] (if (( ([#"watertank.adb" 22 0 0] [#"watertank.adb" 22 0 0] (([@branch_id=2436] Main.spark__branch).bool__content <- ( ((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) > (100 : int)) )));
-   ( [@branch_id=2436] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:watertank.adb:23:27] ([#"watertank.adb" 23 0 0] (let temp___193 [@mlw:proxy_symbol] [@introduced] = (let temp___192 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
-     ( [#"watertank.adb" 23 0 0] begin ensures {true} let _ = (let _ = temp___192.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level in (
-      ()))
-      in () end ;
-     { ( temp___192 ) with Watertank__trainwatertank.__split_fields = { ( temp___192.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__water_level = (Watertank__waterlevel__rep.of_rep(([#"watertank.adb" 23 0 0] ( [@comment:         This.water_level := This.water_level - WaterDecrement;                                               ^ watertank.adb:23:47:VC_RANGE_CHECK] [@vc:annotation] [@GP_Sloc:watertank.adb:23:47] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__this_assign__sub] [@GP_Id:5] (Watertank__waterlevel.range_check_(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) - (100 : int)))) )))) } } )))
-     in (
-      (Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___193.Watertank__trainwatertank.__split_fields ))))
-    ) ) )) else (
-    ()))) );
+   ( [@GP_Sloc:watertank.adb:7:24] ([#"watertank.adb" 7 0 0] (let temp___176 [@mlw:proxy_symbol] [@introduced] = (let temp___175 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
+    ( [#"watertank.adb" 7 0 0] begin ensures {true} let _ = (let _ = temp___175.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level in (
+     ()))
+     in () end ;
+    { ( temp___175 ) with Watertank__trainwatertank.__split_fields = { ( temp___175.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__water_level = ( 400 : Watertank__waterlevel.waterlevel ) } } )))
+    in (
+    [#"watertank.adb" 7 0 0] (Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___176.Watertank__trainwatertank.__split_fields ))))
+   ) );
+   ( [@GP_Sloc:watertank.adb:9:19] ([#"watertank.adb" 9 0 0] (let temp___178 [@mlw:proxy_symbol] [@introduced] = (let temp___177 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
+    ( [#"watertank.adb" 9 0 0] begin ensures {true} let _ = (let _ = temp___177.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status in (
+     ()))
+     in () end ;
+    { ( temp___177 ) with Watertank__trainwatertank.__split_fields = { ( temp___177.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__status = (Watertank__waterstatus__rep.of_rep((1 : int))) } } )))
+    in (
+    [#"watertank.adb" 9 0 0] (Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___178.Watertank__trainwatertank.__split_fields ))))
+   ) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = ((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__update__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int)) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (2500 : int)))) in (
    ()))
    in () end  )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "updatewaterstatus" defined at watertank.ads:26, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Watertank__updatewaterstatus__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        "_gnatprove_standard".Main as Main
- use        "_gnatprove_standard".Integer as Integer
- use        "_gnatprove_standard".Boolean as Boolean
- use        Standard__string as Standard__string
- use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__updatewaterstatus__this as Watertank__updatewaterstatus__this
- use        Ada__text_io__put_line__2___axiom as Ada__text_io__put_line__2___axiom
- use        Watertank__waterlevel as Watertank__waterlevel
- use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
- use        Watertank__waterstatus as Watertank__waterstatus
- use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
- use        Temp___String_Literal_200 as Temp___String_Literal_200
- use        Array__Int__Standard__character as Array__Int__Standard__character
- use        Array__Int__Standard__character as Array__Int__Standard__character
- use        Standard__positive___axiom as Standard__positive___axiom
- use        Standard__character___axiom as Standard__character___axiom
- use        Standard__string___axiom as Standard__string___axiom
- use        Standard__integer___axiom as Standard__integer___axiom
- use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
- use        Watertank__waterstatus___axiom as Watertank__waterstatus___axiom
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__updatewaterstatus__this___axiom as Watertank__updatewaterstatus__this___axiom
- use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
- use        Ada__text_io__line_length__2___axiom as Ada__text_io__line_length__2___axiom
- use        Ada__text_io__page_length__2___axiom as Ada__text_io__page_length__2___axiom
- use        Ada__text_io__put_line__2___axiom as Ada__text_io__put_line__2___axiom
-
- let def [#"watertank.ads" 26 0 0][@GP_Subp:watertank.ads:26] 
-   (__void_param : unit)
-  requires { [#"watertank.ads" 26 0 0] true }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram watertank.ads:26 *)
-  ;
-  [#"watertank.ads" 26 0 0] assume { [#"watertank.ads" 26 0 0] (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram watertank.ads:26 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram watertank.ads:26 *)
-  ;
-  [#"watertank.ads" 26 0 0] begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (5600 : int)))) in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram watertank.ads:26 *)
-  ;
-  [#"watertank.ads" 26 0 0] assume { [#"watertank.ads" 26 0 0] ( ( [@GP_Pretty_Ada:2763] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2771] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (5600 : int)) ) ) };
-  [#"watertank.ads" 26 0 0] begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) > (500 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (5600 : int)))) in (
-   ()))
-   in () end ;
-  (let temp___194 [@mlw:proxy_symbol] [@introduced] = [#"watertank.ads" 26 0 0] (val _f : bool
-  ensures {[#"watertank.ads" 26 0 0] (result = (Boolean.andb (Integer.bool_gt (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (500 : int)) (Integer.bool_le (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (5600 : int))))} 
-  in _f) in (
-   ( [#"watertank.ads" 26 0 0] begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (500 : int)))) in (
-    ()))
-    in () end ;
-   (let temp___195 [@mlw:proxy_symbol] [@introduced] = [#"watertank.ads" 26 0 0] (val _f : bool
-   ensures {[#"watertank.ads" 26 0 0] (result = (Boolean.andb (Integer.bool_ge (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (0 : int)) (Integer.bool_le (Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) (500 : int))))} 
-   in _f) in (
-    ( [#"watertank.ads" 26 0 0] begin ensures {true} let _ = (let _ = ( [#"watertank.ads" 26 0 0] check { [#"watertank.ads" 26 0 0] ([#"watertank.ads" 28 0 0] ( [@comment:     Contract_Cases => (This.water_level > WaterThreshold and this.water_level <= WaterLevel'Last => This.status = Sufficient,      ^ watertank.ads:28:6:VC_DISJOINT_CONTRACT_CASES] [@vc:annotation] [@GP_Reason:VC_DISJOINT_CONTRACT_CASES] [@GP_Sloc:watertank.ads:28:6] [@GP_Id:7] ((((0 : int) + (if ((temp___194 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) + (if ((temp___195 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) <= (1 : int)) )) };
-     check {  ([#"watertank.ads" 28 0 0] ( [@comment:     Contract_Cases => (This.water_level > WaterThreshold and this.water_level <= WaterLevel'Last => This.status = Sufficient,      ^ watertank.ads:28:6:VC_COMPLETE_CONTRACT_CASES] [@GP_Reason:VC_COMPLETE_CONTRACT_CASES] [@vc:annotation] [@GP_Sloc:watertank.ads:28:6] [@GP_Id:8] ((((0 : int) + (if ((temp___194 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) + (if ((temp___195 = True)) then (
-     (1 : int)) else (
-     (0 : int)))) >= (1 : int)) )) } ) in (
-     ()))
-     in () end ;
-     try
-     ( ();
-     ( [@GP_Sloc:watertank.adb:7:7] ([#"watertank.adb" 7 0 0] (if (( ([#"watertank.adb" 7 0 0] [#"watertank.adb" 7 0 0] (([@branch_id=2334] Main.spark__branch).bool__content <- ( (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (5600 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) > (500 : int)))) )));
-     ( [@branch_id=2334] Main.spark__branch ).bool__content )) then (
-      ( ();
-      ( [@GP_Sloc:watertank.adb:8:22] ([#"watertank.adb" 8 0 0] (let temp___197 [@mlw:proxy_symbol] [@introduced] = (let temp___196 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
-       ( [#"watertank.adb" 8 0 0] begin ensures {true} let _ = (let _ = temp___196.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status in (
-        ()))
-        in () end ;
-       { ( temp___196 ) with Watertank__trainwatertank.__split_fields = { ( temp___196.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__status = (Watertank__waterstatus__rep.of_rep((1 : int))) } } )))
-       in (
-       [#"watertank.adb" 8 0 0] (Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___197.Watertank__trainwatertank.__split_fields ))))
-      ) ) )) else (
-      ( [@GP_Sloc:watertank.adb:9:7] (if (( ([#"watertank.adb" 9 0 0] [#"watertank.adb" 9 0 0] (([@branch_id=2355] Main.spark__branch).bool__content <- ( (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (500 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int)))) )));
-      ( [@branch_id=2355] Main.spark__branch ).bool__content )) then (
-       ( ();
-       ( [@GP_Sloc:watertank.adb:10:22] ([#"watertank.adb" 10 0 0] (let temp___199 [@mlw:proxy_symbol] [@introduced] = (let temp___198 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
-        ( [#"watertank.adb" 10 0 0] begin ensures {true} let _ = (let _ = temp___198.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status in (
-         ()))
-         in () end ;
-        { ( temp___198 ) with Watertank__trainwatertank.__split_fields = { ( temp___198.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__status = (Watertank__waterstatus__rep.of_rep((0 : int))) } } )))
-        in (
-        [#"watertank.adb" 10 0 0] (Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___199.Watertank__trainwatertank.__split_fields ))))
-       ) );
-       ( [@GP_Sloc:watertank.adb:11:21] ([#"watertank.adb" 11 0 0] ()) );
-       ( [@GP_Sloc:watertank.adb:11:21] ([#"watertank.adb" 11 0 0] ( (Ada__text_io__put_line__2___axiom.put_line__2((Standard__string.of_array((Temp___String_Literal_200.temp___String_Literal_200(()))) ((1 : int)) ((21 : int))))) )) ) )) else (
-       ())) )))) );
-      raise Return__exc )
-    with
-     Return__exc -> ()
-    end;
-     begin ensures {true} let _ = (let _ = True in (
-     ()))
-     in () end ;
-     begin ensures {true} let _ = (let _ = (if (temp___194) then (
-     ((Watertank__waterstatus__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status)) = (1 : int))) else (
-     True)) in (
-     ()))
-     in () end ;
-     assert {  ([#"watertank.ads" 28 0 0] ( [@GP_Reason:VC_CONTRACT_CASE] [@vc:annotation] [@comment:     Contract_Cases => (This.water_level > WaterThreshold and this.water_level <= WaterLevel'Last => This.status = Sufficient,                                                                                                   ^ watertank.ads:28:99:VC_CONTRACT_CASE] [@GP_Sloc:watertank.ads:28:99] [@GP_Id:9] [@GP_Shape:pragargs__aggr] (if ((temp___194 = True)) then (
-     ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else true) )) };
-     begin ensures {true} let _ = (let _ = (if (temp___195) then (
-     ((Watertank__waterstatus__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status)) = (0 : int))) else (
-     True)) in (
-     ()))
-     in () end ;
-     assert {  ([#"watertank.ads" 29 0 0] ( [@GP_Id:10] [@comment:                        This.water_level >= WaterLevel'First and this.water_level <= WaterThreshold => This.status = Critical);                                                                                                     ^ watertank.ads:29:101:VC_CONTRACT_CASE] [@GP_Reason:VC_CONTRACT_CASE] [@vc:annotation] [@GP_Sloc:watertank.ads:29:101] [@GP_Shape:pragargs__aggr] (if ((temp___195 = True)) then (
-     ((Watertank__waterstatus__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__updatewaterstatus__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (0 : int))) else true) )) } )))
-    )))
-   )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "constructwatertank" defined at watertank.ads:31, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Watertank__constructwatertank__subprogram_def
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
- use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__constructwatertank__result as Watertank__constructwatertank__result
- use        Watertank__waterlevel as Watertank__waterlevel
- use        Watertank__waterstatus as Watertank__waterstatus
- use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
- use        Watertank__constructwatertank__result___axiom as Watertank__constructwatertank__result___axiom
- use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
- use        Watertank__waterstatus___axiom as Watertank__waterstatus___axiom
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
-
- val watertank__constructwatertank__result [@model_trace:2840@result] [@name:ConstructWaterTank] [@model_projected]  : Watertank__trainwatertank.trainwatertank__ref 
- 
- let def [#"watertank.ads" 31 0 0][@GP_Subp:watertank.ads:31] 
-   (__void_param : unit)
-  requires { [#"watertank.ads" 31 0 0] true }
-   = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram watertank.ads:31 *)
-  ;
-  () (* Declarations introduced by the compiler at the beginning of the subprogram watertank.ads:31 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram watertank.ads:31 *)
-  ;
-  [#"watertank.ads" 31 0 0] begin ensures {true} let _ = (let _ = True in (
-   ()))
-   in () end ;
-  () (* Assume Pre of the subprogram watertank.ads:31 *)
-  ;
-  [#"watertank.ads" 31 0 0] try
-   ( ();
-   ([#"watertank.adb" 29 0 0] ( (let watertank__constructwatertank__result__assume = { Watertank__trainwatertank.__split_fields = { Watertank__trainwatertank.rec__watertank__trainwatertank__water_level = ( 5600 : Watertank__waterlevel.waterlevel ); Watertank__trainwatertank.rec__watertank__trainwatertank__status = (Watertank__waterstatus__rep.of_rep((1 : int))) } } in (
-    [#"watertank.adb" 29 0 0] (Watertank__constructwatertank__result.result____split_fields.Watertank__trainwatertank.__split_fields__content <- ( watertank__constructwatertank__result__assume.Watertank__trainwatertank.__split_fields ))))
-   ;
-   [#"watertank.adb" 29 0 0] assume { [#"watertank.adb" 29 0 0] (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = Watertank__constructwatertank__result.result____split_fields.Watertank__trainwatertank.__split_fields__content } True False True True) } ));
-   ();
-   ( [@GP_Sloc:watertank.adb:31:14] ([#"watertank.adb" 31 0 0] ()) );
-   ( [@GP_Sloc:watertank.adb:31:7] ([#"watertank.adb" 31 0 0] ( [#"watertank.adb" 31 0 0] (watertank__constructwatertank__result.Watertank__trainwatertank.trainwatertank__content <- ( { Watertank__trainwatertank.__split_fields = Watertank__constructwatertank__result.result____split_fields.Watertank__trainwatertank.__split_fields__content } ));
-   [#"watertank.adb" 31 0 0] raise Return__exc )) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = True in (
-   ()))
-   in () end ;
-  watertank__constructwatertank__result.Watertank__trainwatertank.trainwatertank__content )
 end

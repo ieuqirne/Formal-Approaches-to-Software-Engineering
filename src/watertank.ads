@@ -1,12 +1,22 @@
   package waterTank with SPARK_Mode is
---
---     type WaterLevel is range 0..5600;
---     --type InjectingClosed is (Injecting, Closed);
---     type WaterStatus is (Critical, Sufficient);
---
---     WaterThreshold: constant WaterLevel :=500;
---     WaterDecrement: constant WaterLevel :=100;
---
+
+   type WaterLevel is range 0..2500;
+   --type InjectingClosed is (Injecting, Closed);
+   type WaterStatus is (Critical, Sufficient);
+
+   WaterThreshold: constant WaterLevel :=500;
+   WaterDecrement: constant WaterLevel :=100;
+
+   type TrainWaterTank is record
+      water_level : WaterLevel := WaterLevel'Last;
+      status : WaterStatus := Sufficient;
+   end record;
+
+   procedure addWaterReactor (This : in out TrainWaterTank)  with
+     Pre => This.water_level >= WaterLevel'First and This.water_level <= WaterLevel'Last,
+     Post => This.water_level >= WaterLevel'First and This.water_level <= WaterLevel'Last;
+
+
 --     type TrainWaterTank is record
 --        water_level : WaterLevel;
 --        status : WaterStatus;
@@ -29,5 +39,5 @@
 --                          This.water_level >= WaterLevel'First and this.water_level <= WaterThreshold => This.status = Critical);
 --
 --     function ConstructWaterTank return TrainWaterTank;
---
+
   end waterTank;

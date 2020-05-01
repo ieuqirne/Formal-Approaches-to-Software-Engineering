@@ -10,11 +10,11 @@ RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U reactor%b		reactor.adb		cbd064d3 NE OO PK IL
+U reactor%b		reactor.adb		4f8f41b0 NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
-U reactor%s		reactor.ads		eeac5ed8 EE NE OO PK IL
+U reactor%s		reactor.ads		6af37bbb EE NE OO PK IL
 Z ada.tags%s		a-tags.adb		a-tags.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
@@ -26,7 +26,7 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200425160014 eeac5ed8 reactor%s
+D reactor.ads		20200501152642 6af37bbb reactor%s
 D reactor.adb		20200425160014 8b88ef66 reactor%b
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
@@ -42,47 +42,47 @@ D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
 G a e
-G c Z s b [engineon reactor 26 14 none]
-G c Z s b [engineoff reactor 30 14 none]
-G c Z s b [calculatepower reactor 43 13 none]
-G c Z s s [TpowerarrayBIP reactor 6 4 none]
-G c Z s s [TrodsrarrayBIP reactor 8 4 none]
-G c Z s s [trainreactorIP reactor 18 9 none]
+G c Z s b [engineon reactor 24 14 none]
+G c Z s b [engineoff reactor 28 14 none]
+G c Z s b [calculatepower reactor 41 13 none]
+G c Z s s [TpowerarrayBIP reactor 4 4 none]
+G c Z s s [TrodsrarrayBIP reactor 6 4 none]
+G c Z s s [trainreactorIP reactor 16 9 none]
 X 1 ada.ads
 16K9*Ada 20e8 11|1r6 1r23
 X 6 a-textio.ads
 57K13*Text_IO 727e16 11|1w10 1r27
 X 10 reactor.ads
-1K9*reactor 48l5 48e12 11|3b14 52l5 52t12
-3I9*Temperature<short_short_integer> 14r33 16r29 20r14
-5I9*Power<short_integer> 6r30 23r13 43r60 11|38r59 40r13 41r16 42r16 42r25
+1K9*reactor 46l5 46e12 11|3b14 52l5 52t12
+3I9*Power<short_integer> 4r30 21r13 41r60 11|38r59 40r13 41r16 42r16 42r25
 . 46r49
-6A9*PowerArray(integer)<5I9> 44r39 44r85 11|41r25
-7I9*Rods<short_short_integer> 8r30 21r20 27r57 28r57 31r56 32r58 11|7r49
+4A9*PowerArray(integer)<3I9> 42r39 42r85 11|41r25
+5I9*Rods<short_short_integer> 6r30 19r20 25r57 26r57 29r56 30r58 11|7r49
 . 42r31
-8A9*RodsrArray(integer)<7I9>
-10E9*StatusOnOff 10e33 19r15
-10n25*On{10E9} 28r27 31r26 11|8r24
-10n29*Off{10E9} 19r30 27r26 32r27 11|7r23 15r21
-12E9*ReactorStatus 12e47 22r16
-12n27*Running{12E9} 22r33
-12n36*Overheated{12E9}
-14i4*OverheatThreshold{3I9}
-16i4*TempIncrement{3I9}
-18R9*TrainReactor 24e14 26r38 30r39 43r39 11|5r38 13r39 38r38
-19e7*OnOff{10E9} 27r18 28r19 31r18 32r19 11|7r15 8m15 15m12
-20i7*temp{3I9}
-21i7*rod_number{7I9} 27r44 28r44 31r43 32r45 11|7r36 46r60
-22e7*status{12E9}
-23i7*pow{5I9} 11|9m15
-26U14*EngineOn 26=24 11|5b14 11l8 11t16
-26r24 This{18R9} 27r13 27r39 28r14 28r39 11|5b24 7r10 7r31 8m10 9m10 9r37
-30U14*EngineOff 30=25 11|13b14 17l8 17t17
-30r25 This{18R9} 31r13 31r38 32r14 32r40 11|13b25 15m7
-43V13*calculatePower{5I9} 43>29 44r14 44r60 11|9s22 38b13 50l8 50t22
-43r29 This{18R9} 11|38b28 46r55
+6A9*RodsrArray(integer)<5I9>
+7E9*StatusOnOff 7e33 17r15
+7n25*On{7E9} 26r27 29r26 11|8r24
+7n29*Off{7E9} 17r30 25r26 30r27 11|7r23 15r21
+8E9*ReactorStatus 8e47 20r16
+8n27*Running{8E9} 20r33
+8n36*Overheated{8E9}
+10I9*Temperature<short_short_integer> 11r33 12r29 18r14
+11i4*OverheatThreshold{10I9}
+12i4*TempIncrement{10I9}
+16R9*TrainReactor 22e14 24r38 28r39 41r39 11|5r38 13r39 38r38
+17e7*OnOff{7E9} 25r18 26r19 29r18 30r19 11|7r15 8m15 15m12
+18i7*temp{10I9}
+19i7*rod_number{5I9} 25r44 26r44 29r43 30r45 11|7r36 46r60
+20e7*status{8E9}
+21i7*pow{3I9} 11|9m15
+24U14*EngineOn 24=24 11|5b14 11l8 11t16
+24r24 This{16R9} 25r13 25r39 26r14 26r39 11|5b24 7r10 7r31 8m10 9m10 9r37
+28U14*EngineOff 28=25 11|13b14 17l8 17t17
+28r25 This{16R9} 29r13 29r38 30r14 30r40 11|13b25 15m7
+41V13*calculatePower{3I9} 41>29 42r14 42r60 11|9s22 38b13 50l8 50t22
+41r29 This{16R9} 11|38b28 46r55
 X 11 reactor.adb
-40i7 Pow{10|5I9} 46m7 48r14
-41i7 MaxPow{10|5I9} 46r15
-42i7 MaxRod{10|5I9} 46r24 46r35
+40i7 Pow{10|3I9} 46m7 48r14
+41i7 MaxPow{10|3I9} 46r15
+42i7 MaxRod{10|3I9} 46r24 46r35
 

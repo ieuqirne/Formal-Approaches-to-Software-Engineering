@@ -71,6 +71,7 @@ package body train with SPARK_Mode is
          This.reac.pow := calculatePower(This.reac);
          This.sp := calculateSpeed(This);
          --calculateSpeed(This);
+         This.reac.temp := calcTemp(This);
       end if;
 
    end addRod;
@@ -81,6 +82,7 @@ package body train with SPARK_Mode is
          This.reac.rod_number := This.reac.rod_number - 1;
          This.reac.pow := calculatePower(This.reac);
          This.sp := calculateSpeed(This);
+         This.reac.temp := calcTemp(This);
       end if;
 
    end decreaseRod;
@@ -110,6 +112,20 @@ package body train with SPARK_Mode is
       return ret;
    end calculateWeight;
 
+   function calcTemp (This : in Train) return Temperature
+   is
+      tempe : Temperature;
+   begin
+      tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1) ;
+      --Put_Line("Tempera: " & tempe'image);
+      return tempe;
+   end calcTemp;
+
+   procedure addWaterReactor (This : in out Train) is
+   begin
+      This.waterInReactor := This.waterInReactor + WaterDecrement;
+
+   end addWaterReactor;
 
 --     procedure Update (This : in out Train) is
 --     begin

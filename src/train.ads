@@ -1,4 +1,5 @@
 with reactor; use reactor;
+with waterTank; use waterTank;
 
 package train with SPARK_Mode is
 
@@ -6,16 +7,17 @@ package train with SPARK_Mode is
 
    type Weight is range 2000..22000;
    ReactorWeight : constant Weight := 2000;
-
    CarriageWeight : constant Weight := 2000;
 
    type Carriage is range 0..10;
+
 
    type Train is record
       reac : reactor.TrainReactor;
       sp : Speed := 0;
       wei : Weight := ReactorWeight;
       numbCarri : Carriage := 0;
+      waterInReactor : waterTank.WaterLevel:= 0;
    end record;
 
 
@@ -47,4 +49,12 @@ package train with SPARK_Mode is
    function calculateWeight (This : in Train) return Weight with
      Pre => This.reac.OnOff = Off and This.wei >= Weight'First and This.wei <= Weight'Last,
      Post => calculateWeight'Result >= ReactorWeight and calculateWeight'Result <= Weight'Last;
+
+   function calcTemp (This : in Train) return Temperature with
+     Pre => This.reac.temp >= Temperature'First and this.reac.temp <= Temperature'Last,
+     Post => calcTemp'Result >= Temperature'First and calcTemp'Result <= Temperature'Last;
+
+   procedure addWaterReactor (This : in out Train) with
+     Pre => This.waterInReactor >= waterTank.WaterLevel'First and This.waterInReactor <= waterTank.WaterLevel'Last,
+     Post => This.waterInReactor >= waterTank.WaterLevel'First and This.waterInReactor <= waterTank.WaterLevel'Last;
 end Train;
