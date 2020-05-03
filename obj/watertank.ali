@@ -1,0 +1,36 @@
+V "GNAT Lib v2019"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U watertank%b		watertank.adb		646a5d33 NE OO PK
+
+U watertank%s		watertank.ads		d78ea486 EE NE OO PK
+
+D system.ads		20190518041258 32a08138 system%s
+D watertank.ads		20200502194008 d78ea486 watertank%s
+D watertank.adb		20200502184908 b3e4f9b5 watertank%b
+G a e
+G c Z s b [returnwaterstatus watertank 15 13 none]
+G c Z s s [trainwatertankIP watertank 10 9 none]
+X 2 watertank.ads
+1K11*waterTank 48l7 48e16 3|3b14 50l7 50t16
+3I9*WaterLevel<short_integer> 7r29 8r29 11r21 11r35 15r65 16r34 16r75 17r42
+. 17r91 3|6r64
+5E9*WaterStatus 5e46 12r16
+5n25*Critical{5E9}
+5n35*Sufficient{5E9} 12r31
+7i4*WaterThreshold{3I9}
+8i4*WaterDecrement{3I9}
+10R9*TrainWaterTank 13e14 15r42 3|6r41
+11i7*water_level{3I9} 16r18 16r60 3|8r19
+12e7*status{5E9}
+15V13*returnWaterStatus{3I9} 15>32 17r14 17r63 3|6b13 9l8 9t25
+15r32 This{10R9} 16r13 16r55 3|6b31 8r14
+

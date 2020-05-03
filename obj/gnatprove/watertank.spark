@@ -11,7 +11,7 @@
       "spark": "all"
     },
     {
-      "name": "waterTank.addWaterReactor",
+      "name": "waterTank.returnWaterStatus",
       "sloc": [
         {
           "file": "watertank.ads",
@@ -31,7 +31,7 @@
       "rule": "VC_POSTCONDITION",
       "severity": "info",
       "entity": {
-        "name": "waterTank.addWaterReactor",
+        "name": "waterTank.returnWaterStatus",
         "sloc": [
           {
             "file": "watertank.ads",
@@ -81,25 +81,9 @@
       "assumptions": [
       ],
       "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "waterTank",
-          "sloc": [
-            {
-              "file": "watertank.ads",
-              "line": 1
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
         "predicate": "CLAIM_POST",
         "arg": {
-          "name": "waterTank.addWaterReactor",
+          "name": "waterTank.returnWaterStatus",
           "sloc": [
             {
               "file": "watertank.ads",
@@ -115,7 +99,7 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "waterTank.addWaterReactor",
+          "name": "waterTank.returnWaterStatus",
           "sloc": [
             {
               "file": "watertank.ads",
@@ -131,7 +115,7 @@
       "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
-          "name": "waterTank.addWaterReactor",
+          "name": "waterTank.returnWaterStatus",
           "sloc": [
             {
               "file": "watertank.ads",
@@ -140,17 +124,33 @@
           ]
         }
       }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "waterTank",
+          "sloc": [
+            {
+              "file": "watertank.ads",
+              "line": 1
+            }
+          ]
+        }
+      }
     }
   ],
   "timings": {
-    "marking": 2.64300004346296E-04,
-    "globals (basic)": 4.80299990158528E-04,
-    "globals/properties (advanced)": 4.88699995912611E-04,
-    "flow analysis": 2.08700005896389E-03,
-    "codepeer results": 9.00000031833770E-06,
-    "init_why_sections": 8.51100019644946E-04,
-    "translation of standard": 3.65850003436208E-03,
-    "translation of compilation unit": 3.02769988775253E-03,
-    "proof": 1.19133996963501E+00
+    "marking": 3.72500013327226E-04,
+    "globals (basic)": 6.35900010820478E-04,
+    "globals/properties (advanced)": 6.74200011417270E-04,
+    "flow analysis": 2.56920000538230E-03,
+    "codepeer results": 1.12999996417784E-05,
+    "init_why_sections": 8.02399998065084E-04,
+    "translation of standard": 9.55449976027012E-03,
+    "translation of compilation unit": 7.68809998407960E-03,
+    "proof": 1.29028189182281E+00
   }
 }

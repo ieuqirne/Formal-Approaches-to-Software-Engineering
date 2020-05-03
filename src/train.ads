@@ -10,25 +10,21 @@ package train with SPARK_Mode is
    CarriageWeight : constant Weight := 2000;
 
    type Carriage is range 0..10;
-
+   waterneeded : waterTank.WaterLevel;
 
    type Train is record
       reac : reactor.TrainReactor;
+      waTank : waterTank.TrainWaterTank;
       sp : Speed := 0;
       wei : Weight := ReactorWeight;
       numbCarri : Carriage := 0;
       waterInReactor : waterTank.WaterLevel:= 0;
    end record;
 
-
    function calculateSpeed (This : in Train) return Speed with
      Pre=> this.wei >= Weight'First and this.wei <= Weight'Last and
      this.reac.pow >= Power'First and this.reac.pow <= Power'Last ,
      Post => calculateSpeed'Result >= Speed'First  and calculateSpeed'Result <= Speed'Last;
-
---     procedure Update (This : in out Train)  with
---       --Pre => This.reac.OnOff = On,
---       Post => This.sp >= Speed'First and This.sp <= Speed'Last;
 
    procedure addCarriage (This : in out Train) with
      Pre => This.reac.OnOff = Off and This.numbCarri < Carriage'Last,
@@ -50,11 +46,26 @@ package train with SPARK_Mode is
      Pre => This.reac.OnOff = Off and This.wei >= Weight'First and This.wei <= Weight'Last,
      Post => calculateWeight'Result >= ReactorWeight and calculateWeight'Result <= Weight'Last;
 
-   function calcTemp (This : in Train) return Temperature with
+   function calcTemp (This : in  Train) return Temperature with
      Pre => This.reac.temp >= Temperature'First and this.reac.temp <= Temperature'Last,
      Post => calcTemp'Result >= Temperature'First and calcTemp'Result <= Temperature'Last;
 
-   procedure addWaterReactor (This : in out Train) with
-     Pre => This.waterInReactor >= waterTank.WaterLevel'First and This.waterInReactor <= waterTank.WaterLevel'Last,
-     Post => This.waterInReactor >= waterTank.WaterLevel'First and This.waterInReactor <= waterTank.WaterLevel'Last;
+   procedure addWaterReactor (This : in out Train)  with
+     Pre => This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last and
+     this.waTank.water_level >= WaterDecrement and this.waterInReactor + WaterDecrement <= waterTank.WaterLevel'Last,
+     Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
+
+   procedure decreaseWaterReactor (This : in out Train)  with
+     Pre => This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last and
+     this.waTank.water_level >= WaterDecrement and this.waterInReactor + WaterDecrement <= waterTank.WaterLevel'First,
+     Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
+
+   procedure overHeatStop (This : in out Train)  with
+     Pre => This.reac.OnOff = On and This.reac.temp >= OverheatThreshold,
+     Post => This.reac.OnOff = Off and this.reac.rod_number = reactor.Rods'Last and this.reac.status = Stop;
+
+   procedure trainToMaintenance (This : in out Train)  with
+     Pre => This.reac.OnOff = On and This.reac.status = Stop,
+     Post => This.reac.status = Maintenance;
+
 end Train;

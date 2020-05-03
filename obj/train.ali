@@ -11,14 +11,15 @@ RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U train%b		train.adb		b60f0e0d NE OO PK IL
+U train%b		train.adb		252a03f8 NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W reactor%s		reactor.adb		reactor.ali
 
-U train%s		train.ads		51435b6e EE NE OO PK IL
+U train%s		train.ads		04910cdb EE NE OO PK IL
 W reactor%s		reactor.adb		reactor.ali
+W watertank%s		watertank.adb		watertank.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
 D a-except.ads		20190518041256 291912d5 ada.exceptions%s
@@ -45,20 +46,23 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200501152906 3bb020d5 train%s
-D train.adb		20200501154104 a832c7ae train%b
+D train.ads		20200503121430 b9ecd3e6 train%s
+D train.adb		20200503120230 b94b3968 train%b
+D watertank.ads		20200502194008 d78ea486 watertank%s
 G a e
-G c Z s b [calculatespeed train 22 13 none]
-G c Z s b [addcarriage train 31 14 none]
-G c Z s b [decreasecarriage train 35 14 none]
-G c Z s b [addrod train 39 14 none]
-G c Z s b [decreaserod train 43 14 none]
-G c Z s b [calculateweight train 47 13 none]
-G c Z s b [calctemp train 51 13 none]
-G c Z s s [trainIP train 14 9 none]
-G r c none [addrod train 39 14 none] [calculatepower reactor 41 13 none]
-G r c none [decreaserod train 43 14 none] [calculatepower reactor 41 13 none]
-G r s trainreactor [trainIP train 14 9 none] [trainreactorIP reactor 16 9 none]
+G c Z s b [calculatespeed train 25 13 none]
+G c Z s b [addcarriage train 34 14 none]
+G c Z s b [decreasecarriage train 38 14 none]
+G c Z s b [addrod train 42 14 none]
+G c Z s b [decreaserod train 46 14 none]
+G c Z s b [calculateweight train 50 13 none]
+G c Z s b [calctemp train 54 13 none]
+G c Z s b [addwaterreactor train 57 14 none]
+G c Z s s [trainIP train 15 9 none]
+G r c none [addrod train 42 14 none] [calculatepower reactor 41 13 none]
+G r c none [decreaserod train 46 14 none] [calculatepower reactor 41 13 none]
+G r s trainreactor [trainIP train 15 9 none] [trainreactorIP reactor 16 9 none]
+G r s trainwatertank [trainIP train 15 9 none] [trainwatertankIP watertank 10 9 none]
 X 1 ada.ads
 16K9*Ada 20e8 27|2r6 2r23 3r6 3r29
 X 3 a-flteio.ads
@@ -66,59 +70,75 @@ X 3 a-flteio.ads
 X 7 a-textio.ads
 57K13*Text_IO 727e16 27|2w10 2r27
 X 12 reactor.ads
-1K9*reactor 46e12 26|1w6 1r19 15r14 27|1w6 1r19
-3I9*Power<short_integer> 26|24r23 24r56
-5I9*Rods<short_short_integer> 26|40r66 44r66 27|69r59 81r59 119r47 119r72
-7n25*On{7E9} 26|40r31 44r31 27|69r28 81r28
-7n29*Off{7E9} 26|32r31 36r31 48r31 27|49r28 59r28
-10I9*Temperature<short_short_integer> 26|51r47 52r31 52r71 53r33 53r74 27|115r47
-. 117r15 119r16 119r35 119r60
-16R9*TrainReactor 22e14 26|15r22
-17e7*OnOff{7E9} 26|32r23 36r23 40r23 44r23 48r23 27|49r20 59r20 69r20 81r20
-18i7*temp{10I9} 26|52r23 52r63 27|74m20 85m20
-19i7*rod_number{5I9} 26|40r53 41r24 41r47 44r53 45r24 45r47 27|69r46 70m20
-. 70r44 81r46 82m20 82r44 119r94
-21i7*pow{3I9} 26|24r16 24r49 27|26r20 29r37 71m20 83m20
+1K9*reactor 46e12 26|1w6 1r19 16r14 27|1w6 1r19
+3I9*Power<short_integer> 26|27r23 27r56
+5I9*Rods<short_short_integer> 26|43r66 47r66 27|69r59 81r59 119r47 119r72
+. 121r50 121r75
+7n25*On{7E9} 26|43r31 47r31 27|69r28 81r28
+7n29*Off{7E9} 26|35r31 39r31 51r31 27|49r28 59r28
+10I9*Temperature<short_short_integer> 26|54r48 55r31 55r71 56r33 56r74 27|115r47
+. 117r15 119r16 119r35 119r60 121r19 121r38 121r63 121r115
+11i4*OverheatThreshold{10I9} 27|120r22
+16R9*TrainReactor 22e14 26|16r22
+17e7*OnOff{7E9} 26|35r23 39r23 43r23 47r23 51r23 27|49r20 59r20 69r20 81r20
+18i7*temp{10I9} 26|55r23 55r63 27|74m20 85m20
+19i7*rod_number{5I9} 26|43r53 44r24 44r47 47r53 48r24 48r47 27|69r46 70m20
+. 70r44 81r46 82m20 82r44 119r94 121r97
+21i7*pow{3I9} 26|27r16 27r49 27|26r20 29r37 71m20 83m20
 41V13*calculatePower{3I9} 27|71s27 83s27
 X 26 train.ads
-3K9*train 54l5 54e10 27|5b14 129l5 129t10
-5I9*Speed<short_short_integer> 16r12 22r53 25r39 25r81 27|7r53 13r14 37r17
-7I9*Weight<short_integer> 8r29 9r30 17r13 23r24 23r53 47r54 48r51 48r80 49r84
-. 27|91r54 97r13 109r34
-8i4*ReactorWeight{7I9} 17r23 49r40 27|107r17 109r18
-9i4*CarriageWeight{7I9} 27|109r49
-11I9*Carriage<short_short_integer> 18r19 32r56 36r56 27|49r54 59r54
-14R9*Train 19e14 22r39 31r41 35r46 39r36 43r41 47r40 51r33 27|7r39 47r41
-. 57r46 67r36 79r41 91r40 115r33
-15r7*reac{12|16R9} 24r11 24r44 32r18 36r18 40r18 40r48 41r19 41r42 44r18
-. 44r48 45r19 45r42 48r18 52r18 52r58 27|26r15 29r32 49r15 59r15 69r15 69r41
+4K9*train 65l5 65e10 27|5b14 148l5 148t10
+6I9*Speed<short_short_integer> 18r12 25r53 28r39 28r81 27|7r53 13r14 37r17
+8I9*Weight<short_integer> 9r29 10r30 19r13 26r24 26r53 50r54 51r51 51r80
+. 52r84 27|91r54 97r13 109r34
+9i4*ReactorWeight{8I9} 19r23 52r40 27|107r17 109r18
+10i4*CarriageWeight{8I9} 27|109r49
+12I9*Carriage<short_short_integer> 20r19 35r56 39r56 27|49r54 59r54
+13i4*waterneeded{28|3I9}
+15R9*Train 22e14 25r39 34r41 38r46 42r36 46r41 50r40 54r34 57r45 27|7r39
+. 47r41 57r46 67r36 79r41 91r40 115r33 129r45
+16r7*reac{12|16R9} 27r11 27r44 35r18 39r18 43r18 43r48 44r19 44r42 47r18
+. 47r48 48r19 48r42 51r18 55r18 55r58 27|26r15 29r32 49r15 59r15 69r15 69r41
 . 70m15 70r39 71m15 71r47 74m15 81r15 81r41 82m15 82r39 83m15 83r47 85m15
-. 119r89
-16i7*sp{5I9} 27|72m15 84m15
-17i7*wei{7I9} 23r17 23r46 48r44 48r73 27|29r55 51m15 61m15
-18i7*numbCarri{11I9} 32r44 33r19 33r36 36r44 37r19 37r36 27|49r42 50m15 50r33
+. 119r89 121r92
+17r7*waTank{28|10R9} 58r18 58r67 59r11 60r19 60r67 27|132m15 132r42 134m15
+18i7*sp{6I9} 27|72m15 84m15
+19i7*wei{8I9} 26r17 26r46 51r44 51r73 27|29r55 51m15 61m15
+20i7*numbCarri{12I9} 35r44 36r19 36r36 39r44 40r19 40r36 27|49r42 50m15 50r33
 . 59r42 60m15 60r33 106r15 109r80
-22V13*calculateSpeed{5I9} 22>29 25r14 25r56 27|7b13 45l8 45t22 72s21 84s21
-22r29 This{14R9} 23r12 23r41 24r6 24r39 27|7b29 26r10 29r27 29r50
-31U14*addCarriage 31=27 27|47b14 55l8 55t19
-31r27 This{14R9} 32r13 32r39 33r14 33r31 27|47b27 49r10 49r37 50m10 50r28
+21i7*waterInReactor{28|3I9} 59r57 27|121r132 133m15 133r38
+25V13*calculateSpeed{6I9} 25>29 28r14 28r56 27|7b13 45l8 45t22 72s21 84s21
+25r29 This{15R9} 26r12 26r41 27r6 27r39 27|7b29 26r10 29r27 29r50
+34U14*addCarriage 34=27 27|47b14 55l8 55t19
+34r27 This{15R9} 35r13 35r39 36r14 36r31 27|47b27 49r10 49r37 50m10 50r28
 . 51m10 51r38
-35U14*decreaseCarriage 35=32 27|57b14 65l8 65t24
-35r32 This{14R9} 36r13 36r39 37r14 37r31 27|57b32 59r10 59r37 60m10 60r28
+38U14*decreaseCarriage 38=32 27|57b14 65l8 65t24
+38r32 This{15R9} 39r13 39r39 40r14 40r31 27|57b32 59r10 59r37 60m10 60r28
 . 61m10 61r38
-39U14*addRod 39=22 27|67b14 77l8 77t14
-39r22 This{14R9} 40r13 40r43 41r14 41r37 27|67b22 69r10 69r36 70m10 70r34
+42U14*addRod 42=22 27|67b14 77l8 77t14
+42r22 This{15R9} 43r13 43r43 44r14 44r37 27|67b22 69r10 69r36 70m10 70r34
 . 71m10 71r42 72m10 72r36 74m10 74r37
-43U14*decreaseRod 43=27 27|79b14 88l8 88t19
-43r27 This{14R9} 44r13 44r43 45r14 45r37 27|79b27 81r10 81r36 82m10 82r34
+46U14*decreaseRod 46=27 27|79b14 88l8 88t19
+46r27 This{15R9} 47r13 47r43 48r14 48r37 27|79b27 81r10 81r36 82m10 82r34
 . 83m10 83r42 84m10 84r36 85m10 85r37
-47V13*calculateWeight{7I9} 47>30 49r14 49r58 27|51s22 61s22 91b13 113l8 113t23
-47r30 This{14R9} 48r13 48r39 48r68 27|91b30 106r10 109r75
-51V13*calcTemp{12|10I9} 51>23 53r14 53r55 27|74s28 85s28 115b13 122l8 122t16
-51r23 This{14R9} 52r13 52r53 27|115b23 119r84
+50V13*calculateWeight{8I9} 50>30 52r14 52r58 27|51s22 61s22 91b13 113l8 113t23
+50r30 This{15R9} 51r13 51r39 51r68 27|91b30 106r10 109r75
+54V13*calcTemp{12|10I9} 54>23 56r14 56r55 27|74s28 85s28 115b13 126l8 126t16
+54r23 This{15R9} 55r13 55r53 27|115b23 119r84 121r87 121r127
+57U14*addWaterReactor 57=31 27|129b14 136l8 136t23
+57r31 This{15R9} 58r13 58r62 59r6 59r52 60r14 60r62 27|129b31 132m10 132r37
+. 133m10 133r33 134m10
 X 27 train.adb
 10f7 SpFloat{float} 27m10 29m10 32r10 34r14 37r23
-13i7 Spee{26|5I9} 33m9 35m12 37m9 40r14
-97i7 ret{26|7I9} 107m10 109m10 112r14
-117i7 tempe{12|10I9} 119m7 121r14
+13i7 Spee{26|6I9} 33m9 35m12 37m9 40r14
+97i7 ret{26|8I9} 107m10 109m10 112r14
+117i7 tempe{12|10I9} 119m7 120r13 121m10 125r14
+X 28 watertank.ads
+1K11*waterTank 26|2w6 2r21 13r18 17r16 21r24 59r92 28|48e16
+3I9*WaterLevel<short_integer> 26|13r28 21r34 58r41 58r89 59r102 60r41 60r89
+5n35*Sufficient{5E9} 27|134r32
+8i4*WaterDecrement{3I9} 26|59r33 59r74 27|132r63 133r55
+10R9*TrainWaterTank 26|17r26 28|13e14
+11i7*water_level{3I9} 26|58r25 58r74 59r18 60r26 60r74 27|132m22 132r49
+12e7*status{5E9} 27|134m22
 

@@ -17,21 +17,17 @@
  </transf>
  </goal>
 </theory>
-<theory name="Watertank__addwaterreactor__subprogram_def">
+<theory name="Watertank__returnwaterstatus__subprogram_def">
  <goal name="VC def" expl="VC for def">
  <transf name="split_goal_wp_conj" >
   <goal name="VC def.0" expl="postcondition">
   </goal>
   <goal name="VC def.1" expl="postcondition">
   </goal>
-  <goal name="VC def.2" expl="postcondition">
-  </goal>
-  <goal name="VC def.3" expl="postcondition">
-  </goal>
-  <goal name="VC def.4" expl="postcondition" proved="true">
+  <goal name="VC def.2" expl="postcondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
-  <goal name="VC def.5" expl="postcondition" proved="true">
+  <goal name="VC def.3" expl="postcondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
  </transf>
@@ -82,6 +78,30 @@
   </goal>
   <goal name="VC def.15" expl="postcondition">
   <proof prover="0"><result status="valid" steps="19"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Watertank__addwaterreactor__subprogram_def">
+ <goal name="VC def" expl="VC for def">
+ <transf name="split_goal_wp_conj" >
+  <goal name="VC def.0" expl="postcondition">
+  </goal>
+  <goal name="VC def.1" expl="postcondition">
+  </goal>
+  <goal name="VC def.2" expl="precondition">
+  <proof prover="0"><result status="valid" steps="19"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="104"/></proof>
+  </goal>
+  <goal name="VC def.3" expl="postcondition">
+  </goal>
+  <goal name="VC def.4" expl="postcondition">
+  </goal>
+  <goal name="VC def.5" expl="postcondition">
+  <proof prover="0"><result status="valid" steps="49"/></proof>
+  </goal>
+  <goal name="VC def.6" expl="postcondition">
+  <proof prover="0"><result status="valid" steps="49"/></proof>
   </goal>
  </transf>
  </goal>

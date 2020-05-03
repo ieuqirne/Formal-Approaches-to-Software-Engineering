@@ -1991,7 +1991,7 @@ module Watertank__waterthreshold
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant waterthreshold [#"watertank.ads" 7 0 0][@model_trace:2393] [@name:WaterThreshold] 
+ val constant waterthreshold [#"watertank.ads" 7 0 0][@model_trace:2389] [@name:WaterThreshold] 
    : int
 
  
@@ -2006,7 +2006,7 @@ module Watertank__waterdecrement
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant waterdecrement [#"watertank.ads" 8 0 0][@model_trace:2403] [@name:WaterDecrement] 
+ val constant waterdecrement [#"watertank.ads" 8 0 0][@model_trace:2399] [@name:WaterDecrement] 
    : int
 
  
@@ -2026,9 +2026,9 @@ module Watertank__trainwatertank__rep
  use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
 
  type __split_fields =
-  { rec__watertank__trainwatertank__water_level [@model_trace:.2423] [@name:water_level] : Watertank__waterlevel.waterlevel; rec__watertank__trainwatertank__status [@model_trace:.2436] [@name:status] : Watertank__waterstatus.waterstatus }
+  { rec__watertank__trainwatertank__water_level [@model_trace:.2419] [@name:water_level] : Watertank__waterlevel.waterlevel; rec__watertank__trainwatertank__status [@model_trace:.2432] [@name:status] : Watertank__waterstatus.waterstatus }
  
- function __split_fields_rec__watertank__trainwatertank__water_level__projection [@model_trace:.2423] [@name:water_level] 
+ function __split_fields_rec__watertank__trainwatertank__water_level__projection [@model_trace:.2419] [@name:water_level] 
    (a : __split_fields) : Watertank__waterlevel.waterlevel =
   a.rec__watertank__trainwatertank__water_level
  
@@ -2036,7 +2036,7 @@ module Watertank__trainwatertank__rep
  
  meta "inline:no" function __split_fields_rec__watertank__trainwatertank__water_level__projection
  
- function __split_fields_rec__watertank__trainwatertank__status__projection [@model_trace:.2436] [@name:status] 
+ function __split_fields_rec__watertank__trainwatertank__status__projection [@model_trace:.2432] [@name:status] 
    (a : __split_fields) : Watertank__waterstatus.waterstatus =
   a.rec__watertank__trainwatertank__status
  
@@ -2215,13 +2215,16 @@ module Watertank__trainwatertank
   writes {x}
 
 end
-(* Module for defining a ref holding the value of variable "this" defined at watertank.ads:15, created in Gnat2Why.Decls.Translate_Variable *)
-module Watertank__addwaterreactor__this
+
+(* Module for defining the constant "this" defined at watertank.ads:15, created in Gnat2Why.Decls.Translate_Constant *)
+module Watertank__returnwaterstatus__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Watertank__trainwatertank as Watertank__trainwatertank
 
- val this__split_fields [#"watertank.ads" 15 0 0][@model_projected] [@model_trace:2456] [@name:This]  : Watertank__trainwatertank.__split_fields__ref 
+ val constant this [#"watertank.ads" 15 0 0][@model_projected] [@model_trace:2452] [@name:This] 
+   : Watertank__trainwatertank.trainwatertank
+
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2230,10 +2233,24 @@ module Watertank__addwaterreactor__this
 end
 
 (* Module giving an empty axiom for the entity "this" defined at watertank.ads:15, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Watertank__addwaterreactor__this___axiom
+module Watertank__returnwaterstatus__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
+
+end
+
+(* Module for possibly declaring a logic function for "returnwaterstatus" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Watertank__returnwaterstatus
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        Watertank__trainwatertank as Watertank__trainwatertank
+
+ val function returnwaterstatus 
+   (this : Watertank__trainwatertank.trainwatertank) : int
+ 
+ val predicate returnwaterstatus__function_guard 
+   (temp___result_154 : int) (this : Watertank__trainwatertank.trainwatertank)
 
 end
 (* Module giving axioms for type "short_short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
@@ -2747,14 +2764,6 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "addwaterreactor" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Watertank__addwaterreactor
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
 (* Module giving axioms for type "TwaterlevelB" defined at watertank.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Watertank__TwaterlevelB___axiom
  use        "_gnatprove_standard".Main
@@ -2771,19 +2780,19 @@ module Watertank__waterlevel___axiom
  use        Watertank__waterlevel as Watertank__waterlevel
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) =
-  (if (( temp___is_init_154 \/ (Watertank__waterlevel.first <= Watertank__waterlevel.last) )) then (
-   (Watertank__waterlevel.dynamic_property Watertank__waterlevel.first Watertank__waterlevel.last temp___expr_158)) else true)
+   (temp___expr_159 : int) (temp___is_init_155 : bool) (temp___skip_constant_156 : bool) (temp___do_toplevel_157 : bool) (temp___do_typ_inv_158 : bool) =
+  (if (( temp___is_init_155 \/ (Watertank__waterlevel.first <= Watertank__waterlevel.last) )) then (
+   (Watertank__waterlevel.dynamic_property Watertank__waterlevel.first Watertank__waterlevel.last temp___expr_159)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_158 : int) (temp___is_init_154 : bool) (temp___skip_constant_155 : bool) (temp___do_toplevel_156 : bool) (temp___do_typ_inv_157 : bool) }
+   (temp___expr_159 : int) (temp___is_init_155 : bool) (temp___skip_constant_156 : bool) (temp___do_toplevel_157 : bool) (temp___do_typ_inv_158 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_159 : int) (temp___is_init_155 : bool) (temp___skip_constant_156 : bool) (temp___do_toplevel_157 : bool) (temp___do_typ_inv_158 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_159 : int) (temp___skip_top_level_160 : bool) =
+   (temp___expr_160 : int) (temp___skip_top_level_161 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_159 : int) (temp___skip_top_level_160 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_159 : int) (temp___skip_top_level_160 : bool) }
+   (temp___expr_160 : int) (temp___skip_top_level_161 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_160 : int) (temp___skip_top_level_161 : bool) }
 
 end
 
@@ -2795,19 +2804,19 @@ module Watertank__waterstatus___axiom
  use        Watertank__waterstatus as Watertank__waterstatus
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) =
-  (if (( temp___is_init_161 \/ (Watertank__waterstatus.first <= Watertank__waterstatus.last) )) then (
-   (Watertank__waterstatus.dynamic_property Watertank__waterstatus.first Watertank__waterstatus.last temp___expr_165)) else true)
+   (temp___expr_166 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool) (temp___do_typ_inv_165 : bool) =
+  (if (( temp___is_init_162 \/ (Watertank__waterstatus.first <= Watertank__waterstatus.last) )) then (
+   (Watertank__waterstatus.dynamic_property Watertank__waterstatus.first Watertank__waterstatus.last temp___expr_166)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_165 : int) (temp___is_init_161 : bool) (temp___skip_constant_162 : bool) (temp___do_toplevel_163 : bool) (temp___do_typ_inv_164 : bool) }
+   (temp___expr_166 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool) (temp___do_typ_inv_165 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_166 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool) (temp___do_typ_inv_165 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_166 : int) (temp___skip_top_level_167 : bool) =
+   (temp___expr_167 : int) (temp___skip_top_level_168 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_166 : int) (temp___skip_top_level_167 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_166 : int) (temp___skip_top_level_167 : bool) }
+   (temp___expr_167 : int) (temp___skip_top_level_168 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_167 : int) (temp___skip_top_level_168 : bool) }
 
 end
 
@@ -2823,20 +2832,20 @@ module Watertank__trainwatertank___axiom
  use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_172 : Watertank__trainwatertank.trainwatertank) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) =
+   (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___is_init_169 : bool) (temp___skip_constant_170 : bool) (temp___do_toplevel_171 : bool) (temp___do_typ_inv_172 : bool) =
   true
  val dynamic_invariant [@inline] 
-   (temp___expr_172 : Watertank__trainwatertank.trainwatertank) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_172 : Watertank__trainwatertank.trainwatertank) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool) (temp___do_typ_inv_171 : bool) }
+   (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___is_init_169 : bool) (temp___skip_constant_170 : bool) (temp___do_toplevel_171 : bool) (temp___do_typ_inv_172 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___is_init_169 : bool) (temp___skip_constant_170 : bool) (temp___do_toplevel_171 : bool) (temp___do_typ_inv_172 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_174 : bool) =
-  ( (if ((Watertank__trainwatertank.watertank__trainwatertank__water_level__pred temp___expr_173)) then (
-   ((Watertank__waterlevel__rep.to_rep temp___expr_173.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) = (2500 : int))) else true) /\ (if ((Watertank__trainwatertank.watertank__trainwatertank__status__pred temp___expr_173)) then (
-   ((Watertank__waterstatus__rep.to_rep temp___expr_173.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else true) )
+   (temp___expr_174 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_175 : bool) =
+  ( (if ((Watertank__trainwatertank.watertank__trainwatertank__water_level__pred temp___expr_174)) then (
+   ((Watertank__waterlevel__rep.to_rep temp___expr_174.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) = (2500 : int))) else true) /\ (if ((Watertank__trainwatertank.watertank__trainwatertank__status__pred temp___expr_174)) then (
+   ((Watertank__waterstatus__rep.to_rep temp___expr_174.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status) = (1 : int))) else true) )
  val default_initial_assumption [@inline] 
-   (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_174 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_173 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_174 : bool) }
+   (temp___expr_174 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_175 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_174 : Watertank__trainwatertank.trainwatertank) (temp___skip_top_level_175 : bool) }
 
 end
 (* Module for defining the value of constant "waterthreshold" defined at watertank.ads:7, created in Gnat2Why.Decls.Translate_Constant_Value *)
@@ -2863,21 +2872,29 @@ module Watertank__waterdecrement___axiom
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "addwaterreactor" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Watertank__addwaterreactor___axiom
+(* Module for declaring a program function (and possibly an axiom) for "returnwaterstatus" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Watertank__returnwaterstatus___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
  use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
+ use        Watertank__returnwaterstatus as Watertank__returnwaterstatus
  use        Watertank__waterlevel as Watertank__waterlevel
+ use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
  use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
+ use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
 
- val addwaterreactor 
-   (this__split_fields : Watertank__trainwatertank.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2475] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2483] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2493] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2501] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) /\ (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = this__split_fields.Watertank__trainwatertank.__split_fields__content } True True True True) ) }
-  writes {this__split_fields}
+ val returnwaterstatus 
+   (this : Watertank__trainwatertank.trainwatertank) : int
+  requires {  ( ( [@GP_Pretty_Ada:2472] ((Watertank__waterlevel__rep.to_rep this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2480] ((Watertank__waterlevel__rep.to_rep this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) }
+  ensures {  ( ( (result = (Watertank__returnwaterstatus.returnwaterstatus this)) /\ (Watertank__returnwaterstatus.returnwaterstatus__function_guard result this) )/\( (Watertank__waterlevel___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:2490] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2498] (result <= (2500 : int)) ) ) ) ) }
+ 
+ axiom returnwaterstatus__post_axiom :
+  (forall this   : Watertank__trainwatertank.trainwatertank [(Watertank__returnwaterstatus.returnwaterstatus this)].
+   ( ( (Watertank__trainwatertank___axiom.dynamic_invariant this True True True True) /\ ( ( [@GP_Pretty_Ada:2472] ((Watertank__waterlevel__rep.to_rep this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2480] ((Watertank__waterlevel__rep.to_rep this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) ) -> (let result = (Watertank__returnwaterstatus.returnwaterstatus this) in (
+    (if ((Watertank__returnwaterstatus.returnwaterstatus__function_guard result this)) then (
+     ( ( ( ( [@GP_Pretty_Ada:2490] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2498] (result <= (2500 : int)) ) ) /\ (Watertank__waterlevel___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+    ))
 
 end
 
@@ -2920,70 +2937,57 @@ module Watertank__package_def
   ([#"watertank.ads" 16 0 0] ());
   ();
   ([#"watertank.adb" 3 0 0] ());
-  ([#"watertank.adb" 5 0 0] ());
+  ([#"watertank.adb" 6 0 0] ());
   ();
-  ( [@GP_Sloc:watertank.adb:41:3] ([#"watertank.adb" 41 0 0] ()) ) )
+  ( [@GP_Sloc:watertank.adb:50:3] ([#"watertank.adb" 50 0 0] ()) ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "addwaterreactor" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Watertank__addwaterreactor__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "returnwaterstatus" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Watertank__returnwaterstatus__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Boolean as Boolean
- use        Watertank__addwaterreactor__this as Watertank__addwaterreactor__this
  use        Watertank__trainwatertank as Watertank__trainwatertank
- use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
+ use        Watertank__returnwaterstatus__this as Watertank__returnwaterstatus__this
  use        Watertank__waterlevel as Watertank__waterlevel
  use        Watertank__waterlevel__rep as Watertank__waterlevel__rep
- use        Watertank__waterstatus as Watertank__waterstatus
- use        Watertank__waterstatus__rep as Watertank__waterstatus__rep
+ use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
  use        Watertank__waterlevel___axiom as Watertank__waterlevel___axiom
  use        Watertank__waterstatus___axiom as Watertank__waterstatus___axiom
  use        Watertank__trainwatertank___axiom as Watertank__trainwatertank___axiom
- use        Watertank__addwaterreactor__this___axiom as Watertank__addwaterreactor__this___axiom
+ use        Watertank__returnwaterstatus__this___axiom as Watertank__returnwaterstatus__this___axiom
 
+ val watertank__returnwaterstatus__result [@model_trace:2445@result] [@model_projected] [@name:returnWaterStatus]  : int__ref 
+ 
  let def [#"watertank.ads" 15 0 0][@GP_Subp:watertank.ads:15] 
    (__void_param : unit)
   requires { [#"watertank.ads" 15 0 0] true }
-  ensures { [#"watertank.ads" 15 0 0] ([#"watertank.ads" 17 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => This.water_level >= WaterLevel'First and This.water_level <= WaterLevel'Last;              ^ watertank.ads:17:14:VC_POSTCONDITION] [@GP_Sloc:watertank.ads:17:14] [@model_vc_post] [@GP_Id:0] [@GP_Shape:pragargs__and] ( ( [@GP_Sloc:watertank.ads:17:14] [@GP_Pretty_Ada:2493] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Sloc:watertank.ads:17:55] [@GP_Pretty_Ada:2501] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) )) }
+  ensures { [#"watertank.ads" 15 0 0] ([#"watertank.ads" 17 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:watertank.ads:17:14] [@comment:     Post => returnWaterStatus'Result >= WaterLevel'First and returnWaterStatus'Result <= WaterLevel'Last;              ^ watertank.ads:17:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:0] [@GP_Shape:pragargs__and] ( ( [@GP_Sloc:watertank.ads:17:14] [@GP_Pretty_Ada:2490] (watertank__returnwaterstatus__result.int__content >= (0 : int)) ) /\ ( [@GP_Sloc:watertank.ads:17:63] [@GP_Pretty_Ada:2498] (watertank__returnwaterstatus__result.int__content <= (2500 : int)) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram watertank.ads:15 *)
   ;
-   assume {  (Watertank__trainwatertank___axiom.dynamic_invariant { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } True False True True) };
+   assume {  (Watertank__trainwatertank___axiom.dynamic_invariant Watertank__returnwaterstatus__this.this True False True True) };
   () (* Declarations introduced by the compiler at the beginning of the subprogram watertank.ads:15 *)
   ;
   () (* Check for RTE in the Pre of the subprogram watertank.ads:15 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (2500 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep(Watertank__returnwaterstatus__this.this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep(Watertank__returnwaterstatus__this.this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (2500 : int)))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram watertank.ads:15 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2475] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2483] ((Watertank__waterlevel__rep.to_rep { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2472] ((Watertank__waterlevel__rep.to_rep Watertank__returnwaterstatus__this.this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2480] ((Watertank__waterlevel__rep.to_rep Watertank__returnwaterstatus__this.this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level) <= (2500 : int)) ) ) };
    try
    ( ();
-   ( [@GP_Sloc:watertank.adb:7:24] ([#"watertank.adb" 7 0 0] (let temp___176 [@mlw:proxy_symbol] [@introduced] = (let temp___175 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
-    ( [#"watertank.adb" 7 0 0] begin ensures {true} let _ = (let _ = temp___175.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level in (
-     ()))
-     in () end ;
-    { ( temp___175 ) with Watertank__trainwatertank.__split_fields = { ( temp___175.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__water_level = ( 400 : Watertank__waterlevel.waterlevel ) } } )))
-    in (
-    [#"watertank.adb" 7 0 0] (Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___176.Watertank__trainwatertank.__split_fields ))))
-   ) );
-   ( [@GP_Sloc:watertank.adb:9:19] ([#"watertank.adb" 9 0 0] (let temp___178 [@mlw:proxy_symbol] [@introduced] = (let temp___177 [@mlw:proxy_symbol] [@introduced] = { Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content } in (
-    ( [#"watertank.adb" 9 0 0] begin ensures {true} let _ = (let _ = temp___177.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__status in (
-     ()))
-     in () end ;
-    { ( temp___177 ) with Watertank__trainwatertank.__split_fields = { ( temp___177.Watertank__trainwatertank.__split_fields ) with Watertank__trainwatertank.rec__watertank__trainwatertank__status = (Watertank__waterstatus__rep.of_rep((1 : int))) } } )))
-    in (
-    [#"watertank.adb" 9 0 0] (Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content <- ( temp___178.Watertank__trainwatertank.__split_fields ))))
-   ) );
+   ( [@GP_Sloc:watertank.adb:8:7] ([#"watertank.adb" 8 0 0] ( [#"watertank.adb" 8 0 0] (watertank__returnwaterstatus__result.int__content <- ( (Watertank__waterlevel__rep.to_rep(Watertank__returnwaterstatus__this.this.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) ));
+   [#"watertank.adb" 8 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb(((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) >= (0 : int))) (((Watertank__waterlevel__rep.to_rep({ Watertank__trainwatertank.__split_fields = Watertank__addwaterreactor__this.this__split_fields.Watertank__trainwatertank.__split_fields__content }.Watertank__trainwatertank.__split_fields.Watertank__trainwatertank.rec__watertank__trainwatertank__water_level)) <= (2500 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((watertank__returnwaterstatus__result.int__content >= (0 : int))) ((watertank__returnwaterstatus__result.int__content <= (2500 : int)))) in (
    ()))
-   in () end  )
+   in () end ;
+  watertank__returnwaterstatus__result.int__content )
 end

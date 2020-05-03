@@ -5,24 +5,10 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 package body train with SPARK_Mode is
 
    function calculateSpeed (This : in Train) return Speed is
-      --Pow : Float := Float(This.reac.pow);
-      --Wei : Float := Float(This.wei);
       SpFloat : Float;
-      --Total : Float;
-      --TotalInt : Speed;
       Spee : Speed;
    begin
-      --Total := Pow / Wei * 100.00;
-      --Put_Line("Total: " & Total'Image);
-      --Total := Total ;
 
-      --This.sp := Speed(Total);
-      --Pow := 1.00;
-      --Wei := 1.00;
-      --Put_Line ("Hey: ");
-      --Put_Line ("Pow: " & Pow'Image);
-      --Put_Line ("Wei: "& Wei'Image);
-      --Sp := Pow / Wei;
       if(This.reac.pow = 0) then
          SpFloat := 0.0;
       else
@@ -38,10 +24,6 @@ package body train with SPARK_Mode is
       end if;
 
       return Spee;
-
-      --Put_Line ("SpFloat: " & SpFloat'Image);
-      --Put_Line ("This.sp: " & This.sp'Image);
-      --This.sp := TotalInt;
    end calculateSpeed;
 
    procedure addCarriage (This : in out Train) is
@@ -49,7 +31,6 @@ package body train with SPARK_Mode is
       if This.reac.OnOff = Off and  This.numbCarri < Carriage'Last then
          This.numbCarri := This.numbCarri + 1;
          This.wei := calculateWeight(This);
-         --This.wcalculateWeight(This);
       end if;
 
    end addCarriage;
@@ -59,7 +40,6 @@ package body train with SPARK_Mode is
       if This.reac.OnOff = Off and  This.numbCarri > Carriage'First then
          This.numbCarri := This.numbCarri - 1;
          This.wei := calculateWeight(This);
-         --This.wcalculateWeight(This);
       end if;
 
    end decreaseCarriage;
@@ -70,8 +50,8 @@ package body train with SPARK_Mode is
          This.reac.rod_number := This.reac.rod_number + 1;
          This.reac.pow := calculatePower(This.reac);
          This.sp := calculateSpeed(This);
-         --calculateSpeed(This);
          This.reac.temp := calcTemp(This);
+
       end if;
 
    end addRod;
@@ -84,25 +64,13 @@ package body train with SPARK_Mode is
          This.sp := calculateSpeed(This);
          This.reac.temp := calcTemp(This);
       end if;
-
    end decreaseRod;
 
 
    function calculateWeight (This : in Train) return Weight
    is
-      --CW : Integer := CarriageWeight;
-      -- CN : Carriage := This.numbCarri;
-      --Caaa : Integer :=  Integer(this.numbCarri) * CarriageWeight;
-      --Caaaaa : Integer ;
       ret : Weight;
    begin
-      --Put_Line("CarriageWeight: " & CW'Image);
-     -- Put_Line("This.numbCarri: " & CN'Image);
-      --Put_Line("Caaa: " & Caaa'Image);
-      --Put_Line("Caaaaa: " & Caaaaa'Image);
-      --Put_Line("ReactorWeight: " & ReactorWeight'Image);
-      --Caaaaa :=  Integer(this.numbCarri);
-      --Put_Line("Caaaaa: " & Caaaaa'Image);
       if(This.numbCarri = 0) then
          ret := ReactorWeight;
       else
@@ -116,20 +84,40 @@ package body train with SPARK_Mode is
    is
       tempe : Temperature;
    begin
-      tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1) ;
-      --Put_Line("Tempera: " & tempe'image);
+      tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1);
       return tempe;
    end calcTemp;
 
+
    procedure addWaterReactor (This : in out Train) is
    begin
+      This.waTank.water_level := This.waTank.water_level - WaterDecrement;
       This.waterInReactor := This.waterInReactor + WaterDecrement;
-
+      if This.waTank.water_level < WaterThreshold then
+         This.waTank.status := Critical;
+      end if;
    end addWaterReactor;
 
---     procedure Update (This : in out Train) is
---     begin
---        calculateSpeed(This);
---     end update;
+   procedure decreaseWaterReactor (This : in out Train) is
+   begin
+      This.waTank.water_level := This.waTank.water_level + WaterDecrement;
+      This.waterInReactor := This.waterInReactor - WaterDecrement;
+      if This.waTank.water_level > WaterThreshold then
+         This.waTank.status := Sufficient;
+      end if;
+   end decreaseWaterReactor;
+
+   procedure overHeatStop (This : in out Train) is
+   begin
+      this.reac.OnOff := Off;
+      this.reac.rod_number := reactor.Rods'Last;
+      this.reac.status := Stop;
+      this.reac.temp := 0;
+   end overHeatStop;
+
+   procedure trainToMaintenance (This : in out Train) is
+   begin
+      this.reac.status := Maintenance;
+   end trainToMaintenance;
 
 end train;

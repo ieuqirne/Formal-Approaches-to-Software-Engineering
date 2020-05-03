@@ -29,6 +29,7 @@ package body ada_main is
    E109 : Short_Integer; pragma Import (Ada, E109, "system__file_io_E");
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__text_io_E");
    E115 : Short_Integer; pragma Import (Ada, E115, "reactor_E");
+   E140 : Short_Integer; pragma Import (Ada, E140, "watertank_E");
    E119 : Short_Integer; pragma Import (Ada, E119, "train_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -202,6 +203,7 @@ package body ada_main is
       Ada.Text_Io'Elab_Body;
       E006 := E006 + 1;
       E115 := E115 + 1;
+      E140 := E140 + 1;
       E119 := E119 + 1;
    end adainit;
 
@@ -239,6 +241,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\reactor.o
+   --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\watertank.o
    --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\train.o
    --   C:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\main.o
    --   -LC:\Users\enrik\OneDrive\Escritorio\Year_4\SET10112-Formal_Approaches_to_Software_Engineering\CourseWork\Borst_Atomic_Train\obj\

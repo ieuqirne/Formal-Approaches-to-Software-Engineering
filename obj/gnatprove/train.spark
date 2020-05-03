@@ -5,7 +5,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 3
+          "line": 4
         }
       ],
       "spark": "all"
@@ -15,7 +15,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 22
+          "line": 24
         }
       ],
       "spark": "all"
@@ -25,7 +25,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 31
+          "line": 29
         }
       ],
       "spark": "all"
@@ -35,7 +35,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 35
+          "line": 33
         }
       ],
       "spark": "all"
@@ -45,7 +45,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 39
+          "line": 37
         }
       ],
       "spark": "all"
@@ -55,7 +55,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 43
+          "line": 41
         }
       ],
       "spark": "all"
@@ -65,7 +65,7 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 47
+          "line": 45
         }
       ],
       "spark": "all"
@@ -75,7 +75,47 @@
       "sloc": [
         {
           "file": "train.ads",
-          "line": 51
+          "line": 49
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "train.addWaterReactor",
+      "sloc": [
+        {
+          "file": "train.ads",
+          "line": 53
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "train.decreaseWaterReactor",
+      "sloc": [
+        {
+          "file": "train.ads",
+          "line": 58
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "train.overHeatStop",
+      "sloc": [
+        {
+          "file": "train.ads",
+          "line": 63
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "train.trainToMaintenance",
+      "sloc": [
+        {
+          "file": "train.ads",
+          "line": 67
         }
       ],
       "spark": "all"
@@ -84,7 +124,7 @@
   "flow": [
     {
       "file": "train.adb",
-      "line": 10,
+      "line": 8,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -93,7 +133,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -103,7 +143,7 @@
     },
     {
       "file": "train.adb",
-      "line": 13,
+      "line": 9,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -112,7 +152,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -122,7 +162,7 @@
     },
     {
       "file": "train.adb",
-      "line": 97,
+      "line": 72,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -131,7 +171,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 47
+            "line": 45
           }
         ]
       },
@@ -141,7 +181,7 @@
     },
     {
       "file": "train.adb",
-      "line": 117,
+      "line": 85,
       "col": 7,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -150,7 +190,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 51
+            "line": 49
           }
         ]
       },
@@ -162,7 +202,7 @@
   "proof": [
     {
       "file": "train.adb",
-      "line": 29,
+      "line": 15,
       "col": 36,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -171,7 +211,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -181,7 +221,7 @@
     },
     {
       "file": "train.adb",
-      "line": 29,
+      "line": 15,
       "col": 54,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -190,7 +230,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -200,7 +240,7 @@
     },
     {
       "file": "train.adb",
-      "line": 29,
+      "line": 15,
       "col": 42,
       "rule": "VC_FP_OVERFLOW_CHECK",
       "severity": "info",
@@ -209,7 +249,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -219,7 +259,7 @@
     },
     {
       "file": "train.adb",
-      "line": 29,
+      "line": 15,
       "col": 60,
       "rule": "VC_FP_OVERFLOW_CHECK",
       "severity": "info",
@@ -228,7 +268,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -238,7 +278,7 @@
     },
     {
       "file": "train.adb",
-      "line": 29,
+      "line": 15,
       "col": 42,
       "rule": "VC_DIVISION_CHECK",
       "severity": "info",
@@ -247,7 +287,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -257,7 +297,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 3853,
-              "time": 2.00000000000000E-01
+              "time": 0
             }
           },
           "transformations": {
@@ -265,20 +305,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 29,
+      "check_line": 15,
       "check_col": 42,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.00000002980232E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.adb",
-      "line": 37,
+      "line": 23,
       "col": 23,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -287,7 +327,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -297,7 +337,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 19858,
-              "time": 8.10000000000000E-01
+              "time": 0
             }
           },
           "transformations": {
@@ -305,20 +345,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 37,
+      "check_line": 23,
       "check_col": 23,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 139,
-          "max_time": 8.10000002384186E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.ads",
-      "line": 25,
+      "line": 27,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -327,7 +367,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 22
+            "line": 24
           }
         ]
       },
@@ -337,7 +377,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 4728,
-              "time": 6.70000000000000E-01
+              "time": 0
             }
           },
           "transformations": {
@@ -348,7 +388,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 4728,
-              "time": 7.30000000000000E-01
+              "time": 0
             }
           },
           "transformations": {
@@ -356,20 +396,20 @@
         }
       ],
       "check_file": "train.ads",
-      "check_line": 25,
+      "check_line": 27,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 7.30000019073486E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.adb",
-      "line": 50,
+      "line": 32,
       "col": 43,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -378,7 +418,291 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 31
+            "line": 29
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 51,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 32,
+      "check_col": 43,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 33,
+      "col": 22,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.addCarriage",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 29
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 54,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 54,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 33,
+      "check_col": 22,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 31,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.addCarriage",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 29
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 27,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 31,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 41,
+      "col": 43,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.decreaseCarriage",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 33
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 51,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 41,
+      "check_col": 43,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 42,
+      "col": 22,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.decreaseCarriage",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 33
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 54,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 54,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 42,
+      "check_col": 22,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 35,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.decreaseCarriage",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 33
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 27,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 35,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 50,
+      "col": 55,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.addRod",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 37
           }
         ]
       },
@@ -397,290 +721,6 @@
       ],
       "check_file": "train.adb",
       "check_line": 50,
-      "check_col": 43,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.adb",
-      "line": 51,
-      "col": 22,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "train.addCarriage",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 31
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 54,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 54,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 5,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.adb",
-      "check_line": 51,
-      "check_col": 22,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.ads",
-      "line": 33,
-      "col": 14,
-      "rule": "VC_POSTCONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "train.addCarriage",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 31
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 27,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.ads",
-      "check_line": 33,
-      "check_col": 14,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.adb",
-      "line": 60,
-      "col": 43,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "train.decreaseCarriage",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 35
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 51,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.adb",
-      "check_line": 60,
-      "check_col": 43,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.adb",
-      "line": 61,
-      "col": 22,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "train.decreaseCarriage",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 35
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 54,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 54,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 5,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.adb",
-      "check_line": 61,
-      "check_col": 22,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.ads",
-      "line": 37,
-      "col": 14,
-      "rule": "VC_POSTCONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "train.decreaseCarriage",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 35
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 27,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.ads",
-      "check_line": 37,
-      "check_col": 14,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.adb",
-      "line": 70,
-      "col": 55,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "train.addRod",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 39
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 51,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.adb",
-      "check_line": 70,
       "check_col": 55,
       "how_proved": "prover",
       "stats": {
@@ -693,7 +733,7 @@
     },
     {
       "file": "train.adb",
-      "line": 72,
+      "line": 52,
       "col": 21,
       "rule": "VC_PRECONDITION",
       "severity": "info",
@@ -702,7 +742,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 39
+            "line": 37
           }
         ]
       },
@@ -712,7 +752,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 20,
-              "time": 1.30000000000000E-01
+              "time": 0
             }
           },
           "transformations": {
@@ -753,20 +793,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 72,
+      "check_line": 52,
       "check_col": 21,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 1.29999995231628E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.adb",
-      "line": 74,
+      "line": 53,
       "col": 28,
       "rule": "VC_PRECONDITION",
       "severity": "info",
@@ -775,7 +815,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 39
+            "line": 37
           }
         ]
       },
@@ -785,7 +825,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 64,
-              "time": 8.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -796,7 +836,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 64,
-              "time": 8.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -804,20 +844,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 74,
+      "check_line": 53,
       "check_col": 28,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.ads",
-      "line": 41,
+      "line": 39,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -826,7 +866,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 39
+            "line": 37
           }
         ]
       },
@@ -844,7 +884,7 @@
         }
       ],
       "check_file": "train.ads",
-      "check_line": 41,
+      "check_line": 39,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -857,7 +897,7 @@
     },
     {
       "file": "train.adb",
-      "line": 82,
+      "line": 62,
       "col": 55,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -866,7 +906,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 43
+            "line": 41
           }
         ]
       },
@@ -884,7 +924,7 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 82,
+      "check_line": 62,
       "check_col": 55,
       "how_proved": "prover",
       "stats": {
@@ -897,7 +937,7 @@
     },
     {
       "file": "train.adb",
-      "line": 84,
+      "line": 64,
       "col": 21,
       "rule": "VC_PRECONDITION",
       "severity": "info",
@@ -906,7 +946,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 43
+            "line": 41
           }
         ]
       },
@@ -957,7 +997,7 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 84,
+      "check_line": 64,
       "check_col": 21,
       "how_proved": "prover",
       "stats": {
@@ -970,7 +1010,7 @@
     },
     {
       "file": "train.adb",
-      "line": 85,
+      "line": 65,
       "col": 28,
       "rule": "VC_PRECONDITION",
       "severity": "info",
@@ -979,7 +1019,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 43
+            "line": 41
           }
         ]
       },
@@ -989,7 +1029,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 64,
-              "time": 9.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -1000,7 +1040,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 64,
-              "time": 8.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -1008,20 +1048,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 85,
+      "check_line": 65,
       "check_col": 28,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.ads",
-      "line": 45,
+      "line": 43,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1030,7 +1070,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 43
+            "line": 41
           }
         ]
       },
@@ -1048,7 +1088,7 @@
         }
       ],
       "check_file": "train.ads",
-      "check_line": 45,
+      "check_line": 43,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1061,7 +1101,7 @@
     },
     {
       "file": "train.adb",
-      "line": 109,
+      "line": 77,
       "col": 65,
       "rule": "VC_OVERFLOW_CHECK",
       "severity": "info",
@@ -1070,7 +1110,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 47
+            "line": 45
           }
         ]
       },
@@ -1088,7 +1128,7 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 109,
+      "check_line": 77,
       "check_col": 65,
       "how_proved": "prover",
       "stats": {
@@ -1101,7 +1141,7 @@
     },
     {
       "file": "train.adb",
-      "line": 109,
+      "line": 77,
       "col": 65,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -1110,7 +1150,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 47
+            "line": 45
           }
         ]
       },
@@ -1128,7 +1168,7 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 109,
+      "check_line": 77,
       "check_col": 65,
       "how_proved": "prover",
       "stats": {
@@ -1141,7 +1181,7 @@
     },
     {
       "file": "train.adb",
-      "line": 109,
+      "line": 77,
       "col": 32,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -1150,7 +1190,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 47
+            "line": 45
           }
         ]
       },
@@ -1168,7 +1208,7 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 109,
+      "check_line": 77,
       "check_col": 32,
       "how_proved": "prover",
       "stats": {
@@ -1181,7 +1221,7 @@
     },
     {
       "file": "train.ads",
-      "line": 49,
+      "line": 47,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1190,7 +1230,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 47
+            "line": 45
           }
         ]
       },
@@ -1219,7 +1259,7 @@
         }
       ],
       "check_file": "train.ads",
-      "check_line": 49,
+      "check_line": 47,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1232,7 +1272,7 @@
     },
     {
       "file": "train.adb",
-      "line": 119,
+      "line": 87,
       "col": 58,
       "rule": "VC_OVERFLOW_CHECK",
       "severity": "info",
@@ -1241,7 +1281,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 51
+            "line": 49
           }
         ]
       },
@@ -1251,7 +1291,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 70,
-              "time": 6.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -1259,20 +1299,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 119,
+      "check_line": 87,
       "check_col": 58,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.adb",
-      "line": 119,
+      "line": 87,
       "col": 58,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
@@ -1281,7 +1321,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 51
+            "line": 49
           }
         ]
       },
@@ -1291,7 +1331,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 75,
-              "time": 6.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -1299,20 +1339,20 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 119,
+      "check_line": 87,
       "check_col": 58,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
     {
       "file": "train.ads",
-      "line": 53,
+      "line": 51,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1321,7 +1361,7 @@
         "sloc": [
           {
             "file": "train.ads",
-            "line": 51
+            "line": 49
           }
         ]
       },
@@ -1331,7 +1371,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 5,
-              "time": 9.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -1342,7 +1382,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 5,
-              "time": 6.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -1350,14 +1390,378 @@
         }
       ],
       "check_file": "train.ads",
-      "check_line": 53,
+      "check_line": 51,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 9.00000035762787E-02
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 94,
+      "col": 58,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.addWaterReactor",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 53
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 94,
+      "check_col": 58,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 95,
+      "col": 50,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.addWaterReactor",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 53
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 58,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 95,
+      "check_col": 50,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 56,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.addWaterReactor",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 53
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 78,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 72,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 56,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 103,
+      "col": 58,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.decreaseWaterReactor",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 58
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 53,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 103,
+      "check_col": 58,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 104,
+      "col": 50,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "train.decreaseWaterReactor",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 58
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 59,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 104,
+      "check_col": 50,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 61,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.decreaseWaterReactor",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 58
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 61,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 65,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.overHeatStop",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 63
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 65,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.ads",
+      "line": 69,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "train.trainToMaintenance",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 67
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.ads",
+      "check_line": 69,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
         }
       }
     }
@@ -1369,11 +1773,11 @@
       "claim": {
         "predicate": "CLAIM_POST",
         "arg": {
-          "name": "train.calculateWeight",
+          "name": "train.decreaseWaterReactor",
           "sloc": [
             {
               "file": "train.ads",
-              "line": 47
+              "line": 58
             }
           ]
         }
@@ -1381,79 +1785,47 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.decreaseWaterReactor",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 58
+            }
+          ]
         }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.decreaseWaterReactor",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 58
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
       ],
       "claim": {
         "predicate": "CLAIM_POST",
         "arg": {
-          "name": "train.decreaseCarriage",
+          "name": "train.calculateSpeed",
           "sloc": [
             {
               "file": "train.ads",
-              "line": 35
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "train.decreaseCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 35
+              "line": 24
             }
           ]
         }
@@ -1465,11 +1837,11 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "train.calculateWeight",
+          "name": "train.calculateSpeed",
           "sloc": [
             {
               "file": "train.ads",
-              "line": 47
+              "line": 24
             }
           ]
         }
@@ -1481,11 +1853,11 @@
       "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
-          "name": "train.calculateWeight",
+          "name": "train.calculateSpeed",
           "sloc": [
             {
               "file": "train.ads",
-              "line": 47
+              "line": 24
             }
           ]
         }
@@ -1493,183 +1865,15 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "train.decreaseCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 35
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_POST",
         "arg": {
-          "name": "train.addCarriage",
+          "name": "train.calcTemp",
           "sloc": [
             {
               "file": "train.ads",
-              "line": 31
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "train.addCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 31
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "train.calculateWeight",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 47
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "train.addCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 31
+              "line": 49
             }
           ]
         }
@@ -1685,71 +1889,7 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "train.calculateSpeed",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 22
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "train.calculateSpeed",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 22
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "train.calculateSpeed",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 22
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "train.calcTemp",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 51
+              "line": 4
             }
           ]
         }
@@ -1764,7 +1904,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -1776,7 +1916,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -1788,7 +1928,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -1800,7 +1940,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -1812,7 +1952,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -1824,7 +1964,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -1836,7 +1976,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -1848,7 +1988,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -1860,7 +2000,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -1873,7 +2013,7 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 39
+              "line": 37
             }
           ]
         }
@@ -1889,7 +2029,7 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 51
+              "line": 49
             }
           ]
         }
@@ -1905,7 +2045,7 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 51
+              "line": 49
             }
           ]
         }
@@ -1920,7 +2060,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -1932,7 +2072,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -1944,7 +2084,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -1957,7 +2097,23 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 39
+              "line": 37
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "train.overHeatStop",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 63
             }
           ]
         }
@@ -1972,7 +2128,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -1984,7 +2140,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -1996,7 +2152,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2008,7 +2164,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2020,7 +2176,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2032,7 +2188,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2044,7 +2200,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2056,7 +2212,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2068,7 +2224,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2081,7 +2237,87 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 39
+              "line": 37
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.overHeatStop",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 63
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.overHeatStop",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 63
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "train.trainToMaintenance",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 67
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.trainToMaintenance",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 67
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.trainToMaintenance",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 67
             }
           ]
         }
@@ -2096,7 +2332,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2108,7 +2344,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2120,7 +2356,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2132,7 +2368,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2144,7 +2380,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2156,7 +2392,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2168,7 +2404,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2180,7 +2416,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2192,7 +2428,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2205,7 +2441,7 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 43
+              "line": 41
             }
           ]
         }
@@ -2220,7 +2456,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2232,7 +2468,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2244,7 +2480,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2257,7 +2493,7 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 43
+              "line": 41
             }
           ]
         }
@@ -2272,7 +2508,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2284,7 +2520,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2296,7 +2532,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2308,7 +2544,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2320,7 +2556,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2332,7 +2568,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2344,7 +2580,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 41
+                "line": 32
               }
             ]
           }
@@ -2356,7 +2592,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 51
+                "line": 49
               }
             ]
           }
@@ -2368,7 +2604,7 @@
             "sloc": [
               {
                 "file": "train.ads",
-                "line": 22
+                "line": 24
               }
             ]
           }
@@ -2381,7 +2617,367 @@
           "sloc": [
             {
               "file": "train.ads",
-              "line": 43
+              "line": 41
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "train.calculateWeight",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "train.decreaseCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.decreaseCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.calculateWeight",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.calculateWeight",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.decreaseCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "train.addWaterReactor",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.addWaterReactor",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.addWaterReactor",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "train.addCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "train.addCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "train.calculateWeight",
+            "sloc": [
+              {
+                "file": "train.ads",
+                "line": 45
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "train.addCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 29
             }
           ]
         }
@@ -2389,14 +2985,14 @@
     }
   ],
   "timings": {
-    "marking": 1.33260001894087E-03,
-    "globals (basic)": 3.10862995684147E-02,
-    "globals/properties (advanced)": 4.20276001095772E-02,
-    "flow analysis": 4.12677004933357E-02,
-    "codepeer results": 8.60000000102445E-06,
-    "init_why_sections": 5.97800011746585E-04,
-    "translation of standard": 3.18420003168285E-03,
-    "translation of compilation unit": 3.95083986222744E-02,
-    "proof": 3.92206168174744E+00
+    "marking": 3.18089989013970E-03,
+    "globals (basic)": 4.32494990527630E-02,
+    "globals/properties (advanced)": 5.90086989104748E-02,
+    "flow analysis": 1.35828495025635E-01,
+    "codepeer results": 1.06999996205559E-05,
+    "init_why_sections": 9.32800001464784E-04,
+    "translation of standard": 4.39410004764795E-03,
+    "translation of compilation unit": 6.77628964185715E-02,
+    "proof": 1.84832012653351E+00
   }
 }

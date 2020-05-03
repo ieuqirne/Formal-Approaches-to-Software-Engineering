@@ -2,13 +2,22 @@
 
 package body waterTank with SPARK_Mode is
 
-   procedure addWaterReactor (This : in out TrainWaterTank) is
-   begin
-      This.water_level := 400;
-      --This.waterInReactor := This.waterInReactor + WaterDecrement;
-      This.status := Sufficient;
 
-   end addWaterReactor;
+   function returnWaterStatus(This : in TrainWaterTank) return WaterLevel is
+   begin
+      return this.water_level;
+   end returnWaterStatus;
+
+
+--     procedure addWaterReactor (This : in out TrainWaterTank) is
+--     begin
+--        if(This.water_level >= WaterDecrement) then
+--           This.water_level := This.water_level - WaterDecrement;
+--           This.status := Sufficient;
+--        end if;
+--
+--
+--     end addWaterReactor;
 --     procedure UpdateWaterStatus (This : in out TrainWaterTank) is
 --     begin
 --        if This.water_level <= WaterLevel'Last and This.water_level > WaterThreshold then
