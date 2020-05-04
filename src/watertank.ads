@@ -1,6 +1,6 @@
   package waterTank with SPARK_Mode is
 
-   type WaterLevel is range 0..2500;
+   type WaterLevel is range 0..1500;
    --type InjectingClosed is (Injecting, Closed);
    type WaterStatus is (Critical, Sufficient);
 

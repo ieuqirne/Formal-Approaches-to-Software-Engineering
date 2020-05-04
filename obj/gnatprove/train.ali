@@ -13,13 +13,13 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U train%b		train.adb		07506106 OO PK IL
+U train%b		train.adb		cb83db74 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W reactor%s		reactor.adb		reactor.ali
 
-U train%s		train.ads		9975454b OO PK IL
+U train%s		train.ads		daa677fa OO PK IL
 W reactor%s		reactor.adb		reactor.ali
 W watertank%s		watertank.adb		watertank.ali
 
@@ -31,15 +31,15 @@ D a-textio.ads		20190518041256 aef4d56d ada.text_io%s
 D a-tiflio.ads		20190518041254 bf196650 ada.text_io.float_io%s
 D interfac.ads		20190518041254 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041254 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200503140936 511ab4f7 reactor%s
+D reactor.ads		20200504173302 cb66ea1a reactor%s
 D system.ads		20190518041256 32a08138 system%s
 D s-crtl.ads		20190518041254 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20190518041256 078245e4 system.file_control_block%s
 D s-parame.ads		20190518041256 48ec542b system.parameters%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200503142028 1fe1553a train%s
-D train.adb		20200503141922 06d51206 train%b
-D watertank.ads		20200503132856 d78ea486 watertank%s
+D train.ads		20200504173802 70746119 train%s
+D train.adb		20200504173802 3fefc2ba train%b
+D watertank.ads		20200504161508 61b4fcf9 watertank%s
 G a Z
 X 1 ada.ads
 16K9*Ada 20e8 16|2r6 2r23 3r6 3r29
@@ -48,50 +48,55 @@ X 2 a-flteio.ads
 X 5 a-textio.ads
 57K13*Text_IO 727e16 16|2w10 2r27
 X 9 reactor.ads
-1K9*reactor 37e12 15|1w6 1r19 16r14 65r63 16|1w6 1r19 113r31
+1K9*reactor 39e12 15|1w6 1r19 16r14 69r63 16|1w6 1r19 149r34
 3I9*Power<short_integer> 15|26r23 26r56
-5I9*Rods<short_short_integer> 15|38r66 42r66 65r71 16|49r59 61r59 87r47 87r72
-. 113r39
-7n25*On{7E9} 15|38r31 42r31 64r31 68r31 16|49r28 61r28
-7n29*Off{7E9} 15|30r31 34r31 46r31 65r32 16|31r28 40r28 112r26
-8n36*Stop{8E9} 15|65r104 68r57 16|114r27
-8n42*Maintenance{8E9} 15|69r33 16|120r27
-10I9*Temperature<short_short_integer> 15|49r48 50r31 50r71 51r33 51r74 16|83r47
-. 85r15 87r16 87r35 87r60
-11i4*OverheatThreshold{10I9} 15|64r56
-16R9*TrainReactor 22e14 15|16r22
-17e7*OnOff{7E9} 15|30r23 34r23 38r23 42r23 46r23 64r23 65r24 68r23 16|31r20
-. 40r20 49r20 61r20 112m17
-18i7*temp{10I9} 15|50r23 50r63 64r48 16|53m20 65m20 115m17
-19i7*rod_number{5I9} 15|38r53 39r24 39r47 42r53 43r24 43r47 65r50 16|49r46
-. 50m20 50r44 61r46 62m20 62r44 87r94 113m17
-20e7*status{8E9} 15|65r95 68r48 69r24 16|114m17 120m17
-21i7*pow{3I9} 15|26r16 26r49 16|12r20 15r37 51m20 63m20
-32V13*calculatePower{3I9} 16|51s27 63s27
+5I9*Rods<short_short_integer> 15|38r66 42r66 69r71 16|49r59 60r59 90r47 90r72
+. 92r56 92r81 149r42
+7n25*On{7E9} 15|38r31 42r31 54r31 68r31 72r31 16|49r28 60r28
+7n29*Off{7E9} 15|30r31 34r31 46r31 69r32 16|31r28 40r28 86r28 148r29
+8n36*Stop{8E9} 15|69r104 72r57 16|150r30
+8n42*Maintenance{8E9} 15|73r33 16|159r27
+10I9*Temperature<short_short_integer> 15|49r47 50r31 50r71 51r33 51r74 16|82r47
+. 84r15 90r16 90r35 90r60 92r25 92r44 92r69 92r121 101r15
+11i4*OverheatThreshold{10I9} 15|68r56 16|91r19 103r28 104r36 115r31
+12i4*OverheatLimitThreshold{10I9} 16|122r27
+17R9*TrainReactor 23e14 15|16r22
+18e7*OnOff{7E9} 15|30r23 34r23 38r23 42r23 46r23 54r23 68r23 69r24 72r23
+. 16|31r20 40r20 49r20 60r20 86r20 148m20
+19i7*temp{10I9} 15|50r23 50r63 68r48 16|53m20 64m20 103r20 104r29 115r24
+. 120m17 122r20 152m20
+20i7*rod_number{5I9} 15|38r53 39r24 39r47 42r53 43r24 43r47 69r50 16|49r46
+. 50m20 50r44 60r46 61m20 61r44 90r94 92r103 149m20
+21e7*status{8E9} 15|69r95 72r48 73r24 16|150m20 159m17
+22i7*pow{3I9} 15|26r16 26r49 16|12r20 15r37 51m20 62m20
+33V13*calculatePower{3I9} 16|51s27 62s27
 X 15 train.ads
-4K9*train 71l5 71e10 16|5b14 123l5 123t10
+4K9*train 75l5 75e10 16|5b14 162l5 162t10
 6I9*Speed<short_short_integer> 18r12 24r53 27r39 27r81 16|7r53 9r14 23r17
 8I9*Weight<short_integer> 9r29 10r30 19r13 25r24 25r53 45r54 46r51 46r80
-. 47r84 16|70r54 72r13 77r34
-9i4*ReactorWeight{8I9} 19r23 47r40 16|75r17 77r18
-10i4*CarriageWeight{8I9} 16|77r49
+. 47r84 16|69r54 71r13 76r34
+9i4*ReactorWeight{8I9} 19r23 47r40 16|74r17 76r18
+10i4*CarriageWeight{8I9} 16|76r49
 12I9*Carriage<short_short_integer> 20r19 30r56 34r56 16|31r54 40r54
 13i4*waterneeded{17|3I9}
-15R9*Train 22e14 24r39 29r41 33r46 37r36 41r41 45r40 49r34 53r45 58r50 63r42
-. 67r48 16|7r39 29r41 38r46 47r36 59r41 70r40 83r33 92r45 101r50 110r42 118r48
-16r7*reac{9|16R9} 26r11 26r44 30r18 34r18 38r18 38r48 39r19 39r42 42r18 42r48
-. 43r19 43r42 46r18 50r18 50r58 64r18 64r43 65r19 65r45 65r90 68r18 68r43
-. 69r19 16|12r15 15r32 31r15 40r15 49r15 49r41 50m15 50r39 51m15 51r47 53m15
-. 61r15 61r41 62m15 62r39 63m15 63r47 65m15 87r89 112m12 113m12 114m12 115m12
-. 120m12
-17r7*waTank{17|10R9} 54r18 54r67 55r11 56r19 56r67 59r18 59r67 60r11 61r19
-. 61r67 16|94m12 94r39 96r15 97m15 103m12 103r39 105r15 106m15
-18i7*sp{6I9} 16|52m15 64m15
+15R9*Train 22e14 24r39 29r41 33r46 37r36 41r41 45r40 49r33 53r49 57r45 62r50
+. 67r43 71r48 16|7r39 29r41 38r46 47r36 58r41 69r40 82r33 100r49 127r45 136r50
+. 145r43 157r48
+16r7*reac{9|17R9} 26r11 26r44 30r18 34r18 38r18 38r48 39r19 39r42 42r18 42r48
+. 43r19 43r42 46r18 50r18 50r58 54r18 68r18 68r43 69r19 69r45 69r90 72r18
+. 72r43 73r19 16|12r15 15r32 31r15 40r15 49r15 49r41 50m15 50r39 51m15 51r47
+. 53m15 60r15 60r41 61m15 61r39 62m15 62r47 64m15 86r15 90r89 92r98 103r15
+. 104r24 115r19 120m12 122r15 148m15 149m15 150m15 152m15 159m12
+17r7*waTank{17|10R9} 54r43 54r92 55r19 55r67 58r18 58r67 59r11 60r19 60r67
+. 63r18 63r67 64r11 65r19 65r67 16|105r18 108m18 111m18 117m15 129m12 129r39
+. 131r15 132m15 138m12 138r39 140r15 141m15
+18i7*sp{6I9} 16|52m15 63m15 151m15
 19i7*wei{8I9} 25r17 25r46 46r44 46r73 16|15r55 33m15 42m15
 20i7*numbCarri{12I9} 30r44 31r19 31r36 34r44 35r19 35r36 16|31r42 32m15 32r33
-. 40r42 41m15 41r33 74r15 77r80
-21i7*waterInReactor{17|3I9} 55r57 60r57 16|95m12 95r35 104m12 104r35
-24V13*calculateSpeed{6I9} 24>29 27r14 27r56 16|7b13 27l8 27t22 52s21 64s21
+. 40r42 41m15 41r33 73r15 76r80
+21i7*waterInReactor{17|3I9} 59r57 64r57 16|92r138 106r20 107m18 107r41 108r63
+. 110m18 116m15 130m12 130r35 139m12 139r35
+24V13*calculateSpeed{6I9} 24>29 27r14 27r56 16|7b13 27l8 27t22 52s21 63s21
 24r29 This{15R9} 25r12 25r41 26r6 26r39 16|7b29 12r10 15r27 15r50
 29U14*addCarriage 29=27 16|29b14 36l8 36t19
 29r27 This{15R9} 30r13 30r39 31r14 31r31 16|29b27 31r10 31r37 32m10 32r28
@@ -99,45 +104,53 @@ X 15 train.ads
 33U14*decreaseCarriage 33=32 16|38b14 45l8 45t24
 33r32 This{15R9} 34r13 34r39 35r14 35r31 16|38b32 40r10 40r37 41m10 41r28
 . 42m10 42r38
-37U14*addRod 37=22 16|47b14 57l8 57t14
+37U14*addRod 37=22 16|47b14 56l8 56t14
 37r22 This{15R9} 38r13 38r43 39r14 39r37 16|47b22 49r10 49r36 50m10 50r34
 . 51m10 51r42 52m10 52r36 53m10 53r37
-41U14*decreaseRod 41=27 16|59b14 67l8 67t19
-41r27 This{15R9} 42r13 42r43 43r14 43r37 16|59b27 61r10 61r36 62m10 62r34
-. 63m10 63r42 64m10 64r36 65m10 65r37
-45V13*calculateWeight{8I9} 45>30 47r14 47r58 16|33s22 42s22 70b13 81l8 81t23
-45r30 This{15R9} 46r13 46r39 46r68 16|70b30 74r10 77r75
-49V13*calcTemp{9|10I9} 49>23 51r14 51r55 16|53s28 65s28 83b13 89l8 89t16
-49r23 This{15R9} 50r13 50r53 16|83b23 87r84
-53U14*addWaterReactor 53=31 16|92b14 99l8 99t23
-53r31 This{15R9} 54r13 54r62 55r6 55r52 56r14 56r62 16|92b31 94m7 94r34 95m7
-. 95r30 96r10 97m10
-58U14*decreaseWaterReactor 58=36 16|101b14 108l8 108t28
-58r36 This{15R9} 59r13 59r62 60r6 60r52 61r14 61r62 16|101b36 103m7 103r34
-. 104m7 104r30 105r10 106m10
-63U14*overHeatStop 63=28 16|110b14 116l8 116t20
-63r28 This{15R9} 64r13 64r38 65r14 65r40 65r85 16|110b28 112m7 113m7 114m7
-. 115m7
-67U14*trainToMaintenance 67=34 16|118b14 121l8 121t26
-67r34 This{15R9} 68r13 68r38 69r14 16|118b34 120m7
+41U14*decreaseRod 41=27 16|58b14 66l8 66t19
+41r27 This{15R9} 42r13 42r43 43r14 43r37 16|58b27 60r10 60r36 61m10 61r34
+. 62m10 62r42 63m10 63r36 64m10 64r37
+45V13*calculateWeight{8I9} 45>30 47r14 47r58 16|33s22 42s22 69b13 80l8 80t23
+45r30 This{15R9} 46r13 46r39 46r68 16|69b30 73r10 76r75
+49V13*calcTemp{9|10I9} 49>23 51r14 51r55 16|53s28 64s28 82b13 98l8 98t16
+. 120s25
+49r23 This{15R9} 50r13 50r53 16|82b23 86r10 90r84 92r93 92r133
+53U14*balanceWaterReactor 53=35 16|100b14 125l8 125t27
+53r35 This{15R9} 54r13 54r38 54r87 55r14 55r62 16|100b35 103r10 104r19 105r13
+. 106r15 107m13 107r36 108m13 108r58 110m13 111m13 115r14 116m10 117m10 120m7
+. 120r34 122r10 123m24
+57U14*addWaterReactor 57=31 16|127b14 134l8 134t23
+57r31 This{15R9} 58r13 58r62 59r6 59r52 60r14 60r62 16|127b31 129m7 129r34
+. 130m7 130r30 131r10 132m10
+62U14*decreaseWaterReactor 62=36 16|136b14 143l8 143t28
+62r36 This{15R9} 63r13 63r62 64r6 64r52 65r14 65r62 16|136b36 138m7 138r34
+. 139m7 139r30 140r10 141m10
+67U14*checkOverHeat 67=29 16|123s10 145b14 155l8 155t21
+67r29 This{15R9} 68r13 68r38 69r14 69r40 69r85 16|145b29 148m10 149m10 150m10
+. 151m10 152m10
+71U14*trainToMaintenance 71=34 16|157b14 160l8 160t26
+71r34 This{15R9} 72r13 72r38 73r14 16|157b34 159m7
 X 16 train.adb
 8f7 SpFloat{float} 13m10 15m10 18r10 20r14 23r23
 9i7 Spee{15|6I9} 19m9 21m12 23m9 26r14
-72i7 ret{15|8I9} 75m10 77m10 80r14
-85i7 tempe{9|10I9} 87m7 88r14
+71i7 ret{15|8I9} 74m10 76m10 79r14
+84i7 tempe{9|10I9} 90m7 91r10 92m16 97r14
+101i7 tempe{9|10I9} 104m10 105r68 106r84 107r86
 X 17 watertank.ads
-1K11*waterTank 15|2w6 2r21 13r18 17r16 21r24 55r92 60r92 17|19e16
-3I9*WaterLevel<short_integer> 15|13r28 21r34 54r41 54r89 55r102 56r41 56r89
-. 59r41 59r89 60r102 61r41 61r89
-5n25*Critical{5E9} 16|97r32
-5n35*Sufficient{5E9} 16|106r32
-7i4*WaterThreshold{3I9} 16|96r36 105r36
-8i4*WaterDecrement{3I9} 15|55r33 55r74 60r33 60r74 16|94r60 95r52 103r60
-. 104r52
+1K11*waterTank 15|2w6 2r21 13r18 17r16 21r24 59r92 64r92 17|19e16
+3I9*WaterLevel<short_integer> 15|13r28 21r34 54r66 54r114 55r41 55r89 58r41
+. 58r89 59r102 60r41 60r89 63r41 63r89 64r102 65r41 65r89 16|105r57 106r38
+. 106r73 107r75 108r40 110r36 111r40 116r33 117r37
+5n25*Critical{5E9} 16|132r32
+5n35*Sufficient{5E9} 16|141r32
+7i4*WaterThreshold{3I9} 16|131r36 140r36
+8i4*WaterDecrement{3I9} 15|59r33 59r74 64r33 64r74 16|105r40 106r56 107r58
+. 129r60 130r52 138r60 139r52
 10R9*TrainWaterTank 15|17r26 17|13e14
-11i7*water_level{3I9} 15|54r25 54r74 55r18 56r26 56r74 59r25 59r74 60r18
-. 61r26 61r74 16|94m19 94r46 96r22 103m19 103r46 105r22
-12e7*status{5E9} 16|97m22 106m22
+11i7*water_level{3I9} 15|54r50 54r99 55r26 55r74 58r25 58r74 59r18 60r26
+. 60r74 63r25 63r74 64r18 65r26 65r74 16|105r25 108m25 111m25 117m22 129m19
+. 129r46 131r22 138m19 138r46 140r22
+12e7*status{5E9} 16|132m22 141m22
 
 QQ SPARKVERSION 2019 (20190517)
 GG EK_DIRECT_CALLS train__calculatespeed 0
@@ -154,111 +167,65 @@ GG EK_DIRECT_CALLS train__calculateweight 0
 GG EK_GLOBALS train__calculateweight local FALSE E_FUNCTION FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS train__calctemp 0
 GG EK_GLOBALS train__calctemp local FALSE E_FUNCTION FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS train__balancewaterreactor 2 train__calctemp train__checkoverheat
+GG EK_GLOBALS train__balancewaterreactor local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS train__addwaterreactor 0
 GG EK_GLOBALS train__addwaterreactor local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS train__decreasewaterreactor 0
 GG EK_GLOBALS train__decreasewaterreactor local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
-GG EK_DIRECT_CALLS train__overheatstop 0
-GG EK_GLOBALS train__overheatstop local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS train__checkoverheat 0
+GG EK_GLOBALS train__checkoverheat local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS train__traintomaintenance 0
 GG EK_GLOBALS train__traintomaintenance local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS train 0
 GG EK_GLOBALS train local FALSE E_PACKAGE TRUE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 1 train__waterneeded FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
-GG EK_FLOW_SCOPE system__crtl__fseek FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__afcb_free__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
-GG EK_FLOW_SCOPE interfaces__shift_right__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
-GG EK_FLOW_SCOPE system__Ole FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__flush__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__open FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__pclose FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__col FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__fdopen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__read__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
-GG EK_FLOW_SCOPE ada__text_io__look_ahead__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__streams__read FALSE FALSE FALSE FALSE TRUE ada__streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__form FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train__calctemp FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__put__4 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__Ogt FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
-GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__end_of_page__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__set_line_length FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__wch_con TRUE FALSE FALSE FALSE FALSE system
-GG EK_FLOW_SCOPE system__crtl__popen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__new_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__col__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__close FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__fseek64 FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__float_text_io__get FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__open FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__is_open FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__end_of_file FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__fflush FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE watertank__returnwaterstatus FALSE FALSE FALSE FALSE TRUE watertank VISIBLE_PART
-GG EK_FLOW_SCOPE ada__streams__write FALSE FALSE FALSE FALSE TRUE ada__streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__Oge FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
-GG EK_FLOW_SCOPE interfaces__rotate_left__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__write__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
-GG EK_FLOW_SCOPE interfaces__c_streams__fwrite FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__get_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train__calculatespeed FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__read FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__get_immediate FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__set_input FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__realloc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__skip_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__fgetc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__file_typeDefault_Initial_Condition FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE interfaces__shift_left FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
-GG EK_FLOW_SCOPE system__Oeq FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
-GG EK_FLOW_SCOPE train__addwaterreactor FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__rotate_right__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__end_of_file__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__ftell FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__end_of_file__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__streams__read_sea FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_output FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__float_text_io__get__2 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_line_length__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__file_typeDefault_Initial_Condition FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__set_mode FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__float_io TRUE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__page FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE train__decreasecarriage FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__fgets FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__page FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_col FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_right FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__write FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__get_immediate__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_left__4 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__get_immediate__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__rewind FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__ftell64 FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE ada__float_text_io__get__2 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_error FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__streams__write_sea FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
 GG EK_FLOW_SCOPE ada__text_io__skip_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__float_io TRUE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__full_name FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_page_length FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__page__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__close FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__close FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__rmdir FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__standard_input FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train__addcarriage FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__getenv FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_right__4 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__stdin FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE train__decreasewaterreactor FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__fopen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE train__addrod FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__stdout FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get_immediate__3 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__standard_output FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__fread FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__float_text_io__put FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__stderr FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__end_of_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io TRUE FALSE FALSE FALSE FALSE ada
-GG EK_FLOW_SCOPE train__decreasewaterreactor FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__rotate_left FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__chdir FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic__4 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
@@ -267,11 +234,11 @@ GG EK_FLOW_SCOPE ada__text_io__standard_error FALSE FALSE FALSE FALSE TRUE ada__
 GG EK_FLOW_SCOPE system__parameters TRUE FALSE FALSE FALSE FALSE system
 GG EK_FLOW_SCOPE system TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE ada__text_io__delete FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__float_text_io__put FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__setvbuf FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__strlen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__current_input FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train__decreasecarriage FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE reactor__engineon FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__current_input FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__mkdir FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__rotate_right FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__fputc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
@@ -282,11 +249,13 @@ GG EK_FLOW_SCOPE ada__text_io__set_page_length__2 FALSE FALSE FALSE FALSE TRUE a
 GG EK_FLOW_SCOPE ada__text_io__current_output FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__end_of_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE train__decreaserod FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__fread__2 FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE system__file_control_block__afcb_allocate FALSE FALSE FALSE FALSE TRUE system__file_control_block VISIBLE_PART
+GG EK_FLOW_SCOPE train TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE ada__text_io__get_immediate__4 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__strncpy FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__reset FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__strncpy FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE system__wch_con__get_wc_encoding_method FALSE FALSE FALSE FALSE TRUE system__wch_con VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__eof_char FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
 GG EK_FLOW_SCOPE ada__text_io__current_error FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
@@ -298,34 +267,34 @@ GG EK_FLOW_SCOPE ada__text_io__initialize_standard_files FALSE FALSE FALSE FALSE
 GG EK_FLOW_SCOPE interfaces__rotate_right__4 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE system__file_control_block__afcb_close FALSE FALSE FALSE FALSE TRUE system__file_control_block VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__setvbuf FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE train__checkoverheat FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__fputwc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE system__wch_con__get_wc_encoding_method__2 FALSE FALSE FALSE FALSE TRUE system__wch_con VISIBLE_PART
 GG EK_FLOW_SCOPE system__parameters__minimum_stack_size FALSE FALSE FALSE FALSE TRUE system__parameters VISIBLE_PART
-GG EK_FLOW_SCOPE ada__float_text_io__put__2 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
+GG EK_FLOW_SCOPE reactor__engineoff FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__line_length FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train__addrod FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__standard_input__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__put FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__malloc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
-GG EK_FLOW_SCOPE reactor__engineoff FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE system__parameters__adjust_storage_size FALSE FALSE FALSE FALSE TRUE system__parameters VISIBLE_PART
 GG EK_FLOW_SCOPE system__file_control_block__afcb_free FALSE FALSE FALSE FALSE TRUE system__file_control_block VISIBLE_PART
 GG EK_FLOW_SCOPE ada__io_exceptions TRUE FALSE FALSE FALSE FALSE ada
-GG EK_FLOW_SCOPE train__overheatstop FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get_line__4 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_right__2 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE system__wch_con__is_start_of_encoding FALSE FALSE FALSE FALSE TRUE system__wch_con VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__feof FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
+GG EK_FLOW_SCOPE ada__float_text_io__put__2 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__standard_output__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__streams__stream_element_arraySR FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
 GG EK_FLOW_SCOPE ada__text_io__get__3 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__atoi FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE train__calculateweight FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__fputs FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__put_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__standard_error__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__memcpy FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__ferror FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
+GG EK_FLOW_SCOPE ada__streams__stream_element_arraySR FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
 GG EK_FLOW_SCOPE interfaces TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE ada__text_io__line_length__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic__2 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
@@ -333,14 +302,13 @@ GG EK_FLOW_SCOPE ada__text_io__new_page__2 FALSE FALSE FALSE FALSE TRUE ada__tex
 GG EK_FLOW_SCOPE ada__text_io__reset__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__tmpnam FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__current_input__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__float_text_io__get__3 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__clearerr FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE reactor__calculatepower FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
-GG EK_FLOW_SCOPE train__decreaserod FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__clearerr FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__page_length FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE train__traintomaintenance FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__current_output__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__free FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__float_text_io__get__3 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get__4 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__rotate_left__2 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__put__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
@@ -349,43 +317,91 @@ GG EK_FLOW_SCOPE ada__text_io__skip_page FALSE FALSE FALSE FALSE TRUE ada__text_
 GG EK_FLOW_SCOPE system__file_control_block TRUE FALSE FALSE FALSE FALSE system
 GG EK_FLOW_SCOPE system__crtl__dup FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__current_error__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE train__traintomaintenance FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__memmove FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__file_exists FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__float_text_io__put__3 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
+GG EK_FLOW_SCOPE train__calctemp FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__ungetc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__flush FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE ada__streams__stream_element_arraySW FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
 GG EK_FLOW_SCOPE system__crtl__freopen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__streams TRUE FALSE FALSE FALSE FALSE ada
-GG EK_FLOW_SCOPE ada__text_io__page_length__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__rotate_right__2 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__page_length__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__put_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE watertank TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE interfaces__c_streams TRUE FALSE FALSE FALSE FALSE interfaces
+GG EK_FLOW_SCOPE watertank TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE interfaces__c_streams__is_regular_file FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
-GG EK_FLOW_SCOPE ada__text_io__create FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__dup2 FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__create FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__float_text_io__put__3 FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__put__3 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__afcb_allocate__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
-GG EK_FLOW_SCOPE ada__float_text_io TRUE FALSE FALSE TRUE ada__text_io__float_io FALSE ada
-GG EK_FLOW_SCOPE train__calculateweight FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
+GG EK_FLOW_SCOPE ada__streams__stream_element_arraySW FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
 GG EK_FLOW_SCOPE ada__text_io__skip_page__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__mode FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__look_ahead FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__new_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE reactor TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE interfaces__c_streams__set_binary_mode FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_left__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE system__Olt FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__unlink FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE train__calculatespeed FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__mktemp FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__float_text_io TRUE FALSE FALSE TRUE ada__text_io__float_io FALSE ada
 GG EK_FLOW_SCOPE ada__text_io__afcb_close__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
-GG EK_FLOW_SCOPE reactor TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE system__crtl__fclose FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__c_streams__set_text_mode FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__name FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl TRUE FALSE FALSE FALSE FALSE system
 GG EK_FLOW_SCOPE interfaces__c_streams__fileno FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__end_of_page FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE train__balancewaterreactor FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__fseek FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__afcb_free__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
+GG EK_FLOW_SCOPE system__Ole FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__flush__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE interfaces__shift_right__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__open FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__col FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__pclose FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__fdopen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__look_ahead__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__read__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
+GG EK_FLOW_SCOPE ada__text_io__form FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__streams__read FALSE FALSE FALSE FALSE TRUE ada__streams VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__put__4 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__Ogt FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__end_of_page__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__set_line_length FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__wch_con TRUE FALSE FALSE FALSE FALSE system
+GG EK_FLOW_SCOPE system__crtl__popen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__new_line__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__col__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__close FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__fseek64 FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__open FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__is_open FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__end_of_file FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__fflush FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE watertank__returnwaterstatus FALSE FALSE FALSE FALSE TRUE watertank VISIBLE_PART
+GG EK_FLOW_SCOPE train__addcarriage FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
+GG EK_FLOW_SCOPE ada__streams__write FALSE FALSE FALSE FALSE TRUE ada__streams VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__Oge FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE interfaces__rotate_left__3 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__write__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
+GG EK_FLOW_SCOPE ada__float_text_io__get FALSE FALSE FALSE FALSE TRUE ada__float_text_io VISIBLE_PART
+GG EK_FLOW_SCOPE interfaces__c_streams__fwrite FALSE FALSE FALSE FALSE TRUE interfaces__c_streams VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__get_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE train__addwaterreactor FALSE FALSE FALSE FALSE TRUE train VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__read FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__get_immediate FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__set_input FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__realloc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE ada__text_io__skip_line FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__fgetc FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE interfaces__shift_left FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
+GG EK_FLOW_SCOPE system__Oeq FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
 GG EK_END_MARKER

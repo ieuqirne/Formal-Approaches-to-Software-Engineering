@@ -2603,7 +2603,7 @@ module Reactor__overheatthreshold
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant overheatthreshold [#"reactor.ads" 11 0 0][@model_trace:2602] [@name:OverheatThreshold] 
+ val constant overheatthreshold [#"reactor.ads" 11 0 0][@model_trace:2611] [@name:OverheatThreshold] 
    : int
 
  
@@ -2613,12 +2613,27 @@ module Reactor__overheatthreshold
 
 end
 
-(* Module for defining the constant "tempincrement" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Constant *)
+(* Module for defining the constant "overheatlimitthreshold" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Constant *)
+module Reactor__overheatlimitthreshold
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val constant overheatlimitthreshold [#"reactor.ads" 12 0 0][@name:OverheatLimitThreshold] [@model_trace:2621] 
+   : int
+
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module for defining the constant "tempincrement" defined at reactor.ads:13, created in Gnat2Why.Decls.Translate_Constant *)
 module Reactor__tempincrement
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val constant tempincrement [#"reactor.ads" 12 0 0][@model_trace:2612] [@name:TempIncrement] 
+ val constant tempincrement [#"reactor.ads" 13 0 0][@model_trace:2631] [@name:TempIncrement] 
    : int
 
  
@@ -2628,7 +2643,7 @@ module Reactor__tempincrement
 
 end
 
-(* Module for axiomatizing the record theory associated to type "trainreactor" defined at reactor.ads:16, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
+(* Module for axiomatizing the record theory associated to type "trainreactor" defined at reactor.ads:17, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
 module Reactor__trainreactor__rep
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2644,9 +2659,9 @@ module Reactor__trainreactor__rep
  use        Reactor__temperature__rep as Reactor__temperature__rep
 
  type __split_fields =
-  { rec__reactor__trainreactor__onoff [@model_trace:.2632] [@name:OnOff] : Reactor__statusonoff.statusonoff; rec__reactor__trainreactor__temp [@model_trace:.2643] [@name:temp] : Reactor__temperature.temperature; rec__reactor__trainreactor__rod_number [@name:rod_number] [@model_trace:.2654] : Reactor__rods.rods; rec__reactor__trainreactor__status [@model_trace:.2665] [@name:status] : Reactor__reactorstatus.reactorstatus; rec__reactor__trainreactor__pow [@name:pow] [@model_trace:.2676] : Reactor__power.power }
+  { rec__reactor__trainreactor__onoff [@model_trace:.2651] [@name:OnOff] : Reactor__statusonoff.statusonoff; rec__reactor__trainreactor__temp [@name:temp] [@model_trace:.2662] : Reactor__temperature.temperature; rec__reactor__trainreactor__rod_number [@model_trace:.2673] [@name:rod_number] : Reactor__rods.rods; rec__reactor__trainreactor__status [@name:status] [@model_trace:.2684] : Reactor__reactorstatus.reactorstatus; rec__reactor__trainreactor__pow [@name:pow] [@model_trace:.2695] : Reactor__power.power }
  
- function __split_fields_rec__reactor__trainreactor__onoff__projection [@model_trace:.2632] [@name:OnOff] 
+ function __split_fields_rec__reactor__trainreactor__onoff__projection [@model_trace:.2651] [@name:OnOff] 
    (a : __split_fields) : Reactor__statusonoff.statusonoff =
   a.rec__reactor__trainreactor__onoff
  
@@ -2654,7 +2669,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__onoff__projection
  
- function __split_fields_rec__reactor__trainreactor__temp__projection [@model_trace:.2643] [@name:temp] 
+ function __split_fields_rec__reactor__trainreactor__temp__projection [@name:temp] [@model_trace:.2662] 
    (a : __split_fields) : Reactor__temperature.temperature =
   a.rec__reactor__trainreactor__temp
  
@@ -2662,7 +2677,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__temp__projection
  
- function __split_fields_rec__reactor__trainreactor__rod_number__projection [@name:rod_number] [@model_trace:.2654] 
+ function __split_fields_rec__reactor__trainreactor__rod_number__projection [@model_trace:.2673] [@name:rod_number] 
    (a : __split_fields) : Reactor__rods.rods =
   a.rec__reactor__trainreactor__rod_number
  
@@ -2670,7 +2685,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__rod_number__projection
  
- function __split_fields_rec__reactor__trainreactor__status__projection [@model_trace:.2665] [@name:status] 
+ function __split_fields_rec__reactor__trainreactor__status__projection [@name:status] [@model_trace:.2684] 
    (a : __split_fields) : Reactor__reactorstatus.reactorstatus =
   a.rec__reactor__trainreactor__status
  
@@ -2678,7 +2693,7 @@ module Reactor__trainreactor__rep
  
  meta "inline:no" function __split_fields_rec__reactor__trainreactor__status__projection
  
- function __split_fields_rec__reactor__trainreactor__pow__projection [@name:pow] [@model_trace:.2676] 
+ function __split_fields_rec__reactor__trainreactor__pow__projection [@name:pow] [@model_trace:.2695] 
    (a : __split_fields) : Reactor__power.power =
   a.rec__reactor__trainreactor__pow
  
@@ -2797,7 +2812,7 @@ module Reactor__trainreactor__rep
 
 end
 
-(* Module for axiomatizing type "trainreactor" defined at reactor.ads:16, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "trainreactor" defined at reactor.ads:17, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__trainreactor
  use export Reactor__trainreactor__rep
  use        "_gnatprove_standard".Main
@@ -2957,13 +2972,13 @@ module Reactor__trainreactor
 
 end
 
-(* Module for defining the constant "this" defined at reactor.ads:32, created in Gnat2Why.Decls.Translate_Constant *)
+(* Module for defining the constant "this" defined at reactor.ads:33, created in Gnat2Why.Decls.Translate_Constant *)
 module Reactor__calculatepower__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Reactor__trainreactor as Reactor__trainreactor
 
- val constant this [#"reactor.ads" 32 0 0][@model_trace:2798] [@model_projected] [@name:This] 
+ val constant this [#"reactor.ads" 33 0 0][@model_projected] [@model_trace:2817] [@name:This] 
    : Reactor__trainreactor.trainreactor
 
  
@@ -2973,7 +2988,7 @@ module Reactor__calculatepower__this
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:32, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "this" defined at reactor.ads:33, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__calculatepower__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2981,7 +2996,7 @@ module Reactor__calculatepower__this___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "calculatepower" defined at reactor.ads:32, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "calculatepower" defined at reactor.ads:33, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__calculatepower
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3130,13 +3145,13 @@ module Ada__text_io__count__rep
  meta "inline:no" function to_rep
 
 end
-(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:24, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:25, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__engineon__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Reactor__trainreactor as Reactor__trainreactor
 
- val this__split_fields [#"reactor.ads" 24 0 0][@model_projected] [@model_trace:2696] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
+ val this__split_fields [#"reactor.ads" 25 0 0][@model_trace:2715] [@model_projected] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3144,7 +3159,7 @@ module Reactor__engineon__this
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:24, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "this" defined at reactor.ads:25, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__engineon__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3152,13 +3167,13 @@ module Reactor__engineon__this___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:28, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "this" defined at reactor.ads:29, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__engineoff__this
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        Reactor__trainreactor as Reactor__trainreactor
 
- val this__split_fields [#"reactor.ads" 28 0 0][@model_projected] [@model_trace:2747] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
+ val this__split_fields [#"reactor.ads" 29 0 0][@model_projected] [@model_trace:2766] [@name:This]  : Reactor__trainreactor.__split_fields__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3166,7 +3181,7 @@ module Reactor__engineoff__this
 
 end
 
-(* Module giving an empty axiom for the entity "this" defined at reactor.ads:28, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "this" defined at reactor.ads:29, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__engineoff__this___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3810,7 +3825,7 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "engineon" defined at reactor.ads:24, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "engineon" defined at reactor.ads:25, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__engineon
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3818,7 +3833,7 @@ module Reactor__engineon
 
 end
 
-(* Module for possibly declaring a logic function for "engineoff" defined at reactor.ads:28, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "engineoff" defined at reactor.ads:29, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__engineoff
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4060,7 +4075,7 @@ module Reactor__temperature___axiom
 
 end
 
-(* Module giving axioms for type "trainreactor" defined at reactor.ads:16, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "trainreactor" defined at reactor.ads:17, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__trainreactor___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4141,7 +4156,19 @@ module Reactor__overheatthreshold___axiom
 
 end
 
-(* Module for defining the value of constant "tempincrement" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Constant_Value *)
+(* Module for defining the value of constant "overheatlimitthreshold" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module Reactor__overheatlimitthreshold___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__overheatlimitthreshold as Reactor__overheatlimitthreshold
+
+ axiom overheatlimitthreshold__def_axiom :
+  ((Reactor__overheatlimitthreshold.overheatlimitthreshold ) = (80 : int))
+
+end
+
+(* Module for defining the value of constant "tempincrement" defined at reactor.ads:13, created in Gnat2Why.Decls.Translate_Constant_Value *)
 module Reactor__tempincrement___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4153,7 +4180,7 @@ module Reactor__tempincrement___axiom
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "engineon" defined at reactor.ads:24, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "engineon" defined at reactor.ads:25, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__engineon___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4167,13 +4194,13 @@ module Reactor__engineon___axiom
 
  val engineon 
    (this__split_fields : Reactor__trainreactor.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2715] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2721] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2731] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2737] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
+  requires {  ( ( [@GP_Pretty_Ada:2734] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2740] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:2750] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2756] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
   writes {this__split_fields}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "engineoff" defined at reactor.ads:28, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "engineoff" defined at reactor.ads:29, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__engineoff___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4187,13 +4214,13 @@ module Reactor__engineoff___axiom
 
  val engineoff 
    (this__split_fields : Reactor__trainreactor.__split_fields__ref) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2766] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2772] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2782] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2788] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
+  requires {  ( ( [@GP_Pretty_Ada:2785] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2791] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:2801] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2807] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) /\ (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = this__split_fields.Reactor__trainreactor.__split_fields__content } True True True True) ) }
   writes {this__split_fields}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "calculatepower" defined at reactor.ads:32, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "calculatepower" defined at reactor.ads:33, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__calculatepower___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4202,17 +4229,19 @@ module Reactor__calculatepower___axiom
  use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
  use        Reactor__calculatepower as Reactor__calculatepower
  use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
 
  val calculatepower 
    (this : Reactor__trainreactor.trainreactor) : int
-  requires {  true }
-  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:2818] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2826] (result <= (5200 : int)) ) ) ) ) }
+  requires {  ( [@GP_Pretty_Ada:18261] ((Reactor__statusonoff__rep.to_rep this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) }
+  ensures {  ( ( (result = (Reactor__calculatepower.calculatepower this)) /\ (Reactor__calculatepower.calculatepower__function_guard result this) )/\( (Reactor__power___axiom.dynamic_invariant result True False True True) /\ ( ( [@GP_Pretty_Ada:2844] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2852] (result <= (5200 : int)) ) ) ) ) }
  
  axiom calculatepower__post_axiom :
   (forall this   : Reactor__trainreactor.trainreactor [(Reactor__calculatepower.calculatepower this)].
-   ( (Reactor__trainreactor___axiom.dynamic_invariant this True True True True) -> (let result = (Reactor__calculatepower.calculatepower this) in (
+   ( ( (Reactor__trainreactor___axiom.dynamic_invariant this True True True True) /\ ( [@GP_Pretty_Ada:18261] ((Reactor__statusonoff__rep.to_rep this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) ) -> (let result = (Reactor__calculatepower.calculatepower this) in (
     (if ((Reactor__calculatepower.calculatepower__function_guard result this)) then (
-     ( ( ( ( [@GP_Pretty_Ada:2818] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2826] (result <= (5200 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
+     ( ( ( ( [@GP_Pretty_Ada:2844] (result >= (0 : int)) ) /\ ( [@GP_Pretty_Ada:2852] (result <= (5200 : int)) ) ) /\ (Reactor__power___axiom.dynamic_invariant result True False True True) )/\true )) else true)))
     ))
 
 end
@@ -4296,6 +4325,7 @@ module Reactor__package_def
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
  use        Reactor__overheatthreshold as Reactor__overheatthreshold
+ use        Reactor__overheatlimitthreshold as Reactor__overheatlimitthreshold
  use        Reactor__tempincrement as Reactor__tempincrement
  use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
  use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
@@ -4316,6 +4346,7 @@ module Reactor__package_def
  use        Ada__text_io__current_err as Ada__text_io__current_err
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
  use        Reactor__overheatthreshold___axiom as Reactor__overheatthreshold___axiom
+ use        Reactor__overheatlimitthreshold___axiom as Reactor__overheatlimitthreshold___axiom
  use        Reactor__tempincrement___axiom as Reactor__tempincrement___axiom
  use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
  use        Ada__text_io__line_length__2___axiom as Ada__text_io__line_length__2___axiom
@@ -4340,33 +4371,38 @@ module Reactor__package_def
    ()))
    in () end ;
   [#"reactor.ads" 11 0 0] assume { [#"reactor.ads" 11 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__overheatthreshold.overheatthreshold True False True True) } ));
-  ([#"reactor.ads" 12 0 0] ( [#"reactor.ads" 12 0 0] begin ensures {true} let _ = (let _ = (10 : int) in (
+  ([#"reactor.ads" 12 0 0] ( [#"reactor.ads" 12 0 0] begin ensures {true} let _ = (let _ = (80 : int) in (
    ()))
    in () end ;
-  [#"reactor.ads" 12 0 0] assume { [#"reactor.ads" 12 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__tempincrement.tempincrement True False True True) } ));
-  ([#"reactor.ads" 17 0 0] ());
-  ([#"reactor.ads" 19 0 0] ());
-  ([#"reactor.ads" 19 0 0] ());
+  [#"reactor.ads" 12 0 0] assume { [#"reactor.ads" 12 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__overheatlimitthreshold.overheatlimitthreshold True False True True) } ));
+  ([#"reactor.ads" 13 0 0] ( [#"reactor.ads" 13 0 0] begin ensures {true} let _ = (let _ = (10 : int) in (
+   ()))
+   in () end ;
+  [#"reactor.ads" 13 0 0] assume { [#"reactor.ads" 13 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__tempincrement.tempincrement True False True True) } ));
+  ([#"reactor.ads" 18 0 0] ());
+  ([#"reactor.ads" 20 0 0] ());
   ([#"reactor.ads" 20 0 0] ());
   ([#"reactor.ads" 21 0 0] ());
-  ([#"reactor.ads" 21 0 0] ());
-  ([#"reactor.ads" 16 0 0] ());
-  ([#"reactor.ads" 24 0 0] ());
-  ([#"reactor.ads" 26 0 0] ());
+  ([#"reactor.ads" 22 0 0] ());
+  ([#"reactor.ads" 22 0 0] ());
+  ([#"reactor.ads" 17 0 0] ());
   ([#"reactor.ads" 25 0 0] ());
-  ([#"reactor.ads" 28 0 0] ());
-  ([#"reactor.ads" 30 0 0] ());
+  ([#"reactor.ads" 27 0 0] ());
+  ([#"reactor.ads" 26 0 0] ());
   ([#"reactor.ads" 29 0 0] ());
-  ([#"reactor.ads" 32 0 0] ());
+  ([#"reactor.ads" 31 0 0] ());
+  ([#"reactor.ads" 30 0 0] ());
   ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 33 0 0] ());
+  ([#"reactor.ads" 35 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
+  ([#"reactor.ads" 34 0 0] ());
    assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
   ();
   ([#"reactor.adb" 3 0 0] ());
@@ -4374,10 +4410,10 @@ module Reactor__package_def
   ([#"reactor.adb" 14 0 0] ());
   ([#"reactor.adb" 20 0 0] ());
   ();
-  ( [@GP_Sloc:reactor.adb:30:1] ([#"reactor.adb" 30 0 0] ()) ) )
+  ( [@GP_Sloc:reactor.adb:34:1] ([#"reactor.adb" 34 0 0] ()) ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "engineon" defined at reactor.ads:24, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "engineon" defined at reactor.ads:25, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__engineon__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4405,24 +4441,24 @@ module Reactor__engineon__subprogram_def
  use        Reactor__engineon__this___axiom as Reactor__engineon__this___axiom
  use        Reactor__calculatepower___axiom as Reactor__calculatepower___axiom
 
- let def [#"reactor.ads" 24 0 0][@GP_Subp:reactor.ads:24] 
+ let def [#"reactor.ads" 25 0 0][@GP_Subp:reactor.ads:25] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 24 0 0] true }
-  ensures { [#"reactor.ads" 24 0 0] ([#"reactor.ads" 26 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__andthen] [@model_vc_post] [@GP_Id:0] [@comment:     Post => This.OnOff = On and then This.rod_number = Rods'Last;              ^ reactor.ads:26:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:26:14] ( ( [@GP_Pretty_Ada:2731] [@GP_Sloc:reactor.ads:26:14] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Sloc:reactor.ads:26:39] [@GP_Pretty_Ada:2737] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) )) }
+  requires { [#"reactor.ads" 25 0 0] true }
+  ensures { [#"reactor.ads" 25 0 0] ([#"reactor.ads" 27 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:27:14] [@comment:     Post => This.OnOff = On and then This.rod_number = Rods'Last;              ^ reactor.ads:27:14:VC_POSTCONDITION] [@GP_Shape:pragargs__andthen] [@model_vc_post] [@GP_Id:1] ( ( [@GP_Pretty_Ada:2750] [@GP_Sloc:reactor.ads:27:14] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2756] [@GP_Sloc:reactor.ads:27:39] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:24 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:25 *)
   ;
    assume {  (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:24 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:25 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:24 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:25 *)
   ;
    begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)) ) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:24 *)
+  () (* Assume Pre of the subprogram reactor.ads:25 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2715] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2721] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2734] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2740] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) };
    try
    ( ();
    ( [@GP_Sloc:reactor.adb:7:7] ([#"reactor.adb" 7 0 0] (if (( ([#"reactor.adb" 7 0 0] [#"reactor.adb" 7 0 0] (([@branch_id=2334] Main.spark__branch).bool__content <- ( (Boolean.andb(((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int))) (((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)))) )));
@@ -4441,9 +4477,9 @@ module Reactor__engineon__subprogram_def
      ( [#"reactor.adb" 9 0 0] begin ensures {true} let _ = (let _ = temp___229.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__pow in (
       ()))
       in () end ;
-     { ( temp___229 ) with Reactor__trainreactor.__split_fields = { ( temp___229.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__pow = (Reactor__power__rep.of_rep((Reactor__calculatepower___axiom.calculatepower({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content })))) } } )))
+     { ( temp___229 ) with Reactor__trainreactor.__split_fields = { ( temp___229.Reactor__trainreactor.__split_fields ) with Reactor__trainreactor.rec__reactor__trainreactor__pow = (Reactor__power__rep.of_rep(([#"reactor.adb" 9 0 0] ( [@GP_Reason:VC_PRECONDITION] [@comment:         This.pow := calculatePower(This);                      ^ reactor.adb:9:22:VC_PRECONDITION] [@vc:annotation] [@GP_Shape:if__this_assign__call_calculatepower] [@GP_Id:0] [@GP_Sloc:reactor.adb:9:22] (Reactor__calculatepower___axiom.calculatepower({ Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content })) )))) } } )))
      in (
-     [#"reactor.adb" 9 0 0] (Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___230.Reactor__trainreactor.__split_fields ))))
+      (Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content <- ( temp___230.Reactor__trainreactor.__split_fields ))))
     ) );
     ( [@GP_Sloc:reactor.adb:10:22] ([#"reactor.adb" 10 0 0] (let temp___232 [@mlw:proxy_symbol] [@introduced] = (let temp___231 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__engineon__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
      ( [#"reactor.adb" 10 0 0] begin ensures {true} let _ = (let _ = temp___231.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__status in (
@@ -4463,7 +4499,7 @@ module Reactor__engineon__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "engineoff" defined at reactor.ads:28, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "engineoff" defined at reactor.ads:29, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__engineoff__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -4483,24 +4519,24 @@ module Reactor__engineoff__subprogram_def
  use        Reactor__trainreactor___axiom as Reactor__trainreactor___axiom
  use        Reactor__engineoff__this___axiom as Reactor__engineoff__this___axiom
 
- let def [#"reactor.ads" 28 0 0][@GP_Subp:reactor.ads:28] 
+ let def [#"reactor.ads" 29 0 0][@GP_Subp:reactor.ads:29] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 28 0 0] true }
-  ensures { [#"reactor.ads" 28 0 0] ([#"reactor.ads" 30 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => This.OnOff = Off and then This.rod_number = Rods'Last;              ^ reactor.ads:30:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:30:14] [@GP_Shape:pragargs__andthen] [@model_vc_post] [@GP_Id:1] ( ( [@GP_Pretty_Ada:2782] [@GP_Sloc:reactor.ads:30:14] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2788] [@GP_Sloc:reactor.ads:30:40] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) )) }
+  requires { [#"reactor.ads" 29 0 0] true }
+  ensures { [#"reactor.ads" 29 0 0] ([#"reactor.ads" 31 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__andthen] [@comment:     Post => This.OnOff = Off and then This.rod_number = Rods'Last;              ^ reactor.ads:31:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:2] [@GP_Sloc:reactor.ads:31:14] ( ( [@GP_Pretty_Ada:2801] [@GP_Sloc:reactor.ads:31:14] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (1 : int)) ) /\ ( [@GP_Sloc:reactor.ads:31:40] [@GP_Pretty_Ada:2807] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:28 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:29 *)
   ;
    assume {  (Reactor__trainreactor___axiom.dynamic_invariant { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content } True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:28 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:29 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:28 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:29 *)
   ;
    begin ensures {true} let _ = (let _ = ( ((Reactor__statusonoff__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) && ((Reactor__rods__rep.to_rep({ Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)) = (5 : int)) ) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:28 *)
+  () (* Assume Pre of the subprogram reactor.ads:29 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2766] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2772] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2785] ((Reactor__statusonoff__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) /\ ( [@GP_Pretty_Ada:2791] ((Reactor__rods__rep.to_rep { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content }.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number) = (5 : int)) ) ) };
    try
    ( ();
    ( [@GP_Sloc:reactor.adb:16:18] ([#"reactor.adb" 16 0 0] (let temp___234 [@mlw:proxy_symbol] [@introduced] = (let temp___233 [@mlw:proxy_symbol] [@introduced] = { Reactor__trainreactor.__split_fields = Reactor__engineoff__this.this__split_fields.Reactor__trainreactor.__split_fields__content } in (
@@ -4520,11 +4556,12 @@ module Reactor__engineoff__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "calculatepower" defined at reactor.ads:32, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "calculatepower" defined at reactor.ads:33, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__calculatepower__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        "_gnatprove_standard".Main as Main
  use        "_gnatprove_standard".Int_Division as Int_Division
  use        "_gnatprove_standard".Boolean as Boolean
  use        Reactor__trainreactor as Reactor__trainreactor
@@ -4538,6 +4575,8 @@ module Reactor__calculatepower__subprogram_def
  use        Reactor__power___axiom as Reactor__power___axiom
  use        Reactor__rods as Reactor__rods
  use        Reactor__rods__rep as Reactor__rods__rep
+ use        Reactor__statusonoff as Reactor__statusonoff
+ use        Reactor__statusonoff__rep as Reactor__statusonoff__rep
  use        Reactor__calculatepower__pow___axiom as Reactor__calculatepower__pow___axiom
  use        Reactor__calculatepower__maxpow___axiom as Reactor__calculatepower__maxpow___axiom
  use        Reactor__calculatepower__maxrod___axiom as Reactor__calculatepower__maxrod___axiom
@@ -4550,25 +4589,26 @@ module Reactor__calculatepower__subprogram_def
  use        Reactor__calculatepower__this___axiom as Reactor__calculatepower__this___axiom
  use        Reactor__TpowerB___axiom as Reactor__TpowerB___axiom
 
- val reactor__calculatepower__result [@model_projected] [@name:calculatePower] [@model_trace:2791@result]  : int__ref 
+ val reactor__calculatepower__result [@model_trace:2810@result] [@model_projected] [@name:calculatePower]  : int__ref 
  
- let def [#"reactor.ads" 32 0 0][@GP_Subp:reactor.ads:32] 
+ let def [#"reactor.ads" 33 0 0][@GP_Subp:reactor.ads:33] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 32 0 0] true }
-  ensures { [#"reactor.ads" 32 0 0] ([#"reactor.ads" 33 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@model_vc_post] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:33:14:VC_POSTCONDITION] [@GP_Shape:pragargs__and] [@GP_Sloc:reactor.ads:33:14] [@GP_Id:5] ( ( [@GP_Sloc:reactor.ads:33:14] [@GP_Pretty_Ada:2818] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Sloc:reactor.ads:33:60] [@GP_Pretty_Ada:2826] (reactor__calculatepower__result.int__content <= (5200 : int)) ) ) )) }
+  requires { [#"reactor.ads" 33 0 0] true }
+  ensures { [#"reactor.ads" 33 0 0] ([#"reactor.ads" 35 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:35:14] [@model_vc_post] [@comment:     Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;              ^ reactor.ads:35:14:VC_POSTCONDITION] [@GP_Shape:pragargs__and] [@GP_Id:6] ( ( [@GP_Pretty_Ada:2844] [@GP_Sloc:reactor.ads:35:14] (reactor__calculatepower__result.int__content >= (0 : int)) ) /\ ( [@GP_Sloc:reactor.ads:35:60] [@GP_Pretty_Ada:2852] (reactor__calculatepower__result.int__content <= (5200 : int)) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:32 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:33 *)
   ;
    assume {  (Reactor__trainreactor___axiom.dynamic_invariant Reactor__calculatepower__this.this True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:32 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:33 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:32 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:33 *)
   ;
-   begin ensures {true} let _ = (let _ = True in (
+   begin ensures {true} let _ = (let _ = ((Reactor__statusonoff__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (0 : int)) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:32 *)
+  () (* Assume Pre of the subprogram reactor.ads:33 *)
   ;
+   assume {  ( [@GP_Pretty_Ada:18261] ((Reactor__statusonoff__rep.to_rep Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff) = (0 : int)) ) };
    try
    ( ();
    ([#"reactor.adb" 22 0 0] ( [#"reactor.adb" 22 0 0] assume { [#"reactor.adb" 22 0 0] (Reactor__power___axiom.default_initial_assumption Reactor__calculatepower__pow.pow.int__content False) };
@@ -4582,10 +4622,16 @@ module Reactor__calculatepower__subprogram_def
    ( [@GP_Sloc:reactor.adb:26:15] ([#"reactor.adb" 26 0 0] ()) );
    ( [@GP_Sloc:reactor.adb:26:24] ([#"reactor.adb" 26 0 0] ()) );
    ( [@GP_Sloc:reactor.adb:26:35] ([#"reactor.adb" 26 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:26:12] ([#"reactor.adb" 26 0 0] [#"reactor.adb" 26 0 0] (Reactor__calculatepower__pow.pow.int__content <- ( ([#"reactor.adb" 26 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:26:31] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:4] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:26:31:VC_RANGE_CHECK] [@GP_Shape:pow_assign__mult] (Reactor__power.range_check_(([#"reactor.adb" 26 0 0] ( [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Sloc:reactor.adb:26:31] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:26:31:VC_OVERFLOW_CHECK] [@GP_Id:3] [@GP_Shape:pow_assign__mult] (Reactor__TpowerB.range_check_((([#"reactor.adb" 26 0 0] ( [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                      ^ reactor.adb:26:22:VC_DIVISION_CHECK] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Shape:pow_assign__mult__div] [@GP_Id:2] [@GP_Sloc:reactor.adb:26:22] (Int_Division.div_(Reactor__calculatepower__maxpow.maxpow.int__content) (Reactor__calculatepower__maxrod.maxrod.int__content)) )) * ((Reactor__calculatepower__maxrod.maxrod.int__content + (1 : int)) - (Reactor__rods__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)))))) )))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:27:14] ([#"reactor.adb" 27 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:27:7] ([#"reactor.adb" 27 0 0] ( [#"reactor.adb" 27 0 0] (reactor__calculatepower__result.int__content <- ( Reactor__calculatepower__pow.pow.int__content ));
-   [#"reactor.adb" 27 0 0] raise Return__exc )) );
+   ( [@GP_Sloc:reactor.adb:26:12] ([#"reactor.adb" 26 0 0] [#"reactor.adb" 26 0 0] (Reactor__calculatepower__pow.pow.int__content <- ( ([#"reactor.adb" 26 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:26:31] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:5] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:26:31:VC_RANGE_CHECK] [@GP_Shape:pow_assign__mult] (Reactor__power.range_check_(([#"reactor.adb" 26 0 0] ( [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Sloc:reactor.adb:26:31] [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                               ^ reactor.adb:26:31:VC_OVERFLOW_CHECK] [@GP_Id:4] [@GP_Shape:pow_assign__mult] (Reactor__TpowerB.range_check_((([#"reactor.adb" 26 0 0] ( [@comment:      Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));                      ^ reactor.adb:26:22:VC_DIVISION_CHECK] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Shape:pow_assign__mult__div] [@GP_Id:3] [@GP_Sloc:reactor.adb:26:22] (Int_Division.div_(Reactor__calculatepower__maxpow.maxpow.int__content) (Reactor__calculatepower__maxrod.maxrod.int__content)) )) * ((Reactor__calculatepower__maxrod.maxrod.int__content + (1 : int)) - (Reactor__rods__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__rod_number)))))) )))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:27:7] ([#"reactor.adb" 27 0 0] (if (( ([#"reactor.adb" 27 0 0] [#"reactor.adb" 27 0 0] (([@branch_id=2464] Main.spark__branch).bool__content <- ( ((Reactor__statusonoff__rep.to_rep(Reactor__calculatepower__this.this.Reactor__trainreactor.__split_fields.Reactor__trainreactor.rec__reactor__trainreactor__onoff)) = (1 : int)) )));
+   ( [@branch_id=2464] Main.spark__branch ).bool__content )) then (
+    ( ();
+    ( [@GP_Sloc:reactor.adb:28:10] ([#"reactor.adb" 28 0 0] ( [#"reactor.adb" 28 0 0] (reactor__calculatepower__result.int__content <- ( (0 : int) ));
+    [#"reactor.adb" 28 0 0] raise Return__exc )) ) )) else (
+    ()))) );
+   ( [@GP_Sloc:reactor.adb:31:14] ([#"reactor.adb" 31 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:31:7] ([#"reactor.adb" 31 0 0] ( [#"reactor.adb" 31 0 0] (reactor__calculatepower__result.int__content <- ( Reactor__calculatepower__pow.pow.int__content ));
+   [#"reactor.adb" 31 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()

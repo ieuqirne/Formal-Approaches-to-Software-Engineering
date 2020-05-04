@@ -15,7 +15,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 24
+          "line": 25
         }
       ],
       "spark": "all"
@@ -25,7 +25,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 28
+          "line": 29
         }
       ],
       "spark": "all"
@@ -35,7 +35,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 32
+          "line": 33
         }
       ],
       "spark": "all"
@@ -53,7 +53,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 32
+            "line": 33
           }
         ]
       },
@@ -64,8 +64,48 @@
   ],
   "proof": [
     {
+      "file": "reactor.adb",
+      "line": 9,
+      "col": 22,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "reactor.EngineOn",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 25
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "reactor.adb",
+      "check_line": 9,
+      "check_col": 22,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
       "file": "reactor.ads",
-      "line": 26,
+      "line": 27,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -74,7 +114,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 24
+            "line": 25
           }
         ]
       },
@@ -103,7 +143,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 26,
+      "check_line": 27,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -116,7 +156,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 30,
+      "line": 31,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -125,7 +165,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 28
+            "line": 29
           }
         ]
       },
@@ -154,7 +194,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 30,
+      "check_line": 31,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -176,7 +216,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 32
+            "line": 33
           }
         ]
       },
@@ -216,7 +256,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 32
+            "line": 33
           }
         ]
       },
@@ -225,7 +265,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 394,
+              "steps": 415,
               "time": 0
             }
           },
@@ -256,7 +296,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 32
+            "line": 33
           }
         ]
       },
@@ -265,7 +305,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 568,
+              "steps": 595,
               "time": 0
             }
           },
@@ -287,7 +327,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 33,
+      "line": 35,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -296,7 +336,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 32
+            "line": 33
           }
         ]
       },
@@ -325,7 +365,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 33,
+      "check_line": 35,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -340,27 +380,95 @@
   "assumptions": [
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 32
-              }
-            ]
-          }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "reactor.calculatePower",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 33
+            }
+          ]
         }
+      }
+    },
+    {
+      "assumptions": [
       ],
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "reactor.EngineOn",
+          "name": "reactor.calculatePower",
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 24
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "reactor.calculatePower",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "reactor.EngineOff",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "reactor.EngineOff",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "reactor.EngineOff",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 29
             }
           ]
         }
@@ -375,7 +483,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 32
+                "line": 33
               }
             ]
           }
@@ -387,7 +495,7 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 32
+                "line": 33
               }
             ]
           }
@@ -399,7 +507,87 @@
             "sloc": [
               {
                 "file": "reactor.ads",
-                "line": 32
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "reactor.EngineOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "reactor.EngineOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
               }
             ]
           }
@@ -412,7 +600,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 24
+              "line": 25
             }
           ]
         }
@@ -433,165 +621,17 @@
           ]
         }
       }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "reactor.calculatePower",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 32
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "reactor.calculatePower",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 32
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "reactor.calculatePower",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 32
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "reactor.EngineOff",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 28
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "reactor.EngineOff",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 28
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "reactor.EngineOff",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 28
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 32
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 32
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 32
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "reactor.EngineOn",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 24
-            }
-          ]
-        }
-      }
     }
   ],
   "timings": {
-    "marking": 1.76040001679212E-03,
-    "globals (basic)": 4.20818999409676E-02,
-    "globals/properties (advanced)": 4.66805994510651E-02,
-    "flow analysis": 1.44268004223704E-02,
-    "codepeer results": 9.80000004346948E-06,
-    "init_why_sections": 8.02199996542186E-04,
-    "translation of standard": 6.34919991716743E-03,
-    "translation of compilation unit": 3.19191999733448E-02,
-    "proof": 2.03339123725891E+00
+    "marking": 3.64789995364845E-03,
+    "globals (basic)": 4.72319014370441E-02,
+    "globals/properties (advanced)": 5.70816993713379E-02,
+    "flow analysis": 2.03271005302668E-02,
+    "codepeer results": 1.06999996205559E-05,
+    "init_why_sections": 8.50200012791902E-04,
+    "translation of standard": 7.13089993223548E-03,
+    "translation of compilation unit": 4.34116981923580E-02,
+    "proof": 1.46137142181396E+00
   }
 }

@@ -9,6 +9,7 @@ package reactor with SPARK_Mode is
 
    type Temperature is range 0..100;
    OverheatThreshold : constant Temperature := 75;
+   OverheatLimitThreshold : constant Temperature := 80;
    TempIncrement : constant Temperature := 10;
 
 
@@ -30,6 +31,7 @@ package reactor with SPARK_Mode is
      Post => This.OnOff = Off and then This.rod_number = Rods'Last;
 
    function calculatePower (This : in TrainReactor) return Power with
+     Pre => This.OnOff = On,
      Post => calculatePower'Result >= PowerArray'First and calculatePower'Result <= PowerArray'Last;
 
 

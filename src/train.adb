@@ -51,7 +51,6 @@ package body train with SPARK_Mode is
          This.reac.pow := calculatePower(This.reac);
          This.sp := calculateSpeed(This);
          This.reac.temp := calcTemp(This);
-
       end if;
 
    end addRod;
@@ -84,10 +83,46 @@ package body train with SPARK_Mode is
    is
       tempe : Temperature;
    begin
+      if(This.reac.OnOff = Off) then
+         return 15;
+      end if;
+
       tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1);
+      if(tempe >= OverheatThreshold) then
+               tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1) - Temperature(this.waterInReactor /100);
+
+      end if;
+
+
       return tempe;
    end calcTemp;
 
+   procedure balanceWaterReactor (This : in out Train) is
+      tempe : Temperature;
+   begin
+      if(this.reac.temp >= OverheatThreshold  ) then
+         tempe := This.reac.temp - OverheatThreshold;
+         if(this.waTank.water_level >= WaterDecrement * WaterLevel(tempe) and
+              this.waterInReactor <= WaterLevel'Last - WaterDecrement * WaterLevel(tempe) ) then
+            This.waterInReactor := This.waterInReactor + WaterDecrement * WaterLevel(tempe);
+            This.waTank.water_level := WaterLevel'Last - This.waterInReactor;
+         else
+            This.waterInReactor := WaterLevel'Last;
+            This.waTank.water_level := WaterLevel'First;
+         end if;
+      end if;
+
+         if (This.reac.temp < OverheatThreshold ) then
+         This.waterInReactor := WaterLevel'First;
+         This.waTank.water_level := WaterLevel'Last;
+         end if;
+
+      This.reac.temp := calcTemp(This);
+
+      if(This.reac.temp > OverheatLimitThreshold) then
+         checkOverHeat(This);
+      end if;
+   end balanceWaterReactor;
 
    procedure addWaterReactor (This : in out Train) is
    begin
@@ -107,13 +142,17 @@ package body train with SPARK_Mode is
       end if;
    end decreaseWaterReactor;
 
-   procedure overHeatStop (This : in out Train) is
+   procedure checkOverHeat (This : in out Train) is
    begin
-      this.reac.OnOff := Off;
-      this.reac.rod_number := reactor.Rods'Last;
-      this.reac.status := Stop;
-      this.reac.temp := 0;
-   end overHeatStop;
+--        if(This.reac.temp > OverheatLimitThreshold) then
+         this.reac.OnOff := Off;
+         this.reac.rod_number := reactor.Rods'Last;
+         this.reac.status := Stop;
+         This.sp := 0;
+         this.reac.temp := 15;
+--        end if;
+
+   end checkOverHeat;
 
    procedure trainToMaintenance (This : in out Train) is
    begin

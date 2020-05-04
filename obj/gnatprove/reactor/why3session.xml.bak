@@ -14,6 +14,8 @@
   </goal>
   <goal name="VC def.1" expl="postcondition">
   </goal>
+  <goal name="VC def.2" expl="postcondition">
+  </goal>
  </transf>
  </goal>
 </theory>
@@ -26,7 +28,8 @@
   </goal>
   <goal name="VC def.2" expl="postcondition">
   </goal>
-  <goal name="VC def.3" expl="precondition">
+  <goal name="VC def.3" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
   <goal name="VC def.4" expl="postcondition">
   </goal>
@@ -69,11 +72,11 @@
   <proof prover="1" obsolete="true"><result status="unknown" steps="177"/></proof>
   </goal>
   <goal name="VC def.2" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="394"/></proof>
+  <proof prover="0"><result status="valid" steps="415"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="454"/></proof>
   </goal>
   <goal name="VC def.3" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="568"/></proof>
+  <proof prover="0"><result status="valid" steps="595"/></proof>
   </goal>
   <goal name="VC def.4" expl="postcondition">
   </goal>

@@ -24,6 +24,10 @@ package body reactor with SPARK_Mode is
       MaxRod : Power := Power(Rods'Last);
    begin
       Pow  := MaxPow / MaxRod * ((MaxRod + 1) - Power(This.rod_number));
+      if(this.OnOff = Off) then
+         return 0;
+      end if;
+
       return Pow;
    end calculatePower;
 

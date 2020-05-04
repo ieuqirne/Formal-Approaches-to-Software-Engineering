@@ -17,7 +17,7 @@ package train with SPARK_Mode is
       waTank : waterTank.TrainWaterTank;
       sp : Speed := 0;
       wei : Weight := ReactorWeight;
-      numbCarri : Carriage := 0;
+      numbCarri : Carriage := 2;
       waterInReactor : waterTank.WaterLevel:= 0;
    end record;
 
@@ -46,9 +46,13 @@ package train with SPARK_Mode is
      Pre => This.reac.OnOff = Off and This.wei >= Weight'First and This.wei <= Weight'Last,
      Post => calculateWeight'Result >= ReactorWeight and calculateWeight'Result <= Weight'Last;
 
-   function calcTemp (This : in  Train) return Temperature with
+   function calcTemp (This : in Train) return Temperature with
      Pre => This.reac.temp >= Temperature'First and this.reac.temp <= Temperature'Last,
      Post => calcTemp'Result >= Temperature'First and calcTemp'Result <= Temperature'Last;
+
+   procedure balanceWaterReactor (This : in out Train)  with
+     Pre => This.reac.OnOff = On and This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last,
+     Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
 
    procedure addWaterReactor (This : in out Train)  with
      Pre => This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last and
@@ -60,7 +64,7 @@ package train with SPARK_Mode is
      this.waTank.water_level >= WaterDecrement and this.waterInReactor + WaterDecrement <= waterTank.WaterLevel'First,
      Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
 
-   procedure overHeatStop (This : in out Train)  with
+   procedure checkOverHeat (This : in out Train)  with
      Pre => This.reac.OnOff = On and This.reac.temp >= OverheatThreshold,
      Post => This.reac.OnOff = Off and this.reac.rod_number = reactor.Rods'Last and this.reac.status = Stop;
 
