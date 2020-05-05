@@ -16,7 +16,7 @@ package reactor with SPARK_Mode is
 
    type TrainReactor is record
       OnOff : StatusOnOff := Off;
-      temp : Temperature := 20;
+      temp : Temperature := 15;
       rod_number : Rods := 5;
       status : ReactorStatus := Stop;
       pow : Power := 0;

@@ -3,11 +3,15 @@ with reactor; use reactor;
 with waterTank; use waterTank;
 
 with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 procedure Main is
    tren: train.Train;
+   option : Integer := 1;
+
    procedure PrintStatus is
    begin
+      Ada.Text_IO.Put(ASCII.ESC & "[2J");
       New_Line;
       Put_Line("...........................");
       Put_Line("Engine: " & tren.reac.OnOff'Image);
@@ -28,101 +32,70 @@ procedure Main is
 
    procedure ClearDelay is
    begin
-      delay 0.0;
+      delay 2.0;
       --Ada.Text_IO.Put(ASCII.ESC & "[2J");
    end ClearDelay;
 
 begin
-   PrintStatus;
-   New_Line;
 
-   Put_Line("Adding carriage...");
-   ClearDelay;
-   addCarriage(tren);
-   PrintStatus;
+   while option /= 0 loop
 
-   Put_Line("Adding carriage...");
-   ClearDelay;
-   addCarriage(tren);
-   PrintStatus;
+      PrintStatus;
+      New_Line;
+      Put_Line("Choose one of the following options: ");
+      Put_Line("...........................");
+      Put_Line("1. Engine On");
+      Put_Line("2. Engine Off");
+      Put_Line("3. Add Carriage");
+      Put_Line("4. Decrease Carriage");
+      Put_Line("5. Add Rod");
+      Put_Line("6. Decrease Rod");
+      Put_Line("7. Maintenance");
+      Put_Line("0. Exit");
+      Put_Line("...........................");
+      New_Line;
+      Ada.Integer_Text_IO.Get(option);
 
-   Put_Line("Engine On...");
-   ClearDelay;
-   EngineOn(tren.reac);
-   PrintStatus;
+      case option is
+         when 1 =>
+            Put_Line("Engine On...");
+            ClearDelay;
+            EngineOn(tren.reac);
+         when 2    =>
+            Put_Line("Engine Off...");
+            EngineOff(tren.reac);
+            ClearDelay;
+         when 3    =>
+            Put_Line("Adding Carriage...");
+            addCarriage(tren);
+            balanceWaterReactor(tren);
+            ClearDelay;
+         when 4    =>
+            Put_Line("Decreasing Carriage...");
+            decreaseCarriage(tren);
+            balanceWaterReactor(tren);
+            ClearDelay;
+         when 5    =>
+            Put_Line("Adding Rod...");
+            addRod(tren);
+            balanceWaterReactor(tren);
+            ClearDelay;
+         when 6    =>
+            Put_Line("Decreasing Rod...");
+            decreaseRod(tren);
+            balanceWaterReactor(tren);
+            ClearDelay;
+         when 7    =>
+            Put_Line("Train To Maintenance");
+            trainToMaintenance(tren);
+            balanceWaterReactor(tren);
+            ClearDelay;
+         when 0    =>
+            Put_Line ("Exiting");
+            delay 2.0;
 
-   Put_Line("Decreasing Rod...");
-   ClearDelay;
-   decreaseRod(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Rod...");
-   ClearDelay;
-   decreaseRod(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Rod...");
-   ClearDelay;
-   decreaseRod(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Rod...");
-   ClearDelay;
-   decreaseRod(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Engine On...");
-   ClearDelay;
-   EngineOn(tren.reac);
-   PrintStatus;
-
-   Put_Line("Engine Off...");
-   ClearDelay;
-   EngineOff(tren.reac);
-   PrintStatus;
-
-   Put_Line("Maintenance...");
-   ClearDelay;
-   trainToMaintenance(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Carriages...");
-   ClearDelay;
-   decreaseCarriage(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Carriages...");
-   ClearDelay;
-   decreaseCarriage(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Carriages...");
-   ClearDelay;
-   decreaseCarriage(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Engine On...");
-   ClearDelay;
-   EngineOn(tren.reac);
-   PrintStatus;
-
-   Put_Line("Decreasing Rod...");
-   ClearDelay;
-   decreaseRod(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
-
-   Put_Line("Decreasing Rod...");
-   ClearDelay;
-   decreaseRod(tren);
-   balanceWaterReactor(tren);
-   PrintStatus;
+         when others => -- error has already been signaled to user
+            null;
+      end case;
+      end loop;
 end Main;

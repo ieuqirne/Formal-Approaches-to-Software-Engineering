@@ -1,5 +1,0 @@
-water.adb:20:39: "Allowed" is undefined
-water.adb:55:33: "Prohibited" is undefined
-water.adb:56:07: "SurfaceTheSubmarine" is undefined
-water.ads:12:48: "DepthMonitor" is undefined (more references follow)
-water.ads:13:62: "OperationStatus" is undefined (more references follow)

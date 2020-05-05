@@ -15,6 +15,7 @@ package body reactor with SPARK_Mode is
    begin
       This.OnOff := Off;
       This.status := Stop;
+      This.pow := calculatePower(This);
    end EngineOff;
 
    function calculatePower(This : in TrainReactor) return Power
