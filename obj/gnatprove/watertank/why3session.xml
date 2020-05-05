@@ -106,24 +106,6 @@
  </transf>
  </goal>
 </theory>
-<theory name="Watertank__update__subprogram_def">
- <goal name="VC def" expl="VC for def">
- <transf name="split_goal_wp_conj" >
-  <goal name="VC def.0" expl="postcondition">
-  </goal>
-  <goal name="VC def.1" expl="postcondition">
-  </goal>
-  <goal name="VC def.2" expl="precondition">
-  <proof prover="0"><result status="valid" steps="49"/></proof>
-  </goal>
-  <goal name="VC def.3" expl="postcondition">
-  </goal>
-  <goal name="VC def.4" expl="postcondition">
-  <proof prover="0"><result status="valid" steps="26"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
 <theory name="Watertank__updatewaterstatus__subprogram_def">
  <goal name="VC def" expl="VC for def">
  <transf name="split_goal_wp_conj" >
@@ -165,6 +147,24 @@
   </goal>
   <goal name="VC def.15" expl="assertion">
   <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Watertank__update__subprogram_def">
+ <goal name="VC def" expl="VC for def">
+ <transf name="split_goal_wp_conj" >
+  <goal name="VC def.0" expl="postcondition">
+  </goal>
+  <goal name="VC def.1" expl="postcondition">
+  </goal>
+  <goal name="VC def.2" expl="precondition">
+  <proof prover="0"><result status="valid" steps="49"/></proof>
+  </goal>
+  <goal name="VC def.3" expl="postcondition">
+  </goal>
+  <goal name="VC def.4" expl="postcondition">
+  <proof prover="0"><result status="valid" steps="26"/></proof>
   </goal>
  </transf>
  </goal>

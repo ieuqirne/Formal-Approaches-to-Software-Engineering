@@ -86,13 +86,11 @@ package body train with SPARK_Mode is
       if(This.reac.OnOff = Off) then
          return 15;
       end if;
-
       tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1);
+
       if(tempe >= OverheatThreshold) then
                tempe := Temperature'Last / Temperature(Rods'Last) * Temperature(Rods'Last - This.reac.rod_number + 1) - Temperature(this.waterInReactor /100);
-
       end if;
-
 
       return tempe;
    end calcTemp;
@@ -110,18 +108,29 @@ package body train with SPARK_Mode is
             This.waterInReactor := WaterLevel'Last;
             This.waTank.water_level := WaterLevel'First;
          end if;
-      end if;
-
-         if (This.reac.temp < OverheatThreshold ) then
+      else
          This.waterInReactor := WaterLevel'First;
          This.waTank.water_level := WaterLevel'Last;
-         end if;
+
+      end if;
+
+--        if (This.reac.temp < OverheatThreshold ) then
+--           This.waterInReactor := WaterLevel'First;
+--           This.waTank.water_level := WaterLevel'Last;
+--        end if;
 
       This.reac.temp := calcTemp(This);
 
       if(This.reac.temp > OverheatLimitThreshold) then
          checkOverHeat(This);
       end if;
+
+      if(This.waTank.water_level > WaterThreshold) then
+         This.waTank.status := Sufficient;
+      else
+         This.waTank.status := Critical;
+      end if;
+
    end balanceWaterReactor;
 
    procedure addWaterReactor (This : in out Train) is
@@ -144,19 +153,18 @@ package body train with SPARK_Mode is
 
    procedure checkOverHeat (This : in out Train) is
    begin
---        if(This.reac.temp > OverheatLimitThreshold) then
-         this.reac.OnOff := Off;
-         this.reac.rod_number := reactor.Rods'Last;
-         this.reac.status := Stop;
-         This.sp := 0;
-         this.reac.temp := 15;
---        end if;
-
+      this.reac.OnOff := Off;
+      this.reac.rod_number := reactor.Rods'Last;
+      this.reac.status := Overheated;
+      This.reac.pow := 0;
+      This.sp := 0;
+      this.reac.temp := 15;
    end checkOverHeat;
 
    procedure trainToMaintenance (This : in out Train) is
    begin
       this.reac.status := Maintenance;
+      This.reac.pow := calculatePower(This.reac);
    end trainToMaintenance;
 
 end train;

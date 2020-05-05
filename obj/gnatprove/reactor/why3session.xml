@@ -53,10 +53,12 @@
   </goal>
   <goal name="VC def.2" expl="postcondition">
   </goal>
-  <goal name="VC def.3" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="5"/></proof>
+  <goal name="VC def.3" expl="postcondition">
   </goal>
   <goal name="VC def.4" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="VC def.5" expl="postcondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
  </transf>

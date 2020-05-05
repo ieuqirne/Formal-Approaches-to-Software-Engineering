@@ -5,7 +5,7 @@ package reactor with SPARK_Mode is
    type Rods is range 1..5;
    type RodsrArray is array (Rods) of Integer;
    type StatusOnOff is (On, Off);
-   type ReactorStatus is (Running, Stop, Maintenance);
+   type ReactorStatus is (Running, Stop, Maintenance, Overheated);
 
    type Temperature is range 0..100;
    OverheatThreshold : constant Temperature := 75;
@@ -18,7 +18,7 @@ package reactor with SPARK_Mode is
       OnOff : StatusOnOff := Off;
       temp : Temperature := 20;
       rod_number : Rods := 5;
-      status : ReactorStatus := Running;
+      status : ReactorStatus := Stop;
       pow : Power := 0;
    end record;
 

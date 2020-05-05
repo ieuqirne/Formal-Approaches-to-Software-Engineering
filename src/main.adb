@@ -5,67 +5,124 @@ with waterTank; use waterTank;
 with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Main is
-
-   --reac: reactor.TrainReactor;
    tren: train.Train;
+   procedure PrintStatus is
+   begin
+      New_Line;
+      Put_Line("...........................");
+      Put_Line("Engine: " & tren.reac.OnOff'Image);
+      Put_Line("Status: " & tren.reac.status'Image);
+      Put_Line("Rods Number: " & tren.reac.rod_number'Image);
+      Put_Line("Power: " & tren.reac.pow'Image);
+      Put_Line("Temperature: " & tren.reac.temp'Image);
+      Put_Line("Speed: " & tren.sp'Image);
+      Put_Line("Number Carriages: " & tren.numbCarri'Image);
+      Put_Line("Total Weight: " & tren.wei'Image);
+      Put_Line("Water In Reactor: " & tren.waterInReactor'Image);
+      Put_Line("Water Left Tank: " & tren.waTank.water_level'Image);
+      Put_Line("Tank Status: " & tren.waTank.status'Image);
+      Put_Line("...........................");
+      New_Line;
+      --delay 2.0;
+   end PrintStatus;
+
+   procedure ClearDelay is
+   begin
+      delay 0.0;
+      --Ada.Text_IO.Put(ASCII.ESC & "[2J");
+   end ClearDelay;
+
 begin
+   PrintStatus;
+   New_Line;
 
-
-   Put_Line("OnOff");
-   Put_Line(tren.reac.OnOff'Image);
-   Put_Line("1. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
+   Put_Line("Adding carriage...");
+   ClearDelay;
    addCarriage(tren);
-   Put_Line("2. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
-   decreaseCarriage(tren);
-   Put_Line("3. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
+   PrintStatus;
 
-   --calculateWeight(tren);
+   Put_Line("Adding carriage...");
+   ClearDelay;
+   addCarriage(tren);
+   PrintStatus;
+
+   Put_Line("Engine On...");
+   ClearDelay;
    EngineOn(tren.reac);
-   Put_Line(tren.reac.OnOff'Image);
-   --calculatePower(tren.reac);
-   ----calculateSpeed(tren);
-   --(tren);
-   Put_Line("4. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
+   PrintStatus;
+
+   Put_Line("Decreasing Rod...");
+   ClearDelay;
    decreaseRod(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-   --Update(tren);
-   --addWaterReactor(tren);
-   Put_Line("5. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
+   Put_Line("Decreasing Rod...");
+   ClearDelay;
    decreaseRod(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-   --Update(tren);
-   Put_Line("6. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
+   Put_Line("Decreasing Rod...");
+   ClearDelay;
    decreaseRod(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-
-   --Update(tren);
-   Put_Line("7. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
+   Put_Line("Decreasing Rod...");
+   ClearDelay;
    decreaseRod(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-   Put_Line("8. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
-   addRod(tren);
+   Put_Line("Engine On...");
+   ClearDelay;
+   EngineOn(tren.reac);
+   PrintStatus;
+
+   Put_Line("Engine Off...");
+   ClearDelay;
+   EngineOff(tren.reac);
+   PrintStatus;
+
+   Put_Line("Maintenance...");
+   ClearDelay;
+   trainToMaintenance(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-   Put_Line("9. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
-   addRod(tren);
+   Put_Line("Decreasing Carriages...");
+   ClearDelay;
+   decreaseCarriage(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-   Put_Line("10. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water Reactor: " & tren.waterInReactor'Image);
-   addRod(tren);
+   Put_Line("Decreasing Carriages...");
+   ClearDelay;
+   decreaseCarriage(tren);
    balanceWaterReactor(tren);
-   --checkOverHeat(tren);
+   PrintStatus;
 
-   Put_Line("11. Rods: " & tren.reac.rod_number'Image & ". Power: " &  calculatePower(tren.reac)'Image & ". Speed: " & tren.sp'Image & ". Weight: " & tren.wei'Image & ". Carriages: " & tren.numbCarri'Image & ". Tempe: " & tren.reac.temp'Image & ". Water Tank: " & tren.waTank.water_level'Image & ". Water: " & tren.waterInReactor'Image);
-   --decreaseRod;
-   --Put_Line("Rods: " & T_Reactor.rod_number'Image & ". Power: " & calculatePower'Image);
+   Put_Line("Decreasing Carriages...");
+   ClearDelay;
+   decreaseCarriage(tren);
+   balanceWaterReactor(tren);
+   PrintStatus;
+
+   Put_Line("Engine On...");
+   ClearDelay;
+   EngineOn(tren.reac);
+   PrintStatus;
+
+   Put_Line("Decreasing Rod...");
+   ClearDelay;
+   decreaseRod(tren);
+   balanceWaterReactor(tren);
+   PrintStatus;
+
+   Put_Line("Decreasing Rod...");
+   ClearDelay;
+   decreaseRod(tren);
+   balanceWaterReactor(tren);
+   PrintStatus;
 end Main;

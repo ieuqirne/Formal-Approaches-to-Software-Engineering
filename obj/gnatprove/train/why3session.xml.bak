@@ -352,39 +352,39 @@
   <goal name="VC def.0" expl="postcondition">
   </goal>
   <goal name="VC def.1" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="175"/></proof>
+  <proof prover="0"><result status="valid" steps="180"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="339"/></proof>
   </goal>
   <goal name="VC def.2" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="180"/></proof>
+  <proof prover="0"><result status="valid" steps="183"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="340"/></proof>
   </goal>
   <goal name="VC def.3" expl="precondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="161"/></proof>
   </goal>
   <goal name="VC def.4" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="190"/></proof>
-  <proof prover="1" obsolete="true"><result status="unknown" steps="339"/></proof>
+  <proof prover="0"><result status="valid" steps="193"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="346"/></proof>
   </goal>
   <goal name="VC def.5" expl="precondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
-  <proof prover="1" obsolete="true"><result status="unknown" steps="346"/></proof>
   </goal>
   <goal name="VC def.6" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="13"/></proof>
+  <proof prover="0"><result status="valid" steps="14"/></proof>
   </goal>
   <goal name="VC def.7" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="175"/></proof>
-  <proof prover="1" obsolete="true"><result status="unknown" steps="340"/></proof>
+  <proof prover="0"><result status="valid" steps="178"/></proof>
   </goal>
   <goal name="VC def.8" expl="postcondition">
   </goal>
   <goal name="VC def.9" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="144"/></proof>
+  <proof prover="0"><result status="valid" steps="146"/></proof>
   </goal>
   <goal name="VC def.10" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="122"/></proof>
+  <proof prover="0"><result status="valid" steps="124"/></proof>
   </goal>
-  <goal name="VC def.3" expl="postcondition">
+  <goal name="VC def.8" expl="postcondition">
   </goal>
  </transf>
  </goal>
@@ -440,13 +440,13 @@
   <goal name="VC def.18" expl="postcondition">
   </goal>
   <goal name="VC def.19" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="319"/></proof>
+  <proof prover="0"><result status="valid" steps="288"/></proof>
   </goal>
   <goal name="VC def.20" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="304"/></proof>
+  <proof prover="0"><result status="valid" steps="276"/></proof>
   </goal>
   <goal name="VC def.21" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="203"/></proof>
+  <proof prover="0"><result status="valid" steps="183"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="565"/></proof>
   </goal>
   <goal name="VC def.22" expl="precondition" proved="true">
@@ -454,15 +454,21 @@
   </goal>
   <goal name="VC def.23" expl="postcondition">
   </goal>
-  <goal name="VC def.24" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="183"/></proof>
+  <goal name="VC def.24" expl="postcondition">
+  <proof prover="0" obsolete="true"><result status="unknown" steps="288"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="509"/></proof>
   </goal>
-  <goal name="VC def.25" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="183"/></proof>
+  <goal name="VC def.25" expl="postcondition">
   </goal>
-  <goal name="VC def.19" expl="precondition">
-  <proof prover="0"><result status="unknown" steps="288"/></proof>
-  <proof prover="1"><result status="unknown" steps="509"/></proof>
+  <goal name="VC def.26" expl="postcondition">
+  </goal>
+  <goal name="VC def.27" expl="postcondition">
+  </goal>
+  <goal name="VC def.28" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="313"/></proof>
+  </goal>
+  <goal name="VC def.29" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="315"/></proof>
   </goal>
  </transf>
  </goal>
@@ -568,7 +574,15 @@
   </goal>
   <goal name="VC def.13" expl="postcondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
-  <proof prover="1" obsolete="true"><result status="unknown" steps="301"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" steps="180"/></proof>
+  </goal>
+  <goal name="VC def.9" expl="precondition">
+  <proof prover="0"><result status="unknown" steps="99"/></proof>
+  <proof prover="1"><result status="unknown" steps="174"/></proof>
+  </goal>
+  <goal name="VC def.12" expl="postcondition">
+  </goal>
+  <goal name="VC def.10" expl="postcondition">
   </goal>
  </transf>
  </goal>
@@ -584,7 +598,14 @@
   </goal>
   <goal name="VC def.3" expl="postcondition">
   </goal>
-  <goal name="VC def.4" expl="postcondition" proved="true">
+  <goal name="VC def.4" expl="postcondition">
+  </goal>
+  <goal name="VC def.5" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="VC def.6" expl="postcondition">
+  </goal>
+  <goal name="VC def.7" expl="postcondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
   </goal>
  </transf>

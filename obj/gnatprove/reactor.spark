@@ -430,186 +430,6 @@
       "assumptions": [
       ],
       "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "reactor.EngineOff",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 29
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "reactor.EngineOff",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 29
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "reactor.EngineOff",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 29
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "reactor.EngineOn",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 25
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "reactor.EngineOn",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 25
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "reactor.calculatePower",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 33
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "reactor.EngineOn",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 25
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
           "name": "reactor",
@@ -621,17 +441,197 @@
           ]
         }
       }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "reactor.EngineOff",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "reactor.EngineOff",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "reactor.EngineOff",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "reactor.EngineOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "reactor.EngineOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "reactor.calculatePower",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 33
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "reactor.EngineOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
     }
   ],
   "timings": {
-    "marking": 3.64789995364845E-03,
-    "globals (basic)": 4.72319014370441E-02,
-    "globals/properties (advanced)": 5.70816993713379E-02,
-    "flow analysis": 2.03271005302668E-02,
-    "codepeer results": 1.06999996205559E-05,
-    "init_why_sections": 8.50200012791902E-04,
-    "translation of standard": 7.13089993223548E-03,
-    "translation of compilation unit": 4.34116981923580E-02,
-    "proof": 1.46137142181396E+00
+    "marking": 2.18200008384883E-03,
+    "globals (basic)": 4.76229004561901E-02,
+    "globals/properties (advanced)": 4.72975000739098E-02,
+    "flow analysis": 1.20072001591325E-02,
+    "codepeer results": 9.29999987420160E-06,
+    "init_why_sections": 9.27900022361428E-04,
+    "translation of standard": 6.15590019151568E-03,
+    "translation of compilation unit": 3.02505996078253E-02,
+    "proof": 1.11996102333069E+00
   }
 }

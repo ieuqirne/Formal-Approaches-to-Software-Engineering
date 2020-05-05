@@ -10,11 +10,11 @@ RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U reactor%b		reactor.adb		03ff007c NE OO PK IL
+U reactor%b		reactor.adb		085005b6 NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
-U reactor%s		reactor.ads		cb66ea1a EE NE OO PK IL
+U reactor%s		reactor.ads		7603bb2a EE NE OO PK IL
 Z ada.tags%s		a-tags.adb		a-tags.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
@@ -26,8 +26,8 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200504173302 cb66ea1a reactor%s
-D reactor.adb		20200504173500 666d3f0b reactor%b
+D reactor.ads		20200505132908 7603bb2a reactor%s
+D reactor.adb		20200505142256 d0a76bf1 reactor%b
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
@@ -63,10 +63,11 @@ X 10 reactor.ads
 7E9*StatusOnOff 7e33 18r15
 7n25*On{7E9} 27r27 30r26 34r26 11|8r24
 7n29*Off{7E9} 18r30 26r26 31r27 11|7r23 16r21 27r23
-8E9*ReactorStatus 8e54 21r16
-8n27*Running{8E9} 21r33 11|10r25
-8n36*Stop{8E9}
+8E9*ReactorStatus 8e66 21r16
+8n27*Running{8E9} 11|10r25
+8n36*Stop{8E9} 21r33 11|17r22
 8n42*Maintenance{8E9}
+8n55*Overheated{8E9}
 10I9*Temperature<short_short_integer> 11r33 12r38 13r29 19r14
 11i4*OverheatThreshold{10I9}
 12i4*OverheatLimitThreshold{10I9}
@@ -75,13 +76,13 @@ X 10 reactor.ads
 18e7*OnOff{7E9} 26r18 27r19 30r18 31r19 34r18 11|7r15 8m15 16m12 27r15
 19i7*temp{10I9}
 20i7*rod_number{5I9} 26r44 27r44 30r43 31r45 11|7r36 26r60
-21e7*status{8E9} 11|10m15
+21e7*status{8E9} 11|10m15 17m12
 22i7*pow{3I9} 11|9m15
 25U14*EngineOn 25=24 11|5b14 12l8 12t16
 25r24 This{17R9} 26r13 26r39 27r14 27r39 11|5b24 7r10 7r31 8m10 9m10 9r37
 . 10m10
 29U14*EngineOff 29=25 11|14b14 18l8 18t17
-29r25 This{17R9} 30r13 30r38 31r14 31r40 11|14b25 16m7
+29r25 This{17R9} 30r13 30r38 31r14 31r40 11|14b25 16m7 17m7
 33V13*calculatePower{3I9} 33>29 35r14 35r60 11|9s22 20b13 32l8 32t22
 33r29 This{17R9} 34r13 11|20b28 26r55 27r10
 X 11 reactor.adb

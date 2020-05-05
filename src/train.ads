@@ -17,7 +17,7 @@ package train with SPARK_Mode is
       waTank : waterTank.TrainWaterTank;
       sp : Speed := 0;
       wei : Weight := ReactorWeight;
-      numbCarri : Carriage := 2;
+      numbCarri : Carriage := 0;
       waterInReactor : waterTank.WaterLevel:= 0;
    end record;
 
@@ -66,7 +66,7 @@ package train with SPARK_Mode is
 
    procedure checkOverHeat (This : in out Train)  with
      Pre => This.reac.OnOff = On and This.reac.temp >= OverheatThreshold,
-     Post => This.reac.OnOff = Off and this.reac.rod_number = reactor.Rods'Last and this.reac.status = Stop;
+     Post => This.reac.OnOff = Off and this.reac.rod_number = reactor.Rods'Last and this.reac.status = Overheated;
 
    procedure trainToMaintenance (This : in out Train)  with
      Pre => This.reac.OnOff = On and This.reac.status = Stop,

@@ -6,24 +6,31 @@ A -march=x86-64
 P ZX
 
 RN
+RV NO_DELAY
+RV NO_FIXED_POINT
 RV NO_IO
+RV NO_RELATIVE_DELAY
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		daca50ba NE OO SU
+U main%b		main.adb		c8ddd302 NE OO SU
 W ada%s			ada.ads			ada.ali
+Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z interfaces%s		interfac.ads		interfac.ali
 W reactor%s		reactor.adb		reactor.ali
 Z system%s		system.ads		system.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
 Z system.img_enum_new%s	s-imenne.adb		s-imenne.ali
 Z system.img_int%s	s-imgint.adb		s-imgint.ali
 W train%s		train.adb		train.ali
 W watertank%s		watertank.adb		watertank.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
+D a-calend.ads		20190518041256 474d9720 ada.calendar%s
+D a-caldel.ads		20190518041256 9f20b83d ada.calendar.delays%s
 D a-except.ads		20190518041256 291912d5 ada.exceptions%s
 D a-ioexce.ads		20190518041256 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20190518041256 119b8fb3 ada.streams%s
@@ -32,9 +39,10 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D main.adb		20200504172838 ae98f22d main%b
-D reactor.ads		20200504173302 cb66ea1a reactor%s
+D main.adb		20200505143822 28ae69b3 main%b
+D reactor.ads		20200505132908 7603bb2a reactor%s
 D system.ads		20190518041258 32a08138 system%s
+D s-conca2.ads		20190518041256 02a0d7d0 system.concat_2%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
 D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
@@ -49,79 +57,71 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200504173802 70746119 train%s
-D watertank.ads		20200504161508 61b4fcf9 watertank%s
+D train.ads		20200505140924 5930280f train%s
+D watertank.ads		20200505141022 61b4fcf9 watertank%s
 G a e
 G c Z b b [main standard 7 11 none]
 G r s train [main standard 7 11 none] [trainIP train 15 9 none]
-G r c none [main standard 7 11 none] [calculatepower reactor 33 13 none]
 G r c none [main standard 7 11 none] [addcarriage train 29 14 none]
-G r c none [main standard 7 11 none] [decreasecarriage train 33 14 none]
 G r c none [main standard 7 11 none] [engineon reactor 25 14 none]
 G r c none [main standard 7 11 none] [decreaserod train 41 14 none]
 G r c none [main standard 7 11 none] [balancewaterreactor train 53 14 none]
-G r c none [main standard 7 11 none] [addrod train 37 14 none]
+G r c none [main standard 7 11 none] [engineoff reactor 29 14 none]
+G r c none [main standard 7 11 none] [traintomaintenance train 71 14 none]
+G r c none [main standard 7 11 none] [decreasecarriage train 33 14 none]
 X 1 ada.ads
-16K9*Ada 20e8 10|5r6 5r23
-X 6 a-textio.ads
-57K13*Text_IO 727e16 10|5w10 5r27
-508U14*Put_Line 10|14s4 15s4 16s4 18s4 20s4 24s4 28s4 35s4 41s4 48s4 53s4
-. 58s4 63s4 68s4
-X 10 main.adb
-7U11*Main 7b11 71l5 71t9
-10r4 tren{27|15R9} 15r13 16r27 16r86 16r119 16r150 16r185 16r222 16r264 16r318
-. 17m16 17r16 18r27 18r86 18r119 18r150 18r185 18r222 18r264 18r318 19m21
-. 19r21 20r27 20r86 20r119 20r150 20r185 20r222 20r264 20r318 23m13 23r13
-. 24r13 28r27 28r86 28r119 28r150 28r185 28r222 28r264 28r318 29m16 29r16
-. 30m24 30r24 35r27 35r86 35r119 35r150 35r185 35r222 35r264 35r318 36m16
-. 36r16 37m24 37r24 41r27 41r86 41r119 41r150 41r185 41r222 41r264 41r318
-. 42m16 42r16 43m24 43r24 48r27 48r86 48r119 48r150 48r185 48r222 48r264
-. 48r318 49m16 49r16 50m24 50r24 53r27 53r86 53r119 53r150 53r185 53r222
-. 53r264 53r318 54m11 54r11 55m24 55r24 58r27 58r86 58r119 58r150 58r185
-. 58r222 58r264 58r318 59m11 59r11 60m24 60r24 63r28 63r87 63r120 63r151
-. 63r186 63r223 63r265 63r319 64m11 64r11 65m24 65r24 68r28 68r87 68r120
-. 68r151 68r186 68r223 68r265 68r311
-X 11 reactor.ads
-1K9*reactor 10|2w6 2r19 11|39e12
+16K9*Ada 20e8 12|5r6 5r23
+X 8 a-textio.ads
+57K13*Text_IO 727e16 12|5w10 5r27
+264U14*New_Line 12|11s7 25s7 37s4
+508U14*Put_Line 12|12s7 13s7 14s7 15s7 16s7 17s7 18s7 19s7 20s7 21s7 22s7
+. 23s7 24s7 39s4 44s4 49s4 54s4 60s4 66s4 72s4 78s4 83s4 88s4 94s4 100s4
+. 106s4 112s4 117s4 123s4
+X 12 main.adb
+7U11*Main 7b11 128l5 128t9
+8r4 tren{30|15R9} 13r29 14r29 15r34 16r28 17r34 18r28 19r39 20r35 21r39 22r38
+. 23r34 41m16 41r16 46m16 46r16 51m13 51r13 56m16 56r16 57m24 57r24 62m16
+. 62r16 63m24 63r24 68m16 68r16 69m24 69r24 74m16 74r16 75m24 75r24 80m13
+. 80r13 85m14 85r14 90m23 90r23 91m24 91r24 96m21 96r21 97m24 97r24 102m21
+. 102r21 103m24 103r24 108m21 108r21 109m24 109r24 114m13 114r13 119m16 119r16
+. 120m24 120r24 125m16 125r16 126m24 126r24
+9U14 PrintStatus 9b14 27l8 27t19 36s4 42s4 47s4 52s4 58s4 64s4 70s4 76s4
+. 81s4 86s4 92s4 98s4 104s4 110s4 115s4 121s4 127s4
+29U14 ClearDelay 29b14 33l8 33t18 40s4 45s4 50s4 55s4 61s4 67s4 73s4 79s4
+. 84s4 89s4 95s4 101s4 107s4 113s4 118s4 124s4
+X 13 reactor.ads
+1K9*reactor 12|2w6 2r19 13|39e12
 3I9*Power<short_integer>
 5I9*Rods<short_short_integer>
 10I9*Temperature<short_short_integer>
-18e7*OnOff{7E9} 10|15r23 24r23
-19i7*temp{10I9} 10|16r232 18r232 20r232 28r232 35r232 41r232 48r232 53r232
-. 58r232 63r233 68r233
-20i7*rod_number{5I9} 10|16r37 18r37 20r37 28r37 35r37 41r37 48r37 53r37 58r37
-. 63r38 68r38
-25U14*EngineOn 10|23s4
-33V13*calculatePower{3I9} 10|16s71 18s71 20s71 28s71 35s71 41s71 48s71 53s71
-. 58s71 63s72 68s72
-X 27 train.ads
-4K9*train 10|1w6 1r17 10r10 27|75e10
+18e7*OnOff{7E9} 12|13r39
+19i7*temp{10I9} 12|17r44
+20i7*rod_number{5I9} 12|15r44
+21e7*status{8E9} 12|14r39
+22i7*pow{3I9} 12|16r38
+25U14*EngineOn 12|51s4 80s4 114s4
+29U14*EngineOff 12|85s4
+X 30 train.ads
+4K9*train 12|1w6 1r17 8r10 30|75e10
 6I9*Speed<short_short_integer>
 8I9*Weight<short_integer>
 12I9*Carriage<short_short_integer>
-15R9*Train 10|10r16 27|22e14
-16r7*reac{11|17R9} 10|15r18 16r32 16r91 16r227 18r32 18r91 18r227 20r32 20r91
-. 20r227 23m18 24r18 28r32 28r91 28r227 35r32 35r91 35r227 41r32 41r91 41r227
-. 48r32 48r91 48r227 53r32 53r91 53r227 58r32 58r91 58r227 63r33 63r92 63r228
-. 68r33 68r92 68r228
-17r7*waTank{28|10R9} 10|16r269 18r269 20r269 28r269 35r269 41r269 48r269
-. 53r269 58r269 63r270 68r270
-18i7*sp{6I9} 10|16r124 18r124 20r124 28r124 35r124 41r124 48r124 53r124 58r124
-. 63r125 68r125
-19i7*wei{8I9} 10|16r155 18r155 20r155 28r155 35r155 41r155 48r155 53r155
-. 58r155 63r156 68r156
-20i7*numbCarri{12I9} 10|16r190 18r190 20r190 28r190 35r190 41r190 48r190
-. 53r190 58r190 63r191 68r191
-21i7*waterInReactor{28|3I9} 10|16r323 18r323 20r323 28r323 35r323 41r323
-. 48r323 53r323 58r323 63r324 68r316
-29U14*addCarriage 10|17s4
-33U14*decreaseCarriage 10|19s4
-37U14*addRod 10|54s4 59s4 64s4
-41U14*decreaseRod 10|29s4 36s4 42s4 49s4
-53U14*balanceWaterReactor 10|30s4 37s4 43s4 50s4 55s4 60s4 65s4
-X 28 watertank.ads
-1K11*waterTank 10|3w6 3r21 28|19e16
+15R9*Train 12|8r16 30|22e14
+16r7*reac{13|17R9} 12|13r34 14r34 15r39 16r33 17r39 51m18 80m18 85m19 114m18
+17r7*waTank{31|10R9} 12|22r43 23r39
+18i7*sp{6I9} 12|18r33
+19i7*wei{8I9} 12|20r40
+20i7*numbCarri{12I9} 12|19r44
+21i7*waterInReactor{31|3I9} 12|21r44
+29U14*addCarriage 12|41s4 46s4
+33U14*decreaseCarriage 12|96s4 102s4 108s4
+41U14*decreaseRod 12|56s4 62s4 68s4 74s4 119s4 125s4
+53U14*balanceWaterReactor 12|57s4 63s4 69s4 75s4 91s4 97s4 103s4 109s4 120s4
+. 126s4
+71U14*trainToMaintenance 12|90s4
+X 31 watertank.ads
+1K11*waterTank 12|3w6 3r21 31|19e16
 3I9*WaterLevel<short_integer>
-11i7*water_level{3I9} 10|16r276 18r276 20r276 28r276 35r276 41r276 48r276
-. 53r276 58r276 63r277 68r277
+11i7*water_level{3I9} 12|22r50
+12e7*status{5E9} 12|23r46
 
