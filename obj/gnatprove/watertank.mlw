@@ -2939,7 +2939,7 @@ module Watertank__package_def
   ([#"watertank.adb" 3 0 0] ());
   ([#"watertank.adb" 6 0 0] ());
   ();
-  ( [@GP_Sloc:watertank.adb:50:3] ([#"watertank.adb" 50 0 0] ()) ) )
+  ( [@GP_Sloc:watertank.adb:11:3] ([#"watertank.adb" 11 0 0] ()) ) )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "returnwaterstatus" defined at watertank.ads:15, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)

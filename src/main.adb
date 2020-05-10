@@ -61,9 +61,11 @@ begin
             Put_Line("Engine On...");
             ClearDelay;
             EngineOn(tren.reac);
+            balanceWaterReactor(tren);
          when 2    =>
             Put_Line("Engine Off...");
             EngineOff(tren.reac);
+            balanceWaterReactor(tren);
             ClearDelay;
          when 3    =>
             Put_Line("Adding Carriage...");

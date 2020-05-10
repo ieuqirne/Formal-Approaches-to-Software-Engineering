@@ -10,7 +10,7 @@ RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U reactor%b		reactor.adb		3e71942d NE OO PK IL
+U reactor%b		reactor.adb		bc86aad0 NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
@@ -27,7 +27,7 @@ D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
 D reactor.ads		20200505171318 33a0da64 reactor%s
-D reactor.adb		20200505171640 a3259b24 reactor%b
+D reactor.adb		20200507202410 21d2a5d9 reactor%b
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
@@ -82,8 +82,8 @@ X 10 reactor.ads
 25r24 This{17R9} 26r13 26r39 27r14 27r39 11|5b24 7r10 7r31 8m10 9m10 9r37
 . 10m10
 29U14*EngineOff 29=25 11|14b14 19l8 19t17
-29r25 This{17R9} 30r13 30r38 31r14 31r40 11|14b25 16m7 17m7 18m7 18r34
-33V13*calculatePower{3I9} 33>29 35r14 35r60 11|9s22 18s19 21b13 33l8 33t22
+29r25 This{17R9} 30r13 30r38 31r14 31r40 11|14b25 16m7 17m7 18m7
+33V13*calculatePower{3I9} 33>29 35r14 35r60 11|9s22 21b13 33l8 33t22
 33r29 This{17R9} 34r13 11|21b28 27r55 28r10
 X 11 reactor.adb
 23i7 Pow{10|3I9} 27m7 32r14

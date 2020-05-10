@@ -35,8 +35,8 @@ package train with SPARK_Mode is
      Post => This.numbCarri < This.numbCarri'Old;
 
    procedure addRod (This : in out Train) with
-     Pre => This.reac.OnOff = On and then This.reac.rod_number < Rods'Last,
-     Post => This.reac.rod_number > This.reac.rod_number'Old;
+     Pre => This.reac.OnOff = On and This.reac.rod_number >= Rods'First and This.reac.rod_number < Rods'Last,
+     Post => This.reac.rod_number > This.reac.rod_number'Old and this.reac.rod_number <= Rods'Last;
 
    procedure decreaseRod (This : in out Train) with
      Pre => This.reac.OnOff = On and then This.reac.rod_number > Rods'First,
@@ -54,22 +54,12 @@ package train with SPARK_Mode is
      Pre => This.reac.OnOff = On and This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last,
      Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
 
-   procedure addWaterReactor (This : in out Train)  with
-     Pre => This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last and
-     this.waTank.water_level >= WaterDecrement and this.waterInReactor + WaterDecrement <= waterTank.WaterLevel'Last,
-     Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
-
-   procedure decreaseWaterReactor (This : in out Train)  with
-     Pre => This.waTank.water_level  >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last and
-     this.waTank.water_level >= WaterDecrement and this.waterInReactor + WaterDecrement <= waterTank.WaterLevel'First,
-     Post => This.waTank.water_level >= WaterLevel'First and This.waTank.water_level <= WaterLevel'Last;
-
-   procedure checkOverHeat (This : in out Train)  with
+   procedure overHeat (This : in out Train)  with
      Pre => This.reac.OnOff = On and This.reac.temp >= OverheatThreshold,
      Post => This.reac.OnOff = Off and this.reac.rod_number = reactor.Rods'Last and this.reac.status = Overheated;
 
    procedure trainToMaintenance (This : in out Train)  with
-     Pre => This.reac.OnOff = On and This.reac.status = Stop,
+     Pre => This.reac.OnOff = On,
      Post => This.reac.status = Maintenance;
 
 end Train;
